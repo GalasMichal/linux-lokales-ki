@@ -1,0 +1,110 @@
+# Secrets and local env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+credentials.json
+**/secrets/
+**/*secret*
+**/*credential*
+
+# Firecrawl CLI cache (may contain API material)
+.firecrawl/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-store/
+
+# Model weights and large binaries — never upload
+*.gguf
+*.ggml
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.bin
+*.pkl
+*.h5
+*.msgpack
+*.npz
+*.engine
+*.imatrix
+
+# Ollama
+.ollama/
+ollama/
+blobs/
+manifests/
+
+# Hugging Face / caches
+.cache/
+huggingface/
+HF_HOME/
+transformers_cache/
+
+# ComfyUI
+ComfyUI/models/
+ComfyUI/output/
+ComfyUI/temp/
+ComfyUI/input/
+models/checkpoints/
+models/loras/
+models/vae/
+models/controlnet/
+models/clip/
+models/clip_vision/
+models/diffusers/
+models/unet/
+models/upscale_models/
+models/embeddings/
+models/hypernetworks/
+models/ipadapter/
+output/
+outputs/
+
+# Logs (may contain prompts or keys)
+*.log
+logs/
+nvidia-smi*.txt
+*.nvvp
+core
+core.*
+*.dump
+*.dmp
+
+# Local runtime / GPU / datasets
+*.img
+*.qcow2
+*.iso
+datasets/
+data/raw/
+tmp/
+temp/
+.wdm/
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
