@@ -60,4 +60,4 @@ done
 systemctl --user daemon-reload
 restore_unit_state ki-hub.service
 restore_unit_state comfyui.service
-printf '%s\n' "ROLLBACK_OK: alte KI-Zentrale wieder aktiv. Neue Dateien wurden nicht gelöscht."
+printf '%s\n' "ROLLBACK_OK: vorheriger Dienst- und Starterzustand wiederhergestellt. Neue Dateien wurden nicht gelöscht."
