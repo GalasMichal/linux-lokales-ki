@@ -39,6 +39,8 @@ def parse_generate_image(
         raise ToolError(f"Nur Workflow '{WORKFLOW_ID}' ist erlaubt.")
     if width not in ALLOWED_SIZES or height not in ALLOWED_SIZES:
         raise ToolError("Erlaubte Bildgrößen sind 512, 768 oder 1024 Pixel.")
+    if isinstance(seed, str) and seed.strip().isdigit():
+        seed = int(seed.strip())
     if isinstance(seed, bool) or not isinstance(seed, int):
         raise ToolError("Der Seed muss eine ganze Zahl sein.")
     if not 0 <= seed <= 18_446_744_073_709_551_615:

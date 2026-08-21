@@ -41,13 +41,17 @@ async def generate_image(
     height: Literal[512, 768, 1024] = 1024,
     seed: int = 42,
     workflow_id: Literal["flux2-klein-t2i-v1"] = WORKFLOW_ID,
+    size: str | None = None,
 ) -> dict[str, Any]:
-    """Erzeuge lokal genau ein Bild mit dem freigegebenen FLUX.2-klein-Workflow.
+    """Generate a local image from a text prompt. Use this when the user asks to create, generate, or draw a picture.
 
-    Der Auftrag läuft mit Batch 1. Ollama wird vorher entladen, ComfyUI wird bei
-    Bedarf gestartet, und Ergebnis sowie Manifest werden im Bildarchiv abgelegt.
-    Erlaubte Kantenlängen: 512, 768 oder 1024 Pixel.
+    Registered call name is mcp__local-tools__generate_image. Do not use Shell, Git, tool_search, or zoom_image.
+    Preferred args: prompt, width, height, seed. Optional size like 512x512 is accepted. Batch is always 1.
     """
+    if isinstance(size, str) and "x" in size.lower():
+        parts = size.lower().replace(" ", "").split("x", 1)
+        if len(parts) == 2 and parts[0].isdigit() and parts[1].isdigit():
+            width, height = int(parts[0]), int(parts[1])
     try:
         return await generate_image_via_workplace(prompt, width, height, seed, workflow_id)
     except ToolError as exc:

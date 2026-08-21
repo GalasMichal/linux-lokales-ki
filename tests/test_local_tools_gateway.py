@@ -33,6 +33,16 @@ class ImageInputTests(unittest.TestCase):
         with self.assertRaises(GATEWAY.ToolError):
             GATEWAY.parse_generate_image("Katze", 512, 512, True, GATEWAY.WORKFLOW_ID)
 
+    def test_numeric_string_seed_is_accepted(self):
+        result = GATEWAY.parse_generate_image("Katze", 512, 512, "20260821", GATEWAY.WORKFLOW_ID)
+        self.assertEqual(result["seed"], 20260821)
+        self.assertEqual(result["width"], 512)
+
+    def test_seed_zero_is_accepted(self):
+        result = GATEWAY.parse_generate_image("Katze", 512, 512, 0, GATEWAY.WORKFLOW_ID)
+        self.assertEqual(result["seed"], 0)
+        self.assertEqual(result["width"], 512)
+
 
 class _Response:
     def __init__(self, payload: dict):
