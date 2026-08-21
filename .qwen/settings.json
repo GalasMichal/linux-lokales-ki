@@ -1,0 +1,6 @@
+{
+  "skills": {
+    "disabledLevels": ["user"]
+  },
+  "$version": 4
+}

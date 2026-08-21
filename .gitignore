@@ -101,6 +101,11 @@ tmp/
 temp/
 .wdm/
 
+# Qwen Code runtime (keep versioned skills and project settings)
+.qwen/tmp/
+.qwen/review-cache/
+.qwen/skills/auto-*
+
 # Editors / OS
 .idea/
 .vscode/

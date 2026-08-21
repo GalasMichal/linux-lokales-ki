@@ -73,6 +73,15 @@ Fünf Coding-Aufgaben / Agentenzyklus: deferred.
 - Cleanup nach Bildauftrag: ComfyUI/Qwen inaktiv, Ollama leer, VRAM 596 MiB
 - Sicherungen: `/mnt/ai-archive/backups/ki-ui/20260821-090954` und `/mnt/ai-archive/backups/ki-ui/20260821-091646`
 
+## Qwen-Skills — 21.08.2026
+
+- Portable Skills unter `skills/` (kein Cursor-Modellrouting)
+- Setup `scripts/setup-qwen-skills.sh` setzt relative Links nach `.qwen/skills/`
+- Projekt-`.qwen/settings.json` schaltet User-Level-Skills in diesem Workspace aus
+- Globale `~/.qwen/settings.json`: Default `local-fast` (Backup `/mnt/ai-archive/backups/qwen/20260821-112638/`)
+- Ollama unverändert
+- Doku: `docs/QWEN_SKILLS.md`
+
 ## Bewusst offen
 
 MCP, Phase-4-Zyklus, Vision-Suite, Image Editing, optionale LLMs, 256K, formale A01–A14-Abnahme.

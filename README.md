@@ -15,6 +15,8 @@ Dieses private Repository dokumentiert und versioniert den real installierten lo
 
 Die Desktop-Oberfläche liegt unter [`apps/ki-workplace`](apps/ki-workplace). Sie benötigt keine Cloud-Verbindung und akzeptiert keine Netzwerkverbindungen außerhalb von `127.0.0.1`.
 
+Qwen-Code-Skills (ohne Cursor-Routing) liegen unter [`skills/`](skills/). Einrichtung: `./scripts/setup-qwen-skills.sh`. Details: [`docs/QWEN_SKILLS.md`](docs/QWEN_SKILLS.md).
+
 ## Entwicklungstest
 
 ```bash
