@@ -1,6 +1,6 @@
 {
   "skills": {
-    "disabledLevels": ["user"]
+    "disabledLevels": ["user", "bundled"]
   },
   "tools": {
     "computerUse": {
@@ -9,6 +9,13 @@
     "visible": [
       "mcp__local-tools__generate_image"
     ]
+  },
+  "memory": {
+    "enableManagedAutoMemory": false,
+    "enableManagedAutoDream": false
+  },
+  "ui": {
+    "enableFollowupSuggestions": false
   },
   "env": {
     "QWEN_CODE_LEGACY_MCP_BLOCKING": "1"

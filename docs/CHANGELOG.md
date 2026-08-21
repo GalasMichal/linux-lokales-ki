@@ -91,6 +91,24 @@ Fünf Coding-Aufgaben / Agentenzyklus: deferred.
 - Projekt-`.qwen/settings.json`: `generate_image` als `mcp__local-tools__generate_image` sichtbar, `computer_use` aus, MCP-Discovery blockierend. Interaktives FAST ruft das Tool trotzdem oft nur im Text auf, ohne Function-Call.
 - Rollback stellt nur MCP-Schlüssel in `~/.qwen/settings.json` wieder her, nicht das Default-Modell
 
+## Qwen ToolSearch MCP — 21.08.2026
+
+- `select:generate_image` und Keyword `image` finden `mcp__local-tools__generate_image`
+- Apply: `scripts/apply-qwen-toolsearch-mcp-alias-patch.sh` (nur 0.21.15, SHA-Check)
+- Rollback geht auf Stock, nicht auf den Zwischenpatch
+- Git-Snapshot-Omit im selben Apply (Task-Hijack); Doku `docs/QWEN_GIT_SNAPSHOT.md`
+- Gateway akzeptiert numerische Seed-Strings und `size` wie `512x512`
+- Doku: `docs/QWEN_TOOLSEARCH_MCP_ALIAS.md`
+
+## FAST 32K Coding-Context — 21.08.2026
+
+- Einmalige Policy: FAST `num_ctx` 16384 → 32768, Parent `qwen3.5:9b` Q4_K_M, kein Pull
+- Qwen-Provider `local-fast.contextWindowSize` 32768; QUALITY bleibt 8192
+- 100 % GPU, `ollama ps` CONTEXT 32768, ~6.1 GB; Override-SHA unverändert
+- Projekt: Auto-Memory aus, Follow-up-Suggestions aus (`ui.enableFollowupSuggestions: false`)
+- Apply/Rollback: `scripts/apply-local-fast-context.sh`, `scripts/rollback-local-fast-context.sh` (`config/modelfiles/local-fast.Modelfile`)
+- Backup: `/mnt/ai-archive/backups/ollama-fast-ctx/`
+
 ## Bewusst offen
 
-MCP, Phase-4-Zyklus, Vision-Suite, Image Editing, optionale LLMs, 256K, formale A01–A14-Abnahme.
+Vision-Suite, Image Editing, optionale LLMs, 256K, formale A01–A14-Abnahme.

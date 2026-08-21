@@ -2,7 +2,7 @@
 
 Stand: 21.08.2026. Gilt für Qwen Code **0.21.13** unter `/srv/ai/apps/qwen-code`.
 
-Dieses Setup ändert **nicht** Ollama (kein Re-Download, keine Quantisierung, kein Context-Tuning).
+Dieses Setup ändert **nicht** QUALITY, Quantisierung oder den systemd-Override. FAST-Context 32K ist der dokumentierte Alias (`config/modelfiles/local-fast.Modelfile`).
 
 ## Welche Skills Qwen hier verwendet
 
@@ -68,19 +68,23 @@ In **diesem Workspace** sind User-Level-Skills abgeschaltet, damit `~/.agents/sk
 
 `.qwen/settings.json` (Projekt, überschreibt nicht `~/.qwen/settings.json`):
 
-- `skills.disabledLevels: ["user"]`
+- `skills.disabledLevels: ["user", "bundled"]` — keine User-Skills aus `~/.agents` und keine gebündelten Qwen-Skills (`new-app`, …) in diesem Workspace. Projekt-Skills inkl. `verify-work` bleiben.
 - `tools.computerUse.enabled: false` — keine `computer_use__*`-Tools in diesem Workspace
 - `tools.visible: ["mcp__local-tools__generate_image"]` — MCP-Bildtool in der ersten Tool-Welle (Qwen 0.21.13: `alwaysLoadTools` ist ein Boolean am MCP-Server, kein Namens-Array)
 - `env.QWEN_CODE_LEGACY_MCP_BLOCKING: "1"` — MCP-Discovery vor dem ersten Modellaufruf (sonst bleibt `generate_image` unsichtbar)
+- `memory.enableManagedAutoMemory: false` und `memory.enableManagedAutoDream: false` — kein Auto-Memory-Prompt mit `~/.qwen/projects/<sanitizeCwd>/…` in diesem Workspace. Bestehende Memory-Dateien bleiben auf der Platte; Backup unter `/mnt/ai-archive/backups/qwen-memory/`. Schema-Keys aus Qwen 0.21.15 `SETTINGS_SCHEMA`.
+- `ui.enableFollowupSuggestions: false` — keine `commit`-Placeholder im TUI-Input. Schema-Key in Qwen 0.21.15 `SETTINGS_SCHEMA`.
 
 `apps/local-tools/config/qwen-mcp.json` setzt `alwaysLoadTools: true` am Server `local-tools`. Das landet bei einem Deploy in der globalen Qwen-Config, ohne `model.name` oder `trust` zu ändern.
 
+`select:generate_image` und Keyword `image` in ToolSearch brauchen den Patch `docs/QWEN_TOOLSEARCH_MCP_ALIAS.md` (nur Qwen 0.21.15).
+
 ## FAST / QUALITY
 
-- FAST: Ollama `local-fast` / `qwen3.5:9b`, Qwen-Provider `local-fast`, Context 16K
-- QUALITY: Ollama `local-quality` / `qwen3.6:27b`, Qwen-Provider `local-quality`, Context 8K
+- FAST: Ollama `local-fast` / `qwen3.5:9b` Q4_K_M, `num_ctx` 32768, Qwen-Provider `contextWindowSize` 32768. Rebuild: `./scripts/apply-local-fast-context.sh`. Rollback 16K: `./scripts/rollback-local-fast-context.sh`.
+- QUALITY: Ollama `local-quality` / `qwen3.6:27b`, Qwen-Provider `local-quality`, Context 8K (unverändert)
 
-Host-Default in `~/.qwen/settings.json`: `model.name` = `local-fast`. QUALITY nur explizit (`qwen -m local-quality`). Ollama-Tuning bleibt unberührt. Backup vor der Umschaltung: `/mnt/ai-archive/backups/qwen/20260821-112638/settings.json`.
+Host-Default in `~/.qwen/settings.json`: `model.name` = `local-fast`. QUALITY nur explizit (`qwen -m local-quality`). systemd-Override unverändert. Backup vor FAST-32K: `/mnt/ai-archive/backups/ollama-fast-ctx/`.
 
 ## Trust
 

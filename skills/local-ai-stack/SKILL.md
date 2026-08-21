@@ -8,16 +8,16 @@ description: >
 
 # Local AI stack
 
-This skill is for the Git repo that documents `/srv/ai`. Do not retune Ollama from here.
+This skill is for the Git repo that documents `/srv/ai`. Do not pull new models, change quant, or retune QUALITY. FAST `num_ctx` is 32768 via `config/modelfiles/local-fast.Modelfile`.
 
 ## Roles (names only)
 
 | Role | Ollama name | Alias | Context in Qwen | Use |
 |------|-------------|-------|-----------------|-----|
-| FAST | `qwen3.5:9b` | `local-fast` | 16K | normal coding, small edits, file analysis |
+| FAST | `qwen3.5:9b` | `local-fast` | 32K | normal coding, small edits, file analysis |
 | QUALITY | `qwen3.6:27b` | `local-quality` | 8K | architecture, hard bugs, larger refactors |
 
-Do not download models, change quant, change context, or load both models at once.
+Do not download models, change quant, change QUALITY context, or load both models at once. FAST context is the documented 32K alias only.
 
 ## Endpoints (localhost only)
 
