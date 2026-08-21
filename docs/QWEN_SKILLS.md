@@ -66,9 +66,14 @@ Nicht verlinkt und nicht kopiert:
 
 In **diesem Workspace** sind User-Level-Skills abgeschaltet, damit `~/.agents/skills` Qwen nicht mit Cursor-Anweisungen füttert:
 
-`.qwen/settings.json` → `skills.disabledLevels: ["user"]`
+`.qwen/settings.json` (Projekt, überschreibt nicht `~/.qwen/settings.json`):
 
-Das ist eine **Projekt**-Datei. `~/.qwen/settings.json` wird nicht überschrieben.
+- `skills.disabledLevels: ["user"]`
+- `tools.computerUse.enabled: false` — keine `computer_use__*`-Tools in diesem Workspace
+- `tools.visible: ["mcp__local-tools__generate_image"]` — MCP-Bildtool in der ersten Tool-Welle (Qwen 0.21.13: `alwaysLoadTools` ist ein Boolean am MCP-Server, kein Namens-Array)
+- `env.QWEN_CODE_LEGACY_MCP_BLOCKING: "1"` — MCP-Discovery vor dem ersten Modellaufruf (sonst bleibt `generate_image` unsichtbar)
+
+`apps/local-tools/config/qwen-mcp.json` setzt `alwaysLoadTools: true` am Server `local-tools`. Das landet bei einem Deploy in der globalen Qwen-Config, ohne `model.name` oder `trust` zu ändern.
 
 ## FAST / QUALITY
 

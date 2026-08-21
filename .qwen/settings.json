@@ -2,5 +2,16 @@
   "skills": {
     "disabledLevels": ["user"]
   },
+  "tools": {
+    "computerUse": {
+      "enabled": false
+    },
+    "visible": [
+      "mcp__local-tools__generate_image"
+    ]
+  },
+  "env": {
+    "QWEN_CODE_LEGACY_MCP_BLOCKING": "1"
+  },
   "$version": 4
 }

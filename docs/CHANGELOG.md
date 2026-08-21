@@ -87,7 +87,8 @@ Fünf Coding-Aufgaben / Agentenzyklus: deferred.
 - Gateway `apps/local-tools/` auf `127.0.0.1:8765`, ein Tool `generate_image`
 - Ruft den KI-Arbeitsplatz `flux2-klein-t2i-v1` auf, kein eigener Comfy-Client
 - Live-Test 512×512 Seed 20260821: Job `2a7951cb7860`, ~39 s, GPU-Cleanup ok
-- Qwen sieht den MCP-Server (`qwen mcp list`: Connected); Headless-Aufruf ohne `--yolo` ruft das Tool nicht zuverlässig auf
+- Qwen sieht den MCP-Server (`qwen mcp list`: Connected)
+- Projekt-`.qwen/settings.json`: `generate_image` als `mcp__local-tools__generate_image` sichtbar, `computer_use` aus, MCP-Discovery blockierend. Interaktives FAST ruft das Tool trotzdem oft nur im Text auf, ohne Function-Call.
 - Rollback stellt nur MCP-Schlüssel in `~/.qwen/settings.json` wieder her, nicht das Default-Modell
 
 ## Bewusst offen

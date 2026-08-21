@@ -12,7 +12,8 @@
       "trust": false,
       "includeTools": [
         "generate_image"
-      ]
+      ],
+      "alwaysLoadTools": true
     }
   }
 }
