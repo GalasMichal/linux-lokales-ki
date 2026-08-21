@@ -1,0 +1,21 @@
+[Unit]
+Description=Lokale KI-Werkzeuge (MCP, localhost only)
+After=ki-workplace.service
+Wants=ki-workplace.service
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/ai/apps/local-tools
+ExecStart=/srv/ai/venvs/local-tools/bin/uvicorn server:app --host 127.0.0.1 --port 8765 --workers 1 --limit-concurrency 8 --timeout-keep-alive 10
+Restart=on-failure
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+Environment=NO_PROXY=127.0.0.1,localhost,host.containers.internal
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=read-only
+ProtectSystem=strict
+RestrictAddressFamilies=AF_UNIX AF_INET
+
+[Install]
+WantedBy=default.target

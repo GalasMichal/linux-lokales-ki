@@ -82,6 +82,14 @@ Fünf Coding-Aufgaben / Agentenzyklus: deferred.
 - Ollama unverändert
 - Doku: `docs/QWEN_SKILLS.md`
 
+## Local-Tools MCP — 21.08.2026
+
+- Gateway `apps/local-tools/` auf `127.0.0.1:8765`, ein Tool `generate_image`
+- Ruft den KI-Arbeitsplatz `flux2-klein-t2i-v1` auf, kein eigener Comfy-Client
+- Live-Test 512×512 Seed 20260821: Job `2a7951cb7860`, ~39 s, GPU-Cleanup ok
+- Qwen sieht den MCP-Server (`qwen mcp list`: Connected); Headless-Aufruf ohne `--yolo` ruft das Tool nicht zuverlässig auf
+- Rollback stellt nur MCP-Schlüssel in `~/.qwen/settings.json` wieder her, nicht das Default-Modell
+
 ## Bewusst offen
 
 MCP, Phase-4-Zyklus, Vision-Suite, Image Editing, optionale LLMs, 256K, formale A01–A14-Abnahme.

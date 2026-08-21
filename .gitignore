@@ -106,6 +106,10 @@ temp/
 .qwen/review-cache/
 .qwen/skills/auto-*
 
+# Temporary Cursor↔ChatGPT handoff notes
+docs/CHATGPT_HANDOFF.md
+docs/CHATGPT_HANDOFF-*.md
+
 # Editors / OS
 .idea/
 .vscode/

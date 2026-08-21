@@ -1,0 +1,18 @@
+{
+  "mcp": {
+    "allowed": [
+      "local-tools"
+    ]
+  },
+  "mcpServers": {
+    "local-tools": {
+      "httpUrl": "http://127.0.0.1:8765/mcp",
+      "discoveryTimeoutMs": 10000,
+      "timeout": 300000,
+      "trust": false,
+      "includeTools": [
+        "generate_image"
+      ]
+    }
+  }
+}
