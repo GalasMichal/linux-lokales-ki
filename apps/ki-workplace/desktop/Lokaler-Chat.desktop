@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Lokaler Chat
+Comment=Lokaler Chat mit Ollama und Open WebUI
+Exec=/srv/ai/apps/ki-workplace/bin/open-local-chat.sh
+Icon=system-users
+Terminal=false
+Categories=Utility;
+StartupNotify=true

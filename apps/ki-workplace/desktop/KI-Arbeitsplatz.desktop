@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=KI-Arbeitsplatz
+Comment=Lokaler Qwen-Code-Agent, Bilder und Systemstatus
+Exec=/srv/ai/apps/ki-workplace/bin/open-workplace.sh
+Icon=applications-development
+Terminal=false
+Categories=Development;Utility;
+StartupNotify=true

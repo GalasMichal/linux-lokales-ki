@@ -1,0 +1,15 @@
+[Unit]
+Description=Qwen Code Web Shell (localhost only)
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/ai/workspaces
+Environment=OLLAMA_API_KEY=ollama
+ExecStart=/srv/ai/apps/qwen-code/bin/qwen serve --hostname 127.0.0.1 --port 4170 --workspace /srv/ai/workspaces --max-sessions 1 --max-total-sessions 1 --max-pending-prompts-per-session 1 --rate-limit --web --http-bridge --telemetry=false
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

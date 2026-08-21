@@ -1,0 +1,16 @@
+[Unit]
+Description=KI-Arbeitsplatz (local UI and Qwen embedding proxy)
+After=default.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/ai/apps/ki-workplace
+ExecStart=/usr/bin/python3 /srv/ai/apps/ki-workplace/server.py
+Restart=on-failure
+RestartSec=2
+Environment=PYTHONUNBUFFERED=1
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KI-Arbeitsplatz</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1017;
+      --panel: #151a24;
+      --panel2: #1c2330;
+      --line: #2c3444;
+      --ink: #eef2f7;
+      --muted: #9ca8bb;
+      --brand: #7457f5;
+      --brand2: #5b3ddd;
+      --ok: #3ddc97;
+      --warn: #f0b45a;
+      --bad: #ff7474;
+    }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { font-family: "Noto Sans", "DejaVu Sans", sans-serif; background: var(--bg); color: var(--ink); }
+    button, input, select, textarea { font: inherit; }
+    .shell { display: grid; grid-template-rows: 64px 1fr; height: 100%; }
+    header {
+      display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+      background: #111620; border-bottom: 1px solid var(--line); min-width: 0;
+    }
+    .brand { display: flex; align-items: center; gap: 9px; min-width: 190px; font-weight: 750; }
+    .brand-mark {
+      width: 34px; height: 34px; display: grid; place-items: center;
+      border-radius: 10px; background: linear-gradient(145deg, #896dff, #4f31ca); font-size: 19px;
+    }
+    nav { display: flex; gap: 6px; min-width: 0; }
+    .nav-btn, .soft-btn, .primary-btn, .subnav-btn {
+      border: 1px solid transparent; color: var(--ink); cursor: pointer; border-radius: 9px;
+    }
+    .nav-btn { padding: 9px 15px; background: transparent; font-weight: 650; }
+    .nav-btn:hover, .nav-btn.active { background: var(--panel2); border-color: var(--line); }
+    .header-info { margin-left: auto; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--warn); display: inline-block; }
+    .dot.ok { background: var(--ok); }
+    .dot.bad { background: var(--bad); }
+    main { min-height: 0; position: relative; }
+    .view { display: none; width: 100%; height: 100%; }
+    .view.active { display: block; }
+    .frame-wrap { width: 100%; height: 100%; position: relative; background: #0d0d0d; }
+    iframe { display: block; width: 100%; height: 100%; border: 0; background: #0d0d0d; }
+    .loading {
+      position: absolute; inset: 0; z-index: 3; display: grid; place-items: center;
+      background: rgba(13,16,23,.96); text-align: center; padding: 30px;
+    }
+    .loading.hidden { display: none; }
+    .loading-card { max-width: 520px; }
+    .spinner { width: 34px; height: 34px; margin: 0 auto 14px; border: 3px solid var(--line); border-top-color: var(--brand); border-radius: 50%; animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading h2 { margin: 0 0 8px; font-size: 20px; }
+    .loading p { color: var(--muted); margin: 0; }
+    .error-text { color: var(--bad) !important; white-space: pre-wrap; }
+
+    .images-layout { height: 100%; display: grid; grid-template-rows: 52px 1fr; }
+    .subnav { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-bottom: 1px solid var(--line); background: #111620; }
+    .subnav-btn { padding: 8px 13px; background: transparent; }
+    .subnav-btn.active { background: var(--panel2); border-color: var(--line); }
+    .subview { display: none; height: 100%; min-height: 0; }
+    .subview.active { display: block; }
+    .simple-image { height: 100%; overflow: auto; padding: 22px; }
+    .generator { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: minmax(330px, 460px) 1fr; gap: 18px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+    .card h2, .card h3 { margin-top: 0; }
+    .hint { color: var(--muted); font-size: 14px; line-height: 1.5; }
+    label { display: block; font-weight: 650; margin: 14px 0 6px; }
+    textarea, input, select {
+      width: 100%; color: var(--ink); background: #0e131c; border: 1px solid #354054;
+      border-radius: 9px; padding: 10px 11px; outline: none;
+    }
+    textarea:focus, input:focus, select:focus { border-color: var(--brand); }
+    textarea { min-height: 150px; resize: vertical; line-height: 1.5; }
+    .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    .primary-btn { width: 100%; margin-top: 16px; padding: 12px 16px; font-weight: 750; background: var(--brand2); }
+    .primary-btn:hover { background: var(--brand); }
+    .primary-btn:disabled { opacity: .55; cursor: wait; }
+    .result { min-height: 480px; display: grid; place-items: center; overflow: hidden; }
+    .result img { max-width: 100%; max-height: calc(100vh - 190px); object-fit: contain; border-radius: 10px; }
+    .result-empty { text-align: center; color: var(--muted); }
+    .job-info { margin-top: 12px; color: var(--muted); font-size: 13px; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .notice { border-left: 4px solid var(--warn); padding-left: 11px; }
+
+    .system-page { height: 100%; overflow: auto; padding: 22px; }
+    .system-inner { max-width: 1100px; margin: 0 auto; }
+    .system-title { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .system-title h1 { margin: 0; font-size: 25px; }
+    .soft-btn { background: var(--panel2); border-color: var(--line); padding: 9px 12px; }
+    .soft-btn:hover { border-color: #4b5870; }
+    .status-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .status-card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 15px; }
+    .status-card h3 { margin: 0 0 8px; font-size: 15px; }
+    .status-value { font-size: 22px; font-weight: 750; }
+    .status-small { color: var(--muted); margin-top: 6px; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
+    .full { grid-column: 1 / -1; }
+    code { font-family: ui-monospace, "DejaVu Sans Mono", monospace; color: #c8d6ee; }
+    @media (max-width: 850px) {
+      .brand { min-width: 0; }
+      .brand span:last-child { display: none; }
+      .header-info span:last-child { display: none; }
+      .generator { grid-template-columns: 1fr; }
+      .status-grid { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="brand"><span class="brand-mark">AI</span><span>KI-Arbeitsplatz</span></div>
+      <nav aria-label="Hauptbereiche">
+        <button class="nav-btn" data-view="agent" type="button">Agent</button>
+        <button class="nav-btn" data-view="images" type="button">Bilder</button>
+        <button class="nav-btn active" data-view="system" type="button">System</button>
+      </nav>
+      <div class="header-info"><span id="header-dot" class="dot"></span><span id="header-status">Status wird geprüft</span></div>
+    </header>
+
+    <main>
+      <section id="view-agent" class="view" aria-label="Qwen Code Agent">
+        <div class="frame-wrap">
+          <div class="loading" id="agent-loading">
+            <div class="loading-card">
+              <div class="spinner"></div>
+              <h2>Qwen Code wird vorbereitet</h2>
+              <p id="agent-message">Bilder-KI wird beendet, dann startet der lokale Agent.</p>
+            </div>
+          </div>
+          <iframe id="agent-frame" title="Qwen Code" allow="clipboard-read; clipboard-write"></iframe>
+        </div>
+      </section>
+
+      <section id="view-images" class="view" aria-label="Bilder">
+        <div class="images-layout">
+          <div class="subnav">
+            <button class="subnav-btn active" data-subview="simple" type="button">Einfach</button>
+            <button class="subnav-btn" data-subview="expert" type="button">Workflow (Experte)</button>
+            <span class="hint">FLUX.2 [klein] · Batch 1 · localhost</span>
+          </div>
+          <div style="min-height:0; position:relative">
+            <div id="subview-simple" class="subview active simple-image">
+              <div class="generator">
+                <form id="image-form" class="card">
+                  <h2>Bild erzeugen</h2>
+                  <p class="hint">Der verifizierte FLUX.2-Workflow wird automatisch geladen. Ollama wird vorher aus dem Grafikspeicher entladen.</p>
+                  <label for="prompt">Was soll auf dem Bild sein?</label>
+                  <textarea id="prompt" maxlength="4000" required>Eine gemütliche Berghütte im Schnee bei Sonnenuntergang, warmes Licht aus den Fenstern, fotorealistisch</textarea>
+                  <div class="row">
+                    <div><label for="width">Breite</label><select id="width"><option>512</option><option>768</option><option selected>1024</option></select></div>
+                    <div><label for="height">Höhe</label><select id="height"><option>512</option><option>768</option><option selected>1024</option></select></div>
+                    <div><label for="seed">Seed</label><input id="seed" type="number" min="0" value="42"></div>
+                  </div>
+                  <button id="generate-btn" class="primary-btn" type="submit">Bild erzeugen</button>
+                  <p id="image-message" class="job-info notice">Fester Seed bedeutet: gleiche Einstellungen ergeben reproduzierbare Ausgabe.</p>
+                </form>
+                <div class="card">
+                  <div id="result" class="result"><div class="result-empty"><strong>Noch kein Bild</strong><br>Links beschreiben und „Bild erzeugen“ klicken.</div></div>
+                  <div id="job-info" class="job-info"></div>
+                </div>
+              </div>
+            </div>
+            <div id="subview-expert" class="subview">
+              <div class="frame-wrap">
+                <div class="loading" id="comfy-loading"><div class="loading-card"><div class="spinner"></div><h2>ComfyUI wird vorbereitet</h2><p id="comfy-message">Textmodell wird entladen, dann startet die Bilder-KI.</p></div></div>
+                <iframe id="comfy-frame" title="ComfyUI"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-system" class="view active" aria-label="Systemstatus">
+        <div class="system-page">
+          <div class="system-inner">
+            <div class="system-title"><h1>Lokaler KI-Stack</h1><button id="refresh-btn" class="soft-btn" type="button">Aktualisieren</button></div>
+            <div id="status-grid" class="status-grid"><div class="status-card full">Status wird gelesen…</div></div>
+            <div class="card" style="margin-top:14px">
+              <h3>Bedienung</h3>
+              <p class="hint"><strong>Agent:</strong> echte Qwen-Code-Oberfläche für Projekte, Dateien, Git, Builds und Tests.</p>
+              <p class="hint"><strong>Bilder:</strong> einfacher FLUX-Generator oder vollständige ComfyUI-Workflow-Ansicht.</p>
+              <p class="hint"><strong>Lokaler Chat:</strong> bleibt absichtlich eine eigene Desktop-App. So vermischen sich allgemeine Chats nicht mit Projektänderungen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const state = { agentLoaded: false, comfyLoaded: false, activeView: "system" };
+    const qs = (selector) => document.querySelector(selector);
+    const qsa = (selector) => [...document.querySelectorAll(selector)];
+
+    function setHeader(kind, text) {
+      const dot = qs("#header-dot");
+      dot.className = "dot" + (kind ? " " + kind : "");
+      qs("#header-status").textContent = text;
+    }
+
+    async function post(path, body) {
+      const response = await fetch(path, {
+        method: "POST",
+        headers: body ? { "Content-Type": "application/json" } : {},
+        body: body ? JSON.stringify(body) : undefined
+      });
+      const data = await response.json();
+      if (!response.ok || !data.ok) throw new Error(data.error || "Aktion fehlgeschlagen.");
+      return data;
+    }
+
+    async function activateAgent() {
+      const loading = qs("#agent-loading");
+      const message = qs("#agent-message");
+      loading.classList.remove("hidden");
+      message.className = "";
+      message.textContent = "Bilder-KI wird beendet, dann startet der lokale Agent.";
+      setHeader("", "Agent wird vorbereitet");
+      try {
+        await post("/api/mode/agent");
+        if (!state.agentLoaded) {
+          const frame = qs("#agent-frame");
+          frame.onload = () => loading.classList.add("hidden");
+          frame.src = "http://127.0.0.1:8791/";
+          state.agentLoaded = true;
+        } else {
+          loading.classList.add("hidden");
+        }
+        setHeader("ok", "Agent bereit");
+      } catch (error) {
+        message.className = "error-text";
+        message.textContent = error.message;
+        setHeader("bad", "Agent-Fehler");
+      }
+    }
+
+    async function activateImages(loadExpert = false) {
+      const loading = qs("#comfy-loading");
+      const message = qs("#comfy-message");
+      if (loadExpert) loading.classList.remove("hidden");
+      message.className = "";
+      message.textContent = "Textmodell wird entladen, dann startet die Bilder-KI.";
+      setHeader("", "Bilder-KI wird vorbereitet");
+      try {
+        await post("/api/mode/images");
+        if (loadExpert && !state.comfyLoaded) {
+          const frame = qs("#comfy-frame");
+          frame.onload = () => loading.classList.add("hidden");
+          frame.src = "http://127.0.0.1:8188/";
+          state.comfyLoaded = true;
+        } else if (loadExpert) {
+          loading.classList.add("hidden");
+        }
+        setHeader("ok", "Bilder-KI bereit");
+      } catch (error) {
+        if (loadExpert) {
+          message.className = "error-text";
+          message.textContent = error.message;
+        }
+        qs("#image-message").textContent = error.message;
+        setHeader("bad", "Bilder-Fehler");
+      }
+    }
+
+    async function showView(name) {
+      state.activeView = name;
+      qsa(".view").forEach((el) => el.classList.toggle("active", el.id === "view-" + name));
+      qsa(".nav-btn").forEach((el) => el.classList.toggle("active", el.dataset.view === name));
+      if (name === "agent") await activateAgent();
+      else if (name === "images") await activateImages(false);
+      else await refreshStatus();
+    }
+
+    function statusCard(title, value, detail, ok) {
+      return `<div class="status-card"><h3><span class="dot ${ok ? "ok" : "bad"}"></span> ${title}</h3><div class="status-value">${value}</div><div class="status-small">${detail}</div></div>`;
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>'"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
+    }
+
+    async function refreshStatus() {
+      try {
+        const response = await fetch("/api/status", { cache: "no-store" });
+        const s = await response.json();
+        const gpu = s.gpu || {};
+        const ram = s.memory || {};
+        const active = (s.storage || {}).active || {};
+        const archive = (s.storage || {}).archive || {};
+        const models = (s.ollama.models || []).length ? s.ollama.models.join(", ") : "kein Modell geladen";
+        qs("#status-grid").innerHTML =
+          statusCard("Ollama", escapeHtml(s.ollama.version || "aus"), escapeHtml(models) + " · 127.0.0.1:11434", s.ollama.running) +
+          statusCard("Qwen Code", s.qwen.ready ? "bereit" : "aus", "Agent-Harness · 127.0.0.1:4170", s.qwen.ready) +
+          statusCard("ComfyUI", s.comfyui.ready ? "bereit" : "aus", "FLUX.2 [klein] · 127.0.0.1:8188", s.comfyui.ready) +
+          statusCard("Grafikkarte", gpu.used_mib != null ? gpu.used_mib + " MiB" : "?", escapeHtml(gpu.name || "nicht lesbar") + " · frei " + (gpu.free_mib ?? "?") + " MiB", !!s.gpu) +
+          statusCard("Arbeitsspeicher", (ram.used_gib ?? "?") + " GiB", "von " + (ram.total_gib ?? "?") + " GiB · Swap " + (ram.swap_used_gib ?? "?") + " GiB", true) +
+          statusCard("Speicher", (active.free_gib ?? "?") + " GiB frei", "/srv/ai · Archiv " + (archive.free_gib ?? "?") + " GiB frei", true) +
+          `<div class="status-card full"><h3>Netzwerkschutz</h3><div class="status-small"><code>${s.bindings.map(escapeHtml).join(" · ")}</code><br>Alle KI-Dienste sind nur über 127.0.0.1 auf diesem PC erreichbar.</div></div>`;
+        if (state.activeView === "system") setHeader("ok", "Systemstatus aktuell");
+      } catch (error) {
+        qs("#status-grid").innerHTML = `<div class="status-card full"><span class="error-text">Statusfehler: ${escapeHtml(error.message)}</span></div>`;
+        setHeader("bad", "Status nicht lesbar");
+      }
+    }
+
+    qsa(".nav-btn").forEach((button) => button.addEventListener("click", () => showView(button.dataset.view)));
+    qsa(".subnav-btn").forEach((button) => button.addEventListener("click", async () => {
+      const name = button.dataset.subview;
+      qsa(".subnav-btn").forEach((el) => el.classList.toggle("active", el === button));
+      qsa(".subview").forEach((el) => el.classList.toggle("active", el.id === "subview-" + name));
+      if (name === "expert") await activateImages(true);
+    }));
+
+    qs("#image-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const button = qs("#generate-btn");
+      const message = qs("#image-message");
+      button.disabled = true;
+      button.textContent = "Bild wird erzeugt…";
+      message.textContent = "GPU wird vorbereitet. Danach läuft FLUX. Der erste Auftrag kann wegen der Hash-Prüfung länger dauern.";
+      setHeader("", "Bildauftrag läuft");
+      try {
+        const result = await post("/api/images/generate", {
+          prompt: qs("#prompt").value,
+          width: Number(qs("#width").value),
+          height: Number(qs("#height").value),
+          seed: Number(qs("#seed").value)
+        });
+        qs("#result").innerHTML = result.previews.map((url) => `<img src="${escapeHtml(url)}" alt="Erzeugtes Bild">`).join("");
+        qs("#job-info").textContent = `Job ${result.job_id} · ${result.runtime_seconds} Sekunden\nArchiv: ${result.archive_directory}\nManifest: ${result.manifest}`;
+        message.textContent = "Fertig. Bild und technisches Manifest wurden auf der Archiv-HDD gespeichert.";
+        setHeader("ok", "Bild fertig");
+      } catch (error) {
+        message.textContent = "Fehler: " + error.message;
+        setHeader("bad", "Bildauftrag fehlgeschlagen");
+      } finally {
+        button.disabled = false;
+        button.textContent = "Bild erzeugen";
+      }
+    });
+
+    qs("#refresh-btn").addEventListener("click", refreshStatus);
+    refreshStatus();
+    const initialView = new URLSearchParams(window.location.search).get("view");
+    if (["agent", "images"].includes(initialView)) showView(initialView);
+    setInterval(() => { if (state.activeView === "system") refreshStatus(); }, 6000);
+  </script>
+</body>
+</html>
