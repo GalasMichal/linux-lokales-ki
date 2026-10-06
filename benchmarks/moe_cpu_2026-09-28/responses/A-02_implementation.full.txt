@@ -1,0 +1,27 @@
+# IMPLEMENTATION — TypeScript function
+
+Implement exactly this TypeScript function. No tools. Show complete code only plus one-line note.
+
+Requirements:
+- Name: `clampLonLat`
+- Input: `{ lon: number; lat: number }`
+- Output: `{ lon: number; lat: number }`
+- Clamp longitude to [-180, 180]
+- Clamp latitude to [-90, 90]
+- If input is not finite numbers, throw `TypeError('invalid lon/lat')`
+- Pure function, no side effects
+- No dependencies
+```typescript
+function clampLonLat({ lon, lat }: { lon: number; lat: number }): { lon: number; lat: number } {
+  if (!Number.isFinite(lon) || !Number.isFinite(lat)) {
+    throw new TypeError('invalid lon/lat');
+  }
+  return {
+    lon: Math.max(-180, Math.min(180, lon)),
+    lat: Math.max(-90, Math.min(90, lat))
+  };
+}
+```
+
+Klammert Koordinaten in gültige Geo-Bereiche und validiert Eingabewerte.
+[ Prompt: 55,9 t/s | Generation: 22,3 t/s ]

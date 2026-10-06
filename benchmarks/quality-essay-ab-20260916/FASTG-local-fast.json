@@ -1,0 +1,121 @@
+{
+  "variant": "FASTG",
+  "model_id": "local-fast",
+  "sessionId": "a2343866-5926-4611-a8e1-23c07464ef6c",
+  "elapsed_s": 47.416,
+  "prompt_error": null,
+  "prompt_result": {
+    "promptId": "de501364-e5dc-45ba-92b1-1282a0e718ae",
+    "lastEventId": 4,
+    "eventEpoch": "f0c0a968-7a8e-4b2a-94c8-76ae6061f2c5"
+  },
+  "votes": [
+    {
+      "requestId": "e47a5aa9-e760-45ad-a7b7-67ea8150755c",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "b813ea79-87d9-4d5b-a47f-f69bf63fb040",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "b0236ed8-89f0-4ead-802a-b5a32907a060",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_6kmevdz8",
+      "name": "memory_load (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "id": "call_p95iufti",
+      "name": "pdf_create (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "id": "call_54nuww53",
+      "name": "pdf_read (local-tools MCP Server)",
+      "status": "completed"
+    }
+  ],
+  "tool_names": [
+    "memory_load",
+    "pdf_create",
+    "pdf_read"
+  ],
+  "missing": [],
+  "duplicate_tools": [],
+  "thoughts": 407,
+  "assistant_chars": 64,
+  "assistant_approx_tokens": 16,
+  "segments": [
+    {
+      "after_tool": null,
+      "before_tool": "memory_load (local-tools MCP Server)",
+      "start_s": 18.233,
+      "end_s": 18.687,
+      "chars": 64,
+      "approx_tokens": 16,
+      "text_preview": "I'll execute these steps in order. Starting with loading memory:"
+    },
+    {
+      "after_tool": null,
+      "before_tool": "pdf_create (local-tools MCP Server)",
+      "start_s": 20.605,
+      "end_s": 20.605,
+      "chars": 0,
+      "approx_tokens": 0,
+      "text_preview": ""
+    },
+    {
+      "after_tool": null,
+      "before_tool": "pdf_read (local-tools MCP Server)",
+      "start_s": 21.311,
+      "end_s": 21.311,
+      "chars": 0,
+      "approx_tokens": 0,
+      "text_preview": ""
+    }
+  ],
+  "max_mid_tokens": 16,
+  "compressed": false,
+  "pdf_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok"
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 3,
+    "tools": 3,
+    "thoughts": 407,
+    "n_gen": 0,
+    "gpu_util": 86,
+    "vram": 8781,
+    "abort": null,
+    "cancelled_leftover": false
+  },
+  "nvidia": {
+    "vram_used_mib": 8781,
+    "vram_total_mib": 16303,
+    "gpu_util": 86
+  },
+  "ollama_ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n",
+  "assistant_text": "I'll execute these steps in order. Starting with loading memory:",
+  "pass_tools": true,
+  "essay_ok": true
+}

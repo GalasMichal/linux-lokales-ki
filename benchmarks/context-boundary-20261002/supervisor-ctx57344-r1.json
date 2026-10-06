@@ -1,0 +1,93 @@
+{
+  "ts": "2026-10-02T21:50:56+0200",
+  "suite": "supervisor",
+  "num_ctx": 57344,
+  "model": "bench-qwen38-27b-56k",
+  "run_id": 1,
+  "sessionId": "6f519a53-1d34-413c-9d4c-402014078160",
+  "elapsed_s": 196.78,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_27rnebgd",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_ha63vf4e",
+      "name": "Agent: Ask researcher about Compact State Ledger",
+      "status": "completed"
+    },
+    {
+      "id": "call_alr33bt1",
+      "name": "ToolSearch: select:read_file,glob",
+      "status": "completed"
+    },
+    {
+      "id": "call_o7kwswzx",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_zrva610l",
+      "name": "ToolSearch: select:read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_j505ljiu",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_x2hqfmz5",
+      "name": "ToolSearch: select:read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_5eplhh5l",
+      "name": "ReadFile: /home/mike/.qwen/projects/-srv-ai-workspaces/memory/feedback/pdf-workflow.md",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2367,
+      "vram_total_mib": 16303,
+      "gpu_util": 1
+    },
+    "mem": {
+      "mem_available_mib": 24637,
+      "swap_used_mib": 6227
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14383,
+      "vram_total_mib": 16303,
+      "gpu_util": 56
+    },
+    "mem": {
+      "mem_available_mib": 19491,
+      "swap_used_mib": 6329
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-56k:latest    5869af699429    19 GB    50%/50% CPU/GPU    57344      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

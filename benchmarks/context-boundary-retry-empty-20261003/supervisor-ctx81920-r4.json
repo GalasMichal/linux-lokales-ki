@@ -1,0 +1,85 @@
+{
+  "ts": "2026-10-03T21:45:32+0200",
+  "suite": "supervisor",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 4,
+  "sessionId": "4d2f2ba1-440d-4e22-a373-a40938cf5f70",
+  "elapsed_s": 115.287,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_gdcp7n4a",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_i74ohfy6",
+      "name": "Agent: researcher asks about Compact State Ledger",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14055,
+      "vram_total_mib": 16303,
+      "gpu_util": 14
+    },
+    "mem": {
+      "mem_available_mib": 22355,
+      "swap_used_mib": 6871
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 6.467,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14125,
+      "vram_total_mib": 16303,
+      "gpu_util": 86
+    },
+    "mem": {
+      "mem_available_mib": 21252,
+      "swap_used_mib": 6883
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 6.467,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

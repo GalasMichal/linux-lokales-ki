@@ -1,0 +1,133 @@
+{
+  "ts": "2026-10-03T23:56:13+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 3,
+  "sessionId": "d9447887-c552-4b45-bbf0-4411c264bc23",
+  "elapsed_s": 243.133,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_5ngwb7py",
+      "name": "ToolSearch: select:read_file,edit,write_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_66smu0a5",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_rq7fye3d",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_6xtnxmod",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_zo61eac4",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_e3tmd49y",
+      "name": "ToolSearch: shell command run",
+      "status": "completed"
+    },
+    {
+      "id": "call_3dufews2",
+      "name": "ToolSearch: bash shell execute command run_script",
+      "status": "completed"
+    },
+    {
+      "id": "call_azippec2",
+      "name": "ToolSearch: pytest python execute script run",
+      "status": "completed"
+    },
+    {
+      "id": "call_o0r7zr64",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_8y430j5s",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_bi29joex",
+      "name": "ToolSearch: local tools list all pdf image browser",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.02s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14262,
+      "vram_total_mib": 16303,
+      "gpu_util": 15
+    },
+    "mem": {
+      "mem_available_mib": 24176,
+      "swap_used_mib": 4540
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 25.928,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14330,
+      "vram_total_mib": 16303,
+      "gpu_util": 3
+    },
+    "mem": {
+      "mem_available_mib": 17224,
+      "swap_used_mib": 4632
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 25.928,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

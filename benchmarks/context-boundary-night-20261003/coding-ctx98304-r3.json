@@ -1,0 +1,223 @@
+{
+  "ts": "2026-10-04T03:26:32+0200",
+  "suite": "coding",
+  "num_ctx": 98304,
+  "model": "bench-qwen38-27b-96k",
+  "run_id": 3,
+  "sessionId": "cae50c17-de4b-4f56-9be6-4e018ea30fd3",
+  "elapsed_s": 456.798,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_nrarkz7w",
+      "name": "ToolSearch: select:read_file,edit,write_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_23dpk05m",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_flf0hwlm",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_v0q2jucq",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_02y9qaq9",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ezkljz7a",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_zjy1pt27",
+      "name": "ToolSearch: shell command run execute bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_mw3a2hfj",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_xxcxwr6g",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_g3maywc4",
+      "name": "Agent: Run fixture pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_arw5ihyw",
+      "name": "ToolSearch: select:mcp__local-tools__bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_88fyp49d",
+      "name": "ToolSearch: run command shell execute bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_inmvzk0y",
+      "name": "ToolSearch: mcp local-tools run script command",
+      "status": "completed"
+    },
+    {
+      "id": "call_qmi9gxud",
+      "name": "ToolSearch: terminal subprocess process exec run pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_5puq6ja6",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_3oz3nznh",
+      "name": "ToolSearch: local-tools mcp all tools list",
+      "status": "completed"
+    },
+    {
+      "id": "call_28fgirbx",
+      "name": "ToolSearch: mcp__local-tools__run mcp__local-tools__exec mcp__local-tools__shell mcp__local-tools__script",
+      "status": "completed"
+    },
+    {
+      "id": "call_cgz3zcnw",
+      "name": "ToolSearch: select:mcp__local-tools__run_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_typ8lggf",
+      "name": "ToolCall: bash",
+      "status": "failed"
+    },
+    {
+      "id": "call_70uhuuig",
+      "name": "ToolSearch: command runner execute program binary path stdout stderr exit code",
+      "status": "completed"
+    },
+    {
+      "id": "call_hulwzbyj",
+      "name": "ToolSearch: execute program run pytest python subprocess spawn process task automation",
+      "status": "completed"
+    },
+    {
+      "id": "call_rs2c3akx",
+      "name": "desktop_snapshot (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_m1sy09g2",
+      "name": "ToolSearch: +terminal command line input type execute app launch",
+      "status": "completed"
+    },
+    {
+      "id": "call_5kfxws1b",
+      "name": "ToolSearch: +execute OR +run deferred hidden tool shell script command program automation task runner qwen local tools",
+      "status": "completed"
+    },
+    {
+      "id": "call_yio4z44i",
+      "name": "ToolSearch: +qwen OR +aider deferred helper tool available session runtime context boundary",
+      "status": "completed"
+    },
+    {
+      "id": "call_yu8j1rhv",
+      "name": "desktop_screenshot (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_talsz4fj",
+      "name": "ReadFile: desktop-screenshots/desktop-20261004-032335.png",
+      "status": "failed"
+    },
+    {
+      "id": "call_q4cizk94",
+      "name": "ReadFile: desktop-screenshots/desktop-20261004-032335.png",
+      "status": "completed"
+    },
+    {
+      "id": "call_zb4hl40a",
+      "name": "browser_open (local-tools MCP Server): {\"url\":\"file:///home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 6,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.00s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14325,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 23600,
+      "swap_used_mib": 4684
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 26.838,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14406,
+      "vram_total_mib": 16303,
+      "gpu_util": 100
+    },
+    "mem": {
+      "mem_available_mib": 23563,
+      "swap_used_mib": 6073
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 26.838,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

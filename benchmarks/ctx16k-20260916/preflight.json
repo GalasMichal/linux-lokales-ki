@@ -1,0 +1,31 @@
+{
+  "ts": "2026-09-16T15:40:07.482903+00:00",
+  "git_head": "abd0282f0939a321d4735b1579b68a86c1c7e61d",
+  "git_branch": "codex/ki-arbeitsplatz",
+  "ollama": "ollama version is 0.34.0",
+  "qwen": "0.23.4",
+  "backup": "/mnt/ai-archive/backups/bench-qwen38-16k-20260916-1738",
+  "override_sha": "7fb44d5fbe5363ca9196bc92a95cb0d23766b4f853c491de19e134efa6d89bf4",
+  "health": {
+    "mcp": {
+      "ok": true,
+      "code": 200,
+      "body": "{\"status\":\"ok\",\"server\":\"local-ai-tools\",\"version\":\"1.2.0\",\"tools\":[\"generate_image\",\"memory_load\",\"memory_update\",\"pdf_read\",\"pdf_inspect\",\"pdf_create\",\"pdf_edit\",\"pdf_merge\",\"pdf_split\",\"pdf_ocr\",\"pdf_render\",\"pdf_vision_qa\"],\"localhost_only\":true,\"pdf\":{\"binaries\":{\"qpdf\":\"/home/mike/.local/bin/qpdf\",\"pdftoppm\":\"/usr/bin/pdftoppm\",\"pdftotext\":\"/usr/bin/pdftotext\",\"pdfunite\":\"/usr/bin/pdfunite\","
+    },
+    "ollama": {
+      "ok": true,
+      "code": 200,
+      "body": "{\"version\":\"0.34.0\"}"
+    },
+    "workplace": {
+      "ok": true,
+      "code": 200,
+      "body": "<!doctype html>\n<html lang=\"de\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>KI-Arbeitsplatz</title>\n  <style>\n    :root {\n      color-scheme: dark;\n      --bg: #0d1017;\n      --panel: #151a24;\n      --panel2: #1c2330;\n      --line: #2c3444;\n      --ink: #eef2f7;\n      --muted: #9ca8bb;\n      --brand: #7457f5;\n      --brand2: #5b3"
+    },
+    "qwen4170": {
+      "ok": false,
+      "error": "<urlopen error [Errno 111] Connection refused>"
+    }
+  },
+  "note_mcp_boot": "local-tools-mcp start was deleted at boot to break ordering cycle with ki-workplace After=default.target; started manually for this phase."
+}

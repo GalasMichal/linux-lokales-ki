@@ -1,0 +1,33 @@
+{
+  "ok": [
+    "af0c3a65165f198ed9c287ee67b5966dd1a2deab3827b30bba8b3b50d5a40096"
+  ],
+  "status": 200,
+  "body": {
+    "ok": true,
+    "job_id": "faacb571fbd1",
+    "workflow_id": "qwen-image-21-edit-v1",
+    "runtime_seconds": 43.485,
+    "archive_directory": "/mnt/ai-archive/images/inbox/2026-09-21/faacb571fbd1",
+    "output_path": "/mnt/ai-archive/images/inbox/2026-09-21/faacb571fbd1/ki_arbeitsplatz_faacb571fbd1_00001_.png",
+    "manifest_path": "/mnt/ai-archive/images/inbox/2026-09-21/faacb571fbd1/manifest.json",
+    "manifest": "/mnt/ai-archive/images/inbox/2026-09-21/faacb571fbd1/manifest.json",
+    "workflow_sha256": "78a0d0f445b08557d5e69139ce7f2d2ad547658bcaf90a10cfe154121b65bbe8",
+    "input_sha256": "af0c3a65165f198ed9c287ee67b5966dd1a2deab3827b30bba8b3b50d5a40096",
+    "reference_sha256": [
+      "af0c3a65165f198ed9c287ee67b5966dd1a2deab3827b30bba8b3b50d5a40096"
+    ],
+    "output_sha256": "82dbcd0d94ba9c277fac99bf49ee476e467965ed775b6822fdbc70d800b11a9c",
+    "quantization": {
+      "dit": "int8",
+      "encoder": "w4a8",
+      "cache": "int8/cpu"
+    },
+    "preserve_alpha": false,
+    "seed": 42,
+    "width": 512,
+    "height": 512,
+    "vram_peak_mib": 15500
+  },
+  "runtime": 45.256
+}

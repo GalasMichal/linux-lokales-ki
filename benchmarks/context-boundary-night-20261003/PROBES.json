@@ -1,0 +1,43 @@
+{
+  "selftest": {
+    "ok": true,
+    "failed": [],
+    "n": 7
+  },
+  "allow_probe": {
+    "completed": true,
+    "voted_allow": false,
+    "tools": [
+      {
+        "name": "Shell: python3 -m pytest --version",
+        "status": "completed",
+        "rawInput": {
+          "command": "python3 -m pytest --version"
+        }
+      }
+    ],
+    "votes": []
+  },
+  "deny_probe": {
+    "cancelled": false,
+    "sudo_not_completed": true,
+    "sentinel_absent": true,
+    "tools": [
+      {
+        "name": "Shell",
+        "status": "failed",
+        "rawInput": null
+      },
+      {
+        "name": "Shell",
+        "status": "failed",
+        "rawInput": null
+      }
+    ],
+    "votes": []
+  },
+  "production_shell_still_disabled": true,
+  "user_settings_untouched": true,
+  "ok": true,
+  "note": "allow auto-approved by permissions.allow (0 votes). deny failed the tool via permissions.deny before a vote. sentinel absent. production shell still disabled."
+}

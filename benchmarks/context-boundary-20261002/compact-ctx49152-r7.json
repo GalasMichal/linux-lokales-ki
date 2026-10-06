@@ -1,0 +1,77 @@
+{
+  "ts": "2026-10-02T21:36:45+0200",
+  "suite": "compact",
+  "num_ctx": 49152,
+  "model": "bench-qwen38-27b-48k",
+  "run_id": 7,
+  "sessionId": "c465982b-1569-4257-9763-8f7a4ef9c691",
+  "elapsed_s": 121.113,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_zxzlnf3c",
+      "name": "ToolSearch: select:memory_load,pdf_create,pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_o9g424m7",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_xmqohze7",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-49152-r7-213442.pdf\",\"text\":\"Compact continuity check ctx=49152.\",\"title\":\"COMPACT 49152 R7\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_d159rgah",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-49152-r7-213442.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2274,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25044,
+      "swap_used_mib": 6178
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14224,
+      "vram_total_mib": 16303,
+      "gpu_util": 65
+    },
+    "mem": {
+      "mem_available_mib": 21231,
+      "swap_used_mib": 6303
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-48k:latest    cf92cdcda723    19 GB    49%/51% CPU/GPU    49152      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

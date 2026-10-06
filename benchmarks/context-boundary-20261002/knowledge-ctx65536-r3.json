@@ -1,0 +1,74 @@
+{
+  "ts": "2026-10-02T22:10:07+0200",
+  "suite": "knowledge",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 3,
+  "sessionId": "17229b71-6214-4f58-8640-0df40c672312",
+  "elapsed_s": 78.76,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "knowledge_search": 1,
+    "knowledge_get": 1
+  },
+  "tools": [
+    {
+      "id": "call_1vdut2g6",
+      "name": "ToolSearch: select:mcp__local-tools__knowledge_search",
+      "status": "completed"
+    },
+    {
+      "id": "call_8fjozgoy",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger lazy tools\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_r9jfew50",
+      "name": "ToolSearch: select:mcp__local-tools__knowledge_get",
+      "status": "completed"
+    },
+    {
+      "id": "call_l9oasst5",
+      "name": "knowledge_get (local-tools MCP Server): {\"id\":\"KB-20260922-SUCCESS-001\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2253,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 24878,
+      "swap_used_mib": 6985
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14306,
+      "vram_total_mib": 16303,
+      "gpu_util": 8
+    },
+    "mem": {
+      "mem_available_mib": 19258,
+      "swap_used_mib": 6615
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

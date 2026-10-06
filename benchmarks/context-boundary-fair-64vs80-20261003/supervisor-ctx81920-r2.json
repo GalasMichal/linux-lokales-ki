@@ -1,0 +1,210 @@
+{
+  "ts": "2026-10-03T18:17:52+0200",
+  "suite": "supervisor",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 2,
+  "sessionId": "c3a63bea-4330-4c2a-8bbd-05f6f89c9ea0",
+  "elapsed_s": 489.105,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift"
+  ],
+  "fail_reasons": [
+    "duplicate_tools:{'agent': 2}"
+  ],
+  "completed_counts": {
+    "agent": 2
+  },
+  "tools": [
+    {
+      "id": "call_v7k9r3l8",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_ytedk78a",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_zpzqtqwr",
+      "name": "ToolSearch: select:tool_call",
+      "status": "completed"
+    },
+    {
+      "id": "call_29j50tuc",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_5yl33v4t",
+      "name": "ToolSearch: +invoke deferred tool generic dispatcher call",
+      "status": "completed"
+    },
+    {
+      "id": "call_y1a2vw9y",
+      "name": "Agent: Ask researcher about Compact State Ledger",
+      "status": "completed"
+    },
+    {
+      "id": "call_n0dcj9te",
+      "name": "ToolSearch: select:grep_search",
+      "status": "completed"
+    },
+    {
+      "id": "call_61rotb60",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_plgvy60o",
+      "name": "Agent: Verify Compact State Ledger meaning",
+      "status": "completed"
+    },
+    {
+      "id": "call_t01p57rr",
+      "name": "ToolSearch: select:mcp__local-tools__knowledge_get,mcp__local-tools__knowledge_search",
+      "status": "completed"
+    },
+    {
+      "id": "call_57h3a9fy",
+      "name": "knowledge_search (local-tools MCP Server): {\"workspace\":\"/srv/ai/workspaces\",\"query\":\"Compact State Ledger KB-20260922-LEDGER\",\"max_results\":10}",
+      "status": "completed"
+    },
+    {
+      "id": "call_4xv4cqq0",
+      "name": "browser_open (local-tools MCP Server): {\"url\":\"https://example.com\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_ax07cq9q",
+      "name": "browser_close (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_1mepfp71",
+      "name": "ToolSearch: grep files workspace search read files",
+      "status": "completed"
+    },
+    {
+      "id": "call_p9i6cm8t",
+      "name": "knowledge_get (local-tools MCP Server): {\"workspace\":\"/srv/ai/workspaces\",\"id\":\"KB-20260922-LEDGER-002\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_apx1ygdl",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_i7tq8xv6",
+      "name": "Grep: 'Compact State Ledger|KB-20260922-LEDGER' in ~/.qwen",
+      "status": "failed"
+    },
+    {
+      "id": "call_u2dxcy3j",
+      "name": "browser_open (local-tools MCP Server): {\"url\":\"https://example.com\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_rx45ejm2",
+      "name": "browser_close (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_l3evvqol",
+      "name": "ToolSearch: select:grep_search,glob",
+      "status": "completed"
+    },
+    {
+      "id": "call_tjzcf669",
+      "name": "Glob: '**/*COMPACT*LEDGER*' in ~/.qwen",
+      "status": "failed"
+    },
+    {
+      "id": "call_15o8abrx",
+      "name": "Glob: '**/QWEN_COMPACT_STATE_LEDGER.md' in ~/.qwen",
+      "status": "failed"
+    },
+    {
+      "id": "call_vxg0kiw7",
+      "name": "Glob: '**/MEMORY.md' in ~/.qwen",
+      "status": "failed"
+    },
+    {
+      "id": "call_0rywf8ut",
+      "name": "Grep: 'Compact State Ledger|KB-20260922-LEDGER' in ~/.qwen",
+      "status": "completed"
+    },
+    {
+      "id": "call_jvu4gy3l",
+      "name": "browser_open (local-tools MCP Server): {\"url\":\"https://example.com\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_z6ufemsi",
+      "name": "browser_close (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_zhniw4o2",
+      "name": "ReadFile: /home/mike/.qwen/projects/-srv-ai-workspaces/memory/MEMORY.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_20oooayk",
+      "name": "Grep: 'Compact State Ledger|KB-20260922-LEDGER' in ~/.qwen/projects/-srv-ai-workspaces/memory",
+      "status": "completed"
+    },
+    {
+      "id": "call_801g00bd",
+      "name": "ReadFile: /home/.../.qwen/projects/-srv-ai-workspaces/memory/project/compact-dup-synchr.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_r3f9oyl1",
+      "name": "Grep",
+      "status": "failed"
+    },
+    {
+      "id": "call_yc3nnb08",
+      "name": "Grep: 'Compact State Ledger|KB-20260922-LEDGER' in .",
+      "status": "completed"
+    }
+  ],
+  "votes": 11,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2331,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 24322,
+      "swap_used_mib": 6847
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14626,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 19395,
+      "swap_used_mib": 7294
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    54%/46% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

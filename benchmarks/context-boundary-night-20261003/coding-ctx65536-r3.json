@@ -1,0 +1,128 @@
+{
+  "ts": "2026-10-03T22:38:44+0200",
+  "suite": "coding",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 3,
+  "sessionId": "2454dac9-bddd-438b-85e3-4fdff2db4ded",
+  "elapsed_s": 88.095,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_ft040sgv",
+      "name": "ToolSearch: select:read_file,write_file,run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_rg26zmnm",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_yymqjiyy",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_idmy44cu",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_20383gvu",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_qoqx15jt",
+      "name": "Shell: python3 -m pytest -q '/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py' (Run the fixture test suite (expect FAIL))",
+      "status": "failed"
+    },
+    {
+      "id": "call_c6en4wgv",
+      "name": "ToolSearch: select:edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_hu3qt9z1",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_p9xz3k16",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_lxhrstt4",
+      "name": "Shell: python3 -m pytest -q '/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py' (Re-run the fixture test suite (expect PASS))",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.00s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14325,
+      "vram_total_mib": 16303,
+      "gpu_util": 11
+    },
+    "mem": {
+      "mem_available_mib": 22185,
+      "swap_used_mib": 7793
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 14.023,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 13351,
+      "vram_total_mib": 16303,
+      "gpu_util": 60
+    },
+    "mem": {
+      "mem_available_mib": 19785,
+      "swap_used_mib": 4476
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 14.023,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

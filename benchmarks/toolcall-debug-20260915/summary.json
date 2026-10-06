@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-15T19:00+02:00",
+  "task": "Use memory_load and report the current project state.",
+  "root_cause": "Qwen3.8 QUALITY has num_ctx 8192. Qwen Serve sends ~26k-char ACP system prompt plus 44 tool schemas (or a large tool_search catalog). Ollama then tokenizes ~10k+ tokens, overflows 8192, and snaps prompt_eval to 4098. The model no longer sees mcp__local-tools__memory_load and emits text/thoughts. FAST 32k holds ~29653 tokens so the same 44-tool request works.",
+  "wire_before": {
+    "path": "/v1/chat/completions",
+    "model": "local-quality",
+    "tool_count": 44,
+    "memory_load_visible": true,
+    "think": false,
+    "enable_thinking": false,
+    "reasoning": null,
+    "reasoning_effort": "none",
+    "prompt_eval_tokens": 4098,
+    "tool_calls": false
+  },
+  "ab_matrix": [
+    {"id": "A_api_chat_think_false_min_mem", "model": "local-quality", "path": "/api/chat", "tools": 1, "think": false, "prompt_tokens": 376, "memory_load": true},
+    {"id": "A_api_chat_think_false_full_44", "model": "local-quality", "path": "/api/chat", "tools": 44, "think": false, "error": "400 multipart content"},
+    {"id": "B_v1_as_is_44", "model": "local-quality", "path": "/v1", "tools": 44, "think": false, "reasoning_effort": "none", "prompt_tokens": 4098, "memory_load": false},
+    {"id": "B_v1_think_on_44", "model": "local-quality", "path": "/v1", "tools": 44, "think": null, "prompt_tokens": 4098, "tool_calls": ["read_file", "glob"]},
+    {"id": "B_v1_full_prompt_only_memory_load", "model": "local-quality", "path": "/v1", "tools": 1, "think": false, "prompt_tokens": 6394, "memory_load": true},
+    {"id": "B_v1_mcp_plus_search_12", "model": "local-quality", "path": "/v1", "tools": 12, "think": false, "prompt_tokens": 7689, "memory_load": true},
+    {"id": "B_v1_15_plus_plan_tools", "model": "local-quality", "path": "/v1", "tools": 15, "prompt_tokens": 4098, "memory_load": false},
+    {"id": "FAST_44_full", "model": "local-fast", "path": "/v1", "tools": 44, "prompt_tokens": 29653, "memory_load": true},
+    {"id": "D_serve_short_prompt_after_config", "model": "local-quality", "via": "qwen serve", "tools": 12, "prompt_tokens": 7689, "memory_load": true, "permission": "proceed_once"}
+  ],
+  "thinking": {
+    "think_false_reaches_ollama": true,
+    "enable_thinking_false_reaches_ollama": true,
+    "reasoning_effort_none_reaches_ollama_after_extra_body": true,
+    "v1_ignores_think_flag_for_this_model": true,
+    "v1_honors_reasoning_effort_none": true,
+    "think_off_plus_overflow": "no structured tool_calls",
+    "think_on_plus_overflow": "structured but wrong tools (read_file/glob) or long thoughts",
+    "upstream_note": "Qwen3.8 long prompt + thinking off is unreliable; locally the hard fail is 8k overflow snapping to 4098"
+  },
+  "config_fix": {
+    "file": "~/.qwen/settings.json",
+    "tools.eager": [],
+    "tools.disabled": "unused builtins (agent/cron/plan/web_fetch/shell/skill/...) so they are not dumped via tool_search catalog",
+    "skills.disabledLevels": ["user", "bundled"],
+    "local-quality extra_body": {"think": false, "enable_thinking": false, "reasoning_effort": "none"},
+    "trust": false,
+    "approvalMode": "default",
+    "alwaysLoadTools": true,
+    "no_0.23.4_patch": true
+  },
+  "e2e": {
+    "memory_load_permission_vote": "PASS",
+    "pdf_create_file": "PASS",
+    "pdf_read": "PASS",
+    "pdf_render_png": "PASS",
+    "memory_update": "PASS",
+    "elapsed_s": 68.146,
+    "votes": "5x proceed_once",
+    "yolo": false,
+    "pdf": ".agent/tmp/quality-cutover-e2e.pdf",
+    "png": ".agent/tmp/quality-cutover-e2e.png",
+    "notes": "Isolated short sessions. Wait for tool completed before cancelling leftover essay. Mega-prompt still overflows 8k."
+  },
+  "fast_regression": {
+    "serve_memory_load": "PASS",
+    "model": "local-fast",
+    "size": "6.1 GB",
+    "processor": "100% GPU",
+    "context": 32768,
+    "vote": "proceed_once"
+  }
+}

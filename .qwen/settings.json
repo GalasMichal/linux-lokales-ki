@@ -6,8 +6,15 @@
     "computerUse": {
       "enabled": false
     },
-    "visible": [
-      "mcp__local-tools__generate_image"
+    "visible": [],
+    "eager": [],
+    "disabled": [
+      "notebook_edit",
+      "zoom_image",
+      "ask_user_question",
+      "enter_plan_mode",
+      "exit_plan_mode",
+      "task_stop"
     ]
   },
   "memory": {

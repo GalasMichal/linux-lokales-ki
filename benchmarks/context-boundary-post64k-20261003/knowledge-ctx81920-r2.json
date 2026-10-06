@@ -1,0 +1,69 @@
+{
+  "ts": "2026-10-03T10:02:27+0200",
+  "suite": "knowledge",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 2,
+  "sessionId": "e4cb83e9-5da6-453c-8652-b2a5874a451e",
+  "elapsed_s": 184.126,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "knowledge_search": 1,
+    "knowledge_get": 1
+  },
+  "tools": [
+    {
+      "id": "call_lqf1eyqz",
+      "name": "ToolSearch: select:mcp__local-tools__knowledge_search,mcp__local-tools__knowledge_get",
+      "status": "completed"
+    },
+    {
+      "id": "call_vkfzor1v",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger lazy tools\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_vjx86rca",
+      "name": "knowledge_get (local-tools MCP Server): {\"id\":\"KB-20260922-SUCCESS-001\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14218,
+      "vram_total_mib": 16303,
+      "gpu_util": 61
+    },
+    "mem": {
+      "mem_available_mib": 19192,
+      "swap_used_mib": 5687
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL       \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      Stopping...    \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14204,
+      "vram_total_mib": 16303,
+      "gpu_util": 61
+    },
+    "mem": {
+      "mem_available_mib": 21506,
+      "swap_used_mib": 6027
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,85 @@
+{
+  "ts": "2026-10-03T21:39:16+0200",
+  "suite": "supervisor",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 1,
+  "sessionId": "181e9291-4e2e-4ccc-9077-c110802d2a79",
+  "elapsed_s": 110.285,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_um6n1db4",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_6lpyy7nv",
+      "name": "Agent: Research Compact State Ledger",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14155,
+      "vram_total_mib": 16303,
+      "gpu_util": 6
+    },
+    "mem": {
+      "mem_available_mib": 22256,
+      "swap_used_mib": 6857
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 7.04,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14122,
+      "vram_total_mib": 16303,
+      "gpu_util": 61
+    },
+    "mem": {
+      "mem_available_mib": 21450,
+      "swap_used_mib": 6886
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 7.04,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

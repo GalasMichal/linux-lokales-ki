@@ -1,0 +1,208 @@
+=== date / uptime / boot ===
+2026-09-21T12:00:52+02:00
+ 12:00:52 up 16 min,  1 user,  load average: 0,49, 0,58, 0,59
+         Systemstart  2026-09-21 11:44
+=== git ===
+abd0282f0939a321d4735b1579b68a86c1c7e61d
+## codex/ki-arbeitsplatz...origin/codex/ki-arbeitsplatz [voraus 5]
+ M .gitignore
+ M .qwen/settings.json
+ M QWEN.md
+ M README.md
+ M apps/ki-workplace/server.py
+ M apps/ki-workplace/systemd/ki-workplace.service
+ M apps/ki-workplace/www/index.html
+ M apps/local-tools/config/qwen-mcp.json
+ M apps/local-tools/gateway.py
+ M apps/local-tools/requirements.txt
+ M apps/local-tools/server.py
+ M apps/local-tools/systemd/local-tools-mcp.service
+ M docs/CHANGELOG.md
+ M docs/KI_ARBEITSPLATZ.md
+ M docs/QWEN_GIT_SNAPSHOT.md
+ M docs/QWEN_SKILLS.md
+ M docs/QWEN_TOOLSEARCH_MCP_ALIAS.md
+ M scripts/apply-local-fast-context.sh
+ M scripts/apply-qwen-toolsearch-mcp-alias-patch.sh
+ M scripts/deploy-local-tools-mcp.sh
+ M scripts/rollback-qwen-toolsearch-mcp-alias-patch.sh
+ M scripts/set-qwen-fast-context.py
+ M tests/live_mcp_smoke.py
+ M tests/test_ki_workplace.py
+ M tests/test_local_tools_gateway.py
+ M tests/test_qwen_fast_context.py
+ M tests/test_qwen_git_snapshot.py
+ M tests/test_qwen_toolsearch_mcp_alias.py
+?? .agent/
+?? .qwen/skills/agent-memory
+?? .qwen/skills/document-tools
+?? apps/local-tools/errors.py
+?? apps/local-tools/memory.py
+?? apps/local-tools/paths.py
+?? apps/local-tools/pdf_tools.py
+?? apps/local-tools/pdf_vision.py
+?? benchmarks/acceptance-a01-a14-20260921/
+?? benchmarks/acceptance_a14_e2e.py
+?? benchmarks/acceptance_probe_a05_a10.py
+?? benchmarks/ctx16k-20260916/
+?? benchmarks/ctx16k_bench.py
+?? benchmarks/ctx16k_e2e.py
+?? benchmarks/ctx32k_probe.py
+?? benchmarks/fable-agent-20260915/
+?? benchmarks/fable_agent_20260915.py
+?? benchmarks/hidden_gen_replay.py
+?? benchmarks/ollama_wire_capture.py
+?? benchmarks/ollama_wire_proxy.py
+?? benchmarks/quality-16k-cutover-20260916/
+?? benchmarks/quality-cutover-20260915/
+?? benchmarks/quality-essay-ab-20260916/
+?? benchmarks/quality-hidden-gen-20260916/
+?? benchmarks/quality_16k_cutover_e2e.py
+?? benchmarks/quality_16k_cutover_smoke.py
+?? benchmarks/quality_cutover_e2e.py
+?? benchmarks/quality_cutover_e2e_multiturn.py
+?? benchmarks/quality_cutover_follow.py
+?? benchmarks/quality_cutover_smoke.py
+?? benchmarks/quality_essay_ab.py
+?? benchmarks/quality_essay_e2e.py
+?? benchmarks/runtime-update-20260921/
+?? benchmarks/toolcall-debug-20260915/
+?? benchmarks/toolcall_ab_ollama.py
+?? benchmarks/toolcall_replay_matrix.py
+?? benchmarks/vision-qa-20260915/
+?? benchmarks/vision_qa_e2e.py
+?? config/modelfiles/bench-qwen36-coding-8k.Modelfile
+?? config/modelfiles/bench-qwen38-27b-16k.Modelfile
+?? config/modelfiles/bench-qwen38-27b-32k.Modelfile
+?? config/modelfiles/bench-qwen38-27b-8k.Modelfile
+?? config/modelfiles/local-quality.Modelfile
+?? config/modelfiles/local-quality.Modelfile.qwen36-8k
+?? config/modelfiles/local-quality.Modelfile.qwen38-8k
+?? docs/ACCEPTANCE_A01_A14.md
+?? docs/AGENT_MEMORY.md
+?? docs/PDF_TOOLS.md
+?? docs/PDF_VISION_QA.md
+?? patches/qwen-code/0.23.4/
+?? scripts/apply-local-quality-16k.sh
+?? scripts/apply-local-quality-qwen38.sh
+?? scripts/apply-mcp-independent-boot.sh
+?? scripts/create-bench-qwen38-16k.sh
+?? scripts/rollback-local-quality-16k.sh
+?? scripts/rollback-local-quality-qwen36.sh
+?? scripts/rollback-mcp-independent-boot.sh
+?? scripts/set-qwen-quality-context.py
+?? scripts/sudo-askpass-kdialog.sh
+?? scripts/upgrade-ollama-0.34.0.sh
+?? skills/agent-memory/
+?? skills/document-tools/
+?? tests/test_agent_memory.py
+?? tests/test_pdf_tools.py
+?? tests/test_pdf_vision_qa.py
+?? tests/test_qwen_0234_patch_apply.py
+?? tests/test_qwen_quality_context.py
+=== versions ===
+{"version":"0.34.0"}ollama version is 0.34.0
+0.23.4
+=== nvidia ===
+595.99.02, 16303 MiB, 1087 MiB, 0 %
+               total        used        free      shared  buff/cache   available
+Mem:            31Gi       7,4Gi         9Gi       118Mi        14Gi        23Gi
+Swap:           52Gi          0B        52Gi
+Dateisystem    Größe Benutzt Verf. Verw% Eingehängt auf
+/dev/sda3       921G    770G  149G   84% /
+/dev/sda3       921G    770G  149G   84% /home
+/dev/sdc1       1,4T    1,1T  314G   78% /mnt/ai-archive
+=== units enable/active ===
+ki-workplace.service enable=enabled active=active
+local-tools-mcp.service enable=enabled active=active
+qwen-code-web.service enable=disabled active=inactive
+comfyui.service enable=disabled active=inactive
+ollama enable=enabled active=active
+=== After/Wants ===
+-- ki-workplace.service --
+Wants=
+WantedBy=default.target
+After=app.slice -.mount network.target basic.target
+UnitFileState=enabled
+ActiveEnterTimestamp=Mon 2026-09-21 11:44:21 CEST
+-- local-tools-mcp.service --
+Wants=
+WantedBy=default.target
+After=basic.target network.target -.mount app.slice
+UnitFileState=enabled
+ActiveEnterTimestamp=Mon 2026-09-21 11:44:21 CEST
+-- qwen-code-web.service --
+Wants=
+WantedBy=
+After=-.mount app.slice basic.target
+UnitFileState=disabled
+ActiveEnterTimestamp=
+-- comfyui.service --
+Wants=
+WantedBy=
+After=app.slice network.target -.mount basic.target
+UnitFileState=disabled
+ActiveEnterTimestamp=
+=== cycle journal this boot ===
+NO_CYCLE
+=== unit start this boot ===
+1:Sep 21 11:44:21 Vollstrecker systemd[1926]: Started ki-workplace.service - KI-Arbeitsplatz (local UI and Qwen embedding proxy).
+2:Sep 21 11:44:21 Vollstrecker systemd[1926]: Started local-tools-mcp.service - Lokale KI-Werkzeuge (MCP, localhost only).
+5:Sep 21 11:44:22 Vollstrecker uvicorn[1967]: INFO:     Started server process [1967]
+=== ports ===
+LISTEN 0      2048       127.0.0.1:8765       0.0.0.0:*    users:(("uvicorn",pid=1967,fd=6))     
+LISTEN 0      128        127.0.0.1:8791       0.0.0.0:*    users:(("python3",pid=1966,fd=11))    
+LISTEN 0      128        127.0.0.1:8790       0.0.0.0:*    users:(("python3",pid=1966,fd=10))    
+LISTEN 0      4096       127.0.0.1:11434      0.0.0.0:*                                          
+LISTEN 0      128        127.0.0.1:3000       0.0.0.0:*    users:(("pasta.avx2",pid=2675,fd=153))
+=== health ===
+{"status":"ok","server":"local-ai-tools","version":"1.2.0","tools":["generate_image","memory_load","memory_update","pdf_read","pdf_inspect","pdf_create","pdf_edit","pdf_merge","pdf_split","pdf_ocr","pdf_render","pdf_vision_qa"],"localhost_only":true,"pdf":{"binaries":{"qpdf":"/home/mike/.local/bin/qpdf","pdftoppm":"/usr/bin/pdftoppm","pdftotext":"/usr/bin/pdftotext","pdfunite":"/usr/bin/pdfunite","pdfseparate":"/usr/bin/pdfseparate","tesseract":"/home/mike/.local/bin/tesseract","ocrmypdf":"/home/mike/.local/bin/ocrmypdf","soffice":"/usr/bin/soffice"},"python":{"pymupdf":"1.28.2","pikepdf":"10.8.0","reportlab":"4.5.1","ocrmypdf":"16.13.0"},"tessdata_dir":"/home/mike/.local/share/tessdata"}}
+{"ok": true, "ollama": {"running": true, "version": "0.34.0", "models": []}, "qwen": {"service": false, "ready": false, "url": "http://127.0.0.1:4170"}, "comfyui": {"service": false, "ready": false, "url": "http://127.0.0.1:8188"}, "chat": {"service": true, "ready": true, "url": "http://127.0.0.1:3000"}, "gpu": {"name": "NVIDIA GeForce RTX 5080", "total_mib": 16303, "used_mib": 1087, "free_mib": 14753, "utilization_percent": 0}, "memory": {"total_gib": 31.12, "used_gib": 7.41, "swap_total_gib": 52.8, "swap_used_gib": 0.0}, "storage": {"active": {"path": "/srv/ai", "total_gib": 920.1, "used_gib": 769.1, "free_gib": 148.3}, "archive": {"path": "/mnt/ai-archive", "total_gib": 1397.3, "used_gib": 1083.9, "free_gib": 313.3}}, "image_job_running": false, "boot": {"mode": null, "phase": "idle", "percent": 0, "title": "Bereit", "detail": ""}, "bindings": ["127.0.0.1:11434", "127.0.0.1:3000", "127.0.0.1:4170", "127.0.0.1:8188", "127.0.0.1:8790", "127.0.0.1:8791"]}
+QWEN_SERVE_DOWN
+
+=== ollama list/ps ===
+NAME                             ID              SIZE      MODIFIED    
+local-quality:latest             ad1736a075f0    17 GB     4 days ago     
+bench-qwen38-27b-32k:latest      d4bf257f520d    17 GB     4 days ago     
+bench-qwen38-27b-16k:latest      ad1736a075f0    17 GB     4 days ago     
+bench-qwen38-27b-8k:latest       993995e538ad    17 GB     5 days ago     
+bench-qwen36-coding-8k:latest    90ae8080c825    17 GB     5 days ago     
+qwen3.6:27b-coding               3a12a518a499    17 GB     5 days ago     
+qwen3.8:27b                      22130167c4c2    17 GB     5 days ago     
+local-fast:latest                cf8bd43c0e1c    6.6 GB    4 weeks ago    
+qwen3.6:27b                      a50eda8ed977    17 GB     4 weeks ago    
+qwen3.5:9b                       6488c96fa5fa    6.6 GB    4 weeks ago    
+NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL 
+=== aliases ===
+-- local-fast --
+2:# To build a new Modelfile based on this, replace FROM with:
+3:# FROM local-fast:latest
+5:FROM /srv/ai/models/ollama/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c
+9:PARAMETER top_k 20
+10:PARAMETER top_p 0.95
+11:PARAMETER num_ctx 32768
+13:PARAMETER temperature 1
+-- local-quality --
+2:# To build a new Modelfile based on this, replace FROM with:
+3:# FROM local-quality:latest
+5:FROM /srv/ai/models/ollama/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d
+6:FROM /srv/ai/models/ollama/blobs/sha256-ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e
+12:PARAMETER num_ctx 16384
+15:PARAMETER temperature 1
+16:PARAMETER top_k 20
+17:PARAMETER top_p 0.95
+=== override ===
+[Service]
+Environment="OLLAMA_HOST=127.0.0.1:11434"
+Environment="OLLAMA_MODELS=/srv/ai/models/ollama"
+Environment="OLLAMA_FLASH_ATTENTION=1"
+Environment="OLLAMA_KV_CACHE_TYPE=q8_0"
+Environment="OLLAMA_NUM_PARALLEL=1"
+Environment="OLLAMA_MAX_LOADED_MODELS=1"
+Environment="OLLAMA_KEEP_ALIVE=5m"
+7fb44d5fbe5363ca9196bc92a95cb0d23766b4f853c491de19e134efa6d89bf4  /etc/systemd/system/ollama.service.d/override.conf
+103220f734bf8b4f4dad26637720fd41400c5ad95d7b02eb7b9d8e16ad1c8f27  /usr/local/bin/ollama
+=== live units sha ===
+3a4c04725163498647f9d4ebc8933fc4ee3566be86d412fe14ce387d0adf2f0c  /home/mike/.config/systemd/user/ki-workplace.service
+c0f12e19726f3358347ef2b8df6ab074c65c5cbc156b20c0321afaab66e329f4  /home/mike/.config/systemd/user/local-tools-mcp.service
+352901557d2368f930698b715edec119ab8d2220b2656f1013e597c9c4c9920c  /home/mike/.config/systemd/user/qwen-code-web.service

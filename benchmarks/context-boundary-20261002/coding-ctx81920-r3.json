@@ -1,0 +1,210 @@
+{
+  "ts": "2026-10-03T06:09:45+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 3,
+  "sessionId": "82e1f2dc-fa0a-4d67-9541-9a9922d4cbfc",
+  "elapsed_s": 570.613,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_1rq09ja9",
+      "name": "ToolSearch: select:read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_iomm8az8",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_mwv6tgl1",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_0mlj6qyw",
+      "name": "ToolSearch: select:edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_kmx7yusa",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_19c3j7m3",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_rhvq4gck",
+      "name": "ToolSearch: shell command execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_kmhatxop",
+      "name": "ToolSearch: bash run command terminal execute pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_afcxc847",
+      "name": "Agent: Run pytest for calc fixture",
+      "status": "completed"
+    },
+    {
+      "id": "call_2xpbc3xs",
+      "name": "ToolSearch: shell command execute bash run",
+      "status": "completed"
+    },
+    {
+      "id": "call_j5o3wnvm",
+      "name": "ToolSearch: run command execute shell bash subprocess",
+      "status": "completed"
+    },
+    {
+      "id": "call_np8jcwhk",
+      "name": "ToolSearch: select:shell_exec,shell_run,bash_tool,run_shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_dehcx1cz",
+      "name": "ToolSearch: terminal command script process invoke execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_pmpne3nu",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_r6ml0ptv",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_1emi34wx",
+      "name": "ToolSearch: exec sh zsh subprocess system call command line run script shell terminal console",
+      "status": "completed"
+    },
+    {
+      "id": "call_x04t9u4b",
+      "name": "ToolSearch: cd run command process pipeline stdin stdout test fixture debug inspect trace log capture output",
+      "status": "completed"
+    },
+    {
+      "id": "call_7iwhrva5",
+      "name": "ToolSearch: select:run,command,bash,shell,cli,exec,script,job,task,process,terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_lw24eu1m",
+      "name": "ToolSearch: select:exec,script,job,task,process,terminal,run_cli,shell_call",
+      "status": "failed"
+    },
+    {
+      "id": "call_tf61bjj9",
+      "name": "ToolSearch: select:local_tools_run,tools_bash,system_shell,host_exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_yu84yr4v",
+      "name": "ToolSearch: agent tool sub agent dispatch delegate work",
+      "status": "completed"
+    },
+    {
+      "id": "call_c45noms9",
+      "name": "ToolSearch: list all available registered functions index catalog directory inventory discover search namespace",
+      "status": "completed"
+    },
+    {
+      "id": "call_61ln7mw6",
+      "name": "ToolCall: run_shell_command",
+      "status": "failed"
+    },
+    {
+      "id": "call_r7ybt32b",
+      "name": "ToolCall: bash",
+      "status": "failed"
+    },
+    {
+      "id": "call_npfue4fb",
+      "name": "ToolCall: shell",
+      "status": "failed"
+    },
+    {
+      "id": "call_k8nh8bn0",
+      "name": "ToolSearch: zsh sh dash cmd dosbatch powershell fish alpine busybox script runner automation execute job pipeline task process worker daemon build test lint",
+      "status": "completed"
+    },
+    {
+      "id": "call_bquh9gdb",
+      "name": "ToolCall: terminal_run",
+      "status": "failed"
+    },
+    {
+      "id": "call_94huolfl",
+      "name": "ToolCall: execute",
+      "status": "failed"
+    },
+    {
+      "id": "call_1bnwbvbh",
+      "name": "ToolSearch: invoke trigger action perform operation utility helper service feature function ability capability method procedure routine program applet plugin extension macro snippet block cell worksheet spreadsheet calc test verify pass fail assertion expected actual value sum product divide modulo arithmetic expression syntax token symbol character digit number decimal fraction integer long short byte char string boolean array list tuple set dictionary map hash table record struct class type interface trait protocol enum constant literal variable assignment increment decrement loop branch conditional switch statement return import export include require use from as default null undefined none empty true false and or not xor nand nor implication equivalence conjunction disjunction biconditional tautology contradiction paradox antinomy sophism fallacy bias prejudice stereotype cliché trope motif theme leitmotif refrain chorus bridge verse stanza couplet quatrain sonnet ghazal haiku tanka renga linked poem",
+      "status": "completed"
+    },
+    {
+      "id": "call_9zfad40d",
+      "name": "ToolCall: task",
+      "status": "failed"
+    },
+    {
+      "id": "call_vjmoh2lw",
+      "name": "ToolSearch: launch spawn start boot open create add insert append write delete remove erase modify update change alter adjust transform adapt convert migrate deploy publish release ship deliver send emit dispatch trigger fire cause effect cause-and-effect consequence outcome result product byproduct offshoot spinoff derivative adaptation translation localization porting transmutation metamorphosis transfiguration apotheosis deification canonization beatification hagiography mythology legend folklore tale story narrative account chronicle history archaeology paleontology entomology taxonomy nomenclature nomenclator glossary dictionary encyclopedia almanac yearbook directory registry ledger journal notebook diary log record archive repository warehouse store depot stock inventory",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26591,
+      "swap_used_mib": 6603
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14066,
+      "vram_total_mib": 16303,
+      "gpu_util": 18
+    },
+    "mem": {
+      "mem_available_mib": 15307,
+      "swap_used_mib": 7212
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

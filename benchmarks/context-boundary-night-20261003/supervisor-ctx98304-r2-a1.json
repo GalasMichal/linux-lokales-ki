@@ -1,0 +1,95 @@
+{
+  "ts": "2026-10-04T02:52:57+0200",
+  "suite": "supervisor",
+  "num_ctx": 98304,
+  "model": "bench-qwen38-27b-96k",
+  "run_id": 2,
+  "sessionId": "7bed7980-4ede-46cd-9003-8d1171dbe32d",
+  "elapsed_s": 139.325,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_69j0sln1",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_gvie5tr8",
+      "name": "Agent: researcher one-sentence probe",
+      "status": "completed"
+    },
+    {
+      "id": "call_38sy2hbz",
+      "name": "ToolSearch: select:grep_search,glob",
+      "status": "completed"
+    },
+    {
+      "id": "call_vqmlo2mv",
+      "name": "Grep: 'Compact State Ledger|LEDGER'",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14320,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 23308,
+      "swap_used_mib": 4209
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 4.399,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14388,
+      "vram_total_mib": 16303,
+      "gpu_util": 60
+    },
+    "mem": {
+      "mem_available_mib": 21112,
+      "swap_used_mib": 4205
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 4.399,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

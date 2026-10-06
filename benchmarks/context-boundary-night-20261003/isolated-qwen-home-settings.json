@@ -1,0 +1,444 @@
+{
+  "env": {
+    "OLLAMA_API_KEY": "ollama"
+  },
+  "skills": {
+    "disabledLevels": [
+      "user",
+      "bundled"
+    ]
+  },
+  "modelProviders": {
+    "openai": [
+      {
+        "id": "local-quality",
+        "name": "Local Quality - Qwen3.8 27B",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 300000,
+          "maxRetries": 1,
+          "contextWindowSize": 65536,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "local-fast",
+        "name": "Local Fast - Qwen3.5 9B",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 180000,
+          "maxRetries": 1,
+          "contextWindowSize": 32768,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-16k",
+        "name": "Bench Qwen3.8 27B 16K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 600000,
+          "maxRetries": 1,
+          "contextWindowSize": 16384,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-24k",
+        "name": "Bench Qwen3.8 27B 24K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 600000,
+          "maxRetries": 1,
+          "contextWindowSize": 24576,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-32k",
+        "name": "Bench Qwen3.8 27B 32K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 600000,
+          "maxRetries": 1,
+          "contextWindowSize": 32768,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-40k",
+        "name": "Bench Qwen3.8 27B 40K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 600000,
+          "maxRetries": 1,
+          "contextWindowSize": 40960,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-48k",
+        "name": "Bench Qwen3.8 27B 48K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 600000,
+          "maxRetries": 1,
+          "contextWindowSize": 49152,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-56k",
+        "name": "Bench Qwen3.8 27B 56K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 600000,
+          "maxRetries": 1,
+          "contextWindowSize": 57344,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-64k",
+        "name": "Bench Qwen3.8 27B 64K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 600000,
+          "maxRetries": 1,
+          "contextWindowSize": 65536,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-72k",
+        "name": "Bench Qwen3.8 27B 72K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 600000,
+          "maxRetries": 1,
+          "contextWindowSize": 73728,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-80k",
+        "name": "Bench Qwen3.8 27B 80K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 600000,
+          "maxRetries": 1,
+          "contextWindowSize": 81920,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-88k",
+        "name": "Bench Qwen3.8 27B 88K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 600000,
+          "maxRetries": 1,
+          "contextWindowSize": 90112,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen38-27b-96k",
+        "name": "Bench Qwen3.8 27B 96K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 720000,
+          "maxRetries": 1,
+          "contextWindowSize": 98304,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen35-9b-32k",
+        "name": "Bench Qwen3.5 9B 32K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 300000,
+          "maxRetries": 1,
+          "contextWindowSize": 32768,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen35-9b-48k",
+        "name": "Bench Qwen3.5 9B 48K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 300000,
+          "maxRetries": 1,
+          "contextWindowSize": 49152,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen35-9b-64k",
+        "name": "Bench Qwen3.5 9B 64K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 300000,
+          "maxRetries": 1,
+          "contextWindowSize": 65536,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen35-9b-80k",
+        "name": "Bench Qwen3.5 9B 80K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 300000,
+          "maxRetries": 1,
+          "contextWindowSize": 81920,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      },
+      {
+        "id": "bench-qwen35-9b-96k",
+        "name": "Bench Qwen3.5 9B 96K",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "generationConfig": {
+          "timeout": 300000,
+          "maxRetries": 1,
+          "contextWindowSize": 98304,
+          "extra_body": {
+            "think": false,
+            "enable_thinking": false,
+            "reasoning_effort": "none"
+          }
+        }
+      }
+    ]
+  },
+  "security": {
+    "auth": {
+      "selectedType": "openai"
+    }
+  },
+  "model": {
+    "name": "bench-qwen38-27b-80k",
+    "baseUrl": "http://127.0.0.1:11434/v1",
+    "skipStartupContext": true,
+    "maxSubagentDepth": 1,
+    "fastModel": "local-fast"
+  },
+  "tools": {
+    "approvalMode": "default",
+    "eager": [],
+    "disabled": [
+      "artifact",
+      "ask_user_question",
+      "create_sub_session",
+      "cron_create",
+      "cron_delete",
+      "cron_list",
+      "enter_plan_mode",
+      "enter_worktree",
+      "exit_plan_mode",
+      "exit_worktree",
+      "get_goal",
+      "loop_wakeup",
+      "monitor",
+      "notebook_edit",
+      "read_mcp_resource",
+      "record_artifact",
+      "record_source",
+      "report_findings",
+      "skill",
+      "task_stop",
+      "update_goal",
+      "web_fetch",
+      "zoom_image"
+    ]
+  },
+  "mcpServers": {
+    "local-tools": {
+      "httpUrl": "http://127.0.0.1:8765/mcp",
+      "discoveryTimeoutMs": 10000,
+      "timeout": 720000,
+      "trust": false,
+      "includeTools": [
+        "generate_image",
+        "edit_image",
+        "memory_load",
+        "memory_update",
+        "knowledge_search",
+        "knowledge_get",
+        "knowledge_record",
+        "pdf_read",
+        "pdf_inspect",
+        "pdf_create",
+        "pdf_edit",
+        "pdf_merge",
+        "pdf_split",
+        "pdf_ocr",
+        "pdf_render",
+        "pdf_vision_qa",
+        "moe_consult",
+        "browser_open",
+        "browser_snapshot",
+        "browser_click",
+        "browser_type",
+        "browser_scroll",
+        "browser_back",
+        "browser_screenshot",
+        "browser_close",
+        "desktop_snapshot",
+        "desktop_focus",
+        "desktop_click",
+        "desktop_type",
+        "desktop_scroll",
+        "desktop_key",
+        "desktop_screenshot",
+        "desktop_close"
+      ],
+      "alwaysLoadTools": false
+    }
+  },
+  "mcp": {
+    "allowed": [
+      "local-tools"
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Read(//home/mike/**)",
+      "mcp__local-tools__pdf_read",
+      "mcp__local-tools__pdf_render",
+      "mcp__local-tools__pdf_create",
+      "mcp__local-tools__pdf_edit",
+      "Bash(python3 -m pytest *)",
+      "Bash(python3 -m unittest *)",
+      "Bash(python -m pytest *)",
+      "Bash(python -m unittest *)"
+    ],
+    "deny": [
+      "Bash(sudo *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(rm *)",
+      "Bash(chmod *)",
+      "Bash(chown *)",
+      "Bash(dd *)",
+      "Bash(mkfs *)",
+      "Bash(reboot *)",
+      "Bash(shutdown *)",
+      "Bash(systemctl *)",
+      "Bash(kill *)",
+      "Bash(npm *)",
+      "Bash(pip *)",
+      "Bash(python3 -c *)",
+      "Bash(python -c *)",
+      "Bash(bash *)",
+      "Bash(sh *)"
+    ]
+  },
+  "general": {
+    "outputStyle": "Concise"
+  },
+  "compactionModel": "local-fast",
+  "context": {
+    "autoCompactThreshold": 0.95
+  },
+  "agents": {
+    "modelGrades": {
+      "fast": "local-fast",
+      "quality": "local-quality"
+    },
+    "allowedGrades": [
+      "fast",
+      "quality"
+    ]
+  },
+  "$version": 4
+}

@@ -1,0 +1,386 @@
+{
+  "ts": "2026-10-03T10:50:48+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 4,
+  "sessionId": "a9b6fe28-d499-4f86-a4e2-5f777f0ce7e8",
+  "elapsed_s": 904.409,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_rnn2jav7",
+      "name": "ToolSearch: select:read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_lv1q74x5",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_73l9m62i",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_8w5rdo7y",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_fx1mgwp7",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_wdxom0fs",
+      "name": "ToolSearch: run shell command bash python",
+      "status": "completed"
+    },
+    {
+      "id": "call_xx3sgzdd",
+      "name": "ToolSearch: run shell command execute bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_voc7tju2",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_sbnyvnad",
+      "name": "ToolSearch: shell bash command exec process terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_ny9npigb",
+      "name": "ToolSearch: mcp local-tools shell run command python test execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_7ycj0kdh",
+      "name": "ToolSearch: +shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_5v9gbefy",
+      "name": "ToolSearch: local-tools list run exec spawn subprocess interpreter",
+      "status": "completed"
+    },
+    {
+      "id": "call_9zxdorc3",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_nsya1b5q",
+      "name": "ToolSearch: mcp local-tools terminal task cli command",
+      "status": "completed"
+    },
+    {
+      "id": "call_dezv0gwr",
+      "name": "ToolSearch: select:edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_ri3sx3zd",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_or4wb3bs",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_swu9exds",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_5w37cw4x",
+      "name": "Agent: Run pytest in fixture dir",
+      "status": "in_progress"
+    },
+    {
+      "id": "call_h7i2nibk",
+      "name": "ToolSearch: select:bash_tool",
+      "status": "completed"
+    },
+    {
+      "id": "call_x47i3naa",
+      "name": "ToolSearch: shell command run execute pytest terminal bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_hwb648fr",
+      "name": "ToolSearch: +shell +run execute command subprocess terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_g3lmtpvl",
+      "name": "ToolSearch: python script interpreter code runner local-tools exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_45j2k1sh",
+      "name": "ToolSearch: +local +execute python",
+      "status": "completed"
+    },
+    {
+      "id": "call_g93akge0",
+      "name": "ToolSearch: +run command file process local-tools execute shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_8eou68vv",
+      "name": "ToolSearch: local-tools run",
+      "status": "completed"
+    },
+    {
+      "id": "call_6em9e647",
+      "name": "ToolSearch: select:mcp__local-tools__run_shell,mcp__local-tools__shell,mcp__local-tools__execute,shell_tool,run_command,mcp__local-tools__python,mcp__local-tools__exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_tfii226g",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_573ngdr3",
+      "name": "ToolSearch: terminal console command input launch app keyboard keys xdotool wmctrl ydotool click type text enter escape tab shift ctrl+a ctrl+c ctrl+v focus close screenshot desktop",
+      "status": "completed"
+    },
+    {
+      "id": "call_5pi864ly",
+      "name": "ToolSearch: select:shell,run,bash,execute,command,terminal,mcp__local-tools__run,mcp__local-tools__command,mcp__local-tools__bash_tool",
+      "status": "completed"
+    },
+    {
+      "id": "call_funqgwqp",
+      "name": "ToolSearch: python interpreter jupyter pytest test framework local",
+      "status": "completed"
+    },
+    {
+      "id": "call_c5bpu88d",
+      "name": "ToolSearch: select:run_tests,test_runner,qwen_shell,execute_python,local_test_runner,mcp__local-tools__test,mcp__local-tools__tests,pymupdf,python_executor",
+      "status": "completed"
+    },
+    {
+      "id": "call_k4ljr4m5",
+      "name": "ToolSearch: +qwen +shell OR +command OR +execution",
+      "status": "completed"
+    },
+    {
+      "id": "call_hr6q70l8",
+      "name": "ToolSearch: list all available tools names",
+      "status": "completed"
+    },
+    {
+      "id": "call_bobmlwxx",
+      "name": "ToolSearch: +process OR +subprocess OR +pipe OR +stdin OR +stdout OR +stderr OR +cwd",
+      "status": "completed"
+    },
+    {
+      "id": "call_qbnim251",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_render,mcp__local-tools__memory_update,mcp__local-tools__knowledge_get,mcp__local-tools__memory_load,mcp__local-tools__desktop_scroll",
+      "status": "completed"
+    },
+    {
+      "id": "call_my2o0ca3",
+      "name": "ToolSearch: script interpreter python code execute run test file local tools mcp",
+      "status": "completed"
+    },
+    {
+      "id": "call_kg2run22",
+      "name": "ToolSearch: +deferred +shell OR +bash OR +command OR +run OR +execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_yr1vzzzp",
+      "name": "ToolSearch: \"python3 -m pytest\"",
+      "status": "completed"
+    },
+    {
+      "id": "call_zdyibdxg",
+      "name": "ToolSearch: +local +command OR +shell OR +terminal OR +bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_koi63m0l",
+      "name": "ToolSearch: +python3 OR +pytest OR +unittest OR +test OR +runner",
+      "status": "completed"
+    },
+    {
+      "id": "call_plqtpdv7",
+      "name": "ToolSearch: +file +execute +local-tools python mcp script",
+      "status": "completed"
+    },
+    {
+      "id": "call_ij5kkq5p",
+      "name": "ToolSearch: +invoke +script +run",
+      "status": "completed"
+    },
+    {
+      "id": "call_ccobbzv0",
+      "name": "ToolSearch: +execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_x9ye8zhu",
+      "name": "ToolSearch: +bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_lvdw7uvc",
+      "name": "ToolSearch: +terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_8z8815go",
+      "name": "ToolSearch: shell +command",
+      "status": "completed"
+    },
+    {
+      "id": "call_2i08wais",
+      "name": "ToolSearch: run_shell mcp local tools shell command terminal bash execute python3 pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_2hyrs8a5",
+      "name": "ToolSearch: select:run_python,python_runner,qwen_code_shell,mcp__local-tools__code,code_runner",
+      "status": "completed"
+    },
+    {
+      "id": "call_fptqu2ww",
+      "name": "ToolSearch: select:mcp__local-tools__run_python,mcp__local-tools__execute_python,mcp__local-tools__python_run,mcp__local-tools__cmd,mcp__local-tools__terminal_run,qwen_shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_avbu4dnl",
+      "name": "ToolSearch: test runner python local tools deferred shell command execution",
+      "status": "completed"
+    },
+    {
+      "id": "call_ravkj24d",
+      "name": "ToolSearch: select:mcp__local-tools__run,mcp__local-tools__shell_tool,mcp__local-tools__bash_runner,shell_executive,exec_local,runcmd",
+      "status": "completed"
+    },
+    {
+      "id": "call_3bsdrf5k",
+      "name": "ToolSearch: +local-tools +runner OR +executor OR +invoker OR +launcher",
+      "status": "completed"
+    },
+    {
+      "id": "call_knfnatxv",
+      "name": "ToolSearch: +qwen +runner OR +executor",
+      "status": "completed"
+    },
+    {
+      "id": "call_9d2h7xus",
+      "name": "ToolSearch: +terminal +command",
+      "status": "completed"
+    },
+    {
+      "id": "call_5i9nu1er",
+      "name": "ToolSearch: +shell +command",
+      "status": "completed"
+    },
+    {
+      "id": "call_ne3gbezl",
+      "name": "ToolSearch: +bash +command",
+      "status": "completed"
+    },
+    {
+      "id": "call_wsrttl70",
+      "name": "ToolSearch: +exec +command",
+      "status": "completed"
+    },
+    {
+      "id": "call_yxc2j8yv",
+      "name": "ToolSearch: +subprocess +command",
+      "status": "completed"
+    },
+    {
+      "id": "call_8vxt97ee",
+      "name": "ToolSearch: +run +command",
+      "status": "completed"
+    },
+    {
+      "id": "call_2b39tjmf",
+      "name": "ToolSearch: bash_tool shell execute command terminal run python pytest local tools fixture test_calc",
+      "status": "completed"
+    },
+    {
+      "id": "call_waua73kb",
+      "name": "ToolSearch: +local-tools +script OR +runner OR +executor OR +invoker OR +launcher OR +worker",
+      "status": "completed"
+    },
+    {
+      "id": "call_x3zlrpwi",
+      "name": "ToolSearch: +local-tools +run OR +execute OR +invoke OR +launch OR +start",
+      "status": "completed"
+    },
+    {
+      "id": "call_ke6h6ujm",
+      "name": "ToolSearch: +command OR +process OR +shell OR +bash OR +terminal OR +pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_4y4gxxrn",
+      "name": "ToolSearch: +command OR +process OR +shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_fjn9sky2",
+      "name": "ToolSearch: +command OR +process",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1476,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26104,
+      "swap_used_mib": 6868
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14205,
+      "vram_total_mib": 16303,
+      "gpu_util": 17
+    },
+    "mem": {
+      "mem_available_mib": 14450,
+      "swap_used_mib": 7679
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

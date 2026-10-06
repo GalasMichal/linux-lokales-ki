@@ -1,0 +1,176 @@
+{
+  "phase": "qwen-image-2.1-isolated-smoke",
+  "verdict": "PASS",
+  "captured_at": "2026-09-21T14:28:52+0200",
+  "license": "qwen-research, private local test only, not commercial",
+  "download": {
+    "repo": "Comfy-Org/Qwen-Image-2.1",
+    "revision": "ace0edeb3791a594ddfa36ed5f41a178a394e921",
+    "license": "qwen-research",
+    "results": [
+      {
+        "name": "qwen_image_2.1_vae_bf16.safetensors",
+        "remote": "vae/qwen_image_2.1_vae_bf16.safetensors",
+        "dest": "/srv/ai/models/comfyui/vae/qwen_image_2.1_vae_bf16.safetensors",
+        "size": 675509688,
+        "sha256": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9",
+        "status": "downloaded",
+        "sha256_got": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9",
+        "kind": "safetensors"
+      },
+      {
+        "name": "qwen3vl_8b_w4a8.safetensors",
+        "remote": "text_encoders/qwen3vl_8b_w4a8.safetensors",
+        "dest": "/srv/ai/models/comfyui/text_encoders/qwen3vl_8b_w4a8.safetensors",
+        "size": 6312105364,
+        "sha256": "7754425e55e7bea2bfde4dde59a4cc236cb44e5ee9c215ea66ef8d47012824eb",
+        "status": "downloaded",
+        "sha256_got": "7754425e55e7bea2bfde4dde59a4cc236cb44e5ee9c215ea66ef8d47012824eb",
+        "kind": "safetensors"
+      },
+      {
+        "name": "qwen_image_2.1_int8_convrot.safetensors",
+        "remote": "diffusion_models/qwen_image_2.1_int8_convrot.safetensors",
+        "dest": "/srv/ai/models/comfyui/diffusion_models/qwen_image_2.1_int8_convrot.safetensors",
+        "size": 7256783064,
+        "sha256": "cb74113cb03faecd79611b01fd7fd642f0aa60d6f0b95086abee214d75eaa57d",
+        "status": "downloaded",
+        "sha256_got": "cb74113cb03faecd79611b01fd7fd642f0aa60d6f0b95086abee214d75eaa57d",
+        "kind": "safetensors"
+      }
+    ],
+    "free_gb_after": 120.33
+  },
+  "edit_512": {
+    "ok": true,
+    "label": "512",
+    "prompt_id": "f0848729-d05a-419a-8b10-e923fdfbb8c6",
+    "runtime_seconds": 38.511,
+    "first_progress_seconds": 0.031,
+    "png": {
+      "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/qwen-image-21-smoke-20260921/output/qwen21_smoke_512_00001_.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 275069,
+      "sha256": "3abd7a80d7b97aaddb23fbd1984e0ef9e3ee90aa8f7deafbed958ee1e9de83d9",
+      "nonzero_payload": true
+    },
+    "vram_before": {
+      "total_mib": 16303,
+      "used_mib": 2357,
+      "free_mib": 13482,
+      "util_percent": 5
+    },
+    "vram_peak_used_mib": 15509,
+    "vram_peak_util_percent": 98,
+    "vram_after": {
+      "total_mib": 16303,
+      "used_mib": 15023,
+      "free_mib": 816,
+      "util_percent": 7
+    },
+    "ram_before": {
+      "mem_available_gib": 20.78,
+      "mem_used_gib": 10.34,
+      "swap_used_gib": 3.7
+    },
+    "ram_peak_used_gib": 22.91,
+    "swap_peak_used_gib": 7.46,
+    "cpu_peak_percent": 19.6,
+    "ram_after": {
+      "mem_available_gib": 7.97,
+      "mem_used_gib": 23.15,
+      "swap_used_gib": 7.21
+    }
+  },
+  "edit_1024": {
+    "ok": true,
+    "label": "1024",
+    "prompt_id": "30dda678-c932-49fd-9ee0-ae7b941fed8e",
+    "runtime_seconds": 15.624,
+    "first_progress_seconds": 0.038,
+    "png": {
+      "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/qwen-image-21-smoke-20260921/output/qwen21_smoke_1024_00001_.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1092725,
+      "sha256": "7f60f0ee5595ebda735dffeb6ce30eb91f43e32227d6fe89e9b6b1eb77490875",
+      "nonzero_payload": true
+    },
+    "vram_before": {
+      "total_mib": 16303,
+      "used_mib": 14998,
+      "free_mib": 842,
+      "util_percent": 9
+    },
+    "vram_peak_used_mib": 15618,
+    "vram_peak_util_percent": 100,
+    "vram_after": {
+      "total_mib": 16303,
+      "used_mib": 13429,
+      "free_mib": 2410,
+      "util_percent": 7
+    },
+    "ram_before": {
+      "mem_available_gib": 7.75,
+      "mem_used_gib": 23.36,
+      "swap_used_gib": 7.12
+    },
+    "ram_peak_used_gib": 24.31,
+    "swap_peak_used_gib": 7.55,
+    "cpu_peak_percent": 13.8,
+    "ram_after": {
+      "mem_available_gib": 8.15,
+      "mem_used_gib": 22.97,
+      "swap_used_gib": 7.55
+    }
+  },
+  "comfy_log_times_s": {
+    "cold_512": 37.86,
+    "warm_1024": 15.22
+  },
+  "vision_model_opinion_only": {
+    "apple_now_green": true,
+    "table_and_steam_preserved": true,
+    "severe_artifacts": false,
+    "summary": "The apple was successfully changed from red to bright green. The table, steam, and overall composition were kept intact as requested."
+  },
+  "cleanup": {
+    "stopped_at": "2026-09-21T14:25:30",
+    "vram_used_mib": 2095,
+    "vram_free_mib": 13745,
+    "gpu_util": 6,
+    "input_copy_removed": true,
+    "weights_kept": {
+      "dit": true,
+      "encoder": true,
+      "vae": true
+    }
+  },
+  "flux_workplace": {
+    "job_id": "9fbab1ed7eaa",
+    "runtime_seconds": 42.31,
+    "workflow_sha256": "d9d752d52b1430bd3756908885146daea41279e29a7b6e3a9e05705572f39953",
+    "model_sha256": {
+      "diffusion_model": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+      "text_encoder": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+      "vae": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3"
+    }
+  },
+  "flux_mcp": {
+    "job_id": "7fb6b408ab1b",
+    "runtime_seconds": 0.785,
+    "workflow_sha256": "d9d752d52b1430bd3756908885146daea41279e29a7b6e3a9e05705572f39953",
+    "model_sha256": {
+      "diffusion_model": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+      "text_encoder": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+      "vae": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3"
+    }
+  },
+  "not_done": [
+    "edit_image MCP",
+    "workplace editing UI",
+    "productive editing API",
+    "git push"
+  ]
+}

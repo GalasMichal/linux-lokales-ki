@@ -1,0 +1,83 @@
+[
+  {
+    "path": "/v1/chat/completions",
+    "stream": true,
+    "max_tokens": 256,
+    "elapsed_s": 34.177,
+    "finish_reason": "length",
+    "usage": null,
+    "content_chars": 1095,
+    "content_head": "1.  **Identify the user's request**: The user requested a sequence of three actions: `memory_load`, then `pdf_create`, then `pdf_read` on the created PDF. Note that `memory_load` was explicitly stated as having already succeeded. Therefore,",
+    "reasoning_chars": 0,
+    "variant": "D-stream-256"
+  },
+  {
+    "path": "/v1/chat/completions",
+    "stream": false,
+    "max_tokens": 256,
+    "elapsed_s": 20.133,
+    "finish_reason": "length",
+    "usage": {
+      "prompt_tokens": 91,
+      "prompt_tokens_details": {
+        "cached_tokens": 87
+      },
+      "completion_tokens": 256,
+      "total_tokens": 347
+    },
+    "content_chars": 1096,
+    "content_head": "```xml\n<state_snapshot>\n  <action_history>\n    step 1: user: \"call memory_load() then call pdf_create(filename='example.pdf', content='hello') after memory_load returns a string containing at least one letter, and only if memory_load did no",
+    "reasoning_chars": 0,
+    "message_keys": [
+      "content",
+      "role"
+    ],
+    "variant": "D-nostream-256"
+  },
+  {
+    "path": "/v1/chat/completions",
+    "stream": false,
+    "max_tokens": 1024,
+    "elapsed_s": 33.388,
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 91,
+      "prompt_tokens_details": {
+        "cached_tokens": 87
+      },
+      "completion_tokens": 508,
+      "total_tokens": 599
+    },
+    "content_chars": 2222,
+    "content_head": "<analysis>\nThe user's request describes a sequence of operations: first calling `memory_load` (which succeeded according to the context), then `pdf_create`, and finally `pdf_read`. \n\nI need to analyze what has happened so far in this conver",
+    "reasoning_chars": 0,
+    "message_keys": [
+      "content",
+      "role"
+    ],
+    "variant": "F-1024"
+  },
+  {
+    "path": "/v1/chat/completions",
+    "stream": false,
+    "max_tokens": 1536,
+    "elapsed_s": 35.545,
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 91,
+      "prompt_tokens_details": {
+        "cached_tokens": 87
+      },
+      "completion_tokens": 570,
+      "total_tokens": 661
+    },
+    "content_chars": 2418,
+    "content_head": "<analysis>\nThe user's request is a meta-instruction asking me to:\n1. Call three tools in sequence: memory_load, pdf_create, then pdf_read\n2. memory_load succeeded (per the user's statement)\n3. First reason in an analysis block\n4. Then produ",
+    "reasoning_chars": 0,
+    "message_keys": [
+      "content",
+      "role"
+    ],
+    "variant": "F-1536"
+  }
+]

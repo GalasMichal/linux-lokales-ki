@@ -1,7 +1,6 @@
 [Unit]
 Description=Lokale KI-Werkzeuge (MCP, localhost only)
-After=ki-workplace.service
-Wants=ki-workplace.service
+After=network.target
 
 [Service]
 Type=simple
@@ -11,6 +10,12 @@ Restart=on-failure
 RestartSec=3
 Environment=PYTHONUNBUFFERED=1
 Environment=NO_PROXY=127.0.0.1,localhost,host.containers.internal
+Environment=PATH=/home/mike/.local/bin:/usr/bin:/usr/local/bin:/bin
+Environment=PYTHONPATH=/home/mike/.local/lib/python3.14/site-packages:/usr/lib64/python3.14/site-packages:/usr/lib/python3.14/site-packages
+Environment=DISPLAY=:0
+Environment=WAYLAND_DISPLAY=wayland-0
+Environment=BROWSER_EXECUTABLE=/usr/bin/brave-browser
+ReadWritePaths=/home/mike/Projects /srv/ai/workspaces /mnt/ai-archive /srv/ai/cache
 NoNewPrivileges=true
 PrivateTmp=true
 ProtectHome=read-only

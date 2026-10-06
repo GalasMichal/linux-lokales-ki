@@ -1,0 +1,92 @@
+{
+  "ts": "2026-10-02T17:37:16+0200",
+  "suite": "tool_chain",
+  "num_ctx": 49152,
+  "model": "bench-qwen38-27b-48k",
+  "run_id": 2,
+  "sessionId": "5cf9ebcd-1047-4175-a51a-4c26ef818c3e",
+  "elapsed_s": 169.479,
+  "pass": false,
+  "drift": false,
+  "state_class": "A_technical",
+  "categories": [
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "artifact_missing:png"
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1
+  },
+  "tools": [
+    {
+      "id": "call_gmd7nzu7",
+      "name": "ToolSearch: select:pdf_create, memory_load, pdf_read, pdf_render, pdf_vision_qa",
+      "status": "completed"
+    },
+    {
+      "id": "call_gvolpam7",
+      "name": "memory_load (local-tools MCP Server): {\"files\":\"\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_sz7k6wb3",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r2-173425.pdf\",\"text\":\"Boundary probe ctx=49152 run=2.\",\"title\":\"BOUND 49152 R2\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_575nq8oq",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r2-173425.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_53prjxvl",
+      "name": "pdf_render (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r2-173425-p1.png\",\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r2-173425.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_e51e9iig",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r2-173425.pdf\",\"question\":\"Confirm the visible title and probe text on page 1.\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true,
+    "png": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1620,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 25151,
+      "swap_used_mib": 5514
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14192,
+      "vram_total_mib": 16303,
+      "gpu_util": 80
+    },
+    "mem": {
+      "mem_available_mib": 22152,
+      "swap_used_mib": 5552
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-48k:latest    cf92cdcda723    19 GB    45%/55% CPU/GPU    49152      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

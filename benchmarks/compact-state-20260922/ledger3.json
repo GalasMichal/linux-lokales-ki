@@ -1,0 +1,65 @@
+{
+  "label": "ledger3",
+  "sessionId": "477f4fd5-cb05-4546-9572-69191f9f89a8",
+  "model_id": "local-quality(openai)",
+  "elapsed_s": 77.27,
+  "prompt_error": null,
+  "votes": [
+    {
+      "requestId": "c4b4b23d-0070-4d34-b7bc-84e188c4641c",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_ntd07gir",
+      "name": "ToolSearch: select:memory_load",
+      "status": "completed",
+      "input": {
+        "query": "select:memory_load"
+      }
+    },
+    {
+      "id": "call_fenpkouc",
+      "name": "ToolCall",
+      "status": "completed",
+      "input": null
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 1
+  },
+  "duplicates": {},
+  "missing": [
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa",
+    "memory_update"
+  ],
+  "assistant_text": "Starting the six-step sequence now: reviewing the `memory_load` schema first.",
+  "compressed": false,
+  "pdf_exists": false,
+  "png_exists": false,
+  "yolo": false,
+  "always_allow": false,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 1,
+    "tools": 2,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 3,
+    "vram": 10147
+  },
+  "nvidia": {
+    "vram_used_mib": 10147,
+    "vram_total_mib": 16303,
+    "gpu_util": 3
+  },
+  "ollama_ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n",
+  "pass": false
+}

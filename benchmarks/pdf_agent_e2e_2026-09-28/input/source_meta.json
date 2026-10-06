@@ -1,0 +1,19 @@
+{
+  "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf",
+  "pages": 2,
+  "sha256": "25be409b0bd3089cebce32952f7fb7dc821ebe30a2015810917eb7e9aedd2dc7",
+  "size": 2892,
+  "page_sizes": [
+    [
+      595.28,
+      841.89
+    ],
+    [
+      595.28,
+      841.89
+    ]
+  ],
+  "text_p1": "PDF Agent End-to-End Test\nCustomer: Example GmbH\nProject Status: Draft\nAmount: 1250 EUR\nThis controlled fixture is used to verify the Qwen local-fast agent path through MCP pdf_* tools.\nLayout must stay largely intact for small in-place edits. Do not treat this as production content.\n",
+  "text_p2": "Task Overview\nTask\nStatus\nAnalysis\nOpen\nImplementation\nPending\nReview\nOpen\nAdditional notes: Keep Analysis and Review as Open. Only the Implementation row status token\nshould change. Prefer same-length replacements when using in-place redact edits so spacing\nstays clean.\n",
+  "note": "Pending only in table cell"
+}

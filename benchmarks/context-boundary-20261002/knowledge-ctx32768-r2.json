@@ -1,0 +1,69 @@
+{
+  "ts": "2026-10-02T19:26:24+0200",
+  "suite": "knowledge",
+  "num_ctx": 32768,
+  "model": "bench-qwen38-27b-32k",
+  "run_id": 2,
+  "sessionId": "84fb048b-c1f7-469d-98f2-740c39e2f3ff",
+  "elapsed_s": 51.256,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "knowledge_search": 1,
+    "knowledge_get": 1
+  },
+  "tools": [
+    {
+      "id": "call_yoz8sh4m",
+      "name": "ToolSearch: select:mcp__local-tools__knowledge_search,mcp__local-tools__knowledge_get",
+      "status": "completed"
+    },
+    {
+      "id": "call_m8iq6beh",
+      "name": "knowledge_search (local-tools MCP Server): {\"max_results\":3,\"query\":\"compact state ledger lazy tools\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_be7uev4q",
+      "name": "knowledge_get (local-tools MCP Server): {\"id\":\"KB-20260922-SUCCESS-001\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1579,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25439,
+      "swap_used_mib": 5831
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14161,
+      "vram_total_mib": 16303,
+      "gpu_util": 86
+    },
+    "mem": {
+      "mem_available_mib": 21067,
+      "swap_used_mib": 5894
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-32k:latest    a095eb40b4bb    18 GB    42%/58% CPU/GPU    32768      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

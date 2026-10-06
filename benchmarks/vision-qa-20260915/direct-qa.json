@@ -1,0 +1,82 @@
+{
+  "bad": {
+    "ok": false,
+    "needs_regeneration": true,
+    "summary": "The page contains two text elements with severe layout defects. The first line of text is clipped on the left edge. The second line consists of two overlapping text blocks, making it unreadable.",
+    "issues": [
+      {
+        "page": 1,
+        "type": "clipped_text",
+        "severity": "high",
+        "description": "The text 'D_LEFT heading hangs off the page' is cut off on the left margin; the beginning of the line is missing.",
+        "confidence": 1.0
+      },
+      {
+        "page": 1,
+        "type": "overlap",
+        "severity": "high",
+        "description": "Two lines of text are superimposed on each other in the center of the page ('OVERLAP_A...' and 'OVERLAP_B...'), resulting in garbled, unreadable characters.",
+        "confidence": 1.0
+      }
+    ],
+    "pages_checked": [
+      1
+    ],
+    "invalid_output": false,
+    "model": "local-quality"
+  },
+  "bad_elapsed_s": 14.159,
+  "clean": {
+    "ok": true,
+    "needs_regeneration": false,
+    "summary": "The page contains a title and a short paragraph of body text at the top left, with the rest of the page blank. The layout is clean, with no overlapping elements, clipped text, or alignment issues.",
+    "issues": [],
+    "pages_checked": [
+      1
+    ],
+    "invalid_output": false,
+    "model": "local-quality"
+  },
+  "clean_elapsed_s": 8.494,
+  "bad_pages": [
+    {
+      "page": 1,
+      "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/vision-qa-bad.vision-p1.png",
+      "summary": "The page contains two text elements with severe layout defects. The first line of text is clipped on the left edge. The second line consists of two overlapping text blocks, making it unreadable.",
+      "issues": [
+        {
+          "page": 1,
+          "type": "clipped_text",
+          "severity": "high",
+          "description": "The text 'D_LEFT heading hangs off the page' is cut off on the left margin; the beginning of the line is missing.",
+          "confidence": 1.0
+        },
+        {
+          "page": 1,
+          "type": "overlap",
+          "severity": "high",
+          "description": "Two lines of text are superimposed on each other in the center of the page ('OVERLAP_A...' and 'OVERLAP_B...'), resulting in garbled, unreadable characters.",
+          "confidence": 1.0
+        }
+      ],
+      "elapsed_s": 14.142,
+      "invalid_output": false,
+      "prompt_eval_count": 1937,
+      "eval_count": 201,
+      "vram": null
+    }
+  ],
+  "clean_pages": [
+    {
+      "page": 1,
+      "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/vision-qa-clean.vision-p1.png",
+      "summary": "The page contains a title and a short paragraph of body text at the top left, with the rest of the page blank. The layout is clean, with no overlapping elements, clipped text, or alignment issues.",
+      "issues": [],
+      "elapsed_s": 8.471,
+      "invalid_output": false,
+      "prompt_eval_count": 1937,
+      "eval_count": 58,
+      "vram": null
+    }
+  ]
+}

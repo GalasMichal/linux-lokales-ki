@@ -1,0 +1,77 @@
+{
+  "ts": "2026-10-02T17:14:25+0200",
+  "suite": "tool_chain",
+  "num_ctx": 40960,
+  "model": "bench-qwen38-27b-40k",
+  "run_id": 3,
+  "sessionId": "5d0d75d1-7778-42fb-9ad2-60f9dc12a19c",
+  "elapsed_s": 142.348,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "compact_issue",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "missing:['memory_load', 'pdf_create', 'pdf_read', 'pdf_render', 'pdf_vision_qa']",
+    "compact_mentioned_with_incomplete_chain",
+    "artifact_missing:pdf",
+    "artifact_missing:png"
+  ],
+  "completed_counts": {
+    "memory_load": 0,
+    "pdf_create": 0,
+    "pdf_read": 0,
+    "pdf_render": 0,
+    "pdf_vision_qa": 0
+  },
+  "tools": [
+    {
+      "id": "call_dzwcsn5a",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+      "status": "completed"
+    },
+    {
+      "id": "call_zhddccmf",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_create",
+      "status": "completed"
+    }
+  ],
+  "votes": 0,
+  "artifacts": {
+    "pdf": false,
+    "png": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1656,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 24867,
+      "swap_used_mib": 5356
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14223,
+      "vram_total_mib": 16303,
+      "gpu_util": 80
+    },
+    "mem": {
+      "mem_available_mib": 22147,
+      "swap_used_mib": 5375
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-40k:latest    d4ed59ea4a99    18 GB    44%/56% CPU/GPU    40960      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

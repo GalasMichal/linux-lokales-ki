@@ -1,0 +1,32 @@
+{
+  "label": "retry2",
+  "sessionId": "e563b837-026b-4421-a6b8-1b36647a0ded",
+  "events": [
+    {
+      "name": "tool_search",
+      "success": true
+    },
+    {
+      "name": "pdf_render",
+      "success": true
+    },
+    {
+      "name": "pdf_render",
+      "success": true
+    }
+  ],
+  "votes": [
+    {
+      "requestId": "6b382897-e8e9-4072-bf9e-fa5650dec686",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "642b774c-e72f-4e89-96fd-4ed931d619d6",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "png": true,
+  "pass": false
+}

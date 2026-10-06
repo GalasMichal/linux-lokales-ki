@@ -1,0 +1,19 @@
+{
+  "phase": "A01-A14 acceptance",
+  "timestamp": "2026-09-21T11:20:00+02:00",
+  "overall": "PASS WITH LIMITATIONS",
+  "canonical_matrix": "docs/ACCEPTANCE_A01_A14.md",
+  "prior_canonical_a01_a14": false,
+  "systemd_cycle_fixed": true,
+  "reboot_proof": false,
+  "unittest": {"ran": 75, "ok": true, "seconds": 83.313},
+  "live_mcp_smoke": true,
+  "a14_morning_pass_s": 157.816,
+  "a14_afternoon_elapsed_s": 195.595,
+  "a14_afternoon_duplicate_pdf_read": true,
+  "a12_job": "b8d57bc6dd22",
+  "backups": {
+    "acceptance": "/mnt/ai-archive/backups/acceptance-a01-a14-20260921-105911",
+    "mcp_boot": "/mnt/ai-archive/backups/mcp-boot-cycle/20260921-105949"
+  }
+}

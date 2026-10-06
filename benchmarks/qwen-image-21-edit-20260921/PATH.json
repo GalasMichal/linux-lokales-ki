@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "status": 400,
+  "body": {
+    "ok": false,
+    "error": "Pfad liegt außerhalb der erlaubten Arbeitsbereiche."
+  },
+  "comfy": "inactive"
+}

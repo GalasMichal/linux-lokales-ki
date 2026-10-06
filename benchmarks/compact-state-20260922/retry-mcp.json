@@ -1,0 +1,8 @@
+{
+  "bad": "{\n  \"ok\": false,\n  \"error\": \"Pfad liegt au\u00dferhalb der erlaubten Arbeitsbereiche: /home/mike\"\n}",
+  "good": "{\n  \"ok\": true,\n  \"path\": \"/home/mike/Projects/Linux Lokales KI/.agent/tmp/compact-continuity/retry-mcp-ok.png\",\n  \"source\": \"/home/mike/Projects/Linux Lokales KI/.agent/tmp/compact-continuity/ledger4.pdf\",\n  \"page\": 1,\n  \"pages\": 1,\n  \"dpi\": 140,\n  \"width\": 1158,\n  \"height\": 1638,\n  \"backend\": \"pym",
+  "bad_ok": false,
+  "good_ok": true,
+  "png": true,
+  "pass": true
+}

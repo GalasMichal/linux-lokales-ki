@@ -1,0 +1,100 @@
+{
+  "ts": "2026-10-04T01:00:20+0200",
+  "suite": "supervisor",
+  "num_ctx": 90112,
+  "model": "bench-qwen38-27b-88k",
+  "run_id": 5,
+  "sessionId": "7bffb397-c081-47d1-8102-e28ffe9c6d26",
+  "elapsed_s": 148.371,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_88cqoq4q",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_iub2zb8f",
+      "name": "Agent: Researcher one-sentence answer",
+      "status": "completed"
+    },
+    {
+      "id": "call_v7u4n6fp",
+      "name": "ToolSearch: search memory tool compact state ledger",
+      "status": "completed"
+    },
+    {
+      "id": "call_wk2zp8wp",
+      "name": "knowledge_search (local-tools MCP Server): {\"max_results\":5,\"query\":\"Compact State Ledger purpose\",\"workspace\":\"/home/mike/.qwen/projects/-srv-ai-workspaces/\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_5rhmnd2r",
+      "name": "knowledge_search (local-tools MCP Server): {\"max_results\":5,\"query\":\"Compact State Ledger purpose\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14087,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 23374,
+      "swap_used_mib": 4299
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 4.528,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14155,
+      "vram_total_mib": 16303,
+      "gpu_util": 94
+    },
+    "mem": {
+      "mem_available_mib": 21128,
+      "swap_used_mib": 4357
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 4.528,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

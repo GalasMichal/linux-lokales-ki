@@ -1,0 +1,63 @@
+{
+  "ts": "2026-10-03T16:26:58+0200",
+  "suite": "supervisor",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 1,
+  "sessionId": "b2fd8caa-6791-4f60-9c06-73abb0380196",
+  "elapsed_s": 108.855,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_ni8e2xo2",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_yvcfdh9c",
+      "name": "Agent: Ask researcher about Compact State Ledger",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2379,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 24081,
+      "swap_used_mib": 7823
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14163,
+      "vram_total_mib": 16303,
+      "gpu_util": 62
+    },
+    "mem": {
+      "mem_available_mib": 20537,
+      "swap_used_mib": 7766
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    52%/48% CPU/GPU    65536      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

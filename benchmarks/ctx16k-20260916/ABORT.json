@@ -1,0 +1,47 @@
+{
+  "abort": "Swap +2123 MiB bei tools-local-quality",
+  "baseline": {
+    "tag": "baseline",
+    "ts": 1789573295.23934,
+    "name": "NVIDIA GeForce RTX 5080",
+    "vram_total_mib": 16303,
+    "vram_used_mib": 1354,
+    "vram_free_mib": 14485,
+    "gpu_util": 4,
+    "mem_total_mib": 31864,
+    "mem_available_mib": 22037,
+    "mem_used_mib": 9827,
+    "swap_total_mib": 54067,
+    "swap_used_mib": 0,
+    "ps": {
+      "raw": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n",
+      "loaded": false,
+      "line": "",
+      "context": null,
+      "processor": ""
+    },
+    "ollama_active": true
+  },
+  "last": {
+    "tag": "abort",
+    "ts": 1789573458.2348542,
+    "name": "NVIDIA GeForce RTX 5080",
+    "vram_total_mib": 16303,
+    "vram_used_mib": 14302,
+    "vram_free_mib": 1537,
+    "gpu_util": 6,
+    "mem_total_mib": 31864,
+    "mem_available_mib": 20272,
+    "mem_used_mib": 11592,
+    "swap_total_mib": 54067,
+    "swap_used_mib": 2129,
+    "ps": {
+      "raw": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    993995e538ad    18 GB    34%/66% CPU/GPU    8192       9 minutes from now    \n",
+      "loaded": true,
+      "line": "local-quality:latest    993995e538ad    18 GB    34%/66% CPU/GPU    8192       9 minutes from now    ",
+      "context": 8192,
+      "processor": "34%/66% CPU/GPU"
+    },
+    "ollama_active": true
+  }
+}

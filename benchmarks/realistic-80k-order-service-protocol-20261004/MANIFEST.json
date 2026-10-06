@@ -1,0 +1,14 @@
+{
+  "bench_variant": "order_service_protocol_v1_20261004",
+  "task": "order_service",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "model_digest": "959b4a6094a9",
+  "protocol_file": "/home/mike/Projects/Linux Lokales KI/benchmarks/realistic_80k_tasks/order_service/PROTOCOL_WORKFLOW_v1.md",
+  "run_root": "/srv/ai/workspaces/realistic-80k-order-service-protocol-20261004/runs",
+  "session_cwd": "/srv/ai/workspaces",
+  "serve": "http://127.0.0.1:4171",
+  "qwen": "stable /srv/ai/apps/qwen-code (not nightly)",
+  "prod_local_quality_num_ctx": 65536,
+  "distinct_from": "benchmarks/realistic-80k-20261004 (original prompt, no protocol block)"
+}

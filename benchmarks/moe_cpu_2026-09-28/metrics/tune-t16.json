@@ -1,0 +1,21 @@
+{
+  "label": "tune-t16",
+  "runtime": "llama.cpp",
+  "model": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_S",
+  "threads": 16,
+  "ctx": 4096,
+  "n_predict": 64,
+  "wall_s": 45.435,
+  "rc": 0,
+  "response_chars": 0,
+  "response_preview": "",
+  "prompt_tps": 32.7,
+  "eval_tps": 23.1,
+  "ram_peak_mb": 21746.0,
+  "ram_min_mb": 6473.0,
+  "swap_peak_mb": 10099.0,
+  "cpu_peak_pct": 49.7,
+  "vram_peak_mb": 2057.0,
+  "vram_min_mb": 1663.0,
+  "gpu_util_peak": 27.0
+}

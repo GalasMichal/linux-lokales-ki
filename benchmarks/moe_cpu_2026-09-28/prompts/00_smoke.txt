@@ -1,0 +1,1 @@
+Antworte mit genau einem kurzen Satz auf Deutsch: Was ist TypeScript?

@@ -1,0 +1,149 @@
+{
+  "model": "bench-qwen38-27b-48k",
+  "model_id": "bench-qwen38-27b-48k(openai)",
+  "num_ctx": 49152,
+  "sessionId": "aae2cdba-2341-4a20-8ae8-27cf378b7e79",
+  "model_switch": {
+    "_meta": {
+      "qwenModelSwitch": {
+        "authType": "openai",
+        "modelId": "bench-qwen38-27b-48k",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "***",
+        "isRuntime": false
+      }
+    }
+  },
+  "elapsed_s": 172.332,
+  "prompt_error": null,
+  "votes": [
+    {
+      "requestId": "c36b225f-1e31-44cf-93a1-0001d1541224",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_c7l9y9k2",
+      "name": "ToolSearch: mcp local-tools memory_load",
+      "status": "completed",
+      "input": {
+        "query": "mcp local-tools memory_load"
+      }
+    },
+    {
+      "id": "call_ni0y01si",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed",
+      "input": {
+        "workspace": "/home/mike/Projects/Linux Lokales KI"
+      }
+    },
+    {
+      "id": "call_7evfhn2s",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-49152.pdf\",\"text\":\"Context ladder probe at 49152 tokens. FAST stays local-fast. No productive cutover.\",\"title\":\"QUALITY CTX 49152\"}",
+      "status": "completed",
+      "input": {
+        "output": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-49152.pdf",
+        "text": "Context ladder probe at 49152 tokens. FAST stays local-fast. No productive cutover.",
+        "title": "QUALITY CTX 49152"
+      }
+    },
+    {
+      "id": "call_925tw0cn",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-49152.pdf\"}",
+      "status": "completed",
+      "input": {
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-49152.pdf"
+      }
+    },
+    {
+      "id": "call_n4r5akhm",
+      "name": "pdf_render (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-49152.png\",\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-49152.pdf\"}",
+      "status": "completed",
+      "input": {
+        "output": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-49152.png",
+        "page": 1,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-49152.pdf"
+      }
+    },
+    {
+      "id": "call_84wl5kxi",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-49152.pdf\"}",
+      "status": "completed",
+      "input": {
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-49152.pdf"
+      }
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1
+  },
+  "expected_hit": [
+    "memory_load",
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa"
+  ],
+  "missing": [],
+  "duplicates": {},
+  "thoughts": 0,
+  "assistant_text_tail": "I'll start with step 1.\nLet me search for these MCP tools.5 steps complete:\n\n1. **memory_load** ✓\n2. **pdf_create** ✓ — 1 page, reportlab\n3. **pdf_read** ✓ — text intact (title + probe sentence)\n4. **pdf_render** ✓ — 1158×1638 PNG @ 140 dpi\n5. **pdf_vision_qa** ✓ executed (local-quality via Ollama, ~16 s), verdict `ok:false`\n\nThe vision QA flags `empty_page` (high confidence) because the page is a minimal probe — title + one short line, rest blank. That's expected for this document; no actual rendering artifacts. The chain itself passed end-to-end: create → read → render → all tools responded correctly at 49152 context with FAST on local-fast and no productive cutover.\n\nNo memory_update executed (none requested).",
+  "pdf_exists": true,
+  "png_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok",
+        "trust": null
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 1,
+    "tools": 6,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 100,
+    "vram": 14378
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1564,
+      "vram_total_mib": 16303,
+      "gpu_util": 3
+    },
+    "mem": {
+      "mem_available_mib": 25352,
+      "swap_used_mib": 4538
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14378,
+      "vram_total_mib": 16303,
+      "gpu_util": 100
+    },
+    "mem": {
+      "mem_available_mib": 22469,
+      "swap_used_mib": 4546
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-48k:latest    cf92cdcda723    19 GB    44%/56% CPU/GPU    49152      4 minutes from now    \n"
+  },
+  "fail_reasons": [],
+  "pass": true
+}

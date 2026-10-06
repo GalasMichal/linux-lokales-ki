@@ -1,0 +1,80 @@
+{
+  "ts": "2026-10-03T13:17:41+0200",
+  "suite": "multi_hop",
+  "num_ctx": 90112,
+  "model": "bench-qwen38-27b-88k",
+  "run_id": 3,
+  "sessionId": "01ad19e3-8707-4ab7-a389-cc895aacc2d3",
+  "elapsed_s": 69.641,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift"
+  ],
+  "fail_reasons": [
+    "missing:['memory_load']"
+  ],
+  "completed_counts": {
+    "memory_load": 0,
+    "knowledge_search": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_8lratm1s",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_pwh9kfq3",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_2kuh8l74",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-multi_hop-90112-r3-131629.pdf\",\"text\":\"multi_hop ctx=90112 knowledge_id=KB-20260922-LEDGER-002 ledger_ok=yes\",\"title\":\"MHOP 90112 R3\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_2aoz8klg",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-multi_hop-90112-r3-131629.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1686,
+      "vram_total_mib": 16303,
+      "gpu_util": 1
+    },
+    "mem": {
+      "mem_available_mib": 25874,
+      "swap_used_mib": 7629
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14200,
+      "vram_total_mib": 16303,
+      "gpu_util": 58
+    },
+    "mem": {
+      "mem_available_mib": 19878,
+      "swap_used_mib": 7596
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    53%/47% CPU/GPU    90112      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

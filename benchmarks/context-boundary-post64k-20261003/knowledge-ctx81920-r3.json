@@ -1,0 +1,69 @@
+{
+  "ts": "2026-10-03T10:06:03+0200",
+  "suite": "knowledge",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 3,
+  "sessionId": "6a42e75e-231f-42bb-8bcf-9bb71dd72abc",
+  "elapsed_s": 211.433,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "knowledge_search": 1,
+    "knowledge_get": 1
+  },
+  "tools": [
+    {
+      "id": "call_nd015j2m",
+      "name": "ToolSearch: select:mcp__local-tools__knowledge_search,mcp__local-tools__knowledge_get",
+      "status": "completed"
+    },
+    {
+      "id": "call_livwkqjn",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger lazy tools\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_3ik3b9zu",
+      "name": "knowledge_get (local-tools MCP Server): {\"id\":\"KB-20260922-SUCCESS-001\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14200,
+      "vram_total_mib": 16303,
+      "gpu_util": 63
+    },
+    "mem": {
+      "mem_available_mib": 21505,
+      "swap_used_mib": 6041
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL       \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      Stopping...    \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14203,
+      "vram_total_mib": 16303,
+      "gpu_util": 72
+    },
+    "mem": {
+      "mem_available_mib": 21816,
+      "swap_used_mib": 6493
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

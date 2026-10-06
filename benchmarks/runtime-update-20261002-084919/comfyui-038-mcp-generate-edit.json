@@ -1,0 +1,42 @@
+{
+  "generate_image": {
+    "wall_s": 61.63,
+    "preview": "meta={'io.modelcontextprotocol/serverInfo': {'name': 'local-ai-tools', 'version': '1.7.0'}} content=[TextContent(type='text', text='{\\n  \"ok\": true,\\n  \"job_id\": \"134b852cf2ef\",\\n  \"runtime_seconds\": 60.268,\\n  \"archive_directory\": \"/mnt/ai-archive/images/inbox/2026-10-02/134b852cf2ef\",\\n  \"manifest\": \"/mnt/ai-archive/images/inbox/2026-10-02/134b852cf2ef/manifest.json\",\\n  \"previews\": [\\n    \"http://127.0.0.1:8188/view?filename=ki_arbeitsplatz_134b852cf2ef_00001_.png&subfolder=&type=output\"\\n  ]",
+    "ok": true,
+    "structured": {
+      "ok": true,
+      "job_id": "134b852cf2ef",
+      "runtime_seconds": 60.268,
+      "archive_directory": "/mnt/ai-archive/images/inbox/2026-10-02/134b852cf2ef",
+      "manifest": "/mnt/ai-archive/images/inbox/2026-10-02/134b852cf2ef/manifest.json",
+      "previews": [
+        "http://127.0.0.1:8188/view?filename=ki_arbeitsplatz_134b852cf2ef_00001_.png&subfolder=&type=output"
+      ],
+      "gpu_cleanup": {
+        "ok": true,
+        "message": "GPU-Verbraucher wurden sauber beendet.",
+        "stopped_services": [
+          "comfyui.service"
+        ],
+        "unloaded_models": [],
+        "gpu": {
+          "name": "NVIDIA GeForce RTX 5080",
+          "total_mib": 16303,
+          "used_mib": 1223,
+          "free_mib": 14616,
+          "utilization_percent": 0
+        }
+      }
+    }
+  },
+  "edit_image": {
+    "wall_s": 7.17,
+    "preview": "meta={'io.modelcontextprotocol/serverInfo': {'name': 'local-ai-tools', 'version': '1.7.0'}} content=[TextContent(type='text', text='{\\n  \"ok\": false,\\n  \"error\": \"ComfyUI hat den Auftrag abgelehnt: {\\'error\\': {\\'type\\': \\'prompt_outputs_failed_validation\\', \\'message\\': \\'Prompt outputs failed validation\\', \\'details\\': \\'\\', \\'extra_info\\': {}}, \\'node_errors\\': {\\'5\\': {\\'errors\\': [{\\'type\\': \\'custom_validation_failed\\', \\'message\\': \\'Custom validation failed for node\\', \\'details\\': \\'ima",
+    "structured": {
+      "ok": false,
+      "error": "ComfyUI hat den Auftrag abgelehnt: {'error': {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}, 'node_errors': {'5': {'errors': [{'type': 'custom_validation_failed', 'message': 'Custom validation failed for node', 'details': 'image - Invalid image file: ki_edit_d41524f89cff_1.png', 'extra_info': {'input_name': 'image'}}], 'dependent_outputs': ['9'], 'class_type': 'LoadImage'}}}",
+      "workflow_id": "qwen-image-21-edit-v1"
+    }
+  }
+}
+MCP_IMG_FAIL gen True edit False

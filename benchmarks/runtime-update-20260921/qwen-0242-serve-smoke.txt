@@ -1,0 +1,12 @@
+=== workplace agent mode ===
+{"ok": true, "mode": "agent", "message": "Agent bereit. Bilder-KI wurde beendet.", "boot": {"mode": "agent", "phase": "ready", "percent": 58, "title": "Qwen erreichbar", "detail": "Der Dienst antwortet. Als N\u00e4chstes kommen die Fensterdateien."}}
+=== qwen health 4170 ===
+{"status":"ok"}
+=== proxy health 8791 ===
+{"status":"ok"}
+=== workspace mcp ===
+{"v":1,"workspaceCwd":"/srv/ai/workspaces","initialized":false,"discoveryState":"not_started","servers":[],"clientCount":0,"budgetMode":"off","budgets":[]}
+=== qwen-code-web unit ===
+active
+=== proceed_once present ===
+14

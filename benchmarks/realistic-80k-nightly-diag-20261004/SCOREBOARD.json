@@ -1,0 +1,14 @@
+{
+  "scope": "order_service only, runs 2–3, 80K, same prompts/fixtures as realistic-80k-20261004",
+  "counters": {
+    "resolved": 1,
+    "must_loss": 1,
+    "tool_runtime": 0,
+    "agent_incomplete": 0
+  },
+  "compare_original_stable_0247": {
+    "run_2": "tool_runtime (invalid_tool_params path vs file_path, LOOP_DETECTED)",
+    "run_3": "tool_runtime (same)"
+  },
+  "notes": "Run 1 from original bench unchanged: must_loss 119==59. Not retested here."
+}

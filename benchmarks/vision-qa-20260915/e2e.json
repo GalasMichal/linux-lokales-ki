@@ -1,0 +1,102 @@
+{
+  "elapsed_s": 372.797,
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14498,
+      "vram_total_mib": 16303,
+      "gpu_util": 5
+    },
+    "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    993995e538ad    18 GB    38%/62% CPU/GPU    8192       4 minutes from now    \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14401,
+      "vram_total_mib": 16303,
+      "gpu_util": 5
+    },
+    "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    993995e538ad    18 GB    38%/62% CPU/GPU    8192       4 minutes from now    \n"
+  },
+  "model": "local-quality(openai)",
+  "bad_pdf": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/vision-qa-bad.pdf",
+  "clean_pdf": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/vision-qa-clean.pdf",
+  "bad_pdf_exists": true,
+  "clean_pdf_exists": false,
+  "turns": [
+    {
+      "expect": "memory_load",
+      "sessionId": "a83cc6e7-d3dc-4d59-ba53-4eb21154c028",
+      "votes": 1,
+      "completed": true,
+      "thoughts": 0,
+      "tools": [
+        {
+          "name": "memory_load (local-tools MCP Server)",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "expect": "pdf_render",
+      "sessionId": "ffaf8596-1d6a-4b86-beeb-3b430771f510",
+      "votes": 0,
+      "completed": false,
+      "thoughts": 0,
+      "tools": [
+        {
+          "name": "ToolSearch: select:mcp__local-tools__pdf_render",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "expect": "pdf_vision_qa",
+      "sessionId": "2ea9861f-cead-4c19-b3b0-020ed5982851",
+      "votes": 1,
+      "completed": true,
+      "thoughts": 0,
+      "tools": [
+        {
+          "name": "pdf_vision_qa (local-tools MCP Server)",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "expect": "pdf_create",
+      "sessionId": "f9001f6f-cab8-4fcf-9ab9-48f0172bc058",
+      "votes": 0,
+      "completed": false,
+      "thoughts": 0,
+      "tools": []
+    },
+    {
+      "expect": "pdf_render",
+      "sessionId": "92f856d0-d1c7-44de-b7a7-d0ccde74a09b",
+      "votes": 0,
+      "completed": false,
+      "thoughts": 0,
+      "tools": []
+    },
+    {
+      "expect": "pdf_vision_qa",
+      "sessionId": "8d8e6bfb-7fc5-4d1c-a6be-61bb912ae95a",
+      "votes": 1,
+      "completed": true,
+      "thoughts": 0,
+      "tools": [
+        {
+          "name": "pdf_vision_qa (local-tools MCP Server)",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "expect": "memory_update",
+      "sessionId": "ef8e0929-d5a5-4620-b28b-8e42bba9e0e7",
+      "votes": 0,
+      "completed": false,
+      "thoughts": 0,
+      "tools": []
+    }
+  ]
+}

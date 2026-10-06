@@ -1,0 +1,77 @@
+{
+  "ts": "2026-10-03T11:59:55+0200",
+  "suite": "compact",
+  "num_ctx": 90112,
+  "model": "bench-qwen38-27b-88k",
+  "run_id": 5,
+  "sessionId": "c72b2c34-c522-4d70-8644-caa33eeec44c",
+  "elapsed_s": 124.099,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_w41itjss",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_y9ow0105",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_90rnli7k",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-90112-r5-115749.pdf\",\"text\":\"Compact continuity check ctx=90112.\",\"title\":\"COMPACT 90112 R5\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_un4hlg6v",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-90112-r5-115749.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1476,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25780,
+      "swap_used_mib": 6540
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14213,
+      "vram_total_mib": 16303,
+      "gpu_util": 60
+    },
+    "mem": {
+      "mem_available_mib": 19386,
+      "swap_used_mib": 6738
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    52%/48% CPU/GPU    90112      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

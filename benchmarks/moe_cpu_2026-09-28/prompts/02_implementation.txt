@@ -1,0 +1,13 @@
+# IMPLEMENTATION — TypeScript function
+
+Implement exactly this TypeScript function. No tools. Show complete code only plus one-line note.
+
+Requirements:
+- Name: `clampLonLat`
+- Input: `{ lon: number; lat: number }`
+- Output: `{ lon: number; lat: number }`
+- Clamp longitude to [-180, 180]
+- Clamp latitude to [-90, 90]
+- If input is not finite numbers, throw `TypeError('invalid lon/lat')`
+- Pure function, no side effects
+- No dependencies

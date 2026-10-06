@@ -1,0 +1,76 @@
+{
+  "ts": "2026-10-02T19:25:29+0200",
+  "suite": "knowledge",
+  "num_ctx": 32768,
+  "model": "bench-qwen38-27b-32k",
+  "run_id": 1,
+  "sessionId": "24f6013b-bb97-4ca0-8482-ce9524105141",
+  "elapsed_s": 48.248,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift"
+  ],
+  "fail_reasons": [
+    "duplicate_tools:{'knowledge_search': 2}"
+  ],
+  "completed_counts": {
+    "knowledge_search": 2,
+    "knowledge_get": 1
+  },
+  "tools": [
+    {
+      "id": "call_xijcz3hr",
+      "name": "ToolSearch: select:mcp__local-tools__knowledge_search,mcp__local-tools__knowledge_get",
+      "status": "completed"
+    },
+    {
+      "id": "call_1cledk4m",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger lazy tools\",\"workspace\":\"workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_a4y1pz3b",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger lazy tools\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_c0y62ebx",
+      "name": "knowledge_get (local-tools MCP Server): {\"id\":\"KB-20260922-SUCCESS-001\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1545,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25298,
+      "swap_used_mib": 5772
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14382,
+      "vram_total_mib": 16303,
+      "gpu_util": 60
+    },
+    "mem": {
+      "mem_available_mib": 20793,
+      "swap_used_mib": 5832
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-32k:latest    a095eb40b4bb    18 GB    41%/59% CPU/GPU    32768      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,10 @@
+Hier ist eine pragmatische Aufschlüsselung des Tickets für den lokalen KI-Arbeitsplatz (Open WebUI + Ollama + lokale Tools), ohne Cloud-Abhängigkeiten und mit Fokus auf Machbarkeit.
+
+### 1. Analyse
+**Ziel:** Verstehen, wie PDFs lokal verarbeitet werden können, ohne externe APIs zu nutzen.
+*   **Input-Format:** PDF-Rechnungen (scanned images oder digitale Dateien).
+*   **Verarbeitungspfad:**
+    *   Dateiupload in Open WebUI -> Lokaler Storage (z.B. `/data/uploads`).
+    *   OCR/Vision: Nutzung eines lokalen Modells (z.B. `Qwen2.5-VL` oder `Llama-3.2-Vision`) über Ollama, um Text aus dem Bild zu extrahieren.
+    *   Strukturierung: Ein lokaler Python-Skript (via MCP Tool) parsst den rohen OCR-Text in eine strukturierte JSON-Form (Datum, Betrag, Anbieter, Zeilen).
+    *   Storage: Speichern des Original-PDFs und der strukturierten Daten im lokalen Vektor-Datenbank-Container (z.B. `Ch

@@ -1,0 +1,82 @@
+{
+  "ts": "2026-10-03T16:16:52+0200",
+  "suite": "compact",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 3,
+  "sessionId": "ab213dee-ca8f-4f68-9491-226eb5387240",
+  "elapsed_s": 151.575,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_l77d0sqz",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load",
+      "status": "completed"
+    },
+    {
+      "id": "call_j9ywitku",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_kxezg5yf",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_create,mcp__local-tools__pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_3s7js5f1",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-65536-r3-161418.pdf\",\"text\":\"Compact continuity check ctx=65536.\",\"title\":\"COMPACT 65536 R3\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_mespwd2b",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-65536-r3-161418.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2756,
+      "vram_total_mib": 16303,
+      "gpu_util": 3
+    },
+    "mem": {
+      "mem_available_mib": 23501,
+      "swap_used_mib": 7737
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14413,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 17636,
+      "swap_used_mib": 7678
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    52%/48% CPU/GPU    65536      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,94 @@
+{
+  "seq": 1,
+  "ts": "22:51:01",
+  "path": "/v1/chat/completions",
+  "elapsed_s": 43.015,
+  "status": 200,
+  "request": {
+    "model": "local-quality",
+    "stream": true,
+    "tool_choice": null,
+    "max_tokens": 4000,
+    "think": false,
+    "enable_thinking": false,
+    "reasoning": null,
+    "reasoning_effort": "none",
+    "tool_count": 13,
+    "tool_names": [
+      "mcp__local-tools__generate_image",
+      "mcp__local-tools__memory_load",
+      "mcp__local-tools__memory_update",
+      "mcp__local-tools__pdf_create",
+      "mcp__local-tools__pdf_edit",
+      "mcp__local-tools__pdf_inspect",
+      "mcp__local-tools__pdf_merge",
+      "mcp__local-tools__pdf_ocr",
+      "mcp__local-tools__pdf_read",
+      "mcp__local-tools__pdf_render",
+      "mcp__local-tools__pdf_split",
+      "mcp__local-tools__pdf_vision_qa",
+      "tool_search"
+    ],
+    "message_count": 2,
+    "messages": [
+      {
+        "role": "system",
+        "content_chars": 27619,
+        "content_head": "You are Qwen Code, a CLI agent operating through an ACP host developed by Alibaba Group, responding according to your \"Output Style\" below, which describes how you should respond to user queries. Your primary goal is to help users safely an",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0
+      },
+      {
+        "role": "user",
+        "content_chars": 2054,
+        "content_head": "[{\"type\": \"text\", \"text\": \"<system-reminder>\\nNo skills are currently available. Skills can be added by creating directories with SKILL.md files or by configuring MCP servers with model-invocable prompts.\\n</system-reminder>\"}, {\"type\": \"te",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0
+      }
+    ],
+    "extra_keys": [
+      "enable_thinking",
+      "max_tokens",
+      "reasoning_effort",
+      "think"
+    ]
+  },
+  "response": {
+    "chunk_count": 30,
+    "finish_reason": "tool_calls",
+    "usage": {
+      "prompt_tokens": 8573,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens": 69,
+      "total_tokens": 8642
+    },
+    "response_keys": [
+      "choices",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "delta_keys": [
+      "content",
+      "role",
+      "tool_calls"
+    ],
+    "content_chars": 143,
+    "content_head": "I'll start with step 1, then proceed to the PDF creation and read in sequence since later steps depend on earlier ones completing successfully.",
+    "content_tail": "I'll start with step 1, then proceed to the PDF creation and read in sequence since later steps depend on earlier ones completing successfully.",
+    "reasoning_chars": 0,
+    "reasoning_head": "",
+    "tool_call_names": [
+      "mcp__local-tools__memory_load"
+    ],
+    "tool_arg_chars": 52,
+    "tool_arg_head": "{\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}"
+  }
+}

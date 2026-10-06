@@ -1,0 +1,110 @@
+{
+  "ts": "2026-10-02T22:46:39+0200",
+  "suite": "coding",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 2,
+  "sessionId": "2c0a293b-e82d-458c-bcb5-42fabe36e623",
+  "elapsed_s": 902.241,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_lb59ho7c",
+      "name": "ToolSearch: select:read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_10zsh7pp",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_4ulmao5d",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_k42y7mv9",
+      "name": "ToolSearch: select:edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_dwim7kds",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_2wsc0ke1",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_btder01o",
+      "name": "ToolSearch: run shell command execute bash pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_fmg9sqjj",
+      "name": "ToolSearch: bash terminal command execute run process spawn",
+      "status": "completed"
+    },
+    {
+      "id": "call_0g7x1zwp",
+      "name": "ToolSearch: terminal shell python3 run command pytest invoke execute process",
+      "status": "completed"
+    },
+    {
+      "id": "call_74ad971m",
+      "name": "ToolSearch: local-tools run execute terminal command shell script process exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_5kswzjbf",
+      "name": "ToolSearch: terminal bash zsh subprocess shell_exec cmd_run run_command python interpreter",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1286,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25922,
+      "swap_used_mib": 4357
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14345,
+      "vram_total_mib": 16303,
+      "gpu_util": 5
+    },
+    "mem": {
+      "mem_available_mib": 18521,
+      "swap_used_mib": 4236
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL       \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    46%/54% CPU/GPU    65536      Stopping...    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

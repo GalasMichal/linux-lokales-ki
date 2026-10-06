@@ -1,0 +1,21 @@
+{
+  "label": "A-02_implementation",
+  "runtime": "llama.cpp",
+  "model": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_S",
+  "threads": 16,
+  "ctx": 4096,
+  "n_predict": 256,
+  "wall_s": 58.31,
+  "rc": 0,
+  "response_chars": 798,
+  "response_preview": "Implement exactly this TypeScript function. No tools. Show complete code only plus one-line note.\n\nRequirements:\n- Name: `clampLonLat`\n- Input: `{ lon: number; lat: number }`\n- Output: `{ lon: number; lat: number }`\n- Clamp longitude to [-180, 180]\n- Clamp latitude to [-90, 90]\n- If input is not finite numbers, throw `TypeError('invalid lon/lat')`\n- Pure function, no side effects\n- No dependencies\n```typescript\nfunction clampLonLat({ lon, lat }: { lon: number; lat: number }): { lon: number; lat: number } {\n  if (!Number.isFinite(lon) || !Number.isFinite(lat)) {\n    throw new TypeError('invalid lon/lat');\n  }\n  return {\n    lon: Math.max(-180, Math.min(180, lon)),\n    lat: Math.max(-90, Math.min(90, lat))\n  };\n}\n```\n\nKlammert Koordinaten in g\u00fcltige Geo-Bereiche und validiert Eingabewerte.",
+  "prompt_tps": 55.9,
+  "eval_tps": 22.3,
+  "ram_peak_mb": 21244.0,
+  "ram_min_mb": 5733.0,
+  "swap_peak_mb": 12461.0,
+  "cpu_peak_pct": 34.8,
+  "vram_peak_mb": 1726.0,
+  "vram_min_mb": 1707.0,
+  "gpu_util_peak": 9.0
+}

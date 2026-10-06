@@ -1,0 +1,26 @@
+{
+  "memory_load": {
+    "wall_s": 0.03,
+    "ok": true,
+    "preview": "meta={'io.modelcontextprotocol/serverInfo': {'name': 'local-ai-tools', 'version': '1.7.0'}} content=[TextContent(type='text', text='{\\n  \"ok\": true,\\n  \"workspace\": \"/home/mike/Projects/Linux Lokales KI\",\\n  \"agent_dir\": \"/home/mike/Projects/Linux Lo"
+  },
+  "pdf_create": {
+    "wall_s": 0.17,
+    "preview": "meta={'io.modelcontextprotocol/serverInfo': {'name': 'local-ai-tools', 'version': '1.7.0'}} content=[TextContent(type='text', text='{\\n  \"ok\": true,\\n  \"path\": \"/home/mike/Projects/Linux Lokales KI/.agent/tmp/runtime-update-pdf/ollama0350-smoke.pdf\",\\n  \"backend\": \"reportlab\",\\n  \"qa\": {\\n    \"ok\": true,\\n    \"path\": \"/home/mike/Projects/Linux Loka"
+  },
+  "pdf_read": {
+    "wall_s": 0.0,
+    "preview": "meta={'io.modelcontextprotocol/serverInfo': {'name': 'local-ai-tools', 'version': '1.7.0'}} content=[TextContent(type='text', text='{\\n  \"ok\": true,\\n  \"path\": \"/home/mike/Projects/Linux Lokales KI/.agent/tmp/runtime-update-pdf/ollama0350-smoke.pdf\",\\n  \"pages\": 1,\\n  \"read_pages\": [\\n    1\\n  ],\\n  \"text\": \"--- page 1 ---\\\\nollama-0350-smoke\\\\nOll"
+  },
+  "pdf_render": {
+    "wall_s": 0.02,
+    "preview": "meta={'io.modelcontextprotocol/serverInfo': {'name': 'local-ai-tools', 'version': '1.7.0'}} content=[TextContent(type='text', text='{\\n  \"ok\": true,\\n  \"path\": \"/home/mike/Projects/Linux Lokales KI/.agent/tmp/runtime-update-pdf/ollama0350-smoke.png\",\\n  \"source\": \"/home/mike/Projects/Linux Lokales KI/.agent/tmp/runtime-update-pdf/ollama0350-smoke.p",
+    "png_exists": true,
+    "png_size": 21376
+  },
+  "pdf_vision_qa": {
+    "wall_s": 6.71,
+    "preview": "meta={'io.modelcontextprotocol/serverInfo': {'name': 'local-ai-tools', 'version': '1.7.0'}} content=[TextContent(type='text', text='{\\n  \"ok\": false,\\n  \"needs_regeneration\": true,\\n  \"pages_checked\": [\\n    1\\n  ],\\n  \"summary\": \"The page contains a title and two lines of body text in the top-left corner, with the rest of the page being empty white space.\",\\n  \"issues\": [\\n    {\\n      \"page\": 1,\\n      \"type\": \"empty_page\",\\n      \"severity\": \"high\",\\n      \"description\": \"Seite ist visuell le"
+  }
+}
+MCP_PDF_PASS

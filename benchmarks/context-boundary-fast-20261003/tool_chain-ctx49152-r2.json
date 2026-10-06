@@ -1,0 +1,85 @@
+{
+  "ts": "2026-10-03T06:33:28+0200",
+  "suite": "tool_chain",
+  "num_ctx": 49152,
+  "model": "bench-qwen35-9b-48k",
+  "run_id": 2,
+  "sessionId": "a26ea479-3189-4e49-897d-1c994144f67d",
+  "elapsed_s": 66.346,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "compact_issue"
+  ],
+  "fail_reasons": [
+    "missing:['pdf_read', 'pdf_render', 'pdf_vision_qa']",
+    "duplicate_tools:{'pdf_create': 2}",
+    "compact_mentioned_with_incomplete_chain",
+    "success_claim_without_tools"
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 2,
+    "pdf_read": 0,
+    "pdf_render": 0,
+    "pdf_vision_qa": 0
+  },
+  "tools": [
+    {
+      "id": "call_nxcieil0",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_xwdsee4l",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r2-063220.pdf\",\"text\":\"Boundary probe ctx=49152 run=2.\",\"title\":\"BOUND 49152 R2\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_fn0hghpq",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r2-063220.pdf\",\"text\":\"Boundary probe ctx=49152 run=2.\",\"title\":\"BOUND 49152 R2\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true,
+    "png": true,
+    "png_exact": false,
+    "png_alt": [
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r2-063220.qa-p1.png"
+    ]
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26213,
+      "swap_used_mib": 6421
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 9142,
+      "vram_total_mib": 16303,
+      "gpu_util": 89
+    },
+    "mem": {
+      "mem_available_mib": 23821,
+      "swap_used_mib": 6420
+    },
+    "ps": "NAME                          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nbench-qwen35-9b-48k:latest    6c3a6def2687    6.8 GB    100% GPU     49152      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

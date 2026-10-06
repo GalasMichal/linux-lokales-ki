@@ -1,0 +1,91 @@
+{
+  "ts": "2026-10-03T06:46:21+0200",
+  "suite": "tool_chain",
+  "num_ctx": 81920,
+  "model": "bench-qwen35-9b-80k",
+  "run_id": 3,
+  "sessionId": "6d3fbb0c-2a53-4538-9a7e-0134cbf705ab",
+  "elapsed_s": 63.322,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1
+  },
+  "tools": [
+    {
+      "id": "call_ri5dhu1b",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_kh1dipqm",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r3-064516.pdf\",\"text\":\"Boundary probe ctx=81920 run=3.\",\"title\":\"BOUND 81920 R3\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_my2ynozg",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r3-064516.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_xbokm864",
+      "name": "pdf_render (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r3-064516.png\",\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r3-064516.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_rs43yzak",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r3-064516.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true,
+    "png": true,
+    "png_exact": true,
+    "png_alt": [
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r3-064516.qa-p1.png",
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r3-064516.png",
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r3-064516.vision-p1.png"
+    ]
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25997,
+      "swap_used_mib": 6263
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 9656,
+      "vram_total_mib": 16303,
+      "gpu_util": 86
+    },
+    "mem": {
+      "mem_available_mib": 23825,
+      "swap_used_mib": 6190
+    },
+    "ps": "NAME                          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nbench-qwen35-9b-80k:latest    b81e343b0550    7.3 GB    100% GPU     81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,170 @@
+{
+  "model": "bench-qwen38-27b-16k",
+  "model_id": "bench-qwen38-27b-16k(openai)",
+  "num_ctx": 16384,
+  "sessionId": "1fb5166a-ed32-4a83-9745-13d251808063",
+  "model_switch": {
+    "_meta": {
+      "qwenModelSwitch": {
+        "authType": "openai",
+        "modelId": "bench-qwen38-27b-16k",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "***",
+        "isRuntime": false
+      }
+    }
+  },
+  "elapsed_s": 152.451,
+  "prompt_error": null,
+  "votes": [
+    {
+      "requestId": "8fcc817a-dc26-4aff-9381-d52ee9e1c006",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_hh9tt5do",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create",
+      "status": "completed",
+      "input": {
+        "query": "select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create"
+      }
+    },
+    {
+      "id": "call_o2adz21q",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed",
+      "input": {
+        "workspace": "/home/mike/Projects/Linux Lokales KI"
+      }
+    },
+    {
+      "id": "call_1c7r1pip",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-16384.pdf\",\"text\":\"Context ladder probe at 16384 tokens. FAST stays local-fast. No productive cutover.\",\"title\":\"QUALITY CTX 16384\"}",
+      "status": "completed",
+      "input": {
+        "output": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-16384.pdf",
+        "text": "Context ladder probe at 16384 tokens. FAST stays local-fast. No productive cutover.",
+        "title": "QUALITY CTX 16384"
+      }
+    },
+    {
+      "id": "call_88e0hn8a",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-16384.pdf\"}",
+      "status": "completed",
+      "input": {
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-16384.pdf"
+      }
+    },
+    {
+      "id": "call_jgqiffcm",
+      "name": "pdf_render (local-tools MCP Server): {\"output\":\".png\",\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-16384.pdf\",\"scale\":2,\"width\":\"page_width\"}",
+      "status": "completed",
+      "input": {
+        "output": ".png",
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-16384.pdf",
+        "scale": 2,
+        "width": "page_width"
+      }
+    },
+    {
+      "id": "call_4dbspzvs",
+      "name": "ToolCall",
+      "status": "failed",
+      "input": null
+    },
+    {
+      "id": "call_cg0us5uq",
+      "name": "pdf_render (local-tools MCP Server): {\"output\":\"/srv/ai/workspaces/render.png\",\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-16384.pdf\"}",
+      "status": "completed",
+      "input": {
+        "output": "/srv/ai/workspaces/render.png",
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-16384.pdf"
+      }
+    },
+    {
+      "id": "call_yh07w75u",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-16384.pdf\"}",
+      "status": "completed",
+      "input": {
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-16384.pdf"
+      }
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 2,
+    "pdf_vision_qa": 1
+  },
+  "expected_hit": [
+    "memory_load",
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa"
+  ],
+  "missing": [],
+  "duplicates": {
+    "pdf_render": 2
+  },
+  "thoughts": 0,
+  "assistant_text_tail": "Starting with memory_load (deferred MCP — fetching schema first).Pipeline complete at 16384 tokens:\n\n- memory_load: loaded (budget 9874/14000)\n- pdf_create: `QUALITY CTX 16384`, 1 page, OK\n- pdf_read: exact title + body text confirmed\n- pdf_render: `/srv/ai/workspaces/render.png` (note: workspace path only — project tmp paths blocked by local-tools sandbox)\n- pdf_vision_qa: `local-quality` at 127.0.0.1:11434, ~10.5 s, text content confirmed present\n\nVision flagged the page as \"nearly blank / header + one line\" (severity high, confidence 1). That's expected — the probe text is intentionally short; it's not a layout defect. Pipeline integrity (create→read→render→vision chain) holds at 16K context.",
+  "pdf_exists": true,
+  "png_exists": false,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok",
+        "trust": null
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 1,
+    "tools": 8,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 89,
+    "vram": 14492
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1645,
+      "vram_total_mib": 16303,
+      "gpu_util": 5
+    },
+    "mem": {
+      "mem_available_mib": 23915,
+      "swap_used_mib": 3225
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14492,
+      "vram_total_mib": 16303,
+      "gpu_util": 89
+    },
+    "mem": {
+      "mem_available_mib": 20305,
+      "swap_used_mib": 4465
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-16k:latest    a4afc9b2a6e8    18 GB    36%/64% CPU/GPU    16384      4 minutes from now    \n"
+  },
+  "fail_reasons": [
+    "duplicate_tools:{'pdf_render': 2}",
+    "png_missing"
+  ],
+  "pass": false
+}

@@ -1,0 +1,13 @@
+{
+  "id": "config_merge",
+  "title": "Config merge with env overrides",
+  "core": true,
+  "musts": [
+    "defaults_unchanged",
+    "unknown_key_valueerror",
+    "env_over_file_over_defaults",
+    "port_int_from_env",
+    "load_file_without_env",
+    "stdlib_only"
+  ]
+}

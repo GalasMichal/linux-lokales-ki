@@ -1,0 +1,85 @@
+{
+  "ts": "2026-10-03T07:04:55+0200",
+  "suite": "coding",
+  "num_ctx": 98304,
+  "model": "bench-qwen35-9b-96k",
+  "run_id": 1,
+  "sessionId": "7d5b1700-c830-41e3-9dd1-d2f5523a817e",
+  "elapsed_s": 11.976,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_3zj0ipeo",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_sofqohe4",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ygul3t3w",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_7k27x6t7",
+      "name": "run_shell_command",
+      "status": "failed"
+    },
+    {
+      "id": "call_j2e6onr9",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_l6wquq9b",
+      "name": "ToolSearch: shell command",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1333,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25770,
+      "swap_used_mib": 6129
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 10016,
+      "vram_total_mib": 16303,
+      "gpu_util": 88
+    },
+    "mem": {
+      "mem_available_mib": 23303,
+      "swap_used_mib": 6129
+    },
+    "ps": "NAME                          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nbench-qwen35-9b-96k:latest    c071de14ef9b    7.7 GB    100% GPU     98304      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

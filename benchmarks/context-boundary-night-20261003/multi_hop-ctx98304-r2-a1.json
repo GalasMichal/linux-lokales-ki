@@ -1,0 +1,120 @@
+{
+  "ts": "2026-10-04T03:57:36+0200",
+  "suite": "multi_hop",
+  "num_ctx": 98304,
+  "model": "bench-qwen38-27b-96k",
+  "run_id": 2,
+  "sessionId": "ca0ed9ff-7770-45ec-88d9-2fbeb8c827ef",
+  "elapsed_s": 127.228,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "knowledge_search": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_ss8gelvl",
+      "name": "ToolSearch: select:memory_load",
+      "status": "completed"
+    },
+    {
+      "id": "call_2opvmmtg",
+      "name": "ToolSearch: knowledge_search workspace query",
+      "status": "completed"
+    },
+    {
+      "id": "call_cz24suk7",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_fhu5tfic",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_vhx57ymu",
+      "name": "ToolSearch: select:pdf_create",
+      "status": "completed"
+    },
+    {
+      "id": "call_h8vn827j",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-multi_hop-98304-r2-035507.pdf\",\"text\":\"multi_hop ctx=98304 knowledge_id=KB-20260922-LEDGER-002 ledger_ok=yes\",\"title\":\"MHOP 98304 R2\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_nvuts04l",
+      "name": "ToolSearch: select:pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_27vhka9t",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-multi_hop-98304-r2-035507.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14337,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 23423,
+      "swap_used_mib": 4623
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 19.484,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14401,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 19091,
+      "swap_used_mib": 4635
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 19.484,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

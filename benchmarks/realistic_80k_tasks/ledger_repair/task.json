@@ -1,0 +1,12 @@
+{
+  "id": "ledger_repair",
+  "title": "Ledger parse, signed balance, report ids",
+  "core": true,
+  "musts": [
+    "pipe_iso_or_valueerror",
+    "keep_entry_ids",
+    "signed_balance",
+    "report_matches_balance",
+    "stdlib_only"
+  ]
+}

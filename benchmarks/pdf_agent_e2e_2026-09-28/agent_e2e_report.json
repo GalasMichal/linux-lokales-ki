@@ -1,0 +1,157 @@
+{
+  "elapsed_s": 89.35,
+  "model": "local-fast(openai)",
+  "session_id": "960cadf2-7933-429d-8724-e0ae045cabf7",
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 8852,
+      "vram_total_mib": 16303,
+      "gpu_util": 5
+    },
+    "ollama_ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14445,
+      "vram_total_mib": 16303,
+      "gpu_util": 27
+    },
+    "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    38%/62% CPU/GPU    16384      4 minutes from now    \n"
+  },
+  "mcp_version": "1.7.0",
+  "user_prompt": "Bearbeite diese PDF mit den MCP-Tools pdf_inspect, pdf_edit, pdf_read (ToolSearch ok):\n/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\n\nPflicht-Ersetzungen in EINEM pdf_edit call, mode=replace, output=/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf:\nreplacements=\"Project Status: Draft=>Project Status: Final;Amount: 1250 EUR=>Amount: 1490 EUR;Pending=>Done   \"\n(Hinweis: Done + 3 Leerzeichen = 7 Zeichen wie Pending, Layout bleibt sauber.)\n\nDanach pdf_read der Output-PDF und kurz best\u00e4tigen, dass Final/1490/Done drin sind und Draft/1250/Pending weg.\nOptional pdf_render/pdf_vision_qa. Kein Shell, kein WriteFile f\u00fcr die PDF, kein YOLO.\n",
+  "source": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf",
+  "edited": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf",
+  "tool_names": [
+    "pdf_inspect (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\"} pdf_inspect (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\"}",
+    "pdf_edit (local-tools MCP Server): {\"mode\":\"replace\",\"output\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\",\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\",\"replacements\":\"Project Status: Draft=>Project Status: Final;Amount: 1250 EUR=>Amount: 1490 EUR;Pending=>Done   \"} pdf_edit (local-tools MCP Server): {\"mode\":\"replace\",\"output\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\",\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\",\"replacements\":\"Project Status: Draft=>Project Status: Final;Amount: 1250 EUR=>Amount: 1490 EUR;Pending=>Done   \"}",
+    "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\"} pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\"}"
+  ],
+  "votes": [
+    {
+      "requestId": "a566c8a1-d442-47fd-85c5-039d0801d9d7",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "575843a8-3f4f-4319-b41b-4a686101ef50",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "1e2088ee-2257-428d-9c32-cd30a6621173",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "yolo": false,
+  "used_pdf_tools": true,
+  "used_toolsearch": false,
+  "agent_texts_tail": "Ich bearbeite das PDF: Zuerst pr\u00fcfe ich die Struktur, dann f\u00fchre den einen pdf_edit call durch und lese den Output zur Best\u00e4tigung.",
+  "technical_qa": {
+    "exists": true,
+    "size": 7166,
+    "header_ok": true,
+    "sha256": "a360fe35b440579fde1d36bc6eb1549976677a6d374e6eae41179b8885dc4292",
+    "src_sha256": "25be409b0bd3089cebce32952f7fb7dc821ebe30a2015810917eb7e9aedd2dc7",
+    "hash_changed": true,
+    "pages": 2,
+    "page_sizes": [
+      [
+        595.28,
+        841.89
+      ],
+      [
+        595.28,
+        841.89
+      ]
+    ],
+    "text_checks": {
+      "has_Final": true,
+      "no_Draft_status": true,
+      "has_1490": true,
+      "no_1250": true,
+      "has_Implementation_Done": true,
+      "no_Pending_status_cell": true,
+      "customer_preserved": true,
+      "title_preserved": true,
+      "analysis_still_open": true,
+      "pages_eq_2": true,
+      "page_size_stable": true
+    },
+    "renders": {
+      "page_1": {
+        "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/renders/edited-p1.png",
+        "bytes": 42156
+      },
+      "page_2": {
+        "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/renders/edited-p2.png",
+        "bytes": 45684
+      }
+    },
+    "pass": true,
+    "text_p1": "PDF Agent End-to-End Test\nCustomer: Example GmbH\nThis controlled fixture is used to verify the Qwen local-fast agent path through MCP pdf_* tools.\nLayout must stay largely intact for small in-place edits. Do not treat this as production content.\nProject Status: Final\nAmount: 1490 EUR\n",
+    "text_p2": "Task Overview\nTask\nStatus\nAnalysis\nOpen\nImplementation\nReview\nOpen\nAdditional notes: Keep Analysis and Review as Open. Only the Implementation row status token\nshould change. Prefer same-length replacements when using in-place redact edits so spacing\nstays clean.\nDone\n"
+  },
+  "vision_qa": {
+    "ok": true,
+    "needs_regeneration": false,
+    "pages_checked": [
+      1,
+      2
+    ],
+    "summary": "The page contains a title, three lines of metadata, and a short paragraph at the top. The layout is clean with no overlaps or clipping, but the majority of the page (approx. 75%) is empty white space. | The page contains a title, a table, and a paragraph of text. The layout is clean with no overlapping elements or clipped text.",
+    "issues": [],
+    "strict": false,
+    "model": "local-quality",
+    "endpoint": "http://127.0.0.1:11434/api/chat",
+    "invalid_output": false,
+    "pages": [
+      {
+        "page": 1,
+        "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.vision-p1.png",
+        "summary": "The page contains a title, three lines of metadata, and a short paragraph at the top. The layout is clean with no overlaps or clipping, but the majority of the page (approx. 75%) is empty white space.",
+        "issues": [],
+        "elapsed_s": 40.228,
+        "invalid_output": false,
+        "prompt_eval_count": 1937,
+        "eval_count": 63,
+        "vram": null
+      },
+      {
+        "page": 2,
+        "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.vision-p2.png",
+        "summary": "The page contains a title, a table, and a paragraph of text. The layout is clean with no overlapping elements or clipped text.",
+        "issues": [],
+        "elapsed_s": 7.305,
+        "invalid_output": false,
+        "prompt_eval_count": 1937,
+        "eval_count": 43,
+        "vram": null
+      }
+    ],
+    "source": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf",
+    "high_issues": [],
+    "vision_pass": true
+  },
+  "negatives": {
+    "missing_text": {
+      "ok": false,
+      "error": "Kein Treffer f\u00fcr die angegebenen replacements \u2014 PDF unver\u00e4ndert. Gesucht: ['THIS_TEXT_DOES_NOT_EXIST_XYZ']",
+      "pass": true
+    },
+    "invalid_pdf": {
+      "ok": false,
+      "error": "Failed to open file '/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/negatives/from_bad.pdf' as type pdf.",
+      "pass": true
+    },
+    "outside_root": {
+      "ok": false,
+      "error": "Pfad liegt au\u00dferhalb der erlaubten Arbeitsbereiche: /etc",
+      "pass": true
+    },
+    "all_pass": true
+  },
+  "agent_pass": true,
+  "overall_pass": true
+}

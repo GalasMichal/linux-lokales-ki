@@ -1,0 +1,2 @@
+[ Prompt: 9,1 t/s | Generation: 9,4 t/s ]
+[ Prompt: 9,1 t/s | Generation: 9,4 t/s ]

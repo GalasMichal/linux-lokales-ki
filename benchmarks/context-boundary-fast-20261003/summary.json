@@ -1,0 +1,283 @@
+{
+  "updated": "2026-10-03T07:05:38+0200",
+  "out": "/home/mike/Projects/Linux Lokales KI/benchmarks/context-boundary-fast-20261003",
+  "total_runs": 61,
+  "by_suite_ctx": [
+    {
+      "suite": "tool_chain",
+      "num_ctx": 32768,
+      "runs": 5,
+      "pass": 4,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 4,
+        "agent_drift": 1
+      },
+      "fail_reasons": [
+        [
+          "duplicate_tools:{'pdf_read': 2}"
+        ]
+      ]
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 49152,
+      "runs": 5,
+      "pass": 0,
+      "fail": 5,
+      "drift": 5,
+      "categories": {
+        "agent_drift": 5,
+        "compact_issue": 3
+      },
+      "fail_reasons": [
+        [
+          "missing:['pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "duplicate_tools:{'pdf_create': 2}",
+          "compact_mentioned_with_incomplete_chain"
+        ],
+        [
+          "missing:['pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "duplicate_tools:{'pdf_create': 2}",
+          "compact_mentioned_with_incomplete_chain",
+          "success_claim_without_tools"
+        ],
+        [
+          "duplicate_tools:{'pdf_create': 2}"
+        ],
+        [
+          "missing:['pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "duplicate_tools:{'pdf_create': 2}",
+          "compact_mentioned_with_incomplete_chain"
+        ],
+        [
+          "duplicate_tools:{'pdf_create': 2}"
+        ]
+      ]
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 65536,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 81920,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 98304,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 32768,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 65536,
+      "runs": 3,
+      "pass": 2,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 2,
+        "agent_drift": 1,
+        "tool_runtime": 1
+      },
+      "fail_reasons": [
+        [
+          "missing:['memory_load', 'pdf_create', 'pdf_read']",
+          "artifact_missing:pdf"
+        ]
+      ]
+    },
+    {
+      "suite": "knowledge",
+      "num_ctx": 32768,
+      "runs": 3,
+      "pass": 0,
+      "fail": 3,
+      "drift": 3,
+      "categories": {
+        "agent_drift": 3
+      },
+      "fail_reasons": [
+        [
+          "missing:['knowledge_search', 'knowledge_get']"
+        ],
+        [
+          "missing:['knowledge_search', 'knowledge_get']"
+        ],
+        [
+          "missing:['knowledge_search', 'knowledge_get']"
+        ]
+      ]
+    },
+    {
+      "suite": "knowledge",
+      "num_ctx": 65536,
+      "runs": 3,
+      "pass": 1,
+      "fail": 2,
+      "drift": 2,
+      "categories": {
+        "pass": 1,
+        "agent_drift": 2
+      },
+      "fail_reasons": [
+        [
+          "missing:['knowledge_search', 'knowledge_get']"
+        ],
+        [
+          "missing:['knowledge_search', 'knowledge_get']"
+        ]
+      ]
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 32768,
+      "runs": 3,
+      "pass": 2,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 2,
+        "agent_drift": 1
+      },
+      "fail_reasons": [
+        [
+          "missing:['agent']"
+        ]
+      ]
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 65536,
+      "runs": 3,
+      "pass": 2,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "agent_drift": 1,
+        "pass": 2
+      },
+      "fail_reasons": [
+        [
+          "missing:['agent']"
+        ]
+      ]
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 32768,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 65536,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 81920,
+      "runs": 3,
+      "pass": 2,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 2,
+        "agent_drift": 1,
+        "tool_runtime": 1
+      },
+      "fail_reasons": [
+        [
+          "missing:['pdf_create', 'pdf_read']",
+          "artifact_missing:pdf"
+        ]
+      ]
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 98304,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 81920,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 98304,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    }
+  ],
+  "note": "No productive cutover. local-quality stays 16384 until explicit Freigabe."
+}

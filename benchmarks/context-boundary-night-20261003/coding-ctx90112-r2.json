@@ -1,0 +1,193 @@
+{
+  "ts": "2026-10-04T01:31:10+0200",
+  "suite": "coding",
+  "num_ctx": 90112,
+  "model": "bench-qwen38-27b-88k",
+  "run_id": 2,
+  "sessionId": "62d58df2-f9a7-4468-9e9d-1e92eeefe75d",
+  "elapsed_s": 904.617,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_iygmtwvl",
+      "name": "ToolSearch: select:read_file,write_file,edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_mwd3xoyu",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_sh2z6bu7",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_mwy30b3o",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_o206888e",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_b3uyk5c4",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_pb23rpis",
+      "name": "ToolSearch: run shell command execute bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_3uxn1plf",
+      "name": "ToolSearch: execute command terminal process run",
+      "status": "completed"
+    },
+    {
+      "id": "call_s7eh9z2t",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_iut1gt8p",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_zuwuz6s9",
+      "name": "Agent: Run and report pytest results",
+      "status": "in_progress"
+    },
+    {
+      "id": "call_rmyg14pj",
+      "name": "ToolSearch: run shell command bash execute terminal subprocess",
+      "status": "completed"
+    },
+    {
+      "id": "call_zbsq5pew",
+      "name": "ToolSearch: execute python script run process local-tools shell exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_zskup92k",
+      "name": "ToolSearch: select:mcp__local-tools__shell,mcp__local-tools__exec,mcp__local-tools__run,bash,sh_run",
+      "status": "completed"
+    },
+    {
+      "id": "call_2q4c8qy5",
+      "name": "ToolSearch: +command run task pipeline subprocess invoke script pytest test",
+      "status": "completed"
+    },
+    {
+      "id": "call_1kfiy2iq",
+      "name": "ToolSearch: terminal console cli cmd line process spawn",
+      "status": "completed"
+    },
+    {
+      "id": "call_c88diffy",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_61c4i5si",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_00tmfn1n",
+      "name": "ToolSearch: select:run,bash,shell,exec,local_tools_run,mcp__local-tools__run_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_huevefel",
+      "name": "ToolSearch: execute command pipeline script pytest python process terminal run shell subprocess",
+      "status": "completed"
+    },
+    {
+      "id": "call_mgvuldrm",
+      "name": "Grep: '.' in ~/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture",
+      "status": "completed"
+    },
+    {
+      "id": "call_3emrlvwe",
+      "name": "moe_consult (local-tools MCP Server): {\"task\":\"In a Python dir: calc.py line1 `from ops import mul`, add returns a+b, area returns mul(w,h); test_calc.py does `from calc import add, area` and asserts add(2,3)==5, area(4,5)==20. Predict exact pytest -q output (stdout/stderr) with cwd=that dir when running: python3 -m pytest -q /home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\",\"role\":\"second_opinion\",\"max_tokens\":640}",
+      "status": "completed"
+    },
+    {
+      "id": "call_6mrx25jn",
+      "name": "knowledge_search (local-tools MCP Server): {\"max_results\":5,\"query\":\"run shell command in subagent without bash tool pytest execution\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 5,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14104,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 23804,
+      "swap_used_mib": 4409
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 26.026,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14157,
+      "vram_total_mib": 16303,
+      "gpu_util": 22
+    },
+    "mem": {
+      "mem_available_mib": 17378,
+      "swap_used_mib": 17294
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 26.026,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

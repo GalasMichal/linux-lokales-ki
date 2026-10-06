@@ -23,10 +23,10 @@
     html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
     body { font-family: "Noto Sans", "DejaVu Sans", sans-serif; background: var(--bg); color: var(--ink); }
     button, input, select, textarea { font: inherit; }
-    .shell { display: grid; grid-template-rows: 64px 1fr; height: 100%; }
+    .shell { display: grid; grid-template-rows: auto 1fr; height: 100%; }
     header {
-      display: flex; align-items: center; gap: 12px; padding: 10px 14px;
-      background: #111620; border-bottom: 1px solid var(--line); min-width: 0;
+      display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px;
+      padding: 10px 14px; background: #111620; border-bottom: 1px solid var(--line); min-width: 0;
     }
     .brand { display: flex; align-items: center; gap: 9px; min-width: 190px; font-weight: 750; }
     .brand-mark {
@@ -39,7 +39,16 @@
     }
     .nav-btn { padding: 9px 15px; background: transparent; font-weight: 650; }
     .nav-btn:hover, .nav-btn.active { background: var(--panel2); border-color: var(--line); }
-    .header-info { margin-left: auto; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; }
+    .header-info { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; }
+    .header-agent {
+      display: none; grid-column: 1 / -1; align-items: center; gap: 10px; min-width: 0;
+    }
+    header.agent-on .header-agent { display: flex; }
+    .header-agent .progress { flex: 1; min-width: 80px; margin: 0; height: 7px; }
+    .header-agent-copy { min-width: 0; flex: 0 1 420px; }
+    .header-agent-copy strong { display: block; font-size: 13px; }
+    .header-agent-copy span { display: block; color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .header-agent #agent-percent { margin: 0; font-size: 13px; font-variant-numeric: tabular-nums; font-weight: 650; color: var(--ink); white-space: nowrap; }
     .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--warn); display: inline-block; }
     .dot.ok { background: var(--ok); }
     .dot.bad { background: var(--bad); }
@@ -58,6 +67,16 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .loading h2 { margin: 0 0 8px; font-size: 20px; }
     .loading p { color: var(--muted); margin: 0; }
+    .progress {
+      height: 8px; width: min(100%, 360px); margin: 0 auto 16px;
+      background: var(--line); border-radius: 99px; overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%; width: 0; background: var(--brand);
+      transition: width .35s ease;
+    }
+    .progress-bar.bad { background: var(--bad); }
+    .loading .soft-btn { margin-top: 16px; }
     .error-text { color: var(--bad) !important; white-space: pre-wrap; }
 
     .images-layout { height: 100%; display: grid; grid-template-rows: 52px 1fr; }
@@ -87,6 +106,14 @@
     .result-empty { text-align: center; color: var(--muted); }
     .job-info { margin-top: 12px; color: var(--muted); font-size: 13px; white-space: pre-wrap; overflow-wrap: anywhere; }
     .notice { border-left: 4px solid var(--warn); padding-left: 11px; }
+    .picker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .picker input[type=file] { width: auto; max-width: 100%; padding: 8px; }
+    .thumb { display: none; max-width: 160px; max-height: 110px; object-fit: contain; border-radius: 8px; border: 1px solid var(--line); margin-top: 6px; }
+    .file-name { color: var(--muted); font-size: 13px; }
+    .check-row { display: flex; align-items: flex-start; gap: 8px; margin-top: 14px; }
+    .check-row input { width: auto; margin-top: 3px; }
+    .check-row strong { display: block; }
+    .check-row small { display: block; color: var(--muted); font-weight: 400; }
 
     .system-page { height: 100%; overflow: auto; padding: 22px; }
     .system-inner { max-width: 1100px; margin: 0 auto; }
@@ -104,7 +131,8 @@
     @media (max-width: 850px) {
       .brand { min-width: 0; }
       .brand span:last-child { display: none; }
-      .header-info span:last-child { display: none; }
+      .header-info #header-status { display: none; }
+      .header-agent-copy span { white-space: normal; }
       .generator { grid-template-columns: 1fr; }
       .status-grid { grid-template-columns: 1fr; }
       .row { grid-template-columns: 1fr; }
@@ -121,16 +149,26 @@
         <button class="nav-btn active" data-view="system" type="button">System</button>
       </nav>
       <div class="header-info"><span id="header-dot" class="dot"></span><span id="header-status">Status wird geprüft</span></div>
+      <div class="header-agent" id="header-agent">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="agent-progress">
+          <div class="progress-bar" id="agent-progress-bar"></div>
+        </div>
+        <p id="agent-percent">0 %</p>
+        <div class="header-agent-copy">
+          <strong id="agent-title">Agent</strong>
+          <span id="agent-detail">Der Balken bleibt, bis du zu Bilder oder System wechselst.</span>
+        </div>
+        <button id="agent-retry" class="soft-btn" type="button" hidden>Nochmal versuchen</button>
+      </div>
     </header>
 
     <main>
       <section id="view-agent" class="view" aria-label="Qwen Code Agent">
         <div class="frame-wrap">
-          <div class="loading" id="agent-loading">
+          <div class="loading hidden" id="agent-loading">
             <div class="loading-card">
-              <div class="spinner"></div>
-              <h2>Qwen Code wird vorbereitet</h2>
-              <p id="agent-message">Bilder-KI wird beendet, dann startet der lokale Agent.</p>
+              <h2>Agent hat nicht geladen</h2>
+              <p id="agent-message" class="error-text"></p>
             </div>
           </div>
           <iframe id="agent-frame" title="Qwen Code" allow="clipboard-read; clipboard-write"></iframe>
@@ -140,9 +178,10 @@
       <section id="view-images" class="view" aria-label="Bilder">
         <div class="images-layout">
           <div class="subnav">
-            <button class="subnav-btn active" data-subview="simple" type="button">Einfach</button>
+            <button class="subnav-btn active" data-subview="simple" type="button">Erzeugen</button>
+            <button class="subnav-btn" data-subview="edit" type="button">Bearbeiten</button>
             <button class="subnav-btn" data-subview="expert" type="button">Workflow (Experte)</button>
-            <span class="hint">FLUX.2 [klein] · Batch 1 · localhost</span>
+            <span class="hint">lokal · Batch 1 · localhost</span>
           </div>
           <div style="min-height:0; position:relative">
             <div id="subview-simple" class="subview active simple-image">
@@ -166,6 +205,49 @@
                 </div>
               </div>
             </div>
+            <div id="subview-edit" class="subview simple-image">
+              <div class="generator">
+                <form id="edit-form" class="card">
+                  <h2>Bild bearbeiten</h2>
+                  <p class="hint">Bearbeitung mit lokalem Qwen-Image-2.1. Kein Cloud-Dienst. Der geprüfte Edit-Workflow bleibt fest verdrahtet.</p>
+                  <label for="edit-input">Ausgangsbild</label>
+                  <div class="picker">
+                    <input id="edit-input" type="file" accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp">
+                    <span id="edit-input-name" class="file-name">Noch kein Bild gewählt</span>
+                  </div>
+                  <img id="edit-input-preview" class="thumb" alt="Vorschau Ausgangsbild">
+                  <label for="edit-instruction">Bearbeitungsanweisung</label>
+                  <textarea id="edit-instruction" maxlength="4000" placeholder="Ändere nur den Himmel zu einem Sonnenuntergang und lasse alles andere unverändert."></textarea>
+                  <label>Referenzbilder</label>
+                  <p class="hint">Optional – bis zu 2 Referenzbilder</p>
+                  <div class="picker">
+                    <input id="edit-ref-1" class="edit-ref" type="file" accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp">
+                    <span id="edit-ref-1-name" class="file-name">keine</span>
+                  </div>
+                  <img id="edit-ref-1-preview" class="thumb" alt="Vorschau Referenz 1">
+                  <div class="picker" style="margin-top:8px">
+                    <input id="edit-ref-2" class="edit-ref" type="file" accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp">
+                    <span id="edit-ref-2-name" class="file-name">keine</span>
+                  </div>
+                  <img id="edit-ref-2-preview" class="thumb" alt="Vorschau Referenz 2">
+                  <div class="row">
+                    <div><label for="edit-width">Breite</label><select id="edit-width"><option>512</option><option>768</option><option selected>1024</option></select></div>
+                    <div><label for="edit-height">Höhe</label><select id="edit-height"><option>512</option><option>768</option><option selected>1024</option></select></div>
+                    <div><label for="edit-seed">Seed</label><input id="edit-seed" type="number" min="0" value="42"></div>
+                  </div>
+                  <label class="check-row">
+                    <input id="preserve-alpha" type="checkbox">
+                    <span><strong>Transparenz erhalten</strong><small>Nur für PNG mit Alpha-Kanal. Standard: aus.</small></span>
+                  </label>
+                  <button id="edit-btn" class="primary-btn" type="submit">Bild bearbeiten</button>
+                  <p id="edit-message" class="job-info notice">Das Ausgangsbild bleibt unverändert. Das Ergebnis liegt danach auf der Archiv-HDD.</p>
+                </form>
+                <div class="card">
+                  <div id="edit-result" class="result"><div class="result-empty"><strong>Noch kein bearbeitetes Bild</strong><br>Links ein Ausgangsbild wählen und „Bild bearbeiten“ klicken.</div></div>
+                  <div id="edit-job-info" class="job-info"></div>
+                </div>
+              </div>
+            </div>
             <div id="subview-expert" class="subview">
               <div class="frame-wrap">
                 <div class="loading" id="comfy-loading"><div class="loading-card"><div class="spinner"></div><h2>ComfyUI wird vorbereitet</h2><p id="comfy-message">Textmodell wird entladen, dann startet die Bilder-KI.</p></div></div>
@@ -184,7 +266,7 @@
             <div class="card" style="margin-top:14px">
               <h3>Bedienung</h3>
               <p class="hint"><strong>Agent:</strong> echte Qwen-Code-Oberfläche für Projekte, Dateien, Git, Builds und Tests.</p>
-              <p class="hint"><strong>Bilder:</strong> einfacher FLUX-Generator oder vollständige ComfyUI-Workflow-Ansicht.</p>
+              <p class="hint"><strong>Bilder:</strong> Erzeugen (FLUX), Bearbeiten (Qwen-Image-2.1) oder ComfyUI-Workflow.</p>
               <p class="hint"><strong>Lokaler Chat:</strong> bleibt absichtlich eine eigene Desktop-App. So vermischen sich allgemeine Chats nicht mit Projektänderungen.</p>
             </div>
           </div>
@@ -204,6 +286,79 @@
       qs("#header-status").textContent = text;
     }
 
+    function setAgentProgress(percent, title, text) {
+      const safe = Math.max(0, Math.min(100, Math.round(percent)));
+      const bar = qs("#agent-progress-bar");
+      bar.style.width = safe + "%";
+      bar.classList.remove("bad");
+      qs("#agent-progress").setAttribute("aria-valuenow", String(safe));
+      qs("#agent-percent").textContent = safe + " %";
+      qs("#agent-title").textContent = title;
+      qs("#agent-detail").textContent = text;
+      qs("#header-status").textContent = title;
+    }
+
+    function applyBoot(boot, waitedMs) {
+      if (!boot || boot.phase === "idle") return;
+      const seconds = Math.max(0, Math.round((waitedMs || 0) / 1000));
+      let text = boot.detail || "";
+      if (boot.phase === "waiting_health" && seconds > 0) {
+        text = "Seit " + seconds + " s keine Antwort von Qwen. Balken bleibt stehen — einfach warten.";
+      } else if (seconds > 0 && boot.phase !== "ready") {
+        text = (text ? text + " · " : "") + seconds + " s";
+      }
+      setAgentProgress(boot.percent, boot.title, text);
+    }
+
+    function startBootPoll(onBoot) {
+      let stopped = false;
+      const started = Date.now();
+      (async () => {
+        while (!stopped) {
+          try {
+            const response = await fetch("/api/status", { cache: "no-store" });
+            const status = await response.json();
+            if (!stopped) onBoot(status.boot || {}, Date.now() - started, status);
+          } catch (_error) {
+            /* next tick retries */
+          }
+          await new Promise((resolve) => setTimeout(resolve, 400));
+        }
+      })();
+      return () => { stopped = true; };
+    }
+
+    function waitForFrameLoad(frame, timeoutMs) {
+      let timer = 0;
+      let done = false;
+      const promise = new Promise((resolve, reject) => {
+        timer = setTimeout(() => {
+          if (done) return;
+          done = true;
+          frame.onload = null;
+          reject(new Error(
+            "Die Agent-Oberfläche hat nach " + Math.round(timeoutMs / 1000) +
+            " Sekunden nicht geantwortet. Oben auf „System“ prüfen, ob Qwen Code „bereit“ ist, dann hier nochmal versuchen."
+          ));
+        }, timeoutMs);
+        frame.onload = () => {
+          if (done) return;
+          done = true;
+          clearTimeout(timer);
+          frame.onload = null;
+          resolve();
+        };
+      });
+      return {
+        promise,
+        cancel() {
+          done = true;
+          clearTimeout(timer);
+          frame.onload = null;
+        }
+      };
+    }
+
     async function post(path, body) {
       const response = await fetch(path, {
         method: "POST",
@@ -215,28 +370,113 @@
       return data;
     }
 
-    async function activateAgent() {
-      const loading = qs("#agent-loading");
-      const message = qs("#agent-message");
-      loading.classList.remove("hidden");
-      message.className = "";
-      message.textContent = "Bilder-KI wird beendet, dann startet der lokale Agent.";
-      setHeader("", "Agent wird vorbereitet");
-      try {
-        await post("/api/mode/agent");
-        if (!state.agentLoaded) {
-          const frame = qs("#agent-frame");
-          frame.onload = () => loading.classList.add("hidden");
-          frame.src = "http://127.0.0.1:8791/";
-          state.agentLoaded = true;
-        } else {
-          loading.classList.add("hidden");
+    const IMAGE_TYPES = new Set(["image/png", "image/jpeg", "image/webp"]);
+    const IMAGE_EXT = /\.(png|jpe?g|webp)$/i;
+    const MAX_IMAGE_BYTES = 25 * 1024 * 1024;
+
+    function bindFilePreview(inputId, nameId, previewId) {
+      const input = qs("#" + inputId);
+      const name = qs("#" + nameId);
+      const preview = qs("#" + previewId);
+      input.addEventListener("change", () => {
+        const file = input.files && input.files[0];
+        if (preview.dataset.url) URL.revokeObjectURL(preview.dataset.url);
+        preview.dataset.url = "";
+        if (!file) {
+          name.textContent = inputId === "edit-input" ? "Noch kein Bild gewählt" : "keine";
+          preview.style.display = "none";
+          preview.removeAttribute("src");
+          return;
         }
-        setHeader("ok", "Agent bereit");
+        name.textContent = file.name + " · " + Math.round(file.size / 1024) + " KiB";
+        const url = URL.createObjectURL(file);
+        preview.dataset.url = url;
+        preview.src = url;
+        preview.style.display = "block";
+      });
+    }
+
+    function clientImageError(file) {
+      if (!file) return "Bitte ein Bild wählen.";
+      const named = file.name || "";
+      if (!IMAGE_EXT.test(named) && !IMAGE_TYPES.has(file.type)) {
+        return "Erlaubt sind nur PNG, JPEG und WebP.";
+      }
+      if (file.size > MAX_IMAGE_BYTES) {
+        return "Die Bilddatei darf höchstens 25 MiB groß sein.";
+      }
+      return "";
+    }
+
+    async function stageImage(file) {
+      const error = clientImageError(file);
+      if (error) throw new Error(error);
+      const body = new FormData();
+      body.append("file", file, file.name);
+      const response = await fetch("/api/images/stage", { method: "POST", body });
+      const data = await response.json();
+      if (!response.ok || !data.ok || !data.path) {
+        throw new Error(data.error || "Datei konnte nicht übernommen werden.");
+      }
+      return data.path;
+    }
+
+    function showAgentError(error) {
+      state.agentLoaded = false;
+      qs("#agent-frame").removeAttribute("src");
+      qs("#agent-progress-bar").classList.add("bad");
+      qs("#agent-progress-bar").style.width = "100%";
+      qs("#agent-percent").textContent = "Fehler";
+      qs("#agent-title").textContent = "Agent hat nicht geladen";
+      qs("#agent-detail").textContent = error.message;
+      qs("#agent-message").textContent = error.message;
+      qs("#agent-loading").classList.remove("hidden");
+      qs("#agent-retry").hidden = false;
+      setHeader("bad", "Agent-Fehler");
+    }
+
+    async function activateAgent() {
+      qs("header").classList.add("agent-on");
+      qs("#agent-loading").classList.add("hidden");
+      qs("#agent-retry").hidden = true;
+      qs("#agent-progress-bar").classList.remove("bad");
+      setAgentProgress(0, "Agent wird vorbereitet", "Balken bleibt oben. Die Chat-Oberfläche ist unabhängig vom Modell.");
+      setHeader("", "Agent wird vorbereitet");
+      const frame = qs("#agent-frame");
+      const needLoad = !state.agentLoaded || !frame.getAttribute("src");
+      let frameOpened = false;
+      const loadWait = needLoad ? waitForFrameLoad(frame, 90000) : { promise: Promise.resolve(), cancel() {} };
+      const openFrame = () => {
+        if (!needLoad || frameOpened) return;
+        frameOpened = true;
+        setAgentProgress(70, "Oberfläche startet", "Fenster öffnet sich. Die Chat-UI braucht kein Modell — das kommt erst beim ersten Satz.");
+        frame.src = "http://127.0.0.1:8791/?theme=dark";
+      };
+      const stopPoll = startBootPoll((boot, waitedMs, status) => {
+        if (frameOpened && boot.percent < 70) return;
+        applyBoot(boot, waitedMs);
+        if (status.qwen && status.qwen.ready) openFrame();
+      });
+      try {
+        const result = await post("/api/mode/agent");
+        stopPoll();
+        if (!frameOpened) {
+          applyBoot(result.boot || { percent: 58, title: "Qwen erreichbar", detail: "Der Dienst antwortet.", phase: "ready" }, 0);
+        }
+        if (!needLoad) {
+          setAgentProgress(100, "Agent bereit", "Oberfläche war schon geladen. Balken bleibt zur Kontrolle oben.");
+          setHeader("ok", "Agent bereit");
+          return;
+        }
+        openFrame();
+        await loadWait.promise;
+        state.agentLoaded = true;
+        setAgentProgress(100, "Dateien geladen", "Chat-Fenster sollte jetzt sichtbar sein. Das Modell lädt erst, wenn du eine Nachricht schickst.");
+        setHeader("ok", "Agent geladen");
       } catch (error) {
-        message.className = "error-text";
-        message.textContent = error.message;
-        setHeader("bad", "Agent-Fehler");
+        stopPoll();
+        loadWait.cancel();
+        showAgentError(error);
       }
     }
 
@@ -270,6 +510,7 @@
 
     async function showView(name) {
       state.activeView = name;
+      qs("header").classList.toggle("agent-on", name === "agent");
       qsa(".view").forEach((el) => el.classList.toggle("active", el.id === "view-" + name));
       qsa(".nav-btn").forEach((el) => el.classList.toggle("active", el.dataset.view === name));
       if (name === "agent") await activateAgent();
@@ -345,7 +586,78 @@
       }
     });
 
+    bindFilePreview("edit-input", "edit-input-name", "edit-input-preview");
+    bindFilePreview("edit-ref-1", "edit-ref-1-name", "edit-ref-1-preview");
+    bindFilePreview("edit-ref-2", "edit-ref-2-name", "edit-ref-2-preview");
+
+    qs("#edit-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const button = qs("#edit-btn");
+      const message = qs("#edit-message");
+      const source = qs("#edit-input").files && qs("#edit-input").files[0];
+      const instruction = qs("#edit-instruction").value.trim();
+      const refs = [qs("#edit-ref-1").files[0], qs("#edit-ref-2").files[0]].filter(Boolean);
+      if (!source) {
+        message.textContent = "Bitte zuerst ein Ausgangsbild wählen.";
+        setHeader("bad", "Kein Ausgangsbild");
+        return;
+      }
+      if (!instruction) {
+        message.textContent = "Bitte eine Bearbeitungsanweisung eingeben.";
+        setHeader("bad", "Keine Anweisung");
+        return;
+      }
+      if (instruction.length > 4000) {
+        message.textContent = "Die Anweisung darf höchstens 4000 Zeichen haben.";
+        return;
+      }
+      if (refs.length > 2) {
+        message.textContent = "Höchstens zwei zusätzliche Referenzbilder sind erlaubt.";
+        return;
+      }
+      const localError = clientImageError(source) || refs.map(clientImageError).find(Boolean);
+      if (localError) {
+        message.textContent = localError;
+        setHeader("bad", "Datei abgelehnt");
+        return;
+      }
+      button.disabled = true;
+      button.textContent = "Bild wird bearbeitet…";
+      message.textContent = "Datei wird übernommen, danach startet die lokale Bearbeitung. Der erste Auftrag kann länger dauern.";
+      setHeader("", "Bildbearbeitung läuft");
+      try {
+        const inputPath = await stageImage(source);
+        const referencePaths = [];
+        for (const file of refs) {
+          referencePaths.push(await stageImage(file));
+        }
+        const result = await post("/api/images/edit", {
+          instruction,
+          input_path: inputPath,
+          reference_paths: referencePaths,
+          width: Number(qs("#edit-width").value),
+          height: Number(qs("#edit-height").value),
+          seed: Number(qs("#edit-seed").value),
+          preserve_alpha: qs("#preserve-alpha").checked
+        });
+        qs("#edit-result").innerHTML = `<img src="/api/images/jobs/${encodeURIComponent(result.job_id)}/output" alt="Bearbeitetes Bild">`;
+        const archive = result.archive_directory || "";
+        const manifest = result.manifest_path || result.manifest || "";
+        qs("#edit-job-info").textContent =
+          `Job ${result.job_id} · ${result.runtime_seconds} Sekunden\nArchiv: ${archive}\nManifest: ${manifest}`;
+        message.textContent = "Fertig. Bearbeitung mit lokalem Qwen-Image-2.1. Bild und Manifest liegen auf der Archiv-HDD.";
+        setHeader("ok", "Bearbeitung fertig");
+      } catch (error) {
+        message.textContent = "Fehler: " + error.message;
+        setHeader("bad", "Bearbeitung fehlgeschlagen");
+      } finally {
+        button.disabled = false;
+        button.textContent = "Bild bearbeiten";
+      }
+    });
+
     qs("#refresh-btn").addEventListener("click", refreshStatus);
+    qs("#agent-retry").addEventListener("click", () => showView("agent"));
     refreshStatus();
     const initialView = new URLSearchParams(window.location.search).get("view");
     if (["agent", "images"].includes(initialView)) showView(initialView);

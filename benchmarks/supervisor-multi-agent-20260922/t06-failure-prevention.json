@@ -1,0 +1,51 @@
+{
+  "label": "t06-failure-prevention",
+  "session_id": "bfc2e5fe-e216-4aa9-a3ee-03d0853dbefc",
+  "model": "local-fast(openai)",
+  "elapsed_s": 35.82,
+  "prompt_error": null,
+  "tools": [
+    "agent:researcher",
+    "knowledge_search",
+    "agent"
+  ],
+  "agent_calls": [
+    "agent:researcher",
+    "agent"
+  ],
+  "knowledge_search": true,
+  "prompt_tokens": [
+    8835,
+    10417
+  ],
+  "max_prompt_tokens": 10417,
+  "first_prompt_tokens": 8835,
+  "assistant_excerpt": "The user explicitly requests I call the agent tool with specific arguments, so I must invoke it exactly as specified rather than first searching for tools or attempting to complete the action myself.\nDie agent-Research-Ergebnisse zeigen, dass KB-Patterns (Ledger-002, Ledger-004) aktiv sind und den duplizierten pdf_create nach Compact State Ledger reparieren – kein Shell/Write nötig, aber der Fix muss in DECISIONS.md als Entscheidungssatz dokumentiert werden.\n**Ergebnis:** Duplikate nach `compact` werden durch die **Compact State Ledger** (KB-20260922-LEDGER) repariert.\n\nDer Validierungs-Check läuft wie folgt:\n1.  `compact` dupliziert tool-Aufrufe (z.B. `pdf_create`) → Zustand in `.agent/STATE.md` veraltet.\n2.  Next session startet mit abgebrochenen tools (`pdf_create` nicht definiert).\n3.  Fix: `mcp__local-tools__memory_update` mit `action:\"update\"`, `workspace=\"/home/mike/.qwen/projects/-srv-ai-workspaces/state\"/.agent/STATE.md` und `state: true`. Dies schreibt den Ledger ein (`task_queue` → `tool_registry_map`) und synchronisiert den Zustand zurück nach `compact`.\n\n**Aktion:** Ich muss diese Entscheidung in `.agent/DECISIONS.md` als fix-entscheidung (KB-20260922-COMPACT-DUP-SYNC) dokumentieren, bevor ich mich abschließe.",
+  "agent_results": [
+    {
+      "structured_result_seen": true
+    }
+  ],
+  "votes": [
+    {
+      "requestId": "95550b22-02c0-4954-8035-1b55df92bd2e",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "2e028d1c-6886-493e-be13-4e2458ddaa60",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "yolo": false,
+  "nvidia": {
+    "vram_used_mib": 9951,
+    "vram_total_mib": 16303,
+    "gpu_util": 88
+  },
+  "ollama_ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n",
+  "ledger_seen": false,
+  "no_user_query": false,
+  "hard_overflow": false
+}

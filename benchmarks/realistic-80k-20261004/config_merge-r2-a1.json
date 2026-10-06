@@ -1,0 +1,124 @@
+{
+  "ts": "2026-10-04T09:39:10+0200",
+  "task": "config_merge",
+  "title": "Config merge with env overrides",
+  "core": true,
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 2,
+  "attempt": 1,
+  "retry_of": null,
+  "sessionId": "cab5101e-344c-4bce-b95a-5fca797209f7",
+  "workspace": "/srv/ai/workspaces/realistic-80k-20261004/runs/config_merge-r2",
+  "elapsed_s": 254.237,
+  "pass": true,
+  "resolved": true,
+  "fail_to_pass": true,
+  "pass_to_pass": true,
+  "musts_ok": true,
+  "score": {
+    "fail_to_pass": {
+      "pass": true,
+      "code": 0,
+      "out": "..                                                                       [100%]\n2 passed in 0.00s\n"
+    },
+    "pass_to_pass": {
+      "pass": true,
+      "code": 0,
+      "out": ".                                                                        [100%]\n1 passed in 0.00s\n"
+    },
+    "musts": {
+      "pass": true,
+      "code": 0,
+      "out": "..                                                                       [100%]\n2 passed in 0.00s\n"
+    },
+    "resolved": true
+  },
+  "tools": [
+    {
+      "name": "Glob: '**/*' in realistic-80k-20261004/runs/config_merge-r2",
+      "status": "completed"
+    },
+    {
+      "name": "ToolSearch: select:read_file,run_shell_command",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-20261004/runs/config_merge-r2/loader.py",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-20261004/runs/config_merge-r2/defaults.py",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-20261004/runs/config_merge-r2/test_visible.py",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-20261004/runs/config_merge-r2/validate.py",
+      "status": "completed"
+    },
+    {
+      "name": "ToolSearch: select:write_file",
+      "status": "completed"
+    },
+    {
+      "name": "WriteFile: Writing to realistic-80k-20261004/runs/config_merge-r2/loader.py",
+      "status": "completed"
+    },
+    {
+      "name": "Shell: cd '/srv/ai/workspaces/realistic-80k-20261004/runs/config_merge-r2' && python3 -m pytest -q test_visible.py (Run visible tests)",
+      "status": "completed"
+    },
+    {
+      "name": "ToolSearch: select:edit",
+      "status": "completed"
+    },
+    {
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "name": "WriteFile: Writing to realistic-80k-20261004/runs/config_merge-r2/loader.py",
+      "status": "completed"
+    },
+    {
+      "name": "Shell: cd '/srv/ai/workspaces/realistic-80k-20261004/runs/config_merge-r2' && python3 -m pytest -q test_visible.py (Re-run visible tests)",
+      "status": "completed"
+    }
+  ],
+  "votes": 4,
+  "vote_log_tail": [],
+  "prompt_error": null,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 4,
+    "tools": 13,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 100,
+    "vram": 14036
+  },
+  "before": {
+    "mem": {
+      "mem_available_mib": 17107,
+      "swap_used_mib": 7681
+    },
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 16.822,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL       ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      Stopping..."
+      ]
+    }
+  },
+  "empty_start": false,
+  "error_class": "pass",
+  "perm_blocked": false,
+  "productive_local_quality_untouched": true
+}

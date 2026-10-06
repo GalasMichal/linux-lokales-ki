@@ -1,0 +1,34 @@
+{
+  "is_error": false,
+  "structured_content": {
+    "ok": true,
+    "job_id": "68ae328f6c49",
+    "runtime_seconds": 22.572,
+    "archive_directory": "/mnt/ai-archive/images/inbox/2026-09-21/68ae328f6c49",
+    "manifest": "/mnt/ai-archive/images/inbox/2026-09-21/68ae328f6c49/manifest.json",
+    "previews": [
+      "http://127.0.0.1:8188/view?filename=ki_arbeitsplatz_68ae328f6c49_00001_.png&subfolder=&type=output"
+    ],
+    "gpu_cleanup": {
+      "ok": true,
+      "message": "GPU-Verbraucher wurden sauber beendet.",
+      "stopped_services": [
+        "comfyui.service"
+      ],
+      "unloaded_models": [],
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 5080",
+        "total_mib": 16303,
+        "used_mib": 1924,
+        "free_mib": 13916,
+        "utilization_percent": 2
+      }
+    }
+  },
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"job_id\": \"68ae328f6c49\",\n  \"runtime_seconds\": 22.572,\n  \"archive_directory\": \"/mnt/ai-archive/images/inbox/2026-09-21/68ae328f6c49\",\n  \"manifest\": \"/mnt/ai-archive/images/inbox/2026-09-21/68ae328f6c49/manifest.json\",\n  \"previews\": [\n    \"http://127.0.0.1:8188/view?filename=ki_arbeitsplatz_68ae328f6c49_00001_.png&subfolder=&type=output\"\n  ],\n  \"gpu_cleanup\": {\n    \"ok\": true,\n    \"message\": \"GPU-Verbraucher wurden sauber beendet.\",\n    \"stopped_services\": [\n      \"comfyui.service\"\n    ],\n    \"unloaded_models\": [],\n    \"gpu\": {\n      \"name\": \"NVIDIA GeForce RTX 5080\",\n      \"total_mib\": 16303,\n      \"used_mib\": 1924,\n      \"free_mib\": 13916,\n      \"utilization_percent\": 2\n    }\n  }\n}"
+    }
+  ]
+}

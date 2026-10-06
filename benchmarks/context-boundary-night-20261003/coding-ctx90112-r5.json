@@ -1,0 +1,116 @@
+{
+  "ts": "2026-10-04T01:59:29+0200",
+  "suite": "coding",
+  "num_ctx": 90112,
+  "model": "bench-qwen38-27b-88k",
+  "run_id": 5,
+  "sessionId": "239a5f87-7cdd-47ca-9401-f3b74045fe3a",
+  "elapsed_s": 45.477,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "artifact_missing:pytest_pass",
+    "artifact_missing:add_fixed",
+    "artifact_missing:mul_fixed",
+    "pytest_failed",
+    "calc_not_fixed",
+    "mul_not_fixed"
+  ],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_mr6yhya4",
+      "name": "ToolSearch: select:read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_6opzf7y4",
+      "name": "ToolSearch: select:edit,write_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_wplcskzr",
+      "name": "ReadFile",
+      "status": "failed"
+    },
+    {
+      "id": "call_tvlianpy",
+      "name": "ReadFile",
+      "status": "failed"
+    },
+    {
+      "id": "call_kdrgaai7",
+      "name": "ReadFile",
+      "status": "failed"
+    },
+    {
+      "id": "call_uzjf7v8x",
+      "name": "ReadFile",
+      "status": "failed"
+    }
+  ],
+  "votes": 0,
+  "artifacts": {
+    "pytest_pass": false,
+    "pytest_out": "   assert -1 == 5\nE        +  where -1 = add(2, 3)\n\ntest_calc.py:4: AssertionError\n__________________________________ test_area ___________________________________\n\n    def test_area():\n>       assert area(4, 5) == 20\nE       assert 9 == 20\nE        +  where 9 = area(4, 5)\n\ntest_calc.py:7: AssertionError\n=========================== short test summary info ============================\nFAILED test_calc.py::test_add - assert -1 == 5\nFAILED test_calc.py::test_area - assert 9 == 20\n2 failed in 0.01s\n",
+    "add_fixed": false,
+    "mul_fixed": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14128,
+      "vram_total_mib": 16303,
+      "gpu_util": 4
+    },
+    "mem": {
+      "mem_available_mib": 23522,
+      "swap_used_mib": 4260
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 20.025,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14152,
+      "vram_total_mib": 16303,
+      "gpu_util": 1
+    },
+    "mem": {
+      "mem_available_mib": 21764,
+      "swap_used_mib": 4243
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 20.025,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "agent"
+}

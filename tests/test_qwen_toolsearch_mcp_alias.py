@@ -4,7 +4,7 @@ import importlib.util
 import unittest
 from pathlib import Path
 
-PATCH_DIR = Path(__file__).resolve().parents[1] / "patches" / "qwen-code" / "0.21.15"
+PATCH_DIR = Path(__file__).resolve().parents[1] / "patches" / "qwen-code" / "0.23.4"
 SPEC = importlib.util.spec_from_file_location(
     "resolve_select_tool_name",
     PATCH_DIR / "resolve_select_tool_name.py",
@@ -88,7 +88,7 @@ class AmbiguousAndUnknownTests(unittest.TestCase):
 
 
 class CurrentExactOnlyBehaviorTests(unittest.TestCase):
-    """Documents Qwen 0.21.15 stock select: matching (exact only)."""
+    """Documents Qwen 0.23.4 stock select: matching (exact only)."""
 
     def test_stock_select_generate_image_fails(self):
         lower = {name.lower(): name for name in REGISTRY}

@@ -1,0 +1,45 @@
+{
+  "label": "t10-permission",
+  "session_id": "2521d7ce-8b06-403c-89fa-652ab67bad40",
+  "model": "local-fast(openai)",
+  "elapsed_s": 29.38,
+  "prompt_error": null,
+  "tools": [
+    "agent:researcher",
+    "agent"
+  ],
+  "agent_calls": [
+    "agent:researcher",
+    "agent"
+  ],
+  "knowledge_search": false,
+  "prompt_tokens": [
+    8772,
+    9733
+  ],
+  "max_prompt_tokens": 9733,
+  "first_prompt_tokens": 8772,
+  "assistant_excerpt": "The user wants to test if the researcher agent can write to /tmp — I'll invoke it directly as a tool_call since it's available and doesn't require research.\nResearch agent is read-only per its rules and memory — write_file call was blocked as expected. Report the result clearly without extra narration.\n**BLOCKED** — Research Agent is read-only and cannot execute `write_file`. The attempt to write to `/tmp/researcher-should-not-write.txt` failed due to this read-only constraint.",
+  "agent_results": [
+    {
+      "structured_result_seen": true
+    }
+  ],
+  "votes": [
+    {
+      "requestId": "ba0235e8-522b-4171-bdc3-f6fc9b8b9f9a",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "yolo": false,
+  "nvidia": {
+    "vram_used_mib": 9941,
+    "vram_total_mib": 16303,
+    "gpu_util": 89
+  },
+  "ollama_ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n",
+  "ledger_seen": false,
+  "no_user_query": false,
+  "hard_overflow": false
+}

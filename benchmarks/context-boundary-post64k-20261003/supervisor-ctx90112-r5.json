@@ -1,0 +1,100 @@
+{
+  "ts": "2026-10-03T12:16:54+0200",
+  "suite": "supervisor",
+  "num_ctx": 90112,
+  "model": "bench-qwen38-27b-88k",
+  "run_id": 5,
+  "sessionId": "0450eeff-e6c3-49c0-a807-27e120f01546",
+  "elapsed_s": 236.564,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift"
+  ],
+  "fail_reasons": [
+    "duplicate_tools:{'agent': 2}"
+  ],
+  "completed_counts": {
+    "agent": 2
+  },
+  "tools": [
+    {
+      "id": "call_ntfgaggu",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_cq3xrn5i",
+      "name": "Agent: Ask researcher about Compact State Ledger",
+      "status": "completed"
+    },
+    {
+      "id": "call_lslrwau4",
+      "name": "Agent: Fetch KB Compact State Ledger entry",
+      "status": "completed"
+    },
+    {
+      "id": "call_7z0zxlap",
+      "name": "knowledge_get (local-tools MCP Server): {\"workspace\":\"-srv-ai-workspaces\",\"id\":\"KB-20260922-LEDGER\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_sbcyshzg",
+      "name": "knowledge_get (local-tools MCP Server): {\"workspace\":\"-srv-ai-workspaces\",\"id\":\"KB-20260922-LEDGER\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_qh2szvr5",
+      "name": "knowledge_search (local-tools MCP Server): {\"workspace\":\"-srv-ai-workspaces\",\"query\":\"KB-20260922-LEDGER\",\"max_results\":1}",
+      "status": "completed"
+    },
+    {
+      "id": "call_i4884w1p",
+      "name": "knowledge_get (local-tools MCP Server): {\"workspace\":\"/srv/ai/workspaces\",\"id\":\"KB-20260922-LEDGER\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_7ypymsbg",
+      "name": "ToolSearch: knowledge search local tools",
+      "status": "completed"
+    },
+    {
+      "id": "call_i5nvj8f7",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"Compact State Ledger\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 7,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1476,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26007,
+      "swap_used_mib": 6779
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14213,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 19429,
+      "swap_used_mib": 6749
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    52%/48% CPU/GPU    90112      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

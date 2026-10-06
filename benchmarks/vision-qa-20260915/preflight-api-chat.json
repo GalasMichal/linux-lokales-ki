@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "elapsed_s": 16.697,
+  "model": "local-quality",
+  "content": "The visible title is \"QUALITY Cutover E2E\". The layout is very sparse and unbalanced, with a large amount of empty white space below the short text block at the top.",
+  "thinking": "",
+  "prompt_eval_count": 1891,
+  "eval_count": 41,
+  "eval_duration_ns": 3242861000,
+  "load_duration_ns": 6444791088,
+  "done_reason": "stop",
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14480,
+      "vram_total_mib": 16303,
+      "gpu_util": 30
+    },
+    "ram": {
+      "ram_used_mib": 10433,
+      "ram_avail_mib": 21430,
+      "ram_total_mib": 31864
+    },
+    "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    993995e538ad    18 GB    38%/62% CPU/GPU    8192       4 minutes from now    \n"
+  }
+}

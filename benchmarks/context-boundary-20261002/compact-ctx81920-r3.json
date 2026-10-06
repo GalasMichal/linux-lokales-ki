@@ -1,0 +1,72 @@
+{
+  "ts": "2026-10-03T05:37:01+0200",
+  "suite": "compact",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 3,
+  "sessionId": "7e37fc5a-6079-4e15-8373-f023d6b49066",
+  "elapsed_s": 154.264,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_76a04sae",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_1wyvmghb",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-81920-r3-053425.pdf\",\"text\":\"Compact continuity check ctx=81920.\",\"title\":\"COMPACT 81920 R3\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_lioh1dey",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-81920-r3-053425.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 1
+    },
+    "mem": {
+      "mem_available_mib": 26282,
+      "swap_used_mib": 6268
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14064,
+      "vram_total_mib": 16303,
+      "gpu_util": 62
+    },
+    "mem": {
+      "mem_available_mib": 20059,
+      "swap_used_mib": 6152
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

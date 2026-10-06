@@ -1,0 +1,80 @@
+{
+  "model": "local-quality",
+  "show": "  Model\n    architecture        qwen35     \n    parameters          27.3B      \n    context length      262144     \n    embedding length    5120       \n    quantization        Q4_K_M     \n    requires            0.32.12    \n\n  Capabilities\n    completion    \n    vision        \n    tools         \n    thinking      \n\n  Projector\n    architecture        clip       \n    parameters          460.73M    \n    embedding length    1152       \n    dimensions          5120       \n\n  Parameters\n    top_p                0.95    \n    draft_num_predict    4       \n    min_p                0       \n    num_ctx              8192    \n    presence_penalty     1.5     \n    repeat_penalty       1       \n    temperature          1       \n    top_k                20      \n\n  License\n    Apache License               \n    Version 2.0, January 2004    \n    ...                          \n\n",
+  "num_ctx": "8192",
+  "ps": {
+    "raw": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    993995e538ad    18 GB    38%/62% CPU/GPU    8192       4 minutes from now    \n",
+    "loaded": true,
+    "name": "local-quality:latest",
+    "line": "local-quality:latest    993995e538ad    18 GB    38%/62% CPU/GPU    8192       4 minutes from now    ",
+    "header": [
+      "NAME",
+      "ID",
+      "SIZE",
+      "PROCESSOR",
+      "CONTEXT",
+      "UNTIL"
+    ]
+  },
+  "nvidia": {
+    "vram_used_mib": 14250,
+    "vram_total_mib": 16303,
+    "gpu_util": 2
+  },
+  "ram": {
+    "mem_total_mib": 31864,
+    "mem_available_mib": 22214
+  },
+  "load": {
+    "content": "OK",
+    "eval_count": 2,
+    "prompt_eval_count": 21,
+    "tok_s": 9.07,
+    "elapsed_s": 45.116
+  },
+  "coding": {
+    "content": "def add(a, b):\n    return a + b",
+    "tok_s": 22.55,
+    "elapsed_s": 1.421,
+    "eval_count": 13
+  },
+  "tool": {
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_th3lvpb1",
+        "function": {
+          "index": 0,
+          "name": "memory_load",
+          "arguments": {
+            "workspace": "/home/mike/Projects/Linux Lokales KI"
+          }
+        }
+      }
+    ],
+    "tok_s": 25.53,
+    "elapsed_s": 2.388,
+    "eval_count": 35,
+    "prompt_eval_count": 296
+  },
+  "nvidia_after": {
+    "vram_used_mib": 14292,
+    "vram_total_mib": 16303,
+    "gpu_util": 2
+  },
+  "ps_after": {
+    "raw": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    993995e538ad    18 GB    38%/62% CPU/GPU    8192       4 minutes from now    \n",
+    "loaded": true,
+    "name": "local-quality:latest",
+    "line": "local-quality:latest    993995e538ad    18 GB    38%/62% CPU/GPU    8192       4 minutes from now    ",
+    "header": [
+      "NAME",
+      "ID",
+      "SIZE",
+      "PROCESSOR",
+      "CONTEXT",
+      "UNTIL"
+    ]
+  },
+  "pass": false
+}

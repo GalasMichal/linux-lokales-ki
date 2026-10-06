@@ -1,0 +1,89 @@
+{
+  "ok": true,
+  "comfy_version": "0.37.0",
+  "argv": [
+    "main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8189",
+    "--output-directory",
+    "/srv/ai/apps/ComfyUI-0.37.0/output"
+  ],
+  "image_key": "images.image_1",
+  "official_diffs": [
+    "clip_name: qwen3vl_8b_int8_convrot.safetensors -> qwen3vl_8b_w4a8.safetensors",
+    "QwenImage21Cache.device: auto -> cpu",
+    "QwenImage21Cache.dtype: default -> int8",
+    "subgraph flattened to API nodes; ComfySwitchNode omitted (official default switch=false uses encoder latent)",
+    "SaveImageAdvanced -> SaveImage",
+    "single LoadImage instead of two template assets",
+    "TextEncodeQwenImage21.resolution explicit 512/1024 (official subgraph widget is 0 = keep source size; 1024 WxH only used if switch=true)"
+  ],
+  "prompt": "Change only the apple in <image1> from red to bright green. Keep the white table, lighting, composition and everything else unchanged.",
+  "source": {
+    "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/qwen-image-21-smoke-20260921/input/source.png",
+    "format": "PNG",
+    "mode": "RGB",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 190999,
+    "sha256": "af0c3a65165f198ed9c287ee67b5966dd1a2deab3827b30bba8b3b50d5a40096",
+    "source": "/mnt/ai-archive/images/inbox/2026-09-21/b8d57bc6dd22/ki_arbeitsplatz_b8d57bc6dd22_00001_.png"
+  },
+  "vram_idle": {
+    "total_mib": 16303,
+    "used_mib": 14998,
+    "free_mib": 842,
+    "util_percent": 9
+  },
+  "ram_idle": {
+    "mem_available_gib": 7.76,
+    "mem_used_gib": 23.35,
+    "swap_used_gib": 7.12
+  },
+  "edit_1024": {
+    "ok": true,
+    "label": "1024",
+    "prompt_id": "30dda678-c932-49fd-9ee0-ae7b941fed8e",
+    "runtime_seconds": 15.624,
+    "first_progress_seconds": 0.038,
+    "png": {
+      "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/qwen-image-21-smoke-20260921/output/qwen21_smoke_1024_00001_.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1092725,
+      "sha256": "7f60f0ee5595ebda735dffeb6ce30eb91f43e32227d6fe89e9b6b1eb77490875",
+      "nonzero_payload": true
+    },
+    "vram_before": {
+      "total_mib": 16303,
+      "used_mib": 14998,
+      "free_mib": 842,
+      "util_percent": 9
+    },
+    "vram_peak_used_mib": 15618,
+    "vram_peak_util_percent": 100,
+    "vram_after": {
+      "total_mib": 16303,
+      "used_mib": 13429,
+      "free_mib": 2410,
+      "util_percent": 7
+    },
+    "ram_before": {
+      "mem_available_gib": 7.75,
+      "mem_used_gib": 23.36,
+      "swap_used_gib": 7.12
+    },
+    "ram_peak_used_gib": 24.31,
+    "swap_peak_used_gib": 7.55,
+    "cpu_peak_percent": 13.8,
+    "ram_after": {
+      "mem_available_gib": 8.15,
+      "mem_used_gib": 22.97,
+      "swap_used_gib": 7.55
+    }
+  }
+}

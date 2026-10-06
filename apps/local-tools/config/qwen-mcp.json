@@ -8,12 +8,45 @@
     "local-tools": {
       "httpUrl": "http://127.0.0.1:8765/mcp",
       "discoveryTimeoutMs": 10000,
-      "timeout": 300000,
+      "timeout": 720000,
       "trust": false,
       "includeTools": [
-        "generate_image"
+        "generate_image",
+        "edit_image",
+        "generate_video",
+        "memory_load",
+        "memory_update",
+        "knowledge_search",
+        "knowledge_get",
+        "knowledge_record",
+        "pdf_read",
+        "pdf_inspect",
+        "pdf_create",
+        "pdf_edit",
+        "pdf_merge",
+        "pdf_split",
+        "pdf_ocr",
+        "pdf_render",
+        "pdf_vision_qa",
+        "moe_consult",
+        "browser_open",
+        "browser_snapshot",
+        "browser_click",
+        "browser_type",
+        "browser_scroll",
+        "browser_back",
+        "browser_screenshot",
+        "browser_close",
+        "desktop_snapshot",
+        "desktop_focus",
+        "desktop_click",
+        "desktop_type",
+        "desktop_scroll",
+        "desktop_key",
+        "desktop_screenshot",
+        "desktop_close"
       ],
-      "alwaysLoadTools": true
+      "alwaysLoadTools": false
     }
   }
 }

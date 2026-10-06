@@ -1,0 +1,21 @@
+{
+  "label": "repeat",
+  "sessionId": "f6bcbff6-64dd-4780-bd2e-af8d32ed7fb7",
+  "events": [
+    {
+      "name": "tool_search",
+      "success": true
+    },
+    {
+      "name": "pdf_read",
+      "success": true
+    }
+  ],
+  "votes": [
+    {
+      "requestId": "f18200f3-51fd-4ac0-848e-e6eed8ba266d",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ]
+}

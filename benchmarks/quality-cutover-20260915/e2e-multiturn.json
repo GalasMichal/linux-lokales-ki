@@ -1,0 +1,132 @@
+{
+  "elapsed_s": 68.146,
+  "turns": [
+    {
+      "sessionId": "0b34869f-067e-4511-8184-7476adf87cb7",
+      "expect": "memory_load",
+      "votes": 1,
+      "thoughts": 0,
+      "completed": true,
+      "path_exists": false,
+      "tools": [
+        {
+          "name": "memory_load (local-tools MCP Server)",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "sessionId": "c42da5fa-e159-4f64-9dc0-b8b481a57e92",
+      "expect": "pdf_create",
+      "votes": 1,
+      "thoughts": 0,
+      "completed": true,
+      "path_exists": true,
+      "tools": [
+        {
+          "name": "pdf_create (local-tools MCP Server)",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "sessionId": "4f6705da-ab38-4255-b426-2380fb3815df",
+      "expect": "pdf_read",
+      "votes": 1,
+      "thoughts": 0,
+      "completed": true,
+      "path_exists": false,
+      "tools": [
+        {
+          "name": "pdf_read (local-tools MCP Server)",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "sessionId": "e7e11ce3-f0cd-4f9d-90ef-9220ba8a106a",
+      "expect": "pdf_render",
+      "votes": 1,
+      "thoughts": 0,
+      "completed": true,
+      "path_exists": true,
+      "tools": [
+        {
+          "name": "pdf_render (local-tools MCP Server)",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "sessionId": "bb91c63e-a6c3-4257-953f-09cf6d1133aa",
+      "expect": "memory_update",
+      "votes": 1,
+      "thoughts": 0,
+      "completed": true,
+      "path_exists": false,
+      "tools": [
+        {
+          "name": "memory_update (local-tools MCP Server)",
+          "status": "completed"
+        }
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "requestId": "649f1bb7-a634-492f-9be1-736af8d2b2b6",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "4faecd35-83c0-4701-a304-504bc41c7adb",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "925aa7b6-774f-4b89-b9a3-a00c25e41b19",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "c962f916-9be0-438e-8be5-52b572869b65",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "3a5c6605-5bd5-416a-8616-02168e2e2f9d",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "name": "memory_load (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "name": "pdf_create (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "name": "pdf_read (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "name": "pdf_render (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "name": "memory_update (local-tools MCP Server)",
+      "status": "completed"
+    }
+  ],
+  "pdf_exists": true,
+  "png_exists": true,
+  "nvidia": {
+    "vram_used_mib": 14226,
+    "vram_total_mib": 16303,
+    "gpu_util": 4
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nlocal-quality:latest    993995e538ad    18 GB    38%/62% CPU/GPU    8192       14 minutes from now    \n"
+}

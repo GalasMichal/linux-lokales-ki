@@ -1,0 +1,141 @@
+{
+  "ts": "2026-10-03T10:57:14+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 5,
+  "sessionId": "55b54b39-2056-425f-8b68-d77ada86b203",
+  "elapsed_s": 381.821,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_d0nmyzjx",
+      "name": "ToolSearch: select:read_file,write_file,edit,grep_search,glob,list_agents,agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_cb74qonb",
+      "name": "ToolSearch: run shell command execute pytest bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_2jmdp7mx",
+      "name": "ToolSearch: shell command run execute shell bash cmd",
+      "status": "completed"
+    },
+    {
+      "id": "call_fhvwaaw8",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_bklzctp4",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_4utramhp",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_c7y5z3eu",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_fhgxom8f",
+      "name": "ToolSearch: terminal shell subprocess execute bash script run command",
+      "status": "completed"
+    },
+    {
+      "id": "call_2niw4wvh",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_teeo5fz2",
+      "name": "ToolSearch: mcp local tools file read write list directory tree copy",
+      "status": "completed"
+    },
+    {
+      "id": "call_58pwpwjd",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_shzku40g",
+      "name": "WriteFile: Writing to /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_quo6qliw",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_tftheg8o",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_b2celmii",
+      "name": "Glob: '*' in ~/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture",
+      "status": "completed"
+    },
+    {
+      "id": "call_qmqvl7fo",
+      "name": "ToolSearch: python execute code interpreter interpret eval run pytest test harness",
+      "status": "completed"
+    },
+    {
+      "id": "call_67a6hkw5",
+      "name": "Agent: Run pytest for fixture",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1476,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25756,
+      "swap_used_mib": 6623
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14203,
+      "vram_total_mib": 16303,
+      "gpu_util": 31
+    },
+    "mem": {
+      "mem_available_mib": 20544,
+      "swap_used_mib": 7308
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      3 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

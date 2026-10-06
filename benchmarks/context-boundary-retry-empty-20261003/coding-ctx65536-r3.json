@@ -1,0 +1,121 @@
+{
+  "ts": "2026-10-03T20:08:44+0200",
+  "suite": "coding",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 3,
+  "sessionId": "bdbb6354-e7c0-4f1c-9604-7474e314ec22",
+  "elapsed_s": 122.771,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "artifact_missing:pytest_pass",
+    "artifact_missing:add_fixed",
+    "artifact_missing:mul_fixed",
+    "pytest_failed",
+    "calc_not_fixed",
+    "mul_not_fixed"
+  ],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_fjcnd1gw",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_q4c6oles",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_0auuvsof",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_rof4lvxp",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_8c6xi0w2",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_so0z8g5n",
+      "name": "ToolSearch: run shell command execute pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_bdcyevyh",
+      "name": "ToolSearch: bash shell command execute terminal",
+      "status": "completed"
+    }
+  ],
+  "votes": 0,
+  "artifacts": {
+    "pytest_pass": false,
+    "pytest_out": "   assert -1 == 5\nE        +  where -1 = add(2, 3)\n\ntest_calc.py:4: AssertionError\n__________________________________ test_area ___________________________________\n\n    def test_area():\n>       assert area(4, 5) == 20\nE       assert 9 == 20\nE        +  where 9 = area(4, 5)\n\ntest_calc.py:7: AssertionError\n=========================== short test summary info ============================\nFAILED test_calc.py::test_add - assert -1 == 5\nFAILED test_calc.py::test_area - assert 9 == 20\n2 failed in 0.01s\n",
+    "add_fixed": false,
+    "mul_fixed": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14149,
+      "vram_total_mib": 16303,
+      "gpu_util": 17
+    },
+    "mem": {
+      "mem_available_mib": 23288,
+      "swap_used_mib": 6623
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 25.162,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14219,
+      "vram_total_mib": 16303,
+      "gpu_util": 3
+    },
+    "mem": {
+      "mem_available_mib": 17910,
+      "swap_used_mib": 6611
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 25.162,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "agent"
+}

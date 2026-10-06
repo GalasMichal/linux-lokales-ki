@@ -1,0 +1,145 @@
+{
+  "seq": 6,
+  "ts": "22:54:50",
+  "path": "/v1/chat/completions",
+  "elapsed_s": 6.032,
+  "status": 200,
+  "request": {
+    "model": "local-quality",
+    "stream": true,
+    "tool_choice": null,
+    "max_tokens": 4000,
+    "think": false,
+    "enable_thinking": false,
+    "reasoning": null,
+    "reasoning_effort": "none",
+    "tool_count": 13,
+    "tool_names": [
+      "mcp__local-tools__generate_image",
+      "mcp__local-tools__memory_load",
+      "mcp__local-tools__memory_update",
+      "mcp__local-tools__pdf_create",
+      "mcp__local-tools__pdf_edit",
+      "mcp__local-tools__pdf_inspect",
+      "mcp__local-tools__pdf_merge",
+      "mcp__local-tools__pdf_ocr",
+      "mcp__local-tools__pdf_read",
+      "mcp__local-tools__pdf_render",
+      "mcp__local-tools__pdf_split",
+      "mcp__local-tools__pdf_vision_qa",
+      "tool_search"
+    ],
+    "message_count": 8,
+    "messages": [
+      {
+        "role": "system",
+        "content_chars": 27619,
+        "content_head": "You are Qwen Code, a CLI agent operating through an ACP host developed by Alibaba Group, responding according to your \"Output Style\" below, which describes how you should respond to user queries. Your primary goal is to help users safely an",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0
+      },
+      {
+        "role": "user",
+        "content_chars": 8698,
+        "content_head": "[{\"type\": \"text\", \"text\": \"<system-reminder>\\nNo skills are currently available. Skills can be added by creating directories with SKILL.md files or by configuring MCP servers with model-invocable prompts.\\n</system-reminder>\"}, {\"type\": \"te",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0
+      },
+      {
+        "role": "assistant",
+        "content_chars": 42,
+        "content_head": "Got it. Thanks for the additional context!",
+        "has_tool_calls": true,
+        "tool_call_name": "mcp__local-tools__pdf_create",
+        "reasoning_chars": 0,
+        "tool_call_arg_chars": 155
+      },
+      {
+        "role": "tool",
+        "content_chars": 171,
+        "content_head": "[{\"type\": \"text\", \"text\": \"Tool execution result was not recorded — likely interrupted by network failure, abort, or process exit. Treat as failure and retry if needed.\"}]",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0,
+        "tool_call_id": "call_xbihx1p0"
+      },
+      {
+        "role": "assistant",
+        "content_chars": 20,
+        "content_head": "Retrying pdf_create…",
+        "has_tool_calls": true,
+        "tool_call_name": "mcp__local-tools__pdf_create",
+        "reasoning_chars": 0,
+        "tool_call_arg_chars": 155
+      },
+      {
+        "role": "tool",
+        "content_chars": 1516,
+        "content_head": "[{\"type\": \"text\", \"text\": \"{\\\"ok\\\":true,\\\"path\\\":\\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/essay-ab-WIRE.pdf\\\",\\\"backend\\\":\\\"reportlab\\\",\\\"qa\\\":{\\\"ok\\\":true,\\\"path\\\":\\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/essay-ab-WIRE.pd",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0,
+        "tool_call_id": "call_o5b312lq"
+      },
+      {
+        "role": "assistant",
+        "content_chars": 0,
+        "content_head": "",
+        "has_tool_calls": true,
+        "tool_call_name": "mcp__local-tools__pdf_read",
+        "reasoning_chars": 0,
+        "tool_call_arg_chars": 76
+      },
+      {
+        "role": "tool",
+        "content_chars": 624,
+        "content_head": "[{\"type\": \"text\", \"text\": \"{\\\"ok\\\":true,\\\"path\\\":\\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/essay-ab-WIRE.pdf\\\",\\\"pages\\\":1,\\\"read_pages\\\":[1],\\\"text\\\":\\\"--- page 1 ---\\\\nEssay AB WIRE\\\\nQUALITY 16k essay-control A/B variant WIRE.\\\",",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0,
+        "tool_call_id": "call_wepb7z7q"
+      }
+    ],
+    "extra_keys": [
+      "enable_thinking",
+      "max_tokens",
+      "reasoning_effort",
+      "think"
+    ]
+  },
+  "response": {
+    "chunk_count": 48,
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 11267,
+      "prompt_tokens_details": {
+        "cached_tokens": 11055
+      },
+      "completion_tokens": 48,
+      "total_tokens": 11315
+    },
+    "response_keys": [
+      "choices",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "delta_keys": [
+      "content",
+      "role"
+    ],
+    "content_chars": 155,
+    "content_head": "WIRE-Kette abgeschlossen: `memory_load` → `pdf_create` (QA ok, 1 Seite, Text stimmt) → `pdf_read` (74 Zeichen, untruncated). Alle drei Schritte fehlerfrei.",
+    "content_tail": "WIRE-Kette abgeschlossen: `memory_load` → `pdf_create` (QA ok, 1 Seite, Text stimmt) → `pdf_read` (74 Zeichen, untruncated). Alle drei Schritte fehlerfrei.",
+    "reasoning_chars": 0,
+    "reasoning_head": "",
+    "tool_call_names": [],
+    "tool_arg_chars": 0,
+    "tool_arg_head": ""
+  }
+}

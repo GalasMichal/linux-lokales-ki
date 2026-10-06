@@ -1,0 +1,7 @@
+2026-09-28T13:55:14+02:00
+               total        used        free      shared  buff/cache   available
+Mem:            31Gi       5,6Gi        18Gi        17Mi       7,6Gi        25Gi
+Swap:           52Gi       7,7Gi        45Gi
+memory.used [MiB], utilization.gpu [%], temperature.gpu
+1650 MiB, 0 %, 41
+5.49 6.78 4.61 1/2446 59839

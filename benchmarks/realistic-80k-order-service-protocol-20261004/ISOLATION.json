@@ -1,0 +1,16 @@
+{
+  "isolation": "QWEN_HOME + second serve + fail-closed voter",
+  "not": [
+    "OS sandbox",
+    "user-account isolation",
+    "tools.executionSandbox (rejected by qwen serve)",
+    "permissions.allow fail-closed (it is auto-approval only)"
+  ],
+  "allow_commands": [
+    "python3 -m pytest *",
+    "python3 -m unittest *"
+  ],
+  "approvalMode": "default",
+  "trust": false,
+  "yolo": false
+}

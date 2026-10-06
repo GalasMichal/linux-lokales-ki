@@ -1,0 +1,20 @@
+version=0.24.7
+agents:
+.qwen/agents/:
+insgesamt 12
+drwxr-xr-x 1 mike mike   72 22. Sep 12:59 .
+drwxr-xr-x 1 mike mike   50 22. Sep 12:59 ..
+-rw-r--r-- 1 mike mike 2240  2. Okt 08:46 architect.md
+-rw-r--r-- 1 mike mike 2094  2. Okt 08:46 researcher.md
+-rw-r--r-- 1 mike mike 2196  2. Okt 08:46 reviewer.md
+
+/srv/ai/workspaces/.qwen/agents/:
+insgesamt 12
+drwxr-xr-x 1 mike mike   72 22. Sep 12:59 .
+drwxr-xr-x 1 mike mike   50 22. Sep 12:59 ..
+-rw-r--r-- 1 mike mike 2240  2. Okt 08:46 architect.md
+-rw-r--r-- 1 mike mike 2094  2. Okt 08:46 researcher.md
+-rw-r--r-- 1 mike mike 2196  2. Okt 08:46 reviewer.md
+OK agent researcher
+OK agent architect
+OK agent reviewer

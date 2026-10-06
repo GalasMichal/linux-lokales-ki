@@ -1,0 +1,288 @@
+{
+  "updated": "2026-10-03T15:16:38+0200",
+  "out": "/home/mike/Projects/Linux Lokales KI/benchmarks/context-boundary-post64k-20261003",
+  "total_runs": 88,
+  "by_suite_ctx": [
+    {
+      "suite": "knowledge",
+      "num_ctx": 81920,
+      "runs": 5,
+      "pass": 4,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "agent_drift": 1,
+        "pass": 4
+      },
+      "fail_reasons": [
+        [
+          "duplicate_tools:{'knowledge_search': 2}"
+        ]
+      ]
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 81920,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 81920,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "multi_hop",
+      "num_ctx": 81920,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 81920,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 81920,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 90112,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 90112,
+      "runs": 5,
+      "pass": 4,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "agent_drift": 1,
+        "tool_runtime": 1,
+        "pass": 4
+      },
+      "fail_reasons": [
+        [
+          "missing:['memory_load', 'pdf_create', 'pdf_read']",
+          "artifact_missing:pdf"
+        ]
+      ]
+    },
+    {
+      "suite": "knowledge",
+      "num_ctx": 90112,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 90112,
+      "runs": 5,
+      "pass": 4,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 4,
+        "agent_drift": 1
+      },
+      "fail_reasons": [
+        [
+          "duplicate_tools:{'agent': 2}"
+        ]
+      ]
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 90112,
+      "runs": 5,
+      "pass": 4,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 4,
+        "agent_drift": 1,
+        "tool_runtime": 1
+      },
+      "fail_reasons": [
+        [
+          "artifact_missing:pytest_pass",
+          "artifact_missing:add_fixed",
+          "artifact_missing:mul_fixed",
+          "pytest_failed",
+          "calc_not_fixed",
+          "mul_not_fixed"
+        ]
+      ]
+    },
+    {
+      "suite": "multi_hop",
+      "num_ctx": 90112,
+      "runs": 5,
+      "pass": 3,
+      "fail": 2,
+      "drift": 2,
+      "categories": {
+        "pass": 3,
+        "agent_drift": 2,
+        "tool_runtime": 1
+      },
+      "fail_reasons": [
+        [
+          "missing:['memory_load']"
+        ],
+        [
+          "missing:['memory_load', 'knowledge_search', 'pdf_create', 'pdf_read']",
+          "artifact_missing:pdf"
+        ]
+      ]
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 98304,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 98304,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "knowledge",
+      "num_ctx": 98304,
+      "runs": 5,
+      "pass": 3,
+      "fail": 2,
+      "drift": 2,
+      "categories": {
+        "pass": 3,
+        "agent_drift": 2
+      },
+      "fail_reasons": [
+        [
+          "missing:['knowledge_search', 'knowledge_get']"
+        ],
+        [
+          "missing:['knowledge_search', 'knowledge_get']"
+        ]
+      ]
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 98304,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 98304,
+      "runs": 5,
+      "pass": 4,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "agent_drift": 1,
+        "tool_runtime": 1,
+        "pass": 4
+      },
+      "fail_reasons": [
+        [
+          "artifact_missing:pytest_pass",
+          "artifact_missing:add_fixed",
+          "artifact_missing:mul_fixed",
+          "pytest_failed",
+          "calc_not_fixed",
+          "mul_not_fixed"
+        ]
+      ]
+    },
+    {
+      "suite": "multi_hop",
+      "num_ctx": 98304,
+      "runs": 5,
+      "pass": 4,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 4,
+        "agent_drift": 1,
+        "tool_runtime": 1
+      },
+      "fail_reasons": [
+        [
+          "missing:['memory_load', 'knowledge_search', 'pdf_create', 'pdf_read']",
+          "artifact_missing:pdf"
+        ]
+      ]
+    }
+  ],
+  "note": "Benchmark-only. Productive local-quality may be 16384 or 65536; check ollama show."
+}

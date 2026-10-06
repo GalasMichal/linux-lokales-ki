@@ -1,0 +1,21 @@
+{
+  "health": {
+    "version": "1.6.0",
+    "tools": 32
+  },
+  "retrieval_pass": true,
+  "retrieval_avg_tokens": 324.5,
+  "retrieval_max_tokens": 448,
+  "fast_pass": true,
+  "quality_pass": true,
+  "fast_session": "0716174d-8a1d-4d35-811f-17580c6a258b",
+  "quality_session": "4f20170c-4df4-4959-ac31-c18a91dbed6e",
+  "pass": true,
+  "compact_regression": {
+    "pass_core": true,
+    "ledger_seen": true,
+    "max_post_compact": 13231,
+    "session": "90ce6e13-e6df-49ec-94e4-d73f554879ef",
+    "limitation": "memory_update once skipped after compact (model drift); run5 later duplicated tools"
+  }
+}

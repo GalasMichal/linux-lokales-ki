@@ -1,0 +1,30 @@
+Qwen-Update 0.24.6 -> 0.24.7
+OK   Live 0.24.7  Keep /srv/ai/apps/qwen-code/lib/qwen-code.0.24.6
+Qwen 0.24.7
+applied
+applied
+OK   Registry-Patch angewendet
+applied
+OK   Git-Snapshot-Patch angewendet
+2e7228baa28660669f56375e8066fecfcb9bb4993892f0580054e18268861c86  /srv/ai/apps/qwen-code/lib/qwen-code/lib/chunks/tool-search-AO4V2HFN.js
+795e81a9c9ddbfeeff926e24d1b9a077a92a108abf68e3628abff1861ae62a49  /srv/ai/apps/qwen-code/lib/qwen-code/lib/chunks/chunk-AN36BHDM.js
+4c41e35fb568efe39e63ce3d4548ef5c052b6a77f8da4aefdb7ea5a7536586fc  /srv/ai/apps/qwen-code/lib/qwen-code/lib/chunks/chunk-L3A6AVZE.js
+Backup /mnt/ai-archive/backups/qwen-code/toolsearch-mcp-alias-20261002-085630
+0.24.7
+Qwen 0.24.7
+SHA tool-search 2e7228baa28660669f56375e8066fecfcb9bb4993892f0580054e18268861c86
+OK   ToolSearch MCP-Alias
+SHA registry 795e81a9c9ddbfeeff926e24d1b9a077a92a108abf68e3628abff1861ae62a49
+OK   Registry MCP-Kurzname
+OK   Git-Snapshot omitted
+Registry+core SHA after ToolSearch/Registry/Git: 795e81a9c9ddbfeeff926e24d1b9a077a92a108abf68e3628abff1861ae62a49
+applied
+OK   Compact-State-Ledger
+0.24.7
+Qwen 0.24.7
+SHA tool-search 2e7228baa28660669f56375e8066fecfcb9bb4993892f0580054e18268861c86
+OK   ToolSearch MCP-Alias
+SHA registry 26550f243415eb6731116447fd48fe90424826343f29346b98f3680da2dda442
+OK   Registry MCP-Kurzname
+OK   Git-Snapshot omitted
+OK Qwen 0.24.7 + Patches

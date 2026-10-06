@@ -1,0 +1,116 @@
+{
+  "ts": "2026-10-03T17:28:54+0200",
+  "suite": "tool_chain",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 1,
+  "sessionId": "3cbf9e21-e82e-41ba-9bf4-d59e9420547e",
+  "elapsed_s": 379.706,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1
+  },
+  "tools": [
+    {
+      "id": "call_pqt1h7l1",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load",
+      "status": "completed"
+    },
+    {
+      "id": "call_x66t12qe",
+      "name": "memory_load (local-tools MCP Server): {\"files\":\"\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_5qpi8lrh",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_create",
+      "status": "completed"
+    },
+    {
+      "id": "call_cl6xx2qq",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r1-172232.pdf\",\"text\":\"Boundary probe ctx=81920 run=1.\",\"title\":\"BOUND 81920 R1\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_x3y79rez",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_srn7thb6",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r1-172232.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_onr6tq8i",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_render",
+      "status": "completed"
+    },
+    {
+      "id": "call_p5wxz5ss",
+      "name": "pdf_render (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r1-172232.png\",\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r1-172232.pdf\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_l5vlipib",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_vision_qa",
+      "status": "completed"
+    },
+    {
+      "id": "call_jzi431p3",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"pages\":\"1\",\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r1-172232.pdf\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true,
+    "png": true,
+    "png_exact": true,
+    "png_alt": [
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r1-172232.qa-p1.png",
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r1-172232.png",
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-81920-r1-172232.vision-p1.png"
+    ]
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2790,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 23511,
+      "swap_used_mib": 7272
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14237,
+      "vram_total_mib": 16303,
+      "gpu_util": 77
+    },
+    "mem": {
+      "mem_available_mib": 19719,
+      "swap_used_mib": 7786
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    57%/43% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

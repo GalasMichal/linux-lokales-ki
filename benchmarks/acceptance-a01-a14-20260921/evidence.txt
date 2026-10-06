@@ -1,0 +1,223 @@
+=== date ===
+2026-09-21T11:04:29+02:00
+=== git HEAD ===
+abd0282f0939a321d4735b1579b68a86c1c7e61d
+=== units enable/active ===
+ki-workplace.service enable=enabled active=active
+local-tools-mcp.service enable=enabled active=active
+qwen-code-web.service enable=disabled active=active
+comfyui.service enable=disabled active=inactive
+=== ollama system ===
+enabled
+active
+=== After/Wants/WantedBy ===
+-- ki-workplace.service --
+Wants=
+WantedBy=default.target
+Conflicts=shutdown.target
+After=network.target app.slice -.mount basic.target
+UnitFileState=enabled
+-- local-tools-mcp.service --
+Wants=
+WantedBy=default.target
+Conflicts=shutdown.target
+After=network.target basic.target app.slice -.mount
+UnitFileState=enabled
+-- qwen-code-web.service --
+Wants=
+WantedBy=
+Conflicts=shutdown.target
+After=app.slice basic.target -.mount
+UnitFileState=disabled
+-- comfyui.service --
+Wants=
+WantedBy=
+Conflicts=shutdown.target
+After=network.target app.slice basic.target -.mount
+UnitFileState=disabled
+=== systemd-analyze verify ===
+verify_exit=0
+=== cycle journal this boot ===
+1:Sep 21 09:45:12 Vollstrecker systemd[1910]: ki-workplace.service: Found ordering cycle: default.target/start after local-tools-mcp.service/start after ki-workplace.service/start - after default.target
+2:Sep 21 09:45:12 Vollstrecker systemd[1910]: ki-workplace.service: Job local-tools-mcp.service/start deleted to break ordering cycle starting with ki-workplace.service/start
+214:Sep 21 09:45:22 Vollstrecker systemd[1910]: Started ki-workplace.service - KI-Arbeitsplatz (local UI and Qwen embedding proxy).
+709:Sep 21 10:11:54 Vollstrecker systemd[1910]: Started local-tools-mcp.service - Lokale KI-Werkzeuge (MCP, localhost only).
+1683:Sep 21 10:59:50 Vollstrecker systemd[1910]: Stopping local-tools-mcp.service - Lokale KI-Werkzeuge (MCP, localhost only)...
+1691:Sep 21 10:59:50 Vollstrecker systemd[1910]: Stopped local-tools-mcp.service - Lokale KI-Werkzeuge (MCP, localhost only).
+1692:Sep 21 10:59:50 Vollstrecker systemd[1910]: local-tools-mcp.service: Consumed 3.127s CPU time over 47min 55.964s wall clock time, 161.6M memory peak, 41.5M memory swap peak.
+1693:Sep 21 10:59:50 Vollstrecker systemd[1910]: Started local-tools-mcp.service - Lokale KI-Werkzeuge (MCP, localhost only).
+1694:Sep 21 10:59:50 Vollstrecker systemd[1910]: Stopping ki-workplace.service - KI-Arbeitsplatz (local UI and Qwen embedding proxy)...
+1695:Sep 21 10:59:50 Vollstrecker systemd[1910]: Stopped ki-workplace.service - KI-Arbeitsplatz (local UI and Qwen embedding proxy).
+1696:Sep 21 10:59:50 Vollstrecker systemd[1910]: Started ki-workplace.service - KI-Arbeitsplatz (local UI and Qwen embedding proxy).
+1712:Sep 21 11:00:33 Vollstrecker systemd[1910]: Stopping local-tools-mcp.service - Lokale KI-Werkzeuge (MCP, localhost only)...
+1720:Sep 21 11:00:33 Vollstrecker systemd[1910]: Stopped local-tools-mcp.service - Lokale KI-Werkzeuge (MCP, localhost only).
+1721:Sep 21 11:00:33 Vollstrecker systemd[1910]: local-tools-mcp.service: Consumed 545ms CPU time over 43.561s wall clock time, 144.9M memory peak.
+1722:Sep 21 11:00:35 Vollstrecker systemd[1910]: Started local-tools-mcp.service - Lokale KI-Werkzeuge (MCP, localhost only).
+1733:Sep 21 11:00:37 Vollstrecker python3[18455]: /srv/ai/apps/ki-workplace/server.py:284: DeprecationWarning: Changing state of started or joined application is deprecated
+1735:Sep 21 11:00:37 Vollstrecker python3[18455]: /srv/ai/apps/ki-workplace/server.py:284: DeprecationWarning: Changing state of started or joined application is deprecated
+1749:Sep 21 11:02:12 Vollstrecker python3[18455]: /srv/ai/apps/ki-workplace/server.py:284: DeprecationWarning: Changing state of started or joined application is deprecated
+1751:Sep 21 11:02:12 Vollstrecker python3[18455]: /srv/ai/apps/ki-workplace/server.py:284: DeprecationWarning: Changing state of started or joined application is deprecated
+=== cycle analyze ===
+1162:→ Unit local-tools-mcp.service:
+1178:	CGroup: /user.slice/user-1000.slice/user@1000.service/app.slice/local-tools-mcp.service
+1182:	Fragment Path: /home/mike/.config/systemd/user/local-tools-mcp.service
+5297:	RequiredBy: qwen-code-web.service (destination-default)
+5335:	RequiredBy: ki-workplace.service (destination-default)
+5353:	RequiredBy: local-tools-mcp.service (destination-default)
+5382:	Before: local-tools-mcp.service (destination-default)
+5386:	Before: qwen-code-web.service (destination-default)
+5424:	Before: ki-workplace.service (destination-default)
+5466:	ReferencedBy: qwen-code-web.service (destination-default)
+5503:	ReferencedBy: ki-workplace.service (destination-default)
+5506:	ReferencedBy: local-tools-mcp.service (destination-default)
+5544:	Wants: ki-workplace.service (origin-file)
+5547:	Wants: local-tools-mcp.service (origin-file)
+5554:	After: local-tools-mcp.service (origin-default)
+5558:	After: ki-workplace.service (origin-default)
+5565:	References: ki-workplace.service (origin-file origin-default)
+5571:	References: local-tools-mcp.service (origin-file origin-default)
+7332:→ Unit qwen-code-web.service:
+7348:	CGroup: /user.slice/user-1000.slice/user@1000.service/app.slice/qwen-code-web.service
+7352:	Fragment Path: /home/mike/.config/systemd/user/qwen-code-web.service
+13197:	RequiredBy: local-tools-mcp.service (destination-file)
+13221:	RequiredBy: ki-workplace.service (destination-file)
+13231:	RequiredBy: qwen-code-web.service (destination-file)
+13256:	Before: local-tools-mcp.service (destination-file)
+13268:	Before: ki-workplace.service (destination-file)
+13284:	Before: qwen-code-web.service (destination-file)
+13312:	ReferencedBy: ki-workplace.service (destination-file destination-slice-property)
+13323:	ReferencedBy: local-tools-mcp.service (destination-file destination-slice-property)
+13326:	ReferencedBy: qwen-code-web.service (destination-file destination-slice-property)
+13353:	SliceOf: ki-workplace.service (destination-slice-property)
+13361:	SliceOf: qwen-code-web.service (destination-slice-property)
+13364:	SliceOf: local-tools-mcp.service (destination-slice-property)
+15481:	ConflictedBy: ki-workplace.service (destination-default)
+15502:	ConflictedBy: qwen-code-web.service (destination-default)
+15521:	ConflictedBy: local-tools-mcp.service (destination-default)
+15585:	After: ki-workplace.service (destination-default)
+15614:	After: local-tools-mcp.service (destination-default)
+15641:	After: qwen-code-web.service (destination-default)
+15712:	ReferencedBy: local-tools-mcp.service (destination-default)
+=== ports ===
+LISTEN 0      128        127.0.0.1:3000       0.0.0.0:*    users:(("pasta.avx2",pid=2600,fd=153))
+LISTEN 0      511        127.0.0.1:4170       0.0.0.0:*    users:(("node",pid=9695,fd=22))       
+LISTEN 0      128        127.0.0.1:8791       0.0.0.0:*    users:(("python3",pid=18455,fd=11))   
+LISTEN 0      128        127.0.0.1:8790       0.0.0.0:*    users:(("python3",pid=18455,fd=10))   
+LISTEN 0      2048       127.0.0.1:8765       0.0.0.0:*    users:(("uvicorn",pid=18675,fd=6))    
+LISTEN 0      4096       127.0.0.1:11434      0.0.0.0:*                                          
+=== ollama list/ps ===
+NAME                             ID              SIZE      MODIFIED    
+local-quality:latest             ad1736a075f0    17 GB     4 days ago     
+bench-qwen38-27b-32k:latest      d4bf257f520d    17 GB     4 days ago     
+bench-qwen38-27b-16k:latest      ad1736a075f0    17 GB     4 days ago     
+bench-qwen36-coding-8k:latest    90ae8080c825    17 GB     5 days ago     
+bench-qwen38-27b-8k:latest       993995e538ad    17 GB     5 days ago     
+qwen3.6:27b-coding               3a12a518a499    17 GB     5 days ago     
+qwen3.8:27b                      22130167c4c2    17 GB     5 days ago     
+local-fast:latest                cf8bd43c0e1c    6.6 GB    4 weeks ago    
+qwen3.6:27b                      a50eda8ed977    17 GB     4 weeks ago    
+qwen3.5:9b                       6488c96fa5fa    6.6 GB    4 weeks ago    
+NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              
+local-quality:latest    ad1736a075f0    18 GB    40%/60% CPU/GPU    16384      3 minutes from now    
+=== nvidia ===
+595.99.02, 16303 MiB, 14179 MiB, 3 %
+=== mounts ===
+Dateisystem    Größe Benutzt Verf. Verw% Eingehängt auf
+/dev/sda3       921G    769G  149G   84% /
+/dev/sda3       921G    769G  149G   84% /home
+/dev/sda3       921G    769G  149G   84% /
+/dev/sdc1       1,4T    1,1T  314G   78% /mnt/ai-archive
+=== large files on /home >500M excluding .cache/cursor? ===
+327G	/home/mike/.local/share
+328G	/home/mike/.local
+996M	/home/mike/.config/BraveSoftware
+6,9G	/home/mike/.config/Cursor
+660M	/home/mike/.config/discord
+9,6G	/home/mike/.config
+1,5G	/home/mike/.cache/BraveSoftware
+1,9G	/home/mike/.cache/brave-whatsapp
+1,8G	/home/mike/.cache/codex-runtimes
+1,4G	/home/mike/.cache/pip
+=== qwen health / mcp / workplace ===
+{"status":"ok"}{"status":"ok","server":"local-ai-tools","version":"1.2.0","tools":["generate_image","memory_load","memory_update","pdf_read","pdf_inspect","pdf_create","pdf_edit","pdf_merge","pdf_split","pdf_ocr","pdf_render","pdf_vision_qa"],"localhost_only":true,"pdf":{"binaries":{"qpdf":"/home/mike/.local/bin/qpdf","pdftoppm":"/usr/bin/pdftoppm","pdftotext":"/usr/bin/pdftotext","pdfunite":"/usr/bin/pdfunite","pdfseparate":"/usr/bin/pdfseparate","tesseract":"/home/mike/.local/bin/tesseract","ocrmypdf":"/home/mike/.local/bin/ocrmypdf","soffice":"/usr/bin/soffice"},"python":{"pymupdf":"1.28.2","pikepdf":"10.8.0","reportlab":"4.5.1","ocrmypdf":"16.13.0"},"tessdata_dir":"/home/mike/.local/share/tessdata"}}
+{'ok': True, 'qwen': {'service': True, 'ready': True, 'url': 'http://127.0.0.1:4170'}, 'comfyui': {'service': False, 'ready': False, 'url': 'http://127.0.0.1:8188'}, 'gpu': {'name': 'NVIDIA GeForce RTX 5080', 'total_mib': 16303, 'used_mib': 14173, 'free_mib': 1667, 'utilization_percent': 3}, 'boot': {'mode': 'agent', 'phase': 'ready', 'percent': 58, 'title': 'Qwen erreichbar', 'detail': 'Der Dienst antwortet. Als Nächstes kommen die Fensterdateien.'}, 'bindings': ['127.0.0.1:11434', '127.0.0.1:3000', '127.0.0.1:4170', '127.0.0.1:8188', '127.0.0.1:8790', '127.0.0.1:8791']}
+=== mcp workspace ===
+{'initialized': True, 'servers': [{'kind': 'mcp_server', 'status': 'ok', 'name': 'local-tools', 'mcpStatus': 'connected', 'transport': 'http', 'disabled': False, 'hasOAuthTokens': False, 'configOrigin': 'user_settings', 'source': 'user', 'removable': True, 'config': {'httpUrl': 'http://127.0.0.1:8765/mcp'}, 'entryCount': 2, 'entrySummary': [{'entryIndex': 0, 'refs': 1, 'status': 'connected'}, {'entryIndex': 2, 'refs': 1, 'status': 'connected'}], 'resourceCount': 0, 'promptCount': 0}], 'mcpServers': None}
+=== hardening still in live mcp unit ===
+/home/mike/.config/systemd/user/qwen-code-web.service:ExecStart=/srv/ai/apps/qwen-code/bin/qwen serve --hostname 127.0.0.1 --port 4170 --workspace /srv/ai/workspaces --max-sessions 1 --max-total-sessions 1 --max-pending-prompts-per-session 1 --rate-limit --web --http-bridge --telemetry=false
+/home/mike/.config/systemd/user/qwen-code-web.service:NoNewPrivileges=true
+/home/mike/.config/systemd/user/qwen-code-web.service:PrivateTmp=true
+/home/mike/.config/systemd/user/ki-workplace.service:NoNewPrivileges=true
+/home/mike/.config/systemd/user/ki-workplace.service:PrivateTmp=true
+/home/mike/.config/systemd/user/local-tools-mcp.service:ExecStart=/srv/ai/venvs/local-tools/bin/uvicorn server:app --host 127.0.0.1 --port 8765 --workers 1 --limit-concurrency 8 --timeout-keep-alive 10
+/home/mike/.config/systemd/user/local-tools-mcp.service:Environment=NO_PROXY=127.0.0.1,localhost,host.containers.internal
+/home/mike/.config/systemd/user/local-tools-mcp.service:NoNewPrivileges=true
+/home/mike/.config/systemd/user/local-tools-mcp.service:PrivateTmp=true
+/home/mike/.config/systemd/user/local-tools-mcp.service:ProtectHome=read-only
+/home/mike/.config/systemd/user/local-tools-mcp.service:ProtectSystem=strict
+/home/mike/.config/systemd/user/local-tools-mcp.service:RestrictAddressFamilies=AF_UNIX AF_INET
+=== backup dirs ===
+drwxr-xr-x 1 mike mike 456 21. Sep 10:59 /mnt/ai-archive/backups/acceptance-a01-a14-20260921-105911
+drwxr-xr-x 1 mike mike 408 21. Sep 10:59 /mnt/ai-archive/backups/mcp-boot-cycle/20260921-105949
+=== rollback scripts exist ===
+-rwxr-xr-x 1 mike mike 1479 21. Aug 20:03 /home/mike/Projects/Linux Lokales KI/scripts/rollback-local-fast-context.sh
+-rwxr-xr-x 1 mike mike 3166 16. Sep 20:57 /home/mike/Projects/Linux Lokales KI/scripts/rollback-local-quality-16k.sh
+-rwxr-xr-x 1 mike mike 1355 15. Sep 19:44 /home/mike/Projects/Linux Lokales KI/scripts/rollback-local-quality-qwen36.sh
+-rwxr-xr-x 1 mike mike 3729 21. Aug 11:40 /home/mike/Projects/Linux Lokales KI/scripts/rollback-local-tools-mcp.sh
+-rwxr-xr-x 1 mike mike 2472 21. Aug 09:21 /home/mike/Projects/Linux Lokales KI/scripts/rollback-local-ui.sh
+-rwxr-xr-x 1 mike mike  680 21. Sep 10:59 /home/mike/Projects/Linux Lokales KI/scripts/rollback-mcp-independent-boot.sh
+-rwxr-xr-x 1 mike mike 3142 15. Sep 18:53 /home/mike/Projects/Linux Lokales KI/scripts/rollback-qwen-toolsearch-mcp-alias-patch.sh
+=== models locations ===
+12G	/srv/ai/models
+0	/usr/share/ollama
+drwxr-xr-x 1 mike mike 4096 21. Sep 10:59 /mnt/ai-archive/backups
+drwxr-xr-x 1 mike mike    0 18. Aug 11:05 /mnt/ai-archive/images
+drwxr-xr-x 1 mike mike  128 18. Aug 14:36 /srv/ai
+drwxr-xr-x 1 mike mike   26 18. Aug 11:07 /srv/ai/models
+=== .local/share top ===
+376K	/home/mike/.local/share/d4-diag
+1,4M	/home/mike/.local/share/icons
+2,3M	/home/mike/.local/share/kactivitymanagerd
+12M	/home/mike/.local/share/tessdata
+13M	/home/mike/.local/share/klipper
+53M	/home/mike/.local/share/reshade
+67M	/home/mike/.local/share/d4-fgfix
+160M	/home/mike/.local/share/baloo
+311M	/home/mike/.local/share/dlssnr
+405M	/home/mike/.local/share/Trash
+1,4G	/home/mike/.local/share/lutris
+4,9G	/home/mike/.local/share/umu
+5,0G	/home/mike/.local/share/containers
+315G	/home/mike/.local/share/Steam
+327G	/home/mike/.local/share
+=== /srv/ai top ===
+40K	/srv/ai/configs
+72K	/srv/ai/docs
+80K	/srv/ai/benchmarks
+228K	/srv/ai/workflows
+300K	/srv/ai/workspaces
+2,3M	/srv/ai/logs
+1,9G	/srv/ai/apps
+4,1G	/srv/ai/cache
+6,2G	/srv/ai/venvs
+12G	/srv/ai/models
+24G	/srv/ai
+=== patches --check ===
+Qwen 0.23.4
+SHA tool-search dcdf42c5a9eae6886f21967634818b94c70f98aeab036d0eb870d061d14418f6
+OK   ToolSearch MCP-Alias
+SHA registry ac82a673836a95776588c3bbe155b75e0bcb630c3ce5e1ca1e4ab8ca9bd7bc46
+OK   Registry MCP-Kurzname
+OK   Git-Snapshot omitted
+=== qwen settings compact/trust ===
+model {'name': 'local-fast', 'baseUrl': 'http://127.0.0.1:11434/v1', 'skipStartupContext': True}
+trust None
+approvalMode None
+yolo None
+trust None
+compactionModel local-fast
+autoCompactThreshold 0.95
+samplingParams None
+disabled count 27
+includeTools None
+alwaysLoad None

@@ -1,0 +1,97 @@
+{
+  "ts": "2026-10-02T17:40:10+0200",
+  "suite": "tool_chain",
+  "num_ctx": 49152,
+  "model": "bench-qwen38-27b-48k",
+  "run_id": 3,
+  "sessionId": "c5074503-5fba-4563-9f4f-d94292b3fab9",
+  "elapsed_s": 169.497,
+  "pass": false,
+  "drift": false,
+  "state_class": "A_technical",
+  "categories": [
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "artifact_missing:png"
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1
+  },
+  "tools": [
+    {
+      "id": "call_qlpnwbnk",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+      "status": "completed"
+    },
+    {
+      "id": "call_r6o20a64",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_x6t8l32d",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r3-173719.pdf\",\"text\":\"Boundary probe ctx=49152 run=3.\",\"title\":\"BOUND 49152 R3\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_e0adtako",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r3-173719.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_4mw7sowp",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_2taiu00p",
+      "name": "pdf_render (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r3-173719.p1.png\",\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r3-173719.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_93ob57ah",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-49152-r3-173719.pdf\",\"question\":\"Enthält die Seite exakt den Text 'Boundary probe ctx=49152 run=3.'?\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true,
+    "png": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1610,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 25180,
+      "swap_used_mib": 5552
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14209,
+      "vram_total_mib": 16303,
+      "gpu_util": 62
+    },
+    "mem": {
+      "mem_available_mib": 21833,
+      "swap_used_mib": 5686
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-48k:latest    cf92cdcda723    19 GB    45%/55% CPU/GPU    49152      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

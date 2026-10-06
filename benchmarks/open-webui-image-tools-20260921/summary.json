@@ -1,0 +1,35 @@
+{
+  "tests": {
+    "CHAT-BAD-FILE": true,
+    "CHAT-EDIT-ORIGINAL": true,
+    "CHAT-EXPLICIT-SECOND-EDIT": true,
+    "CHAT-GENERATE": true,
+    "CHAT-IMAGE-TALK": true,
+    "CHAT-NO-DOUBLE-EDIT": true,
+    "CHAT-SIZE-512": true,
+    "CHAT-SIZE-EXPLICIT": true,
+    "CLEANUP": true,
+    "MCP-HEALTH": true,
+    "SHA": true,
+    "TOOL": true,
+    "WORKPLACE-GENERATE": true
+  },
+  "cleanup": {
+    "comfy": "inactive",
+    "ollama": "active",
+    "gpu": {
+      "used_mib": 2100,
+      "free_mib": 13739
+    },
+    "staged": [],
+    "ki_edit": "0"
+  },
+  "git": "abd0282f0939a321d4735b1579b68a86c1c7e61d",
+  "pass": true,
+  "docs": {
+    "handoff": "docs/CHATGPT_HANDOFF.md",
+    "phase": "docs/OPEN_WEBUI_IMAGE_TOOLS.md",
+    "changelog": "docs/CHANGELOG.md",
+    "written_at": "2026-09-21T19:20"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "label": "ctx8k-smoke",
+  "runtime": "llama.cpp",
+  "model": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_S",
+  "threads": 16,
+  "ctx": 8192,
+  "n_predict": 64,
+  "wall_s": 81.591,
+  "rc": 0,
+  "response_chars": 101,
+  "response_preview": "TypeScript ist eine Programmiersprache, die JavaScript erweitert und statische Typisierung hinzuf\u00fcgt.",
+  "prompt_tps": 7.0,
+  "eval_tps": 16.0,
+  "ram_peak_mb": 20456.0,
+  "ram_min_mb": 5618.0,
+  "swap_peak_mb": 18339.0,
+  "cpu_peak_pct": 24.0,
+  "vram_peak_mb": 1690.0,
+  "vram_min_mb": 1636.0,
+  "gpu_util_peak": 1.0
+}

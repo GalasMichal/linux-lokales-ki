@@ -1,0 +1,19 @@
+# DEBUGGING — broken TypeScript
+
+Find the bug(s), explain briefly, and provide the corrected function. No tools.
+
+```typescript
+export function mergeUniqueIds(a: string[], b: string[]): string[] {
+  const out = [];
+  for (let i = 0; i <= a.length; i++) {
+    if (!out.includes(a[i])) out.push(a[i]);
+  }
+  for (const id of b) {
+    if (out.indexOf(id) > 0) continue;
+    out.push(id);
+  }
+  return out.filter(Boolean);
+}
+```
+
+Expected behavior: union of unique string IDs from both arrays, stable order (a then new from b), no holes/undefined, empty strings discarded.

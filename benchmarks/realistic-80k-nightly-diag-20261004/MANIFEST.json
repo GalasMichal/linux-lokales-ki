@@ -1,0 +1,14 @@
+{
+  "purpose": "Isolated Qwen nightly diagnostic for order_service runs 2–3 (original tool_runtime cases)",
+  "qwen_stable_prod": "0.24.7 at /srv/ai/apps/qwen-code (unchanged)",
+  "qwen_test": "0.24.7-nightly.20261003.2c591ecc08",
+  "qwen_test_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/qwen-code-nightly-20261003/qwen-code/bin/qwen",
+  "serve": "127.0.0.1:4172 isolated QWEN_HOME",
+  "model": "bench-qwen38-27b-80k",
+  "model_ollama_id": "959b4a6094a9",
+  "num_ctx": 81920,
+  "ollama": "0.35.0",
+  "prod_local_quality_num_ctx": 65536,
+  "patches_on_nightly": false,
+  "host_patches_on_stable": "toolsearch MCP alias + compact state ledger"
+}

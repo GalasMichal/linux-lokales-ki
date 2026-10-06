@@ -1,0 +1,90 @@
+{
+  "ts": "2026-10-03T07:04:23+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen35-9b-80k",
+  "run_id": 2,
+  "sessionId": "4ede1de7-0cf1-4ac5-aba1-af3b676a0598",
+  "elapsed_s": 15.013,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_oiffhbws",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_8e6btvjw",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_hyw6n1w3",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_jm43fa40",
+      "name": "run_shell_command",
+      "status": "failed"
+    },
+    {
+      "id": "call_3vcnq1wf",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_axu1ye5e",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_79ckrf2e",
+      "name": "ToolCall",
+      "status": "failed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1333,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25750,
+      "swap_used_mib": 6130
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 9648,
+      "vram_total_mib": 16303,
+      "gpu_util": 100
+    },
+    "mem": {
+      "mem_available_mib": 23234,
+      "swap_used_mib": 6129
+    },
+    "ps": "NAME                          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nbench-qwen35-9b-80k:latest    b81e343b0550    7.3 GB    100% GPU     81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,93 @@
+{
+  "model": "bench-qwen38-27b-32k",
+  "num_ctx": 32768,
+  "ok": true,
+  "artifacts": [],
+  "tests": {
+    "cold": {
+      "elapsed_s": 4.228,
+      "load_s": 3.341,
+      "prompt_eval_count": 21,
+      "eval_count": 2,
+      "tok_s": 10.52,
+      "content": "OK",
+      "artifacts": [],
+      "resources": {
+        "tag": "32768-cold",
+        "vram_used_mib": 14247,
+        "vram_total_mib": 16303,
+        "gpu_util": 21,
+        "mem_available_mib": 24647,
+        "swap_used_mib": 4068,
+        "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-32k:latest    a095eb40b4bb    18 GB    39%/61% CPU/GPU    32768      9 minutes from now    \n"
+      }
+    },
+    "tool": {
+      "elapsed_s": 2.087,
+      "tok_s": 27.78,
+      "prompt_eval_count": 287,
+      "has_tool_call": true,
+      "tool_calls": [
+        {
+          "id": "call_75m1xkt4",
+          "function": {
+            "index": 0,
+            "name": "memory_load",
+            "arguments": {
+              "workspace": "/home/mike/Projects/Linux Lokales KI"
+            }
+          }
+        }
+      ],
+      "content": "",
+      "artifacts": [],
+      "resources": {
+        "tag": "32768-tool",
+        "vram_used_mib": 14263,
+        "vram_total_mib": 16303,
+        "gpu_util": 1,
+        "mem_available_mib": 24336,
+        "swap_used_mib": 4112,
+        "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-32k:latest    a095eb40b4bb    18 GB    39%/61% CPU/GPU    32768      9 minutes from now    \n"
+      }
+    },
+    "filled": {
+      "elapsed_s": 25.969,
+      "tok_s": 10.78,
+      "prompt_eval_count": 18059,
+      "eval_count": 12,
+      "content": "KONTEXT-OK-32768",
+      "artifacts": [],
+      "fill_chars": 72153,
+      "resources": {
+        "tag": "32768-filled",
+        "vram_used_mib": 14299,
+        "vram_total_mib": 16303,
+        "gpu_util": 0,
+        "mem_available_mib": 23864,
+        "swap_used_mib": 4335,
+        "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-32k:latest    a095eb40b4bb    18 GB    39%/61% CPU/GPU    32768      9 minutes from now    \n"
+      }
+    }
+  },
+  "baseline": {
+    "tag": "32768-baseline",
+    "vram_used_mib": 1221,
+    "vram_total_mib": 16303,
+    "gpu_util": 0,
+    "mem_available_mib": 26196,
+    "swap_used_mib": 3989,
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "severe": [],
+  "final": {
+    "tag": "32768-final",
+    "vram_used_mib": 14299,
+    "vram_total_mib": 16303,
+    "gpu_util": 0,
+    "mem_available_mib": 23855,
+    "swap_used_mib": 4342,
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-32k:latest    a095eb40b4bb    18 GB    39%/61% CPU/GPU    32768      9 minutes from now    \n"
+  },
+  "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-32k:latest    a095eb40b4bb    18 GB    39%/61% CPU/GPU    32768      9 minutes from now    \n"
+}

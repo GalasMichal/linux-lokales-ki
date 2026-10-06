@@ -1,0 +1,162 @@
+{
+  "model": "bench-qwen38-27b-40k",
+  "model_id": "bench-qwen38-27b-40k(openai)",
+  "num_ctx": 40960,
+  "sessionId": "7ad826a9-cc52-4249-b00f-245e75fc8c64",
+  "model_switch": {
+    "_meta": {
+      "qwenModelSwitch": {
+        "authType": "openai",
+        "modelId": "bench-qwen38-27b-40k",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "***",
+        "isRuntime": false
+      }
+    }
+  },
+  "elapsed_s": 400.339,
+  "prompt_error": null,
+  "votes": [
+    {
+      "requestId": "dd9c53d1-1b42-4d34-bcd0-3e44a7819803",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "a089328e-d07f-4dc2-bff7-9bad16b29281",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_4nerw4tq",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+      "status": "completed",
+      "input": {
+        "query": "select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+        "max_results": 10
+      }
+    },
+    {
+      "id": "call_sb4e7m3o",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+      "status": "completed",
+      "input": {
+        "query": "select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa"
+      }
+    },
+    {
+      "id": "call_b7foo0uz",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+      "status": "completed",
+      "input": {
+        "query": "select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa"
+      }
+    },
+    {
+      "id": "call_wjrmg4k8",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed",
+      "input": {
+        "workspace": "/home/mike/Projects/Linux Lokales KI"
+      }
+    },
+    {
+      "id": "call_ucdyz2lt",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed",
+      "input": {
+        "workspace": "/home/mike/Projects/Linux Lokales KI"
+      }
+    },
+    {
+      "id": "call_yoltsvww",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load",
+      "status": "completed",
+      "input": {
+        "query": "select:mcp__local-tools__memory_load"
+      }
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 2,
+    "pdf_create": 0,
+    "pdf_read": 0,
+    "pdf_render": 0,
+    "pdf_vision_qa": 0
+  },
+  "expected_hit": [
+    "memory_load"
+  ],
+  "missing": [
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa"
+  ],
+  "duplicates": {
+    "memory_load": 2
+  },
+  "thoughts": 0,
+  "assistant_text_tail": "ssed from: 9208 to ~8811 tokens).Running step 1 now.IMPORTANT: This conversation approached the input token limit for bench-qwen38-27b-40k. A compressed context will be sent for future messages (compressed from: 10648 to ~8942 tokens).I need to find the memory_load tool first.Step 1: memory_load.IMPORTANT: This conversation approached the input token limit for bench-qwen38-27b-40k. A compressed context will be sent for future messages (compressed from: 9437 to ~8808 tokens).Step 1 failed (recording error). Retrying once:IMPORTANT: This conversation approached the input token limit for bench-qwen38-27b-40k. A compressed context will be sent for future messages (compressed from: 10155 to ~8581 tokens).Step 1 failed again with \"result not recorded.\" Retrying once more.IMPORTANT: This conversation approached the input token limit for bench-qwen38-27b-40k. A compressed context will be sent for future messages (compressed from: 9984 to ~8750 tokens).Got it. Thanks for the additional context!",
+  "pdf_exists": false,
+  "png_exists": false,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok",
+        "trust": null
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 2,
+    "tools": 6,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 63,
+    "vram": 14138
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 6587,
+      "vram_total_mib": 16303,
+      "gpu_util": 7
+    },
+    "mem": {
+      "mem_available_mib": 24149,
+      "swap_used_mib": 4566
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14138,
+      "vram_total_mib": 16303,
+      "gpu_util": 63
+    },
+    "mem": {
+      "mem_available_mib": 22437,
+      "swap_used_mib": 4548
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-40k:latest    d4ed59ea4a99    18 GB    44%/56% CPU/GPU    40960      4 minutes from now    \n"
+  },
+  "fail_reasons": [
+    "missing:pdf_create",
+    "missing:pdf_read",
+    "missing:pdf_render",
+    "missing:pdf_vision_qa",
+    "duplicate_tools:{'memory_load': 2}",
+    "pdf_missing",
+    "png_missing"
+  ],
+  "pass": false
+}

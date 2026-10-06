@@ -1,0 +1,61 @@
+{
+  "ts": "2026-10-03T17:15:37+0200",
+  "suite": "multi_hop",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 1,
+  "sessionId": "e0f01249-ee46-4a1f-b6a3-4071ffa0fd4a",
+  "elapsed_s": 47.172,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "missing:['memory_load', 'knowledge_search', 'pdf_create', 'pdf_read']",
+    "artifact_missing:pdf"
+  ],
+  "completed_counts": {
+    "memory_load": 0,
+    "knowledge_search": 0,
+    "pdf_create": 0,
+    "pdf_read": 0
+  },
+  "tools": [],
+  "votes": 0,
+  "artifacts": {
+    "pdf": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2848,
+      "vram_total_mib": 16303,
+      "gpu_util": 1
+    },
+    "mem": {
+      "mem_available_mib": 23337,
+      "swap_used_mib": 7096
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 2853,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 24383,
+      "swap_used_mib": 8454
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,47 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "memory_load",
+      "ok": true,
+      "detail": [
+        "STATE.md",
+        "REQUIREMENTS.md",
+        "DECISIONS.md",
+        "TASKS.md",
+        "TOOLS.md"
+      ]
+    },
+    {
+      "name": "pdf_create",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "name": "pdf_read",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "pages": 1
+      }
+    },
+    {
+      "name": "pdf_vision_qa",
+      "ok": true,
+      "detail": {
+        "ok": false,
+        "invalid_output": false,
+        "summary": "The page contains a title and a single line of text at the top left, with the rest of the page being blank space.",
+        "issues": [
+          {
+            "page": 1,
+            "type": "empty_page",
+            "severity": "high",
+            "description": "The page is nearly blank, containing only a title and one sentence in the upper-left corner. The vast majority of the page area is unused white space.",
+            "confidence": 1.0
+          }
+        ]
+      }
+    }
+  ]
+}

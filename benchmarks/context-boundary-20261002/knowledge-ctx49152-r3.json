@@ -1,0 +1,69 @@
+{
+  "ts": "2026-10-02T19:30:03+0200",
+  "suite": "knowledge",
+  "num_ctx": 49152,
+  "model": "bench-qwen38-27b-48k",
+  "run_id": 3,
+  "sessionId": "2c8b8858-4c64-4e7b-a772-4d4182c2bffe",
+  "elapsed_s": 51.27,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "knowledge_search": 1,
+    "knowledge_get": 1
+  },
+  "tools": [
+    {
+      "id": "call_ou3h3vic",
+      "name": "ToolSearch: mcp_local_tools knowledge_search knowledge_get",
+      "status": "completed"
+    },
+    {
+      "id": "call_53bp1q2h",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger lazy tools\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_q1ixlzmu",
+      "name": "knowledge_get (local-tools MCP Server): {\"id\":\"KB-20260922-SUCCESS-001\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1578,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25537,
+      "swap_used_mib": 5990
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14416,
+      "vram_total_mib": 16303,
+      "gpu_util": 59
+    },
+    "mem": {
+      "mem_available_mib": 20745,
+      "swap_used_mib": 5083
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-48k:latest    cf92cdcda723    19 GB    44%/56% CPU/GPU    49152      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

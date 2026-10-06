@@ -1,0 +1,7 @@
+{
+  "ts": "2026-09-16T18:57:04.642661+00:00",
+  "git_head": "abd0282f0939a321d4735b1579b68a86c1c7e61d",
+  "local_quality_ctx_before": "8192",
+  "local_quality_id_before": "993995e538ad",
+  "note": "ollama ps showed a 16k slot named local-quality (shared weights / runtime ctx) while the tag stayed 8192. Tag confirmed via ollama show."
+}

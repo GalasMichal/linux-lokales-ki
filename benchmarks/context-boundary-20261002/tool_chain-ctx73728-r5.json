@@ -1,0 +1,92 @@
+{
+  "ts": "2026-10-02T23:08:26+0200",
+  "suite": "tool_chain",
+  "num_ctx": 73728,
+  "model": "bench-qwen38-27b-72k",
+  "run_id": 5,
+  "sessionId": "d5f8089b-9f09-4eba-a29f-71471f6dd42e",
+  "elapsed_s": 199.693,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift"
+  ],
+  "fail_reasons": [
+    "missing:['pdf_render']"
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 0,
+    "pdf_vision_qa": 1
+  },
+  "tools": [
+    {
+      "id": "call_6g5l1z8d",
+      "name": "ToolSearch: local-tools memory load pdf create",
+      "status": "completed"
+    },
+    {
+      "id": "call_n3932dbe",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_f0uq3vxe",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r5-230504.pdf\",\"text\":\"Boundary probe ctx=73728 run=5.\",\"title\":\"BOUND 73728 R5\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_0hdtt0df",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r5-230504.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_8n0tumn3",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r5-230504.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true,
+    "png": true,
+    "png_exact": false,
+    "png_alt": [
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r5-230504.qa-p1.png",
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r5-230504.vision-p1.png"
+    ]
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1288,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26068,
+      "swap_used_mib": 4624
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14373,
+      "vram_total_mib": 16303,
+      "gpu_util": 71
+    },
+    "mem": {
+      "mem_available_mib": 22012,
+      "swap_used_mib": 4606
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-72k:latest    41c3bb97d1e6    19 GB    47%/53% CPU/GPU    73728      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,57 @@
+{
+  "label": "baseline",
+  "sessionId": "74c5bb15-84e0-4b52-96bf-5d3fec627914",
+  "model_id": "local-quality(openai)",
+  "elapsed_s": 164.476,
+  "prompt_error": null,
+  "votes": [
+    {
+      "requestId": "f8a46e3a-70a8-4fa3-b059-3212bad0abc2",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_a8n1mo2p",
+      "name": "memory_load (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 1
+  },
+  "duplicates": {},
+  "missing": [
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa",
+    "memory_update"
+  ],
+  "assistant_text": "Starting the session with `memory_load` now.",
+  "compressed": false,
+  "pdf_exists": false,
+  "png_exists": false,
+  "yolo": false,
+  "always_allow": false,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 1,
+    "tools": 1,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 2,
+    "vram": 14560
+  },
+  "nvidia": {
+    "vram_used_mib": 14560,
+    "vram_total_mib": 16303,
+    "gpu_util": 2
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    40%/60% CPU/GPU    16384      4 minutes from now    \n",
+  "pass": false
+}

@@ -1,0 +1,245 @@
+{
+  "ts": "2026-10-03T03:58:15+0200",
+  "suite": "coding",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 4,
+  "sessionId": "729eee5a-f25e-4d56-b5c8-f4b4ad2fdcc6",
+  "elapsed_s": 905.091,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_x6h5vxyh",
+      "name": "ToolSearch: select:read_file,edit,write_file,grep_search",
+      "status": "completed"
+    },
+    {
+      "id": "call_cmaww7zt",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_a9b34ddf",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_xtytdeow",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_bqba0o8o",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_ns092gxq",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_wjxjgymg",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_2js1vzjn",
+      "name": "ToolSearch: run shell command bash bash_command run_shell execute command terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_x6yjn5gf",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_dm6jf5er",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_j605vww8",
+      "name": "WriteFile: Writing to /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/_run_probe.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ibqajcdd",
+      "name": "ToolSearch: terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_kundg4a3",
+      "name": "ToolSearch: select:run_shell_command,bash,shell,execute,exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_0fo2ts9t",
+      "name": "ToolSearch: ls or glob list files in directory",
+      "status": "completed"
+    },
+    {
+      "id": "call_bxfudc9t",
+      "name": "ToolSearch: command output pytest run script execute terminal shell bash cmd",
+      "status": "completed"
+    },
+    {
+      "id": "call_p6b1iehq",
+      "name": "Agent: run fixture pytest once",
+      "status": "completed"
+    },
+    {
+      "id": "call_hk39m99y",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"Linux Lokales KI\",\"files\":\"STATE.md,TASKS.md,TOOLS.md\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_x8hhtfv8",
+      "name": "pdf_inspect (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_yhdh5yxo",
+      "name": "ToolSearch: select:read_file,list_directory,run_python,execute_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_ene9m0bp",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_hbcalspc",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_qfnl0rgx",
+      "name": "moe_consult (local-tools MCP Server): {\"task\":\"I need to read and execute a Python test file at /home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py using available tools. I can't use pdf_inspect for .py files, and there's no read_file or run_python in the deferred tool list I found. What other tools might be available for reading and executing Python files?</task>\",\"role\":\"second_opinion\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_z2kto1zo",
+      "name": "desktop_snapshot (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_9ponsgr2",
+      "name": "ToolSearch: +test +calc fixture",
+      "status": "completed"
+    },
+    {
+      "id": "call_iv2je1l1",
+      "name": "browser_snapshot (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_09go59fe",
+      "name": "memory_load (local-tools MCP Server): {\"files\":\"STATE.md,TASKS.md,DECISIONS.md,REQUIREMENTS.md\",\"workspace\":\"Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_l9pnzq9e",
+      "name": "ReadFile: /home/.../.qwen/projects/-srv-ai-workspaces/memory/project/qwen-runtime-stack.md",
+      "status": "failed"
+    },
+    {
+      "id": "call_4hkqd0za",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/.qwen/projects/-srv-ai-workspaces/memory/project/qwen-runtime-stack.md\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_uped1jd2",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_v5f3mibo",
+      "name": "ToolSearch: run execute shell python bash script terminal command process",
+      "status": "completed"
+    },
+    {
+      "id": "call_mdn2br8w",
+      "name": "Grep: '.' in ~/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture (filter: '*.py')",
+      "status": "completed"
+    },
+    {
+      "id": "call_8a8seb1a",
+      "name": "ToolSearch: select:run,shell,bash,execute_code,code_interpreter,run_script,terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_w8ta3h6h",
+      "name": "ToolSearch: +qwen +code agent task write file save output result",
+      "status": "completed"
+    },
+    {
+      "id": "call_53u1hn63",
+      "name": "ToolCall: list_directory",
+      "status": "failed"
+    },
+    {
+      "id": "call_9op7exoy",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_w2xi2xjz",
+      "name": "ToolSearch: +output result write save text content path file",
+      "status": "completed"
+    },
+    {
+      "id": "call_byeotl4q",
+      "name": "ToolSearch: create make new document render build",
+      "status": "completed"
+    },
+    {
+      "id": "call_lcg80a3z",
+      "name": "ToolSearch: conky konsole gnome-terminal kitty tmux xterm",
+      "status": "completed"
+    }
+  ],
+  "votes": 12,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1307,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26397,
+      "swap_used_mib": 5973
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14394,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 21187,
+      "swap_used_mib": 12898
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    46%/54% CPU/GPU    65536      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

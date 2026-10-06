@@ -1,0 +1,40 @@
+{
+  "label": "fast-kb",
+  "session_id": "0716174d-8a1d-4d35-811f-17580c6a258b",
+  "model": "local-fast(openai)",
+  "elapsed_s": 53.66,
+  "prompt_error": null,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 1,
+    "tools": 2,
+    "thoughts": 1026,
+    "n_gen": 0,
+    "gpu_util": 100,
+    "vram": 10015
+  },
+  "votes": [
+    {
+      "requestId": "482a1873-0317-45db-bba5-12dd77be7acf",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    "tool_search",
+    "mcp__local-tools__knowledge_search"
+  ],
+  "used_knowledge_search": true,
+  "used_tool_search": true,
+  "assistant_excerpt": "User wants me to search for knowledge_search tool and query it about compact duplicate pdf_create issues - I'll execute these steps in sequence.\nIch suche nach der knowledge_search-Funktion und führe den Query aus.\nDer User hat keine memory_update explizit angefordert – ich muss prüfen, ob es in der Memory bereits etwas zu \"compact duplicate\" gibt. Die的记忆 ist stark auf PDF-sandbox beschränkt, aber nicht auf compact duplicates.\n\nDa keine Dateiänderungen oder shell-basierte Änderungen erlaubt sind, kann ich nur tool_call und text-antwort verwenden. Ich werde den knowledge_search durchführen.\n**Ursache:** Prompt-only Kompromisse (reine Text-Analyse) nach Compact waren unzureichend — das Modell verliert Tool-Events durch Kompression. Die reattach-Mechanismen haben früher ganze Ergebnisse wiedergegeben statt präziser Zusammenfassungen.\n\n**Validierter Fix:** `Compact State Ledger` deterministisch von echten Tool-Events maschinell erzeugen (Kontinuität <tool_continuity>) und große erfolgreiche Ergebnisse straffen, bevor sie in den Kontext zurückkehren. Kombiniert mit **Lazy Tool Loading** läuft der E2E-Pfad durch ohne doppelte `pdf_create` oder zweite Kompaktierung.",
+  "yolo": false,
+  "nvidia": {
+    "vram_used_mib": 10015,
+    "vram_total_mib": 16303,
+    "gpu_util": 100
+  },
+  "ollama_ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n",
+  "pass": true
+}

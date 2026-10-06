@@ -1,0 +1,13 @@
+{
+  "prompt": "Change only the apple in <image1> from red to bright green. Keep the white table, lighting, composition and everything else unchanged.",
+  "diffs": [
+    "clip_name: qwen3vl_8b_int8_convrot.safetensors -> qwen3vl_8b_w4a8.safetensors",
+    "QwenImage21Cache.device: auto -> cpu",
+    "QwenImage21Cache.dtype: default -> int8",
+    "subgraph flattened to API nodes; ComfySwitchNode omitted (official default switch=false uses encoder latent)",
+    "SaveImageAdvanced -> SaveImage",
+    "single LoadImage instead of two template assets",
+    "TextEncodeQwenImage21.resolution explicit 512/1024 (official subgraph widget is 0 = keep source size; 1024 WxH only used if switch=true)"
+  ],
+  "image_key": "images.image_1"
+}

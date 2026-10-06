@@ -1,0 +1,153 @@
+{
+  "ts": "2026-10-03T21:01:13+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 2,
+  "sessionId": "f5409c6a-dda0-40cb-bf38-b570f3550923",
+  "elapsed_s": 235.512,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_sner3tvn",
+      "name": "ReadFile",
+      "status": "failed"
+    },
+    {
+      "id": "call_kur200of",
+      "name": "ToolSearch: select:read_file,glob,grep_search,write_file,edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_qnxlayae",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_lj9omcg9",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_aq905uqc",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_jjd9fael",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_boscoc82",
+      "name": "ToolSearch: select:run_shell_command,bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_xuires38",
+      "name": "ToolSearch: shell command exec run pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_mimgoche",
+      "name": "ToolSearch: select:mcp__local-tools__run,mcp__local-tools__exec,shell_command,execute_command,system",
+      "status": "completed"
+    },
+    {
+      "id": "call_fpovwcje",
+      "name": "ToolSearch: mcp local tools command run terminal bash python",
+      "status": "completed"
+    },
+    {
+      "id": "call_jqmuvrtl",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_udlkxa5i",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_mdqrgq6g",
+      "name": "ToolSearch: +run command terminal shell process",
+      "status": "completed"
+    },
+    {
+      "id": "call_v6ocewh3",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_kp8ixwzx",
+      "name": "ToolSearch: mcp local tools",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14104,
+      "vram_total_mib": 16303,
+      "gpu_util": 13
+    },
+    "mem": {
+      "mem_available_mib": 23012,
+      "swap_used_mib": 6519
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 23.365,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14176,
+      "vram_total_mib": 16303,
+      "gpu_util": 65
+    },
+    "mem": {
+      "mem_available_mib": 15684,
+      "swap_used_mib": 6895
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 23.365,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

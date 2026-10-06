@@ -1,0 +1,451 @@
+[
+  {
+    "id": "A_local-quality_think=False",
+    "path": "/api/chat",
+    "model": "local-quality",
+    "content_head": "I'll load the project memory to check the current state.",
+    "tool_calls": [
+      {
+        "id": "call_oiwwn2kd",
+        "function": {
+          "index": 0,
+          "name": "memory_load",
+          "arguments": {
+            "workspace": "."
+          }
+        }
+      }
+    ],
+    "thinking_head": "",
+    "eval_count": 40,
+    "prompt_eval_count": 279,
+    "elapsed_s": 27.986,
+    "think_arg": false,
+    "has_tool_call": true,
+    "memory_load_called": true
+  },
+  {
+    "id": "A_local-quality_think=True",
+    "path": "/api/chat",
+    "model": "local-quality",
+    "content_head": "",
+    "tool_calls": null,
+    "thinking_head": "The user wants me to load the project memory and report the current project state. I need to call memory_load, but I need a workspace parameter. Let me try with a reasonable default or see if there's ",
+    "eval_count": 120,
+    "prompt_eval_count": 277,
+    "elapsed_s": 9.476,
+    "think_arg": true,
+    "has_tool_call": false,
+    "memory_load_called": false
+  },
+  {
+    "id": "A_local-quality_think=None",
+    "path": "/api/chat",
+    "model": "local-quality",
+    "content_head": "",
+    "tool_calls": null,
+    "thinking_head": "The user wants me to load the project memory and report the current project state. I need to call memory_load, but I need a workspace parameter. Let me try with a reasonable default or see if there's ",
+    "eval_count": 120,
+    "prompt_eval_count": 277,
+    "elapsed_s": 9.482,
+    "think_arg": null,
+    "has_tool_call": false,
+    "memory_load_called": false
+  },
+  {
+    "id": "B_local-quality_think_false",
+    "path": "/v1/chat/completions",
+    "model": "local-quality",
+    "content_head": "",
+    "tool_calls": null,
+    "reasoning_head": "The user wants me to load the project memory and report the current project state. I need to call memory_load, but I need a workspace parameter. Let me try with a reasonable default or see if there's ",
+    "finish_reason": "length",
+    "prompt_tokens": 277,
+    "completion_tokens": 120,
+    "elapsed_s": 9.448,
+    "think_arg": {
+      "think": false
+    },
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": [
+      "think"
+    ]
+  },
+  {
+    "id": "B_local-quality_think_true",
+    "path": "/v1/chat/completions",
+    "model": "local-quality",
+    "content_head": "",
+    "tool_calls": null,
+    "reasoning_head": "The user wants me to load the project memory and report the current project state. I need to call memory_load, but I need a workspace parameter. Let me try with a reasonable default or see if there's ",
+    "finish_reason": "length",
+    "prompt_tokens": 277,
+    "completion_tokens": 120,
+    "elapsed_s": 9.568,
+    "think_arg": {
+      "think": true
+    },
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": [
+      "think"
+    ]
+  },
+  {
+    "id": "B_local-quality_enable_thinking_false",
+    "path": "/v1/chat/completions",
+    "model": "local-quality",
+    "content_head": "",
+    "tool_calls": null,
+    "reasoning_head": "The user wants me to load the project memory and report the current project state. I need to call memory_load, but I need a workspace parameter. Let me try with a reasonable default or see if there's ",
+    "finish_reason": "length",
+    "prompt_tokens": 277,
+    "completion_tokens": 120,
+    "elapsed_s": 9.265,
+    "think_arg": {
+      "enable_thinking": false
+    },
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": [
+      "enable_thinking"
+    ]
+  },
+  {
+    "id": "B_local-quality_reasoning_effort_none",
+    "path": "/v1/chat/completions",
+    "model": "local-quality",
+    "content_head": "I'll load the project memory to check the current state.",
+    "tool_calls": [
+      {
+        "id": "call_52bwcpu7",
+        "index": 0,
+        "type": "function",
+        "function": {
+          "name": "memory_load",
+          "arguments": "{\"workspace\":\".\"}"
+        }
+      }
+    ],
+    "reasoning_head": "",
+    "finish_reason": "tool_calls",
+    "prompt_tokens": 279,
+    "completion_tokens": 40,
+    "elapsed_s": 2.409,
+    "think_arg": {
+      "reasoning_effort": "none"
+    },
+    "has_tool_call": true,
+    "memory_load_called": true,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": [
+      "reasoning_effort"
+    ]
+  },
+  {
+    "id": "B_local-quality_chat_template_kwargs",
+    "path": "/v1/chat/completions",
+    "model": "local-quality",
+    "content_head": "",
+    "tool_calls": null,
+    "reasoning_head": "The user wants me to load the project memory and report the current project state. I need to call memory_load, but I need a workspace parameter. Let me try with a reasonable default or see if there's ",
+    "finish_reason": "length",
+    "prompt_tokens": 277,
+    "completion_tokens": 120,
+    "elapsed_s": 9.416,
+    "think_arg": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": [
+      "chat_template_kwargs"
+    ]
+  },
+  {
+    "id": "B_local-quality_bare",
+    "path": "/v1/chat/completions",
+    "model": "local-quality",
+    "content_head": "",
+    "tool_calls": null,
+    "reasoning_head": "The user wants me to load the project memory and report the current project state. I need to call memory_load, but I need a workspace parameter. Let me try with a reasonable default or see if there's ",
+    "finish_reason": "length",
+    "prompt_tokens": 277,
+    "completion_tokens": 120,
+    "elapsed_s": 9.295,
+    "think_arg": {},
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": []
+  },
+  {
+    "id": "A_local-fast_think=False",
+    "path": "/api/chat",
+    "model": "local-fast",
+    "content_head": "I need to know which workspace you'd like me to load. Could you please specify the workspace name?",
+    "tool_calls": null,
+    "thinking_head": "",
+    "eval_count": 22,
+    "prompt_eval_count": 279,
+    "elapsed_s": 16.391,
+    "think_arg": false,
+    "has_tool_call": false,
+    "memory_load_called": false
+  },
+  {
+    "id": "A_local-fast_think=True",
+    "path": "/api/chat",
+    "model": "local-fast",
+    "content_head": "",
+    "tool_calls": null,
+    "thinking_head": "The user wants me to use the memory_load function to load a compact .agent project memory and report the current project state. However, I need to provide a \"workspace\" parameter which is required for",
+    "eval_count": 120,
+    "prompt_eval_count": 277,
+    "elapsed_s": 1.07,
+    "think_arg": true,
+    "has_tool_call": false,
+    "memory_load_called": false
+  },
+  {
+    "id": "A_local-fast_think=None",
+    "path": "/api/chat",
+    "model": "local-fast",
+    "content_head": "",
+    "tool_calls": null,
+    "thinking_head": "The user wants me to use the memory_load function to load a compact .agent project memory and report the current project state. However, I need to provide a \"workspace\" parameter which is required for",
+    "eval_count": 120,
+    "prompt_eval_count": 277,
+    "elapsed_s": 1.074,
+    "think_arg": null,
+    "has_tool_call": false,
+    "memory_load_called": false
+  },
+  {
+    "id": "B_local-fast_think_false",
+    "path": "/v1/chat/completions",
+    "model": "local-fast",
+    "content_head": "",
+    "tool_calls": null,
+    "reasoning_head": "The user wants me to use the memory_load function to load a compact .agent project memory and report the current project state. However, I need to provide a \"workspace\" parameter which is required for",
+    "finish_reason": "length",
+    "prompt_tokens": 277,
+    "completion_tokens": 120,
+    "elapsed_s": 1.069,
+    "think_arg": {
+      "think": false
+    },
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": [
+      "think"
+    ]
+  },
+  {
+    "id": "B_local-fast_think_true",
+    "path": "/v1/chat/completions",
+    "model": "local-fast",
+    "content_head": "",
+    "tool_calls": null,
+    "reasoning_head": "The user wants me to use the memory_load function to load a compact .agent project memory and report the current project state. However, I need to provide a \"workspace\" parameter which is required for",
+    "finish_reason": "length",
+    "prompt_tokens": 277,
+    "completion_tokens": 120,
+    "elapsed_s": 1.067,
+    "think_arg": {
+      "think": true
+    },
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": [
+      "think"
+    ]
+  },
+  {
+    "id": "B_local-fast_enable_thinking_false",
+    "path": "/v1/chat/completions",
+    "model": "local-fast",
+    "content_head": "",
+    "tool_calls": null,
+    "reasoning_head": "The user wants me to use the memory_load function to load a compact .agent project memory and report the current project state. However, I need to provide a \"workspace\" parameter which is required for",
+    "finish_reason": "length",
+    "prompt_tokens": 277,
+    "completion_tokens": 120,
+    "elapsed_s": 1.073,
+    "think_arg": {
+      "enable_thinking": false
+    },
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": [
+      "enable_thinking"
+    ]
+  },
+  {
+    "id": "B_local-fast_reasoning_effort_none",
+    "path": "/v1/chat/completions",
+    "model": "local-fast",
+    "content_head": "I need to know which workspace you'd like me to load. Could you please specify the workspace name?",
+    "tool_calls": null,
+    "reasoning_head": "",
+    "finish_reason": "stop",
+    "prompt_tokens": 279,
+    "completion_tokens": 22,
+    "elapsed_s": 0.212,
+    "think_arg": {
+      "reasoning_effort": "none"
+    },
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": [
+      "reasoning_effort"
+    ]
+  },
+  {
+    "id": "B_local-fast_chat_template_kwargs",
+    "path": "/v1/chat/completions",
+    "model": "local-fast",
+    "content_head": "",
+    "tool_calls": null,
+    "reasoning_head": "The user wants me to use the memory_load function to load a compact .agent project memory and report the current project state. However, I need to provide a \"workspace\" parameter which is required for",
+    "finish_reason": "length",
+    "prompt_tokens": 277,
+    "completion_tokens": 120,
+    "elapsed_s": 1.069,
+    "think_arg": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": [
+      "chat_template_kwargs"
+    ]
+  },
+  {
+    "id": "B_local-fast_bare",
+    "path": "/v1/chat/completions",
+    "model": "local-fast",
+    "content_head": "",
+    "tool_calls": null,
+    "reasoning_head": "The user wants me to use the memory_load function to load a compact .agent project memory and report the current project state. However, I need to provide a \"workspace\" parameter which is required for",
+    "finish_reason": "length",
+    "prompt_tokens": 277,
+    "completion_tokens": 120,
+    "elapsed_s": 1.076,
+    "think_arg": {},
+    "has_tool_call": false,
+    "memory_load_called": false,
+    "wire_keys": [
+      "_elapsed_s",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "sent_keys": []
+  }
+]

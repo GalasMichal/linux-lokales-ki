@@ -1,0 +1,65 @@
+{
+  "ram_before": 23.34,
+  "ts": "2026-09-21T19:34:50",
+  "tools": [
+    "generate_image",
+    "edit_image",
+    "memory_load",
+    "memory_update",
+    "pdf_read",
+    "pdf_inspect",
+    "pdf_create",
+    "pdf_edit",
+    "pdf_merge",
+    "pdf_split",
+    "pdf_ocr",
+    "pdf_render",
+    "pdf_vision_qa",
+    "browser_open",
+    "browser_snapshot",
+    "browser_click",
+    "browser_type",
+    "browser_scroll",
+    "browser_back",
+    "browser_screenshot",
+    "browser_close"
+  ],
+  "ram_during": 23.11,
+  "open": {
+    "url": "https://example.com/",
+    "title": "Example Domain",
+    "snapshot": "[l1] link \"Learn more\""
+  },
+  "click": {
+    "ref": "l1",
+    "url": "https://www.iana.org/help/example-domains",
+    "title": "Example Domains"
+  },
+  "back": "https://example.com/",
+  "screenshot": {
+    "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/browser-agent-20260921/example.png",
+    "bytes": 19445,
+    "png": true
+  },
+  "invalid": true,
+  "blocked": {
+    "file:///etc/passwd": "Dieses URL-Schema ist gesperrt: file",
+    "javascript:alert(1)": "Dieses URL-Schema ist gesperrt: javascript",
+    "http://127.0.0.1:9/": "Privates oder lokales Ziel ist gesperrt: 127.0.0.1"
+  },
+  "type": {
+    "ref": "i1",
+    "chars": 20
+  },
+  "scroll": {
+    "scrolled": "down",
+    "url": "https://httpbin.org/forms/post"
+  },
+  "close": {
+    "ok": true,
+    "closed": true
+  },
+  "ram_after": 23.27,
+  "agent_procs": "",
+  "ok": true
+}

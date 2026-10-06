@@ -1,0 +1,540 @@
+{
+  "updated": "2026-10-03T06:25:08+0200",
+  "out": "/home/mike/Projects/Linux Lokales KI/benchmarks/context-boundary-20261002",
+  "total_runs": 163,
+  "by_suite_ctx": [
+    {
+      "suite": "tool_chain",
+      "num_ctx": 32768,
+      "runs": 5,
+      "pass": 4,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 4,
+        "agent_drift": 1,
+        "tool_runtime": 1
+      },
+      "fail_reasons": [
+        [
+          "missing:['memory_load', 'pdf_create', 'pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "artifact_missing:pdf",
+          "artifact_missing:png"
+        ]
+      ]
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 40960,
+      "runs": 10,
+      "pass": 0,
+      "fail": 10,
+      "drift": 10,
+      "categories": {
+        "agent_drift": 10,
+        "compact_issue": 9,
+        "tool_runtime": 10
+      },
+      "fail_reasons": [
+        [
+          "missing:['pdf_create', 'pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "duplicate_tools:{'memory_load': 2}",
+          "compact_mentioned_with_incomplete_chain",
+          "artifact_missing:pdf",
+          "artifact_missing:png"
+        ],
+        [
+          "duplicate_tools:{'memory_load': 2, 'pdf_create': 2, 'pdf_read': 2, 'pdf_render': 2, 'pdf_vision_qa': 2}",
+          "artifact_missing:pdf",
+          "artifact_missing:png"
+        ],
+        [
+          "missing:['memory_load', 'pdf_create', 'pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "compact_mentioned_with_incomplete_chain",
+          "artifact_missing:pdf",
+          "artifact_missing:png"
+        ],
+        [
+          "missing:['pdf_vision_qa']",
+          "duplicate_tools:{'memory_load': 2}",
+          "compact_mentioned_with_incomplete_chain",
+          "success_claim_without_tools",
+          "artifact_missing:png"
+        ],
+        [
+          "missing:['pdf_create', 'pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "duplicate_tools:{'memory_load': 5}",
+          "compact_mentioned_with_incomplete_chain",
+          "artifact_missing:pdf",
+          "artifact_missing:png"
+        ],
+        [
+          "missing:['pdf_create', 'pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "compact_mentioned_with_incomplete_chain",
+          "artifact_missing:pdf",
+          "artifact_missing:png"
+        ],
+        [
+          "missing:['memory_load']",
+          "compact_mentioned_with_incomplete_chain",
+          "artifact_missing:pdf",
+          "artifact_missing:png"
+        ],
+        [
+          "missing:['pdf_create', 'pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "duplicate_tools:{'memory_load': 2}",
+          "compact_mentioned_with_incomplete_chain",
+          "artifact_missing:pdf",
+          "artifact_missing:png"
+        ],
+        [
+          "missing:['pdf_create', 'pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "compact_mentioned_with_incomplete_chain",
+          "artifact_missing:pdf",
+          "artifact_missing:png"
+        ],
+        [
+          "missing:['pdf_create', 'pdf_read', 'pdf_render', 'pdf_vision_qa']",
+          "duplicate_tools:{'memory_load': 2}",
+          "compact_mentioned_with_incomplete_chain",
+          "artifact_missing:pdf",
+          "artifact_missing:png"
+        ]
+      ]
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 49152,
+      "runs": 10,
+      "pass": 5,
+      "fail": 5,
+      "drift": 2,
+      "categories": {
+        "pass": 5,
+        "tool_runtime": 3,
+        "agent_drift": 2
+      },
+      "fail_reasons": [
+        [
+          "artifact_missing:png"
+        ],
+        [
+          "artifact_missing:png"
+        ],
+        [
+          "duplicate_tools:{'pdf_read': 2}"
+        ],
+        [
+          "duplicate_tools:{'pdf_read': 2}"
+        ],
+        [
+          "artifact_missing:png_exact"
+        ]
+      ]
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 57344,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 65536,
+      "runs": 10,
+      "pass": 10,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 10
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 32768,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 49152,
+      "runs": 10,
+      "pass": 7,
+      "fail": 3,
+      "drift": 3,
+      "categories": {
+        "agent_drift": 3,
+        "compact_issue": 1,
+        "tool_runtime": 3,
+        "pass": 7
+      },
+      "fail_reasons": [
+        [
+          "missing:['pdf_create', 'pdf_read']",
+          "compact_mentioned_with_incomplete_chain",
+          "artifact_missing:pdf"
+        ],
+        [
+          "missing:['pdf_create', 'pdf_read']",
+          "artifact_missing:pdf"
+        ],
+        [
+          "missing:['pdf_create', 'pdf_read']",
+          "artifact_missing:pdf"
+        ]
+      ]
+    },
+    {
+      "suite": "knowledge",
+      "num_ctx": 32768,
+      "runs": 3,
+      "pass": 2,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "agent_drift": 1,
+        "pass": 2
+      },
+      "fail_reasons": [
+        [
+          "duplicate_tools:{'knowledge_search': 2}"
+        ]
+      ]
+    },
+    {
+      "suite": "knowledge",
+      "num_ctx": 49152,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 32768,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 49152,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 32768,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 49152,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 57344,
+      "runs": 10,
+      "pass": 7,
+      "fail": 3,
+      "drift": 3,
+      "categories": {
+        "agent_drift": 3,
+        "tool_runtime": 2,
+        "pass": 7
+      },
+      "fail_reasons": [
+        [
+          "missing:['pdf_create', 'pdf_read']",
+          "artifact_missing:pdf"
+        ],
+        [
+          "duplicate_tools:{'pdf_create': 2}"
+        ],
+        [
+          "missing:['memory_load', 'pdf_create', 'pdf_read']",
+          "artifact_missing:pdf"
+        ]
+      ]
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 57344,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "knowledge",
+      "num_ctx": 57344,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 57344,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 65536,
+      "runs": 10,
+      "pass": 9,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 9,
+        "agent_drift": 1,
+        "tool_runtime": 1
+      },
+      "fail_reasons": [
+        [
+          "missing:['pdf_create', 'pdf_read']",
+          "artifact_missing:pdf"
+        ]
+      ]
+    },
+    {
+      "suite": "knowledge",
+      "num_ctx": 65536,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 65536,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 65536,
+      "runs": 10,
+      "pass": 10,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 10
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 73728,
+      "runs": 10,
+      "pass": 8,
+      "fail": 2,
+      "drift": 2,
+      "categories": {
+        "pass": 8,
+        "agent_drift": 2
+      },
+      "fail_reasons": [
+        [
+          "missing:['pdf_vision_qa']",
+          "success_claim_without_tools"
+        ],
+        [
+          "missing:['pdf_render']"
+        ]
+      ]
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 73728,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 73728,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 81920,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "knowledge",
+      "num_ctx": 73728,
+      "runs": 3,
+      "pass": 2,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 2,
+        "agent_drift": 1
+      },
+      "fail_reasons": [
+        [
+          "duplicate_tools:{'knowledge_search': 2}"
+        ]
+      ]
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 73728,
+      "runs": 3,
+      "pass": 3,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 3
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "compact",
+      "num_ctx": 81920,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    },
+    {
+      "suite": "knowledge",
+      "num_ctx": 81920,
+      "runs": 3,
+      "pass": 2,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "pass": 2,
+        "agent_drift": 1
+      },
+      "fail_reasons": [
+        [
+          "duplicate_tools:{'knowledge_search': 2}"
+        ]
+      ]
+    },
+    {
+      "suite": "supervisor",
+      "num_ctx": 81920,
+      "runs": 3,
+      "pass": 2,
+      "fail": 1,
+      "drift": 1,
+      "categories": {
+        "agent_drift": 1,
+        "pass": 2
+      },
+      "fail_reasons": [
+        [
+          "missing:['agent']"
+        ]
+      ]
+    },
+    {
+      "suite": "coding",
+      "num_ctx": 81920,
+      "runs": 5,
+      "pass": 5,
+      "fail": 0,
+      "drift": 0,
+      "categories": {
+        "pass": 5
+      },
+      "fail_reasons": []
+    }
+  ],
+  "note": "No productive cutover. local-quality stays 16384 until explicit Freigabe."
+}

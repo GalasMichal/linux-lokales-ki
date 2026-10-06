@@ -1,0 +1,111 @@
+{
+  "phase": "quality-hidden-gen-20260916",
+  "root_cause": "After pdf_create, Qwen auto-compact ran because turn-2 prompt_tokens 14447 exceeded the 0.85*16384=13926 threshold. Compact is a side query with tool_count=0, max_tokens≈10048, stream=true, reasoning_effort=none. Ollama returned 2713 completion tokens as normal delta.content (<analysis>+<state_snapshot>), not reasoning_content. ACP strips analysis and does not emit agent_message_chunk. Post-compact orphan-tool repair injected 'Tool execution result was not recorded' for the successful pdf_create, so the model called pdf_create again.",
+  "backup": "/mnt/ai-archive/backups/qwen-hidden-gen-20260916-224945",
+  "fix": {
+    "context.autoCompactThreshold": 0.95,
+    "compactionModel": "local-fast",
+    "global_max_tokens": null,
+    "qwen_patch": null
+  },
+  "questions": {
+    "1_ollama_content": "yes — delta.content, 10288 chars / 2713 tokens",
+    "2_reasoning_content": "no — reasoning_chars=0, delta_keys=[content, role]",
+    "3_parser_drops_pre_tool": "no — compact has no tool_calls; analysis is stripped by design of chatCompressionService",
+    "4_serve_buffers_without_acp": "yes — compact output is not agent_message_chunk / thoughts=0",
+    "5_long_abschlussbericht": "no — it is the compact summarizer XML, not a user-facing report",
+    "6_broken_tool_call": "no during compact; after compact orphan repair fakes pdf_create failure → retry",
+    "7_waiting_for_parser_token": "no — finish_reason=stop after 2520 SSE chunks",
+    "8_direct_replay": "yes — same /v1 path through proxy; compact-head replay also emits content not reasoning",
+    "9_fast_same_request": "no compact on FAST 32k; 3-tool 47s, no duplicate",
+    "10_other_tools": "triggers when prompt ≥ auto threshold (after large memory_load + system 27k + 13 tools). pdf_create is the first tool after that. 6-tool still had a short FAST compact after pdf_render (n_gen=1412, VRAM 8GB), no duplicate."
+  },
+  "matrix": [
+    {
+      "id": "A",
+      "name": "Qwen Serve baseline via wire proxy",
+      "file": "quality-essay-ab-20260916/WIRE-local-quality.json",
+      "prompt_tokens_turn2": 14447,
+      "output_tokens_compact": 2713,
+      "visible_chars": 241,
+      "hidden_tokens": 2713,
+      "elapsed_s": 274.707,
+      "tools": ["memory_load", "pdf_create", "pdf_create", "pdf_read"],
+      "finish_reason_compact": "stop",
+      "duplicate_pdf_create": true,
+      "compressed": true,
+      "error": null
+    },
+    {
+      "id": "B",
+      "name": "Same Ollama /v1/chat/completions as Serve (captured)",
+      "note": "Serve posts through 127.0.0.1:11436 to 11434/v1. Turn 3 is the compact request.",
+      "stream": true,
+      "tool_choice": null,
+      "max_tokens": 10048,
+      "reasoning_effort": "none",
+      "think": false,
+      "enable_thinking": false,
+      "tool_count": 0,
+      "content_chars": 10288,
+      "reasoning_chars": 0,
+      "elapsed_s": 193.177
+    },
+    {
+      "id": "C",
+      "name": "/api/chat not used by Serve compact",
+      "note": "All captured turns were POST /v1/chat/completions. Compact-head replay used /v1 only."
+    },
+    {
+      "id": "D",
+      "name": "stream vs non-stream compact-head",
+      "file": "quality-hidden-gen-20260916/replay-compact-head.json",
+      "stream_256": {"elapsed_s": 34.177, "finish_reason": "length", "reasoning_chars": 0, "content_chars": 1095},
+      "nostream_256": {"elapsed_s": 20.133, "finish_reason": "length", "reasoning_chars": 0, "completion_tokens": 256, "message_keys": ["content", "role"]}
+    },
+    {
+      "id": "E",
+      "name": "tool_choice",
+      "note": "Compact sends tools=[]. Agent turns use tool_choice=null (auto). Not the cause. Not set productively."
+    },
+    {
+      "id": "F",
+      "name": "isolated compact max_tokens 1024/1536",
+      "F-1024": {"completion_tokens": 508, "finish_reason": "stop", "elapsed_s": 33.388, "reasoning_chars": 0},
+      "F-1536": {"completion_tokens": 570, "finish_reason": "stop", "elapsed_s": 35.545, "reasoning_chars": 0},
+      "note": "Capping only compact output would shorten analysis. Global max_tokens remains unset."
+    },
+    {
+      "id": "G",
+      "name": "FAST identical 3-tool",
+      "file": "quality-essay-ab-20260916/FASTG-local-fast.json",
+      "elapsed_s": 47.416,
+      "hidden_tokens": 0,
+      "duplicate_pdf_create": false,
+      "compressed": false,
+      "pass_tools": true
+    },
+    {
+      "id": "FIX",
+      "name": "Serve after context.autoCompactThreshold=0.95 + compactionModel=local-fast",
+      "file": "quality-essay-ab-20260916/FIX-local-quality.json",
+      "elapsed_s": 41.435,
+      "hidden_tokens_after_pdf_create": 0,
+      "duplicate_pdf_create": false,
+      "compressed": false,
+      "pass_tools": true,
+      "essay_ok": true
+    },
+    {
+      "id": "E2E",
+      "name": "QUALITY 6-tool after fix",
+      "file": "quality-essay-ab-20260916/e2e.json",
+      "elapsed_s": 155.799,
+      "duplicate_pdf_create": false,
+      "compressed_visible": false,
+      "votes": 6,
+      "pass": true,
+      "note": "After pdf_render a short FAST compact may still run (~1412 n_gen, ~20s, VRAM 8GB) then QUALITY resumes. No duplicate tools."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+Ticket:
+"Als Nutzer möchte ich in der lokalen KI-Arbeitsplatz-App PDF-Rechnungen hochladen, Text per OCR/Vision extrahieren und als Knowledge-Eintrag speichern, damit spätere Chats die Rechnung finden."
+
+Decompose into:
+1) Analyse
+2) Implementierung
+3) Tests
+4) Review
+5) Akzeptanzkriterien
+
+Assume local stack: Open WebUI / Qwen Code / local-tools MCP / Ollama. No cloud. Keep practical. No tools. No full implementation.
+## 1) Analyse
+
+**Anforderungskomponenten:**
+- PDF-Upload-Funktionalität
+- OCR/Vision zur Textextraktion
+- Speicherung als Knowledge-Eintrag
+- Integration in Chat-System
+
+**Technische Einschränkungen:**
+- Lokaler Stack: Open WebUI, Qwen Code, local-tools MCP, Ollama
+- Keine Cloud-Abhängigkeiten
+- Keine externen Tools/Services
+
+**Architektur-Design:**
+- PDF-Verarbeitung lokal mit PyPDF2 oder pdfplumber
+- OCR durch Tesseract (via local-tools MCP)
+- Knowledge-Store: lokaler Vector DB (z.B. ChromaDB)
+- Integration über Open WebUI API
+
+**Risiken:**
+- OCR-Qualität auf lokalem Setup
+- Performance bei PDF-Verarbeitung
+- Lokale Ressourcen (Speicher, CPU)
+
+## 2) Implementierung
+
+```typescript
+// pdf-upload.ts
+export class PDFProcessor {
+  async uploadAndProcess(file: File): Promise<ProcessResult> {
+    // 1. PDF validieren
+    // 2. Seiten extrahieren
+[ Prompt: 16,5 t/s | Generation: 19,5 t/s ]

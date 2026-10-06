@@ -1,0 +1,108 @@
+{
+  "started": "2026-10-02T15:59:56+0200",
+  "levels": [
+    {
+      "model": "bench-qwen38-27b-16k",
+      "num_ctx": 16384,
+      "pass": false,
+      "elapsed_s": 152.451,
+      "fail_reasons": [
+        "duplicate_tools:{'pdf_render': 2}",
+        "png_missing"
+      ],
+      "completed_counts": {
+        "memory_load": 1,
+        "pdf_create": 1,
+        "pdf_read": 1,
+        "pdf_render": 2,
+        "pdf_vision_qa": 1
+      },
+      "vram_after_mib": 14492,
+      "swap_after_mib": 4465,
+      "seeded": true
+    },
+    {
+      "model": "bench-qwen38-27b-24k",
+      "num_ctx": 24576,
+      "pass": true,
+      "elapsed_s": 357.542,
+      "fail_reasons": [],
+      "completed_counts": {
+        "memory_load": 1,
+        "pdf_create": 1,
+        "pdf_read": 1,
+        "pdf_render": 1,
+        "pdf_vision_qa": 1
+      },
+      "vram_after_mib": 14124,
+      "swap_after_mib": 4212,
+      "seeded": true
+    },
+    {
+      "model": "bench-qwen38-27b-32k",
+      "num_ctx": 32768,
+      "pass": true,
+      "elapsed_s": 234.075,
+      "fail_reasons": [],
+      "completed_counts": {
+        "memory_load": 1,
+        "pdf_create": 1,
+        "pdf_read": 1,
+        "pdf_render": 1,
+        "pdf_vision_qa": 1
+      },
+      "vram_after_mib": 14184,
+      "swap_after_mib": 4164,
+      "seeded": true
+    },
+    {
+      "model": "bench-qwen38-27b-40k",
+      "num_ctx": 40960,
+      "pass": false,
+      "elapsed_s": 400.339,
+      "fail_reasons": [
+        "missing:pdf_create",
+        "missing:pdf_read",
+        "missing:pdf_render",
+        "missing:pdf_vision_qa",
+        "duplicate_tools:{'memory_load': 2}",
+        "pdf_missing",
+        "png_missing"
+      ],
+      "completed_counts": {
+        "memory_load": 2,
+        "pdf_create": 0,
+        "pdf_read": 0,
+        "pdf_render": 0,
+        "pdf_vision_qa": 0
+      },
+      "vram_after_mib": 14138,
+      "swap_after_mib": 4548
+    },
+    {
+      "model": "bench-qwen38-27b-48k",
+      "num_ctx": 49152,
+      "pass": true,
+      "elapsed_s": 172.332,
+      "fail_reasons": [],
+      "completed_counts": {
+        "memory_load": 1,
+        "pdf_create": 1,
+        "pdf_read": 1,
+        "pdf_render": 1,
+        "pdf_vision_qa": 1
+      },
+      "vram_after_mib": 14378,
+      "swap_after_mib": 4546
+    }
+  ],
+  "highest_pass_ctx": 49152,
+  "first_fail_ctx": 16384,
+  "productive_local_quality_ctx": 16384,
+  "recommendation": "Serve-E2E zuverlässig PASS bei 24K und 32K. 16K zu eng/flaky für volle Memory+PDF+Vision-Kette. 40K Verhaltens-Fail (Doppel memory_load, keine PDF-Kette) — Grenze „zu hoch“ für Agent-Qualität. 48K einmal PASS, aber nicht als stabile Grenze werten. Kein VRAM/RAM-OOM bis 48K. Cutover höchstens 32K — nur mit Freigabe. local-quality bleibt 16384.",
+  "from_ctx": 40960,
+  "local_quality_still_16384": true,
+  "ended": "2026-10-02T16:09:35+0200",
+  "reliable_highest_pass_ctx": 32768,
+  "behavioral_too_high_from_ctx": 40960
+}

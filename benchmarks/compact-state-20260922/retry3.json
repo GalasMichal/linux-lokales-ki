@@ -1,0 +1,27 @@
+{
+  "sessionId": "b1272b9a-98f7-4e90-8b12-1b1e3226b018",
+  "events": [
+    {
+      "success": true,
+      "args": {
+        "output": "/srv/ai/apps/local-tools/forbidden-ledger-retry.png",
+        "page": 1,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/compact-continuity/ledger4.pdf"
+      }
+    },
+    {
+      "success": true,
+      "args": {
+        "output": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/compact-continuity/retry-ok2.png",
+        "page": 1,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/compact-continuity/ledger4.pdf"
+      }
+    }
+  ],
+  "outputs": [
+    "{\"ok\":false,\"error\":\"Pfad liegt außerhalb der erlaubten Arbeitsbereiche: /srv/ai/apps/local-tools\"}\n{\n  \"ok\": false,\n  \"error\": \"Pfad liegt außerhalb der erlaubten Arbeitsbereiche: /srv/ai/apps/local-",
+    "{\"ok\":true,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/compact-continuity/retry-ok2.png\",\"source\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/compact-continuity/ledger4.pdf\",\"page\":1,"
+  ],
+  "png": true,
+  "pass": false
+}

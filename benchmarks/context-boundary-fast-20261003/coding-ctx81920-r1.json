@@ -1,0 +1,80 @@
+{
+  "ts": "2026-10-03T07:04:03+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen35-9b-80k",
+  "run_id": 1,
+  "sessionId": "2d7c11c9-4fd5-4b0c-a544-f952e05bd36e",
+  "elapsed_s": 11.984,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_zoh0z21z",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_dmi0k5cn",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_25wqpwbm",
+      "name": "WriteFile: Writing to /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_j13mqxpo",
+      "name": "run_shell_command",
+      "status": "failed"
+    },
+    {
+      "id": "call_zt44awvc",
+      "name": "ToolSearch: shell command run execute",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1333,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25739,
+      "swap_used_mib": 6130
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 9648,
+      "vram_total_mib": 16303,
+      "gpu_util": 88
+    },
+    "mem": {
+      "mem_available_mib": 23194,
+      "swap_used_mib": 6130
+    },
+    "ps": "NAME                          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nbench-qwen35-9b-80k:latest    b81e343b0550    7.3 GB    100% GPU     81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

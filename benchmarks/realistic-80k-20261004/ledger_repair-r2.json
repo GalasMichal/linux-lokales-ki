@@ -1,0 +1,96 @@
+{
+  "ts": "2026-10-04T09:46:56+0200",
+  "task": "ledger_repair",
+  "title": "Ledger parse, signed balance, report ids",
+  "core": true,
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 2,
+  "attempt": 1,
+  "retry_of": null,
+  "sessionId": "0502a586-146b-4aae-9beb-163a943af497",
+  "workspace": "/srv/ai/workspaces/realistic-80k-20261004/runs/ledger_repair-r2",
+  "elapsed_s": 54.716,
+  "pass": false,
+  "resolved": false,
+  "fail_to_pass": false,
+  "pass_to_pass": true,
+  "musts_ok": false,
+  "score": {
+    "fail_to_pass": {
+      "pass": false,
+      "code": 1,
+      "out": " _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nentries.py:24: in parse_text\n    rows.append(parse_line(raw))\n                ^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nline = 'a1|2026-10-01|100'\n\n    def parse_line(line: str) -> Entry:\n        # BUG: splits on comma, so real '|' rows break\n        parts = [p.strip() for p in line.split(\",\")]\n        if len(parts) != 3:\n>           raise ValueError(\"bad line\")\nE           ValueError: bad line\n\nentries.py:15: ValueError\n=========================== short test summary info ============================\nFAILED test_visible.py::test_parse_pipe_rows_and_signed_balance - ValueError:...\nFAILED test_visible.py::test_report_keeps_ids_and_matches_balance - ValueErro...\n2 failed in 0.01s\n"
+    },
+    "pass_to_pass": {
+      "pass": true,
+      "code": 0,
+      "out": "..                                                                       [100%]\n2 passed in 0.00s\n"
+    },
+    "musts": {
+      "pass": false,
+      "code": 1,
+      "out": "3\")\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n/home/mike/Projects/Linux Lokales KI/benchmarks/realistic_80k_tasks/ledger_repair/hidden/test_musts.py:20: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nline = 'z9|2026-12-31|-3'\n\n    def parse_line(line: str) -> Entry:\n        # BUG: splits on comma, so real '|' rows break\n        parts = [p.strip() for p in line.split(\",\")]\n        if len(parts) != 3:\n>           raise ValueError(\"bad line\")\nE           ValueError: bad line\n\nentries.py:15: ValueError\n=========================== short test summary info ============================\nFAILED ../../../../../../home/mike/Projects/Linux Lokales KI/benchmarks/realistic_80k_tasks/ledger_repair/hidden/test_musts.py::test_iso_date_kept\n1 failed, 2 passed in 0.01s\n"
+    },
+    "resolved": false
+  },
+  "tools": [
+    {
+      "name": "ToolSearch: select:run_shell_command,list",
+      "status": "completed"
+    },
+    {
+      "name": "Shell: ls -la /srv/ai/workspaces/realistic-80k-20261004/runs/ledger_repair-r2 && python3 -m pytest -q test_visible.py 2>&1 | tail -50 [in /srv/ai/workspaces/realistic-80k-20261004/runs/ledger_repair-r2] (List task dir and run visible tests)",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile",
+      "status": "failed"
+    },
+    {
+      "name": "ReadFile",
+      "status": "failed"
+    },
+    {
+      "name": "ReadFile",
+      "status": "failed"
+    },
+    {
+      "name": "ReadFile",
+      "status": "failed"
+    }
+  ],
+  "votes": 0,
+  "vote_log_tail": [],
+  "prompt_error": null,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 0,
+    "tools": 6,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 0,
+    "vram": 14024
+  },
+  "before": {
+    "mem": {
+      "mem_available_mib": 22586,
+      "swap_used_mib": 7137
+    },
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 24.421,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "empty_start": false,
+  "error_class": "must_loss",
+  "perm_blocked": false,
+  "productive_local_quality_untouched": true
+}

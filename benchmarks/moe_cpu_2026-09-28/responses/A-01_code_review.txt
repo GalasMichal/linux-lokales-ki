@@ -1,0 +1,36 @@
+Review the following TypeScript/OpenLayers snippet. List:
+1) concrete bugs
+2) unnecessary complexity
+3) concrete improvements
+
+Return a short structured answer. No tools.
+
+```typescript
+import Map from 'ol/Map';
+import View from 'ol/View';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+import VectorLayer from 'ol/layer/Vector';
+import VectorSource from 'ol/source/Vector';
+import { fromLonLat } from 'ol/proj';
+import Feature from ... (truncated)
+**1) Konkrete Fehler**
+- `document.getElementById(target)!.style.height = '100vh';` kann fehlschlagen, wenn `target` kein gültiger DOM-Selector ist
+- `data[0].lon, data[0].lat` in `setCenter()` kann fehlschlagen, wenn `data` leer ist
+
+**2) Unnötige Komplexität**
+- `setInterval` mit fester 1000ms-Intervall, ohne Möglichkeit zur Steuerung
+- `any` Typ bei `p: any` in `data.forEach()`
+- `source.clear()` + `source.addFeature()` für jeden Datenabruf ist ineffizient
+
+**3) Konkrete Verbesserungen**
+- Typisierung von `p` als `Position` Interface
+- `setInterval` mit `clearInterval` zur Ressourcenfreigabe
+- `source.clear()` nur bei Bedarf, `source.addFeatures()` für bessere Performance
+- Fehlerbehandlung für `fetch` und `data[0]`
+- `target` als `HTMLElement` statt `string` übergeben
+
+```typescript
+interface Position {
+  lon
+[ Prompt: 40,2 t/s | Generation: 21,3 t/s ]

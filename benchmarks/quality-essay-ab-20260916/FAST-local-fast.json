@@ -1,0 +1,121 @@
+{
+  "variant": "FAST",
+  "model_id": "local-fast(openai)",
+  "sessionId": "acf3213e-9f7a-4f83-8f1f-57952acd457f",
+  "elapsed_s": 29.601,
+  "prompt_error": null,
+  "prompt_result": {
+    "promptId": "0c34ab45-ce7c-42e7-bbb4-5677b9905a73",
+    "lastEventId": 3,
+    "eventEpoch": "c9b6801d-d743-4da2-a1cc-bf01e79104f8"
+  },
+  "votes": [
+    {
+      "requestId": "ed6cbe0c-8722-4d98-ac37-ea442f36c6f5",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "e6d38c3c-9f77-415c-a49f-3fd30cc748f1",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "dccf1801-7dde-4d2e-8b81-def570d7d3f7",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_qffquz2g",
+      "name": "memory_load (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "id": "call_lsp5b71f",
+      "name": "pdf_create (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "id": "call_xap8uw7c",
+      "name": "pdf_read (local-tools MCP Server)",
+      "status": "completed"
+    }
+  ],
+  "tool_names": [
+    "memory_load",
+    "pdf_create",
+    "pdf_read"
+  ],
+  "missing": [],
+  "duplicate_tools": [],
+  "thoughts": 310,
+  "assistant_chars": 0,
+  "assistant_approx_tokens": 0,
+  "segments": [
+    {
+      "after_tool": null,
+      "before_tool": "memory_load (local-tools MCP Server)",
+      "start_s": 1.707,
+      "end_s": 1.707,
+      "chars": 0,
+      "approx_tokens": 0,
+      "text_preview": ""
+    },
+    {
+      "after_tool": null,
+      "before_tool": "pdf_create (local-tools MCP Server)",
+      "start_s": 3.613,
+      "end_s": 3.613,
+      "chars": 0,
+      "approx_tokens": 0,
+      "text_preview": ""
+    },
+    {
+      "after_tool": null,
+      "before_tool": "pdf_read (local-tools MCP Server)",
+      "start_s": 4.366,
+      "end_s": 4.366,
+      "chars": 0,
+      "approx_tokens": 0,
+      "text_preview": ""
+    }
+  ],
+  "max_mid_tokens": 0,
+  "compressed": false,
+  "pdf_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok"
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 3,
+    "tools": 3,
+    "thoughts": 310,
+    "n_gen": 0,
+    "gpu_util": 100,
+    "vram": 8733,
+    "abort": null,
+    "cancelled_leftover": false
+  },
+  "nvidia": {
+    "vram_used_mib": 8733,
+    "vram_total_mib": 16303,
+    "gpu_util": 100
+  },
+  "ollama_ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n",
+  "assistant_text": "",
+  "pass_tools": true,
+  "essay_ok": true
+}

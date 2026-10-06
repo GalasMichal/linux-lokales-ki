@@ -1,0 +1,27 @@
+{
+  "result": "FAIL – prompt-only insufficient",
+  "installed_patch": false,
+  "prompt_stock_sha": "859c4a89149f02e271f73039bf4aa4d31eead0e08dd333d3a17f790bd754986c",
+  "registry_patched_sha": "2433fc7ca45bc5afc22efc91be0da87ba1f420b213d5d9e61a180e9525924035",
+  "runs": [
+    {
+      "label": "short-prompt",
+      "sessionId": "631ff44e-c5b4-419c-b735-79288f1164f3",
+      "prompt_tokens_before": 9845,
+      "compressed": false,
+      "error": "500 no user query found in messages",
+      "note": "Qwen estimate stayed under 0.95. Ollama rejected the follow-up."
+    },
+    {
+      "label": "forced-compact",
+      "sessionId": "27a92462-9f9a-4838-9847-980dee5d884a",
+      "compaction_model": "local-fast",
+      "compact_output_tokens_approx": 345,
+      "vram_during_compact_mib": 9299,
+      "compressed": true,
+      "tokens_after_compact_estimate": 17216,
+      "hard_limit": 16384,
+      "error": "Context is too large to send safely after automatic compression"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "status": 200,
+  "body": {
+    "ok": true,
+    "job_id": "cd3220e9efaa",
+    "workflow_id": "qwen-image-21-edit-v1",
+    "runtime_seconds": 81.947,
+    "archive_directory": "/mnt/ai-archive/images/inbox/2026-09-21/cd3220e9efaa",
+    "output_path": "/mnt/ai-archive/images/inbox/2026-09-21/cd3220e9efaa/ki_arbeitsplatz_cd3220e9efaa_00001_.png",
+    "manifest_path": "/mnt/ai-archive/images/inbox/2026-09-21/cd3220e9efaa/manifest.json",
+    "manifest": "/mnt/ai-archive/images/inbox/2026-09-21/cd3220e9efaa/manifest.json",
+    "workflow_sha256": "78a0d0f445b08557d5e69139ce7f2d2ad547658bcaf90a10cfe154121b65bbe8",
+    "input_sha256": "af0c3a65165f198ed9c287ee67b5966dd1a2deab3827b30bba8b3b50d5a40096",
+    "reference_sha256": [],
+    "output_sha256": "4e579a6ef313f15a052732a8bdade4aea478519dfbd4fb5c77a8c08466a8a531",
+    "quantization": {
+      "dit": "int8",
+      "encoder": "w4a8",
+      "cache": "int8/cpu"
+    },
+    "preserve_alpha": false,
+    "seed": 42,
+    "width": 1024,
+    "height": 1024,
+    "vram_peak_mib": 15250
+  },
+  "runtime": 83.634,
+  "cleanup": {
+    "comfyui": "inactive",
+    "qwen": "inactive",
+    "gpu": {
+      "used_mib": 2168,
+      "free_mib": 13672
+    },
+    "staged": []
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "label": "t02-architecture",
+  "session_id": "9f3be373-e192-4423-8895-cbd2ccfb47c4",
+  "model": "local-fast(openai)",
+  "elapsed_s": 576.61,
+  "prompt_error": null,
+  "tools": [
+    "agent:researcher",
+    "agent:architect",
+    "agent",
+    "agent",
+    "tool_search",
+    "tool_search",
+    "agent:researcher",
+    "agent:architect",
+    "memory_load",
+    "knowledge_search",
+    "browser_open",
+    "knowledge_search",
+    "knowledge_search",
+    "tool_search",
+    "browser_open",
+    "read_file",
+    "knowledge_search",
+    "memory_load",
+    "read_file",
+    "read_file",
+    "read_file",
+    "read_file",
+    "read_file",
+    "read_file",
+    "agent",
+    "knowledge_search",
+    "memory_load",
+    "tool_call",
+    "tool_call",
+    "knowledge_search",
+    "tool_call",
+    "tool_call",
+    "tool_call",
+    "agent",
+    "list_agents",
+    "list_agents"
+  ],
+  "agent_calls": [
+    "agent:researcher",
+    "agent:architect",
+    "agent",
+    "agent",
+    "agent:researcher",
+    "agent:architect",
+    "agent",
+    "agent"
+  ],
+  "knowledge_search": true,
+  "prompt_tokens": [
+    8897,
+    9367,
+    12773,
+    15130,
+    15226
+  ],
+  "max_prompt_tokens": 15226,
+  "first_prompt_tokens": 8897,
+  "assistant_excerpt": "ve the researcher findings, then combine them.\nBoth agents completed (researcher was blocked due to MCP knowledge_search limitation). Here's the synthesis:\n\n---\n\n## Supervisor Synthesis: Safe Mostly-Autonomous Architecture\n\n### Core Pattern: Decide → Gate → Execute → Record\n\nA **platform-neutral** model grounded in four existing constraints (Continuity, Lazy Tools, KB-as-fallback, read-only Security posture):\n\n```\n┌─────────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐\n│  ORCHESTRATOR │→ │ DECIDER  │→ │ GUARDRAIL │→ │ EXECUTOR  │\n│ (plan/step)  │   │(policy/  │   │risk-tier  │   │(side-     │\n└──────┬────────┘   read)     │+gates)      │    effect)     │\n       │                  └─────┬─────┘      ├────┐          │\n       │                         ▼           │     │          │\n       ┌────────────────────────►┌─────────┤     │          │\n       │            KB/CONTEXT ◄──│AUDIT   │ROLLBACK         │\n       └────────────────────────►│  LOG    │<────────────────┘\n                                  └─────────┘                │\n                                                               ▼\n                                                            HUMAN ESCALATE\n```\n\n### Key Decisions\n\n**1. Separation of Concerns**\n- **Decider**: pure, read-only, outputs typed `ActionRequest` (intent + params + expected postcondition)\n- **Executor**: dumb side-effect adapter; can only act on pre-validated requests\n- Coupling point: exactly one `ActionRequest` contract\n\n**2. Guardrail Patterns**\nRisk tiers (computed inside gate, *never* by Decider):\n| Tier | Scope | Autonomy policy |\n|------|-------|-----------------|\n| T0 | read-only | auto-proceed |\n| T1 | idempotent-write | auto with rollback handle |\n| T2 | destructive/non-idempotent | confirm before action |\n| T3 | irreversible/external (network-send, delete, spend) | human approval only or deny |\n\n**3. Failure Tolerance** (no full shutdowns)\n- Per-step failure policy: T0 skip+log; T1 rollback then retry N×(capped); T2/T2 pause that task, park state in memory surface to human\n- Circuit-breaker at *task* level only; other tasks keep running\n\n**4. Audit Integration**\n- Single hash-chained append-only log at: decision emit, gate allow/deny, executor start/finish/rollback, escalation\n- Log itself feeds KB-as-fallback → decisions informed by decision history\n\n### Minimal Viable Architecture (4 parts)\n\n1. **Contract + risk-tier enum** (the spine)\n2. **Guardrail gate** implementing tier→policy table + determinstic idempotency check\n3. **Executor adapters** conforming to effect+rollback-handle interface\n4. **Append-only audit log** (hash-chained, same store as memory persists KB without new infra)\n\n### Tradeoffs Evaluated\n\n| Axis | Recommendation |\n|------|----------------|\n| Unknown action | deny + log → check is post-hoc |\n| Retry autonomy | capped N× on T1 only |\n| Destructive batch | bulk with single rollback group (confirm once per group) |\n| Observability | log all decisions; executor detail optional |\n\n### Risk Mitigations\n\n- `ActionRequest.class` drives tier assignment deterministically inside gate → prevents model self-classification attacks\n- Policy table versioned + signed → drift detected without code change\n- Audit log bounded size/retention policy required for disk-constrained offline hosts\n\n---\n\n### Open Questions (for next iteration)\n\n1. T2 destructive batches: per-item confirm vs single group confirm?\n2. Audit log retention compaction strategy?\n3. Risk-tier policy as config vs code?",
+  "agent_results": [
+    {
+      "name": "list_agents",
+      "chars": 327,
+      "excerpt": "No ordinary background subagents are available in this session, and no other Qwen Code session on this machine is reachable. Named Agent Team teammates are not listed here; their results are delivered automatically through team messaging, so do not use list_agents to wait for a teammate. This session is named \"workspaces-7f\"."
+    },
+    {
+      "structured_result_seen": true
+    }
+  ],
+  "votes": [
+    {
+      "requestId": "9d5b1715-f61c-4ab8-b579-b6041065cefc",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "5a52934e-7af8-47c2-99ad-ffa15d803aff",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "123ae604-15fb-4e1d-99c8-8f5ec6e40276",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "8b7440ef-b391-448f-9964-729a81946fe9",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "8f9d069e-96f6-433f-8bbd-1cf6ccee5df4",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "dfdbd412-21a3-4036-a07f-6d6dc1e62cb4",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "b025817a-16e9-49ed-8020-acb77b967b56",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "2df846ed-a791-4a41-8199-16a69d7ff5c9",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "0517753c-cf0b-4787-b083-9679688c219d",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "d2d6588f-0310-4c93-a05d-c20eebadfbc3",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "77d7018d-d7fa-40d5-ba9a-e0a782c3dde1",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "7d0cde15-c673-4fa6-afab-e6379212a1a6",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "a0501f11-e010-4ddf-b8cc-166afbe50a54",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "yolo": false,
+  "nvidia": {
+    "vram_used_mib": 9943,
+    "vram_total_mib": 16303,
+    "gpu_util": 100
+  },
+  "ollama_ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n",
+  "ledger_seen": false,
+  "no_user_query": false,
+  "hard_overflow": false
+}

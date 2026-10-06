@@ -1,0 +1,16 @@
+{
+  "phase": "QUALITY 16k productive cutover",
+  "ts": "2026-09-16T21:10+02:00",
+  "local_quality": {"id": "ad1736a075f0", "num_ctx": 16384, "parent": "qwen3.8:27b"},
+  "local_fast": {"id": "cf8bd43c0e1c", "num_ctx": 32768},
+  "backup": "/mnt/ai-archive/backups/local-quality-16k-20260916-205745",
+  "rollback": "scripts/rollback-local-quality-16k.sh",
+  "smoke_pass": true,
+  "e2e_pass": true,
+  "e2e_elapsed_s": 564.869,
+  "fast_regression_pass": true,
+  "unittest": 66,
+  "default_model": "local-fast",
+  "trust": false,
+  "approvalMode": "default"
+}

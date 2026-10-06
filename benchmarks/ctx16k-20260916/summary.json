@@ -1,0 +1,19 @@
+{
+  "phase": "QUALITY 16k/32k context probe",
+  "ts": "2026-09-16T18:00+02:00",
+  "productive_unchanged": {
+    "local-quality": {"id": "993995e538ad", "num_ctx": 8192},
+    "local-fast": {"id": "cf8bd43c0e1c", "num_ctx": 32768}
+  },
+  "aliases_added": ["bench-qwen38-27b-16k", "bench-qwen38-27b-32k"],
+  "recommendation": "keep_8k_now__cutover_16k_later",
+  "e2e_16k_single_session": true,
+  "e2e_elapsed_s": 352.439,
+  "notes": [
+    "16k holds current 12-tool Serve prompt and completed one-session Memory+PDF+Vision E2E",
+    "16k leftover essay after pdf_create triggered context compression 15691->11396",
+    "44-tool historic dump: 8k snaps to 4098 no tool; 16k 8194 tokens wrong tool update_plan; 32k 29653 tokens correct memory_load",
+    "32k loads on RTX 5080, ~41% CPU offload, ~10 tok/s vs 13 at 8k",
+    "default model briefly persisted to bench-16k during E2E; restored to local-fast"
+  ]
+}

@@ -1,0 +1,3 @@
+=== live_mcp_smoke ===
+{"ok": true, "server": "name='local-ai-tools' title=None version='1.2.0' description=None website_url=None icons=None", "tools": ["generate_image", "memory_load", "memory_update", "pdf_read", "pdf_inspect", "pdf_create", "pdf_edit", "pdf_merge", "pdf_split", "pdf_ocr", "pdf_render", "pdf_vision_qa"], "workflow_id": "flux2-klein-t2i-v1", "widths": [512, 768, 1024], "heights": [512, 768, 1024]}
+smoke_exit=0

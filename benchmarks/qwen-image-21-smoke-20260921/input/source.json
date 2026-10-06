@@ -1,0 +1,12 @@
+{
+  "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/qwen-image-21-smoke-20260921/input/source.png",
+  "format": "PNG",
+  "mode": "RGB",
+  "size": [
+    512,
+    512
+  ],
+  "bytes": 190999,
+  "sha256": "af0c3a65165f198ed9c287ee67b5966dd1a2deab3827b30bba8b3b50d5a40096",
+  "source": "/mnt/ai-archive/images/inbox/2026-09-21/b8d57bc6dd22/ki_arbeitsplatz_b8d57bc6dd22_00001_.png"
+}

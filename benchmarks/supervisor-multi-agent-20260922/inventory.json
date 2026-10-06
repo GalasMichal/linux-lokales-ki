@@ -1,0 +1,22 @@
+{
+  "qwen_version": "0.24.2",
+  "agent_enabled": true,
+  "list_agents_enabled": true,
+  "send_message_enabled": true,
+  "shell_disabled": true,
+  "maxSubagentDepth": 1,
+  "agentTeam": false,
+  "alwaysLoadTools": false,
+  "mcp_tools": 32,
+  "trust": false,
+  "approvalMode": "default",
+  "agents_present": [
+    "architect.md",
+    "researcher.md",
+    "reviewer.md"
+  ],
+  "model_grades": {
+    "fast": "local-fast",
+    "quality": "local-quality"
+  }
+}

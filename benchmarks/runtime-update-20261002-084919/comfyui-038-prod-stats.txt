@@ -1,0 +1,2 @@
+0.38.0
+['main.py', '--listen', '127.0.0.1', '--port', '8188', '--output-directory', '/srv/ai/apps/ComfyUI/output', '--disable-comfy-compiler']

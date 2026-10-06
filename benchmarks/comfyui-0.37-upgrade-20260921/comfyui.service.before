@@ -1,0 +1,24 @@
+[Unit]
+Description=Local ComfyUI
+Documentation=file:///srv/ai/apps/ki-hub/www/index.html
+# Linger=yes: User-Manager startet schon beim Rechnerstart (default.target).
+# Nicht After=graphical-session.target — dann wartet die Unit auf die Desktop-
+# Anmeldung und bleibt nach Reboot oft inactive, obwohl enabled.
+After=network.target
+StartLimitIntervalSec=180
+StartLimitBurst=12
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/ai/apps/ComfyUI
+Environment=HF_HOME=/srv/ai/cache/huggingface
+# GPU kann nach Reboot ein paar Sekunden fehlen. Nicht hart fehlschlagen.
+ExecStartPre=/bin/bash -c 'for i in $(seq 1 30); do [ -e /dev/nvidia0 ] && exit 0; sleep 1; done; exit 0'
+ExecStart=/srv/ai/venvs/comfyui/bin/python main.py --listen 127.0.0.1 --port 8188
+Restart=on-failure
+RestartSec=8
+
+[Install]
+# Boot (Linger) plus nochmal, wenn die grafische Sitzung da ist.
+# Autostart ist Wunsch; Knopf Bilder in der KI-Zentrale startet zuverlässig nach.
+WantedBy=default.target graphical-session.target

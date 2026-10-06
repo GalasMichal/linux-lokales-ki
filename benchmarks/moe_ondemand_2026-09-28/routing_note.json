@@ -1,0 +1,11 @@
+{
+  "trivial_tasks": "no automatic moe_consult \u2014 agent/skill instruction only",
+  "complex_tasks": "architect/reviewer/supervisor MAY call moe_consult",
+  "evidence": [
+    ".qwen/agents/architect.md",
+    ".qwen/agents/reviewer.md",
+    "skills/supervisor-team/SKILL.md",
+    "QWEN.md"
+  ],
+  "pass": true
+}

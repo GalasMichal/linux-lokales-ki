@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Wach halten
+Name[de]=Wach halten
+Comment=Standby an/aus schalten — ein Klick AN, noch ein Klick AUS
+Comment[de]=Standby an/aus schalten — ein Klick AN, noch ein Klick AUS
+Exec=/home/mike/.local/bin/keep-awake-toggle toggle
+Icon=preferences-system-power-management
+Terminal=false
+Categories=Utility;System;
+StartupNotify=false
+Keywords=sleep;standby;inhibit;wach;suspend;

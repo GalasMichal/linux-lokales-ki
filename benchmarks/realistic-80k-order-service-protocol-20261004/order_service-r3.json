@@ -1,0 +1,124 @@
+{
+  "ts": "2026-10-04T14:32:20+0200",
+  "task": "order_service",
+  "title": "Checkout totals and member prices",
+  "core": true,
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "bench_variant": "order_service_protocol_v1_20261004",
+  "protocol_file": "/home/mike/Projects/Linux Lokales KI/benchmarks/realistic_80k_tasks/order_service/PROTOCOL_WORKFLOW_v1.md",
+  "run_id": 3,
+  "attempt": 1,
+  "retry_of": null,
+  "sessionId": "49024ea6-a8c0-40c0-97d7-0826e3269bba",
+  "workspace": "/srv/ai/workspaces/realistic-80k-order-service-protocol-20261004/runs/order_service-r3",
+  "elapsed_s": 206.492,
+  "pass": true,
+  "resolved": true,
+  "fail_to_pass": true,
+  "pass_to_pass": true,
+  "musts_ok": true,
+  "score": {
+    "fail_to_pass": {
+      "pass": true,
+      "code": 0,
+      "out": "..                                                                       [100%]\n2 passed in 0.00s\n"
+    },
+    "pass_to_pass": {
+      "pass": true,
+      "code": 0,
+      "out": "...                                                                      [100%]\n3 passed in 0.00s\n"
+    },
+    "musts": {
+      "pass": true,
+      "code": 0,
+      "out": "...                                                                      [100%]\n3 passed in 0.01s\n"
+    },
+    "resolved": true
+  },
+  "tools": [
+    {
+      "name": "ToolSearch: select:read_file,write_file,run_shell_command,glob,edit",
+      "status": "completed"
+    },
+    {
+      "name": "Glob: '**/*' in realistic-80k-order-service-protocol-20261004/runs/order_service-r3",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-order-service-protocol-20261004/.../test_visible.py",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-order-service-protocol-20261004/runs/order_service-r3/cart.py",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-order-service-protocol-20261004/runs/order_service-r3/checkout.py",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-order-service-protocol-20261004/runs/order_service-r3/catalog.py",
+      "status": "completed"
+    },
+    {
+      "name": "WriteFile: Writing to realistic-80k-order-service-protocol-20261004/runs/order_service-r3/catalog.py",
+      "status": "completed"
+    },
+    {
+      "name": "WriteFile: Writing to realistic-80k-order-service-protocol-20261004/runs/order_service-r3/cart.py",
+      "status": "completed"
+    },
+    {
+      "name": "WriteFile: Writing to realistic-80k-order-service-protocol-20261004/runs/order_service-r3/checkout.py",
+      "status": "completed"
+    },
+    {
+      "name": "Edit: realistic-80k-order-service-protocol-20261004/runs/order_service-r3/checkout.py",
+      "status": "completed"
+    },
+    {
+      "name": "Shell: python3 -m pytest -q test_visible.py [in /srv/ai/workspaces/realistic-80k-order-service-protocol-20261004/runs/order_service-r3] (Run visible pytest suite)",
+      "status": "completed"
+    }
+  ],
+  "tools_failed": 0,
+  "votes": 4,
+  "vote_log_tail": [],
+  "prompt_error": null,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 4,
+    "tools": 11,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 65,
+    "vram": 14161
+  },
+  "before": {
+    "mem": {
+      "mem_available_mib": 17476,
+      "swap_used_mib": 8027
+    },
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 19.399,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "empty_start": false,
+  "error_class": "pass",
+  "perm_blocked": false,
+  "productive_local_quality_untouched": true,
+  "turn_aborted": false,
+  "validation_attempt": 3,
+  "validation_slot": 3,
+  "run_validity": "valid",
+  "invalid_reason": null
+}

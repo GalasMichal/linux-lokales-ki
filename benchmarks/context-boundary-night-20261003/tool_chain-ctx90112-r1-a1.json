@@ -1,0 +1,118 @@
+{
+  "ts": "2026-10-04T00:17:16+0200",
+  "suite": "tool_chain",
+  "num_ctx": 90112,
+  "model": "bench-qwen38-27b-88k",
+  "run_id": 1,
+  "sessionId": "aac13f81-98ff-43bd-83b5-843b457f5b1d",
+  "elapsed_s": 227.364,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1
+  },
+  "tools": [
+    {
+      "id": "call_yq279vd1",
+      "name": "ToolSearch: select:memory_load,pdf_create,pdf_read,pdf_render,pdf_vision_qa",
+      "status": "completed"
+    },
+    {
+      "id": "call_1wm8gr93",
+      "name": "memory_load (local-tools MCP Server): {\"files\":\"\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_3aubzf47",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-90112-r1-001320.pdf\",\"text\":\"Boundary probe ctx=90112 run=1.\",\"title\":\"BOUND 90112 R1\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_k2t9dioe",
+      "name": "pdf_read (local-tools MCP Server): {\"max_chars\":4000,\"pages\":\"\",\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-90112-r1-001320.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_odnghh35",
+      "name": "pdf_render (local-tools MCP Server): {\"dpi\":140,\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-90112-r1-001320.png\",\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-90112-r1-001320.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_t9vw4tmf",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"pages\":\"1\",\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-90112-r1-001320.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true,
+    "png": true,
+    "png_exact": true,
+    "png_alt": [
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-90112-r1-001320.qa-p1.png",
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-90112-r1-001320.png",
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-90112-r1-001320.vision-p1.png"
+    ]
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14088,
+      "vram_total_mib": 16303,
+      "gpu_util": 1
+    },
+    "mem": {
+      "mem_available_mib": 23514,
+      "swap_used_mib": 4555
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 6.352,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14156,
+      "vram_total_mib": 16303,
+      "gpu_util": 63
+    },
+    "mem": {
+      "mem_available_mib": 21924,
+      "swap_used_mib": 4426
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 6.352,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

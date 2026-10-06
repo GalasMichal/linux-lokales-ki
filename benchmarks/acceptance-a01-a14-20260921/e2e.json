@@ -1,0 +1,141 @@
+{
+  "sessionId": "12d8d06f-ce40-47f3-b4ee-3a0069a2c4b8",
+  "model_id": "local-quality(openai)",
+  "elapsed_s": 195.595,
+  "prompt_error": null,
+  "votes": [
+    {
+      "requestId": "80b7c02e-010b-47d9-9ce6-0a3b07ecd04a",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "1e1aca6e-7f11-4656-8eae-f89156e8849d",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "cef89bf4-93d1-440e-9c03-d4a7bb442195",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "8d062e22-75c3-4dd4-b8b9-8b01e498b2a1",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "5df84b46-a4ff-4bb3-83d3-30bf7fc71781",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "1229b5e8-1b22-448c-a1fd-859c418d687f",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "f22a79d7-72db-4d82-b180-b2bac9ca25a1",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_28ukdxed",
+      "name": "memory_load (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_pvu5pkps",
+      "name": "pdf_create (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_3ba71j9c",
+      "name": "pdf_read (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_qeb5i7e5",
+      "name": "pdf_read (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_xjv57rne",
+      "name": "pdf_render (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_yw7vdkro",
+      "name": "pdf_vision_qa (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_g6isc6a2",
+      "name": "memory_update (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 2,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1,
+    "memory_update": 1
+  },
+  "duplicates": {
+    "pdf_read": 2
+  },
+  "expected_hit": [
+    "memory_load",
+    "memory_update",
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa"
+  ],
+  "missing": [],
+  "thoughts": 0,
+  "assistant_text": "IMPORTANT: This conversation approached the input token limit for local-quality. A compressed context will be sent for future messages (compressed from: 15821 to ~9392 tokens).Got it. Thanks for the additional context!Steps 3–6 of the chain complete:\n\n- **pdf_read** ✓ — page 1, 109 chars, expected text (\"A14 QUALITY acceptance / A01-A14 acceptance. Qwen3.8 27B QUALITY 16384. FAST stays local-fast.\"), not truncated.\n- **pdf_render** ✓ — `a14-e2e.png` (1158×1638 @140 dpi).\n- **pdf_vision_qa** ⚠ — ran fully against `local-quality` (Ollama, 1937 prompt / 113 eval, ~12s), but flagged one \"high\" issue: page is mostly blank below the title+line. That's a false positive for this file — the E2E artifact intentionally contains exactly those two lines; no regeneration needed, `needs_regeneration` ignored.\n- **memory_update** ✓ — DECISIONS.md updated, decision \"A01-A14 QUALITY E2E 2026-09-21\" recorded, history snapshot written (`20260921-110754`).\n\nAll six steps executed in one session, all calls local (reportlab / pymupdf / Ollama on `127.0.0.1:11434`), no cloud fallback. QUALITY E2E chain validated end-to-end.",
+  "compressed": true,
+  "pdf_exists": true,
+  "png_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok"
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 7,
+    "tools": 7,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 63,
+    "vram": 14475
+  },
+  "nvidia": {
+    "vram_used_mib": 14475,
+    "vram_total_mib": 16303,
+    "gpu_util": 63
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    39%/61% CPU/GPU    16384      4 minutes from now    \n",
+  "pass": false
+}

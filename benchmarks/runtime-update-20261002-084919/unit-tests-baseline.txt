@@ -1,0 +1,35 @@
+........................................................................ [ 58%]
+....................................................                     [100%]
+=============================== warnings summary ===============================
+tests/test_ki_workplace.py::EditHttpGuardTests::test_cleanup_error_still_stops_gpu
+tests/test_ki_workplace.py::EditHttpGuardTests::test_path_returns_400_without_starting_comfy
+tests/test_ki_workplace.py::StageAndOutputTests::test_edit_without_starting_comfy_on_empty_instruction_after_stage
+tests/test_ki_workplace.py::StageAndOutputTests::test_job_output_rejects_bad_id
+tests/test_ki_workplace.py::StageAndOutputTests::test_stage_png_gets_random_name
+tests/test_ki_workplace.py::StageAndOutputTests::test_stage_rejects_txt
+  /home/mike/Projects/Linux Lokales KI/apps/ki-workplace/server.py:1560: NotAppKeyWarning: It is recommended to use web.AppKey instances for keys.
+  https://docs.aiohttp.org/en/stable/web_advanced.html#application-s-config
+    app["session"] = session
+
+tests/test_ki_workplace.py::EditHttpGuardTests::test_cleanup_error_still_stops_gpu
+tests/test_ki_workplace.py::EditHttpGuardTests::test_path_returns_400_without_starting_comfy
+tests/test_ki_workplace.py::StageAndOutputTests::test_edit_without_starting_comfy_on_empty_instruction_after_stage
+tests/test_ki_workplace.py::StageAndOutputTests::test_job_output_rejects_bad_id
+tests/test_ki_workplace.py::StageAndOutputTests::test_stage_png_gets_random_name
+tests/test_ki_workplace.py::StageAndOutputTests::test_stage_rejects_txt
+  /home/mike/Projects/Linux Lokales KI/apps/ki-workplace/server.py:1561: NotAppKeyWarning: It is recommended to use web.AppKey instances for keys.
+  https://docs.aiohttp.org/en/stable/web_advanced.html#application-s-config
+    app["image_lock"] = asyncio.Lock()
+
+tests/test_ki_workplace.py::EditHttpGuardTests::test_cleanup_error_still_stops_gpu
+tests/test_ki_workplace.py::EditHttpGuardTests::test_path_returns_400_without_starting_comfy
+tests/test_ki_workplace.py::StageAndOutputTests::test_edit_without_starting_comfy_on_empty_instruction_after_stage
+tests/test_ki_workplace.py::StageAndOutputTests::test_job_output_rejects_bad_id
+tests/test_ki_workplace.py::StageAndOutputTests::test_stage_png_gets_random_name
+tests/test_ki_workplace.py::StageAndOutputTests::test_stage_rejects_txt
+  /home/mike/Projects/Linux Lokales KI/apps/ki-workplace/server.py:1562: NotAppKeyWarning: It is recommended to use web.AppKey instances for keys.
+  https://docs.aiohttp.org/en/stable/web_advanced.html#application-s-config
+    app["boot"] = boot_payload("idle", mode=None)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+124 passed, 18 warnings in 94.89s (0:01:34)

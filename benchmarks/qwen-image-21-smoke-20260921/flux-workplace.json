@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "job_id": "9fbab1ed7eaa",
+  "runtime_seconds": 42.31,
+  "archive_directory": "/mnt/ai-archive/images/inbox/2026-09-21/9fbab1ed7eaa",
+  "manifest": "/mnt/ai-archive/images/inbox/2026-09-21/9fbab1ed7eaa/manifest.json",
+  "previews": [
+    "http://127.0.0.1:8188/view?filename=ki_arbeitsplatz_9fbab1ed7eaa_00001_.png&subfolder=&type=output"
+  ],
+  "_harness_runtime_seconds": 42.331
+}

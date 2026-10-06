@@ -1,0 +1,12 @@
+{
+  "stopped_at": "2026-09-21T14:25:30",
+  "vram_used_mib": 2095,
+  "vram_free_mib": 13745,
+  "gpu_util": 6,
+  "input_copy_removed": true,
+  "weights_kept": {
+    "dit": true,
+    "encoder": true,
+    "vae": true
+  }
+}

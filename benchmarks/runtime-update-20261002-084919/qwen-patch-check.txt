@@ -1,0 +1,6 @@
+Qwen 0.24.6
+SHA tool-search f3ccfc6cd8ee3048b9d294fb06b381704c8dc04dcab219b872ce4de869865161
+OK   ToolSearch MCP-Alias
+SHA registry 9008a6ea1ab91fa60bc9f71cd28448d141496a814336e5057a248375f0235443
+OK   Registry MCP-Kurzname
+OK   Git-Snapshot omitted

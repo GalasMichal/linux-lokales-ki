@@ -1,0 +1,14 @@
+{
+  "task_ok": {
+    "config_merge": true,
+    "ledger_repair": true,
+    "order_service": false
+  },
+  "must_pattern": {
+    "config_merge": false,
+    "ledger_repair": false,
+    "order_service": false
+  },
+  "cutover": false,
+  "reason": "stay 64K: missing repeated core success or must-loss pattern"
+}

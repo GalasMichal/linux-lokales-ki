@@ -1,0 +1,32 @@
+{
+  "ok": {
+    "dit": "int8",
+    "encoder": "w4a8",
+    "cache": "int8/cpu"
+  },
+  "is_error": false,
+  "result": {
+    "ok": true,
+    "job_id": "93d02c1bffad",
+    "workflow_id": "qwen-image-21-edit-v1",
+    "runtime_seconds": 43.469,
+    "archive_directory": "/mnt/ai-archive/images/inbox/2026-09-21/93d02c1bffad",
+    "output_path": "/mnt/ai-archive/images/inbox/2026-09-21/93d02c1bffad/ki_arbeitsplatz_93d02c1bffad_00001_.png",
+    "manifest_path": "/mnt/ai-archive/images/inbox/2026-09-21/93d02c1bffad/manifest.json",
+    "manifest": "/mnt/ai-archive/images/inbox/2026-09-21/93d02c1bffad/manifest.json",
+    "workflow_sha256": "78a0d0f445b08557d5e69139ce7f2d2ad547658bcaf90a10cfe154121b65bbe8",
+    "input_sha256": "af0c3a65165f198ed9c287ee67b5966dd1a2deab3827b30bba8b3b50d5a40096",
+    "reference_sha256": [],
+    "output_sha256": "5c5db4525d165e9d5623885d152ab0d8213eca6150208736bc1b62cf9358bb8d",
+    "quantization": {
+      "dit": "int8",
+      "encoder": "w4a8",
+      "cache": "int8/cpu"
+    },
+    "preserve_alpha": false,
+    "seed": 42,
+    "width": 512,
+    "height": 512,
+    "vram_peak_mib": 15525
+  }
+}

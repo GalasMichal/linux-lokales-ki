@@ -1,0 +1,337 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "name": "A05_status",
+      "ok": true,
+      "detail": {
+        "ollama": {
+          "running": true,
+          "version": "0.34.0",
+          "models": [
+            "local-quality:latest"
+          ]
+        },
+        "qwen": {
+          "service": true,
+          "ready": true,
+          "url": "http://127.0.0.1:4170"
+        }
+      }
+    },
+    {
+      "name": "A05_mode_agent",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "mode": "agent",
+        "message": "Agent bereit. Bilder-KI wurde beendet.",
+        "boot": {
+          "mode": "agent",
+          "phase": "ready",
+          "percent": 58,
+          "title": "Qwen erreichbar",
+          "detail": "Der Dienst antwortet. Als Nächstes kommen die Fensterdateien."
+        }
+      }
+    },
+    {
+      "name": "A05_auth_providers_blocked",
+      "ok": true,
+      "detail": {
+        "v": 1,
+        "workspaceCwd": "/srv/ai/workspaces",
+        "providers": [],
+        "groups": [],
+        "localOnly": true
+      }
+    },
+    {
+      "name": "A05_local_models_only",
+      "ok": false,
+      "detail": [
+        "Local Quality - Qwen3.8 27B",
+        "Local Fast - Qwen3.5 9B"
+      ]
+    },
+    {
+      "name": "A08_tools",
+      "ok": true,
+      "detail": [
+        "generate_image",
+        "memory_load",
+        "memory_update",
+        "pdf_read",
+        "pdf_inspect",
+        "pdf_create",
+        "pdf_edit",
+        "pdf_merge",
+        "pdf_split",
+        "pdf_ocr",
+        "pdf_render",
+        "pdf_vision_qa"
+      ]
+    },
+    {
+      "name": "A09_load_ok",
+      "ok": true,
+      "detail": {
+        "keys": [
+          "STATE.md",
+          "REQUIREMENTS.md",
+          "DECISIONS.md",
+          "TASKS.md",
+          "TOOLS.md"
+        ],
+        "chars": null
+      }
+    },
+    {
+      "name": "A09_requirements_full",
+      "ok": true,
+      "detail": "# Requirements\n\n- Local-only stack. No cloud fallback. Bind `127.0.0.1` only.\n- `trust: false`, no `--yolo`, no new mode"
+    },
+    {
+      "name": "A09_recent_decision",
+      "ok": true,
+      "detail": "terminates the chain.\n\n## 2026-09-21T10:16:41.186915+02:00 — QUALITY hidden-gen compact fix\n\nHidden post-tool tokens were Qwen auto-compact analysis. context.autoCompactThreshold=0.95 and compactionModel=local-fast. No global max_tokens. FAST stays default.\n\n## 2026-09-21T11:00:37.367373+02:00 — A01-A14 acceptance 2026-09-21\n\nAcceptance matrix A01-A14 executed against live stack. No new features.\n"
+    },
+    {
+      "name": "A09_older_headings",
+      "ok": true,
+      "detail": "headings"
+    },
+    {
+      "name": "A09_tasks_compact",
+      "ok": true,
+      "detail": "# Tasks\n\nCompleted: 23 items (full list in `.agent/TASKS.md`).\n- [x] Expliziter 16k-Cutover von `local-quality` (16384, Default bleibt local-fast)\n- [x] Essay-Control: compact memory_load + Concise + "
+    },
+    {
+      "name": "A09_update_ok",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "workspace": "/home/mike/Projects/Linux Lokales KI",
+        "changed": [
+          "DECISIONS.md"
+        ],
+        "history": [
+          "/home/mike/Projects/Linux Lokales KI/.agent/history/20260921-110212-DECISIONS.md",
+          "/home/mike/Projects/Linux Lokales KI/.agent/history/20260921-110212-summary.md"
+        ],
+        "summary": "A01-A14 acceptance probe recorded."
+      }
+    },
+    {
+      "name": "A09_history_snapshot",
+      "ok": true,
+      "detail": {
+        "before": 30,
+        "after": 32
+      }
+    },
+    {
+      "name": "A10_create",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-create.pdf",
+        "backend": "reportlab",
+        "qa": {
+          "ok": true,
+          "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-create.pdf",
+          "pages": 1,
+          "text_chars": 54,
+          "text_preview": "A10 create\nAcceptance PDF page one. Local stack only.\n",
+          "render_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-create.qa-p1.png",
+          "errors": [],
+          "warnings": [],
+          "vision": {
+            "ready": true,
+            "page": 1,
+            "image_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-create.qa-p1.png",
+            "mime": "image/png",
+            "note": "Kein Vision-Modell aufgerufen. Render liegt bereit."
+          }
+        }
+      }
+    },
+    {
+      "name": "A10_inspect",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-create.pdf",
+        "pages": 1,
+        "is_encrypted": false,
+        "metadata": {
+          "format": "PDF 1.4",
+          "title": "A10 create",
+          "author": "(anonymous)",
+          "subject": "(unspecified)",
+          "creator": "(unspecified)",
+          "producer": "ReportLab PDF Library - (opensource)",
+          "creationDate": "D:20260921110212+02'00'",
+          "modDate": "D:20260921110212+02'00'"
+        },
+        "page_info": [
+          {
+            "page": 1,
+            "width": 595.28,
+            "height": 841.89,
+            "has_text": true,
+            "chars": 54
+          }
+        ],
+        "backend": "pymupdf"
+      }
+    },
+    {
+      "name": "A10_read",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "pages": 1
+      }
+    },
+    {
+      "name": "A10_render",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-p1.png",
+        "source": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-create.pdf",
+        "page": 1,
+        "pages": 1,
+        "dpi": 140,
+        "width": 1158,
+        "height": 1638,
+        "backend": "pymupdf",
+        "vision": {
+          "ready": true,
+          "page": 1,
+          "image_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-p1.png",
+          "mime": "image/png",
+          "note": "Kein Vision-Modell aufgerufen. PNG ist für spätere visuelle QA."
+        }
+      }
+    },
+    {
+      "name": "A10_edit",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-edit.pdf",
+        "source": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-create.pdf",
+        "mode": "replace",
+        "replacements_applied": 1,
+        "backend": "pymupdf",
+        "qa": {
+          "ok": true,
+          "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-edit.pdf",
+          "pages": 1,
+          "text_chars": 58,
+          "text_preview": "A10 create\n. Local stack only.\nAcceptance PDF edited page\n",
+          "render_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-edit.qa-p1.png",
+          "errors": [],
+          "warnings": [],
+          "vision": {
+            "ready": true,
+            "page": 1,
+            "image_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-edit.qa-p1.png",
+            "mime": "image/png",
+            "note": "Kein Vision-Modell aufgerufen. Render liegt bereit."
+          }
+        }
+      }
+    },
+    {
+      "name": "A10_merge",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-merged.pdf",
+        "sources": [
+          "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-create.pdf",
+          "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-edit.pdf"
+        ],
+        "backend": "pikepdf",
+        "qa": {
+          "ok": true,
+          "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-merged.pdf",
+          "pages": 2,
+          "text_chars": 113,
+          "text_preview": "A10 create\nAcceptance PDF page one. Local stack only.\n\nA10 create\n. Local stack only.\nAcceptance PDF edited page\n",
+          "render_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-merged.qa-p1.png",
+          "errors": [],
+          "warnings": [],
+          "vision": {
+            "ready": true,
+            "page": 1,
+            "image_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-merged.qa-p1.png",
+            "mime": "image/png",
+            "note": "Kein Vision-Modell aufgerufen. Render liegt bereit."
+          }
+        }
+      }
+    },
+    {
+      "name": "A10_split",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "source": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-merged.pdf",
+        "outputs": [
+          "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-split/a10-merged-pages-1.pdf"
+        ],
+        "count": 1,
+        "backend": "pikepdf",
+        "qa": {
+          "ok": true,
+          "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-split/a10-merged-pages-1.pdf",
+          "pages": 1,
+          "text_chars": 54,
+          "text_preview": "A10 create\nAcceptance PDF page one. Local stack only.\n",
+          "render_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-split/a10-merged-pages-1.qa-p1.png",
+          "errors": [],
+          "warnings": [],
+          "vision": {
+            "ready": true,
+            "page": 1,
+            "image_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-split/a10-merged-pages-1.qa-p1.png",
+            "mime": "image/png",
+            "note": "Kein Vision-Modell aufgerufen. Render liegt bereit."
+          }
+        }
+      }
+    },
+    {
+      "name": "A10_ocr",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-ocr.pdf",
+        "source": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-create.pdf",
+        "languages": "eng",
+        "backend": "ocrmypdf+tesseract",
+        "qa": {
+          "ok": true,
+          "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-ocr.pdf",
+          "pages": 1,
+          "text_chars": 54,
+          "text_preview": "A10 create\nAcceptance PDF page one. Local stack only.\n",
+          "render_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-ocr.qa-p1.png",
+          "errors": [],
+          "warnings": [],
+          "vision": {
+            "ready": true,
+            "page": 1,
+            "image_path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/a01-a14/a10-ocr.qa-p1.png",
+            "mime": "image/png",
+            "note": "Kein Vision-Modell aufgerufen. Render liegt bereit."
+          }
+        }
+      }
+    }
+  ]
+}

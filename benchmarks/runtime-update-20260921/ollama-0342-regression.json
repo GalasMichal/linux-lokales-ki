@@ -1,0 +1,85 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "name": "fast_generate",
+      "ok": false,
+      "detail": {
+        "response": "",
+        "eval": 16,
+        "prompt_eval": 17,
+        "elapsed_s": 36.404,
+        "ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n",
+        "nvidia": {
+          "vram_used_mib": 8382,
+          "vram_total_mib": 16303,
+          "gpu_util": 2
+        }
+      }
+    },
+    {
+      "name": "fast_ctx_32768",
+      "ok": true,
+      "detail": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n"
+    },
+    {
+      "name": "quality_generate",
+      "ok": true,
+      "detail": {
+        "response": "QUALITY-OK",
+        "eval": 5,
+        "prompt_eval": 20,
+        "elapsed_s": 50.645,
+        "ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    36%/64% CPU/GPU    16384      4 minutes from now    \n",
+        "nvidia": {
+          "vram_used_mib": 14183,
+          "vram_total_mib": 16303,
+          "gpu_util": 6
+        }
+      }
+    },
+    {
+      "name": "quality_ctx_16384",
+      "ok": true,
+      "detail": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    36%/64% CPU/GPU    16384      4 minutes from now    \n"
+    },
+    {
+      "name": "tool_calling",
+      "ok": true,
+      "detail": {
+        "tool_calls": [
+          {
+            "id": "call_74fqeufl",
+            "function": {
+              "index": 0,
+              "name": "get_status",
+              "arguments": {
+                "who": "ollama"
+              }
+            }
+          }
+        ],
+        "content": "",
+        "elapsed_s": 1.857
+      }
+    },
+    {
+      "name": "structured_output",
+      "ok": true,
+      "detail": {
+        "raw": "{\n  \"ok\": true,\n  \"model\": \"local-quality\"\n}",
+        "parsed": {
+          "ok": true,
+          "model": "local-quality"
+        },
+        "elapsed_s": 1.465
+      }
+    }
+  ],
+  "nvidia_end": {
+    "vram_used_mib": 14197,
+    "vram_total_mib": 16303,
+    "gpu_util": 29
+  },
+  "ollama_ps_end": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    36%/64% CPU/GPU    16384      4 minutes from now    \n"
+}

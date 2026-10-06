@@ -1,0 +1,83 @@
+{
+  "ts": "2026-10-03T19:07:21+0200",
+  "suite": "multi_hop",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 5,
+  "sessionId": "364ae0f0-f5cd-45d9-8a88-3629556bd74f",
+  "elapsed_s": 106.071,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "knowledge_search": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_rq1is7h6",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__knowledge_search,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_3v7sx0ro",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_jmmb322d",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_pb8xtebx",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-multi_hop-81920-r5-190533.pdf\",\"text\":\"multi_hop ctx=81920 knowledge_id=KB-20260922-SUCCESS-001 ledger_ok=yes\",\"title\":\"MHOP 81920 R5\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_4vcr75l1",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-multi_hop-81920-r5-190533.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1969,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26571,
+      "swap_used_mib": 5353
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14254,
+      "vram_total_mib": 16303,
+      "gpu_util": 61
+    },
+    "mem": {
+      "mem_available_mib": 20720,
+      "swap_used_mib": 5708
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    53%/47% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,60 @@
+{
+  "ts": "2026-10-03T05:00:02+0200",
+  "suite": "compact",
+  "num_ctx": 57344,
+  "model": "bench-qwen38-27b-56k",
+  "run_id": 10,
+  "sessionId": "9388a991-25dc-49bd-9a6f-2ab9773aacbb",
+  "elapsed_s": 39.221,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "missing:['memory_load', 'pdf_create', 'pdf_read']",
+    "artifact_missing:pdf"
+  ],
+  "completed_counts": {
+    "memory_load": 0,
+    "pdf_create": 0,
+    "pdf_read": 0
+  },
+  "tools": [],
+  "votes": 0,
+  "artifacts": {
+    "pdf": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26271,
+      "swap_used_mib": 6388
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14174,
+      "vram_total_mib": 16303,
+      "gpu_util": 60
+    },
+    "mem": {
+      "mem_available_mib": 22742,
+      "swap_used_mib": 6380
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-56k:latest    5869af699429    19 GB    46%/54% CPU/GPU    57344      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

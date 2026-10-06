@@ -1,0 +1,34 @@
+{
+  "label": "memory",
+  "sessionId": "a7e2c3bd-41cb-4d0f-9e75-c13973b90c51",
+  "elapsed_s": 30.67,
+  "tools": [
+    {
+      "id": "call_x7562w79",
+      "name": "ToolSearch: select:memory_load",
+      "status": "completed",
+      "input": {
+        "query": "select:memory_load"
+      }
+    },
+    {
+      "id": "call_m70egsvx",
+      "name": "ToolCall",
+      "status": "completed",
+      "input": null
+    }
+  ],
+  "completed_names": [
+    "ToolSearch: select:memory_load",
+    "ToolCall"
+  ],
+  "votes": [
+    {
+      "requestId": "6a25a43f-acd1-4fe6-b35f-44f959082589",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "proceed_once": true,
+  "yolo": false
+}

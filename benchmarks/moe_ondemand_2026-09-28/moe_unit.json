@@ -1,0 +1,51 @@
+{
+  "smoke": {
+    "ok": true,
+    "answer": "Reply with exactly: MOE_OK\n\nReply in compact bullets. Second opinion only; main agent verifies.\n\u2022 Task requires exact response: MOE_OK\n\u2022 Reply format: compact bullets\n\u2022 Second opinion only - main agent verifies\n\u2022 No additional commentary or assumptions\n\u2022 Response must be precisely as instructed\n\nMOE_OK",
+    "elapsed": 79.674
+  },
+  "architecture": {
+    "ok": true,
+    "elapsed": 75.026,
+    "answer_head": "Smallest safe way to add on-demand CPU MoE second-opinion to MCP without a permanent service.\n\nCONTEXT:\nlocal-tools MCP; local-fast stays default.\n\nReply in compact bullets. Second opinion only; main agent verifies.\n\u2022 **Minimal addition**: Single `mcp-second-opinion` process with `--on-demand` flag\n\u2022 **No permanent service**: Process spawns on first request, terminates after timeout\n\u2022 **Local-tool",
+    "before": {
+      "mem_available_kb": 27220708,
+      "mem_total_kb": 32630252,
+      "swap_used_kb": 8378016,
+      "swap_free_kb": 46986784,
+      "swap_total_kb": 55364800
+    },
+    "after": {
+      "mem_available_kb": 27287660,
+      "mem_total_kb": 32630252,
+      "swap_used_kb": 8477964,
+      "swap_free_kb": 46886836,
+      "swap_total_kb": 55364800
+    },
+    "leftover": []
+  },
+  "reviewer": {
+    "ok": true,
+    "elapsed": 54.066,
+    "answer_head": "Should main agent skip MoE for one-line CSS fixes? Answer yes/no with one reason.\n\nReply in compact bullets. Second opinion only; main agent verifies.\n\u2022 **Risk**: Skipping MoE for CSS fixes may introduce regressions or styling inconsistencies\n\u2022 **Missing Check**: No validation of fix impact on respo"
+  },
+  "timeout_cleanup": {
+    "ok": false,
+    "timed_out": true,
+    "killed": true,
+    "leftover": [],
+    "lock_cleared": true,
+    "elapsed": 12.18,
+    "error": "MoE consult timed out after 4s; process killed"
+  },
+  "repeated": {
+    "ok": true,
+    "elapsed": 78.336,
+    "answer": "One word: recovered\n\nReply in compact bullets. Second opinion only; main agent verifies.\n\u2022 Recovery implies prior loss o",
+    "leftover": []
+  },
+  "health": {
+    "version": "1.7.0",
+    "tools": 33
+  }
+}

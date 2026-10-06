@@ -1,0 +1,130 @@
+{
+  "variant": "FIX",
+  "model_id": "local-quality",
+  "sessionId": "634ec348-d63e-4cd7-84a9-0055c332d5fc",
+  "elapsed_s": 41.435,
+  "prompt_error": null,
+  "prompt_result": {
+    "promptId": "2b1e4ab7-1d21-40b8-9b9b-a5f8e76c134a",
+    "lastEventId": 4,
+    "eventEpoch": "a72fd73c-1424-4927-8033-071ee8db1fde"
+  },
+  "votes": [
+    {
+      "requestId": "5b2b7ceb-467c-4f88-81ba-d2131c2aa3ca",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "91d1e643-92e1-44ac-ba56-a2f176f6118b",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "1d8dc982-8a02-4b4b-aa0e-a33c833f14bf",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_m8hhlcut",
+      "name": "memory_load (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "id": "call_41cphrv0",
+      "name": "pdf_create (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "id": "call_fpyw8r8e",
+      "name": "pdf_read (local-tools MCP Server)",
+      "status": "completed"
+    }
+  ],
+  "tool_names": [
+    "memory_load",
+    "pdf_create",
+    "pdf_read"
+  ],
+  "missing": [],
+  "duplicate_tools": [],
+  "thoughts": 0,
+  "assistant_chars": 175,
+  "assistant_approx_tokens": 43,
+  "segments": [
+    {
+      "after_tool": null,
+      "before_tool": "memory_load (local-tools MCP Server)",
+      "start_s": 12.672,
+      "end_s": 16.103,
+      "chars": 72,
+      "approx_tokens": 18,
+      "text_preview": "I'll run these steps in order, starting with loading the project memory."
+    },
+    {
+      "after_tool": null,
+      "before_tool": "pdf_create (local-tools MCP Server)",
+      "start_s": 30.524,
+      "end_s": 30.524,
+      "chars": 0,
+      "approx_tokens": 0,
+      "text_preview": ""
+    },
+    {
+      "after_tool": null,
+      "before_tool": "pdf_read (local-tools MCP Server)",
+      "start_s": 35.26,
+      "end_s": 35.26,
+      "chars": 0,
+      "approx_tokens": 0,
+      "text_preview": ""
+    },
+    {
+      "after_tool": null,
+      "before_tool": "(final/leftover)",
+      "start_s": 36.242,
+      "end_s": 39.502,
+      "chars": 103,
+      "approx_tokens": 25,
+      "text_preview": "All three steps completed cleanly. `pdf_read` returned the expected text (1 page, title + body string)."
+    }
+  ],
+  "max_mid_tokens": 18,
+  "compressed": false,
+  "pdf_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok"
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 3,
+    "tools": 3,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 100,
+    "vram": 14253,
+    "abort": null,
+    "cancelled_leftover": false
+  },
+  "nvidia": {
+    "vram_used_mib": 14253,
+    "vram_total_mib": 16303,
+    "gpu_util": 100
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    38%/62% CPU/GPU    16384      4 minutes from now    \n",
+  "assistant_text": "I'll run these steps in order, starting with loading the project memory.All three steps completed cleanly. `pdf_read` returned the expected text (1 page, title + body string).",
+  "pass_tools": true,
+  "essay_ok": true
+}

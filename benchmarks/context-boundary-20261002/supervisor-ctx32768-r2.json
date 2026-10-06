@@ -1,0 +1,83 @@
+{
+  "ts": "2026-10-02T19:33:59+0200",
+  "suite": "supervisor",
+  "num_ctx": 32768,
+  "model": "bench-qwen38-27b-32k",
+  "run_id": 2,
+  "sessionId": "20016a71-90d9-4d05-abe9-262ccfbbd1d9",
+  "elapsed_s": 127.006,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_c7ilms7e",
+      "name": "Agent: 1-line lookup: what is Compact State Ledger used for?",
+      "status": "completed"
+    },
+    {
+      "id": "call_duz4v9l8",
+      "name": "ToolSearch: grep text in files ripgrep content search",
+      "status": "completed"
+    },
+    {
+      "id": "call_7ahzwy1y",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_4zjvymsa",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_gzb6t13g",
+      "name": "Grep: 'Compact State Ledger|State Ledger|state_ledger' in .",
+      "status": "completed"
+    },
+    {
+      "id": "call_u1lxg77a",
+      "name": "Grep: 'State Ledger|Compact State|state ledger' in ~/.qwen/projects/-srv-ai-workspaces",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1562,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25562,
+      "swap_used_mib": 5089
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14382,
+      "vram_total_mib": 16303,
+      "gpu_util": 61
+    },
+    "mem": {
+      "mem_available_mib": 21004,
+      "swap_used_mib": 5033
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-32k:latest    a095eb40b4bb    18 GB    41%/59% CPU/GPU    32768      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

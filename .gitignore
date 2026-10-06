@@ -106,9 +106,24 @@ temp/
 .qwen/review-cache/
 .qwen/skills/auto-*
 
-# Temporary Cursor↔ChatGPT handoff notes
+# Agent memory audit trail and generated QA renders
+.agent/history/*
+!.agent/history/.gitkeep
+.agent/qa/
+.agent/tmp/
+*.qa-p*.png
+
+# Temporary Cursor↔ChatGPT handoff notes (personal, not for public)
 docs/CHATGPT_HANDOFF.md
 docs/CHATGPT_HANDOFF-*.md
+docs/gpt-handoff-*/
+docs/gpt-handoff-latest
+docs/gpt-handoff-*.zip
+docs/GIVE_TO_CHATGPT.md
+
+# Local-only test payloads / private agent scratch
+pdf_test/
+.agent/tmp/
 
 # Editors / OS
 .idea/
@@ -117,3 +132,12 @@ docs/CHATGPT_HANDOFF-*.md
 *~
 .DS_Store
 Thumbs.db
+
+# Benchmark runtime junk
+**/*.pid
+**/*.nohup.out
+**/keepawake*.pid
+**/nohup.out
+**/watch*-nohup.out
+**/orchestrator-nohup.out
+benchmarks/**/qwen-home/

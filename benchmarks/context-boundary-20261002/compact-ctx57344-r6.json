@@ -1,0 +1,87 @@
+{
+  "ts": "2026-10-03T04:53:02+0200",
+  "suite": "compact",
+  "num_ctx": 57344,
+  "model": "bench-qwen38-27b-56k",
+  "run_id": 6,
+  "sessionId": "f477bb68-52f6-4cd9-9f1c-498c619f3006",
+  "elapsed_s": 127.417,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_8dvquo68",
+      "name": "ToolSearch: memory_load",
+      "status": "completed"
+    },
+    {
+      "id": "call_2zy8w5a9",
+      "name": "memory_load (local-tools MCP Server): {\"files\":\"\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_sqgcm6gi",
+      "name": "ToolSearch: pdf_create",
+      "status": "completed"
+    },
+    {
+      "id": "call_hu5g96fj",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-57344-r6-045053.pdf\",\"text\":\"Compact continuity check ctx=57344.\",\"title\":\"COMPACT 57344 R6\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_1wq4jv7u",
+      "name": "ToolSearch: pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_260sqhsx",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-57344-r6-045053.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26120,
+      "swap_used_mib": 6239
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14176,
+      "vram_total_mib": 16303,
+      "gpu_util": 62
+    },
+    "mem": {
+      "mem_available_mib": 19734,
+      "swap_used_mib": 6362
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-56k:latest    5869af699429    19 GB    46%/54% CPU/GPU    57344      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,10 @@
+{
+  "valid_runs": 3,
+  "invalid_runs": 0,
+  "resolved": 2,
+  "must_loss": 1,
+  "tool_runtime_on_valid": 0,
+  "agent_fail": 0,
+  "recommend_80k_supervised": false,
+  "recommendation": "Stay 64K prod; 80K remains candidate (protocol validation did not clear MUST)"
+}

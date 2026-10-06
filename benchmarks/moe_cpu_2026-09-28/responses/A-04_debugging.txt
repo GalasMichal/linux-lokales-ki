@@ -1,0 +1,43 @@
+Find the bug(s), explain briefly, and provide the corrected function. No tools.
+
+```typescript
+export function mergeUniqueIds(a: string[], b: string[]): string[] {
+  const out = [];
+  for (let i = 0; i <= a.length; i++) {
+    if (!out.includes(a[i])) out.push(a[i]);
+  }
+  for (const id of b) {
+    if (out.indexOf(id) > 0) continue;
+    out.push(id);
+  }
+  return out.filter(Boolean);
+}
+```
+
+Expected behavior: union of unique string IDs from both arrays, stable o ... (truncated)
+## Fehleranalyse
+
+1. **IndexOutOfBoundsException**: `i <= a.length` im ersten Loop führt zu Zugriff auf `a[a.length]` (undefined)
+2. **Falsche Bedingung**: `out.indexOf(id) > 0` überspringt Elemente, die an Position 0 stehen (inkl. `0` als gültiger Index)
+3. **Fehlende Typisierung**: `out` hat keinen Typ, was zu Problemen führen kann
+
+## Korrigierte Funktion
+
+```typescript
+export function mergeUniqueIds(a: string[], b: string[]): string[] {
+  const out: string[] = [];
+  for (let i = 0; i < a.length; i++) {
+    if (!out.includes(a[i])) out.push(a[i]);
+  }
+  for (const id of b) {
+    if (out.includes(id)) continue;
+    out.push(id);
+  }
+  return out.filter(Boolean);
+}
+```
+
+Die Hauptprobleme waren:
+- Der erste Loop ging über `a.length` statt `a.length - 1`
+- `indexOf(id) > 0` sollte `includes(id)` sein, um Duplikate korrekt zu erk
+[ Prompt: 70,2 t/s | Generation: 22,6 t/s ]

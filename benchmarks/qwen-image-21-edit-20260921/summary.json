@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "phase": "qwen-image-21-edit-backend-mcp",
+  "when": "2026-09-21T14:56:00+02:00",
+  "mcp_before": {"version": "1.2.0", "tools": 12},
+  "mcp_after": {"version": "1.3.0", "tools": 13},
+  "workflow_id": "qwen-image-21-edit-v1",
+  "workflow_sha256": "78a0d0f445b08557d5e69139ce7f2d2ad547658bcaf90a10cfe154121b65bbe8",
+  "flux_workflow_sha256": "d9d752d52b1430bd3756908885146daea41279e29a7b6e3a9e05705572f39953",
+  "backup": "/mnt/ai-archive/backups/qwen-image-21-edit-20260921-144943",
+  "git_head": "abd0282f0939a321d4735b1579b68a86c1c7e61d",
+  "cases": {
+    "PATH": true,
+    "TYPE": true,
+    "SIZE": true,
+    "EDIT-1024": true,
+    "MULTI": true,
+    "MCP": true,
+    "FLUX": true,
+    "CLEANUP_SUCCESS": true,
+    "CLEANUP_ERROR_UNIT": true
+  },
+  "jobs": {
+    "EDIT-1024": "cd3220e9efaa",
+    "MULTI": "faacb571fbd1",
+    "MCP": "93d02c1bffad",
+    "FLUX": "bf5df1a30c27"
+  },
+  "security": {
+    "trust": false,
+    "approvalMode": "default",
+    "yolo": false
+  }
+}

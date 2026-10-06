@@ -1,0 +1,113 @@
+{
+  "ts": "2026-10-02T17:22:37+0200",
+  "suite": "tool_chain",
+  "num_ctx": 40960,
+  "model": "bench-qwen38-27b-40k",
+  "run_id": 4,
+  "sessionId": "2ca81974-c615-4cc8-99c4-08355210ca58",
+  "elapsed_s": 488.444,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "compact_issue",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "missing:['pdf_vision_qa']",
+    "duplicate_tools:{'memory_load': 2}",
+    "compact_mentioned_with_incomplete_chain",
+    "success_claim_without_tools",
+    "artifact_missing:png"
+  ],
+  "completed_counts": {
+    "memory_load": 2,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 0
+  },
+  "tools": [
+    {
+      "id": "call_umoyv1gn",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+      "status": "completed"
+    },
+    {
+      "id": "call_qhfqcido",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_0s6nu444",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-40960-r4-171427.pdf\",\"text\":\"Boundary probe ctx=40960 run=4.\",\"title\":\"BOUND 40960 R4\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_2zk5k38o",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_nq19rc2w",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-40960-r4-171427.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_0m9jp8el",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load",
+      "status": "completed"
+    },
+    {
+      "id": "call_9yh19kyj",
+      "name": "memory_load (local-tools MCP Server): {\"files\":\"\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_zbj0hj7b",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+      "status": "completed"
+    },
+    {
+      "id": "call_9twahsx7",
+      "name": "pdf_render (local-tools MCP Server): {\"dpi\":140,\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-40960-r4-171427-p1.png\",\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-40960-r4-171427.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pdf": true,
+    "png": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1654,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 24954,
+      "swap_used_mib": 5375
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14216,
+      "vram_total_mib": 16303,
+      "gpu_util": 60
+    },
+    "mem": {
+      "mem_available_mib": 22158,
+      "swap_used_mib": 5320
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-40k:latest    d4ed59ea4a99    18 GB    44%/56% CPU/GPU    40960      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

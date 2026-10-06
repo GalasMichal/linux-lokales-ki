@@ -1,0 +1,69 @@
+{
+  "label": "t07-research-fast",
+  "session_id": "70b6b892-2e54-4c52-a11b-d25b27659e39",
+  "model": "local-fast(openai)",
+  "elapsed_s": 106.34,
+  "prompt_error": null,
+  "tools": [
+    "agent:researcher",
+    "knowledge_search",
+    "knowledge_get",
+    "knowledge_get",
+    "knowledge_get",
+    "agent"
+  ],
+  "agent_calls": [
+    "agent:researcher",
+    "agent"
+  ],
+  "knowledge_search": true,
+  "prompt_tokens": [
+    8855,
+    10591
+  ],
+  "max_prompt_tokens": 10591,
+  "first_prompt_tokens": 8855,
+  "assistant_excerpt": "The user wants me to call the researcher agent with a specific query, but I should first search for relevant information about the qwen compact lazy ledger context before engaging the agent.\nI'll call the researcher agent to investigate the \"qwen compact lazy ledger\" context in this workspace.\nThe tool already completed the search and returned results. I should summarize the findings in exactly 5 bullets as requested, without adding narration or extra context.\n**5 bullet summary of qwen compact + lazy ledger context issues:**\n\n1. **Compact threshold regression (KB-20260922-COMPACT-001)**: `autoCompactThreshold=85%` caused hidden post-tool generation pauses on QUALITY runs → fix: use `0.95` with `compactionModel=local-fast`.\n\n2. **Lazy loading overflow fix (KB-20260922-LAZY-002)**: Token hard limit exceeded at 17216 tokens (overflow >16384) → fix: enable lazy loading pattern via `alwaysLoadTools=false`, `tools.visible=[]`, all tools discovered through `ToolSearch`.\n\n3. **State desync after compact (compact-dup-synchr)**: Tool calls duplicated post-compact because `.agent/STATE.md` becomes stale; repair via `memory_update(action:\"update\", state:true, workspace=\"./.agent\")`.\n\n4. **Memory field enforcement**: `memory_update create` fails without explicit markdown-file boolean (`state|tasks|decisions|requirements|tools`) + absolute `workspace`; only direct `.agent/` markdown writes are durable.\n\n5. **PDF render sandbox block**: `pdf_render` rejects paths under `/srv/ai/workspaces/...`; use internal QA PNGs from `pdf_create` or output to allowed locations instead.",
+  "agent_results": [
+    {
+      "structured_result_seen": true
+    }
+  ],
+  "votes": [
+    {
+      "requestId": "0ca87243-fdb4-41e1-a156-cc7e0ef09a41",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "273afe5d-c5c3-4d1d-b5eb-6bee7c1dcfcf",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "2c202237-6876-46ff-85cf-24ddfc840e6e",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "5cde94d8-6649-4712-b9d4-d2ab7ac6da99",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "b8a27c79-1a64-4747-952f-6162d37bf85a",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "yolo": false,
+  "nvidia": {
+    "vram_used_mib": 9941,
+    "vram_total_mib": 16303,
+    "gpu_util": 100
+  },
+  "ollama_ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nlocal-fast:latest    cf8bd43c0e1c    6.1 GB    100% GPU     32768      4 minutes from now    \n",
+  "ledger_seen": false,
+  "no_user_query": false,
+  "hard_overflow": false
+}

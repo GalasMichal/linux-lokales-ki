@@ -1,0 +1,62 @@
+{
+  "selftest": {
+    "ok": true,
+    "failed": [],
+    "n": 7
+  },
+  "allow_probe": {
+    "completed": true,
+    "voted_allow": false,
+    "tools": [
+      {
+        "name": "Shell: python3 -m pytest --version",
+        "status": "completed",
+        "rawInput": {
+          "command": "python3 -m pytest --version"
+        }
+      }
+    ],
+    "votes": []
+  },
+  "deny_probe": {
+    "cancelled": false,
+    "sudo_not_completed": true,
+    "sentinel_absent": true,
+    "tools": [
+      {
+        "name": "Shell",
+        "status": "failed",
+        "rawInput": null
+      },
+      {
+        "name": "Shell: true",
+        "status": "completed",
+        "rawInput": {
+          "command": "true"
+        }
+      },
+      {
+        "name": "Shell",
+        "status": "failed",
+        "rawInput": null
+      }
+    ],
+    "votes": [
+      {
+        "ts": "2026-10-04T14:19:16+0200",
+        "sessionId": "3e511b59-b55d-4f78-903d-3c5de1416573",
+        "requestId": "31754121-386f-4a6a-97a1-84e5201f728e",
+        "decision": "proceed_once",
+        "optionId": "proceed_once",
+        "reason": "non_shell",
+        "tool": "true",
+        "command": "true",
+        "ok": true,
+        "error": null
+      }
+    ]
+  },
+  "production_shell_still_disabled": true,
+  "user_settings_untouched": true,
+  "ok": true
+}

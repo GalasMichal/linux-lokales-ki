@@ -55,11 +55,11 @@ cmd_check() {
     printf 'FAIL Qwen contextWindowSize ist %s, erwartet %s\n' "$provider_fast" "$TARGET_CTX"
     exit 1
   fi
-  if [[ "$provider_quality" != "8192" ]]; then
-    printf 'FAIL QUALITY contextWindowSize ist %s, erwartet 8192\n' "$provider_quality"
+  if [[ "$provider_quality" != "8192" && "$provider_quality" != "16384" ]]; then
+    printf 'FAIL QUALITY contextWindowSize ist %s, erwartet 8192 oder 16384\n' "$provider_quality"
     exit 1
   fi
-  printf 'OK   FAST %s, QUALITY 8192\n' "$TARGET_CTX"
+  printf 'OK   FAST %s, QUALITY %s\n' "$TARGET_CTX" "$provider_quality"
 }
 
 if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then

@@ -1,0 +1,77 @@
+{
+  "ts": "2026-10-03T16:11:13+0200",
+  "suite": "compact",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 1,
+  "sessionId": "7077e64f-2b3f-46d1-b92b-fb9c0aece83a",
+  "elapsed_s": 145.417,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_0uzwccpv",
+      "name": "ToolSearch: select:memory_load,pdf_create,pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_bq0a8x88",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_iu2b3ama",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-65536-r1-160845.pdf\",\"text\":\"Compact continuity check ctx=65536.\",\"title\":\"COMPACT 65536 R1\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_vpm7ikxe",
+      "name": "pdf_read (local-tools MCP Server): {\"max_chars\":20000,\"pages\":\"\",\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-65536-r1-160845.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2881,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 23772,
+      "swap_used_mib": 7791
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14136,
+      "vram_total_mib": 16303,
+      "gpu_util": 63
+    },
+    "mem": {
+      "mem_available_mib": 18745,
+      "swap_used_mib": 8130
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    55%/45% CPU/GPU    65536      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

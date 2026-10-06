@@ -1,0 +1,20 @@
+{
+  "session": "7276c1fe-221e-4e87-b73f-0289683b8af9",
+  "tools": [
+    "desktop_snapshot (local-tools MCP Server): {}",
+    "desktop_type (local-tools MCP Server): {}",
+    "desktop_snapshot (local-tools MCP Server): {}"
+  ],
+  "votes": [
+    "proceed_once",
+    "proceed_once",
+    "proceed_once"
+  ],
+  "texts": [
+    " oder",
+    " finden",
+    "."
+  ],
+  "ok": true,
+  "note": "Fenster-ID ging direkt an desktop_type. Ein extra desktop_focus war nicht nötig. Kate enthält den Satz."
+}

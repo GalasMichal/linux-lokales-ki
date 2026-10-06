@@ -1,0 +1,123 @@
+{
+  "ts": "2026-10-03T22:43:08+0200",
+  "suite": "coding",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 5,
+  "sessionId": "22cad402-8f70-4fa3-bff1-ac8f2c7aaf21",
+  "elapsed_s": 109.818,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_qke6zoeh",
+      "name": "ToolSearch: select:read_file,run_shell_command,edit,write_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_i8o5ajx8",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_aedfo39l",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_bnukxrqt",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_8hzii0x4",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_qtm4d1wk",
+      "name": "Shell: python3 -m pytest -q \"/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\" (Run pytest to confirm expected failures)",
+      "status": "failed"
+    },
+    {
+      "id": "call_6gop98j5",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ungc3126",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_v7aqki8j",
+      "name": "Shell: python3 -m pytest -q \"/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\" (Re-run pytest to confirm tests pass)",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.00s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 13236,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 20017,
+      "swap_used_mib": 4397
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL       \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      Stopping...    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 13.002,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL       ",
+        "bench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      Stopping..."
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 13238,
+      "vram_total_mib": 16303,
+      "gpu_util": 72
+    },
+    "mem": {
+      "mem_available_mib": 16988,
+      "swap_used_mib": 5040
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 13.002,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL       ",
+      "bench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    51%/49% CPU/GPU    65536      Stopping..."
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

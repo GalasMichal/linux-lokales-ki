@@ -1,0 +1,81 @@
+{
+  "ts": "2026-10-03T05:43:57+0200",
+  "suite": "knowledge",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 2,
+  "sessionId": "08133e63-ef8e-4a14-add8-905301ef6056",
+  "elapsed_s": 75.464,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift"
+  ],
+  "fail_reasons": [
+    "duplicate_tools:{'knowledge_search': 2}"
+  ],
+  "completed_counts": {
+    "knowledge_search": 2,
+    "knowledge_get": 1
+  },
+  "tools": [
+    {
+      "id": "call_ccyjjvuh",
+      "name": "ToolSearch: local-tools knowledge search and get",
+      "status": "completed"
+    },
+    {
+      "id": "call_1ewjo943",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger lazy tools\",\"workspace\":\"Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_iwqd7sjo",
+      "name": "ToolSearch: local-tools list workspaces",
+      "status": "completed"
+    },
+    {
+      "id": "call_lgqfb8d2",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger lazy tools\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_efg32zye",
+      "name": "knowledge_get (local-tools MCP Server): {\"id\":\"KB-20260922-SUCCESS-001\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26027,
+      "swap_used_mib": 6168
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14064,
+      "vram_total_mib": 16303,
+      "gpu_util": 77
+    },
+    "mem": {
+      "mem_available_mib": 19912,
+      "swap_used_mib": 6188
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

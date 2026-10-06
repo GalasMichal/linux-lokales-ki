@@ -1,0 +1,46 @@
+# Tasks
+
+- [x] Inventory host stack before deploy
+- [x] Deploy MCP `./scripts/deploy-local-tools-mcp.sh`
+- [x] Health + live_mcp_smoke + PYTHONPATH fix
+- [x] Live MCP memory+PDF E2E (client)
+- [x] Qwen FAST baseline (tokens/VRAM; MCP blocked by trust:false)
+- [x] Verify Ollama 0.34.0 / Qwen Code 0.23.4 from GitHub
+- [x] Ollama 0.34.0 update + regression
+- [x] Port Qwen patches to 0.23.4 then update
+- [x] Additive pull `qwen3.8:27b` + `qwen3.6:27b-coding` + 8K bench aliases
+- [x] Fable/agent benchmark (4 Modelle × 4 Aufgaben)
+- [x] `local-quality` auf Qwen3.8 8K umbiegen
+- [x] Smoke-Test neues local-quality
+- [x] Wire-Capture Qwen Serve → Ollama; A/B + Thinking + Prompt-Größe
+- [x] Config-Fix 8k overflow (kein 0.23.4-Patch)
+- [x] Serve Kurzprompt `memory_load` + Permission `proceed_once`
+- [x] Interaktiver Qwen-Web Memory/PDF E2E
+- [x] FAST Serve-Regression `memory_load` nach Config-Fix
+- [x] PDF Vision-QA (`pdf_vision_qa` via Ollama `/api/chat` + local-quality)
+- [x] Additive 16k/32k QUALITY-Context-Probe (`local-quality` bleibt 8k)
+- [x] 16k zusammenhängender Serve-E2E (Memory+PDF+Vision, `proceed_once`)
+- [x] Expliziter 16k-Cutover von `local-quality` (16384, Default bleibt local-fast)
+- [x] Essay-Control: compact memory_load + Concise + skipStartupContext (sichtbarer Text kurz; 6-Tool weiter Compact/Duplikat)
+- [x] Hidden-Gen: Wire-Nachweis Auto-Compact; `autoCompactThreshold=0.95` + `compactionModel=local-fast`; 6-Tool-E2E PASS
+- [x] A01–A14 Abnahme 21.09.2026 (PASS WITH LIMITATIONS; Reboot-Beweis 11:44 PASS)
+- [x] Ollama 0.34.2 + Qwen Code 0.24.2 Runtime-Update (QUALITY-E2E Compact/Duplikat wie A14)
+- [x] Qwen-Image-2.1 Analyse + Plan (`docs/QWEN_IMAGE_2_1_ANALYSIS.md`); kein Download
+- [x] Isoliertes ComfyUI 0.37.0 + FLUX.2-[klein]-Regression + Cutover (kein 2.1-Gewicht)
+- [x] Kontrollierter Download int8-DiT + w4a8-Encoder + VAE und isolierter Edit-Smoke
+- [x] Fest verdrahteter Edit-Workflow, Workplace-Backend und MCP `edit_image`
+- [x] Sichtbare KI-Arbeitsplatz-Editing-UI
+- [x] Open-WebUI Bild-Tools (`generate_image` / `edit_image`)
+- [x] Lokaler Browser-Agent (Brave + Playwright, eigenes Profil, `browser_*` in local-tools)
+- [x] Desktop-Agent (KWin + AT-SPI, `desktop_*`, kein Root-Daemon)
+- [x] Compact-Prompt untersucht: FAIL, prompt-only reicht nicht, nicht installiert (`docs/QWEN_COMPACT_CONTINUITY.md`)
+- [x] Lazy Tool Loading 22.09.: Schemata zurückgestellt, 17216-Abbruch weg, Sechs-Tool-Kette FAIL (`docs/QWEN_LAZY_TOOL_LOADING.md`)
+- [x] Compact State Ledger 22.09.: PASS, Folgeprompt 9318, sechs Tools je 1× (`docs/QWEN_COMPACT_STATE_LEDGER.md`)
+- [x] Knowledge Base v2 22.09.: PASS, MCP 1.6.0/32, Retrieval+E2E (`docs/KNOWLEDGE_BASE_V2.md`)
+- [x] Supervisor / Multi-Agent 22.09.: PASS, Named Agents + E2E (`docs/SUPERVISOR_MULTI_AGENT.md`)
+- [x] Runtime-Update 02.10.2026: Ollama 0.35.0, Qwen 0.24.7 + Patches, ComfyUI 0.38.0 (`docs/RUNTIME_UPDATE_2026-10-02.md`)
+- [x] Additive QUALITY Context-Probe 16K/24K/32K (kein Cutover; `benchmarks/quality-context-probe-20261002/`)
+- [ ] Serve/Agent-E2E für QUALITY 24K/32K, dann optional Cutover nur mit Freigabe
+- [ ] Autonomer Software-Development-Workflow (später; plattformneutral)
+- [ ] High-Resolution Image Pipeline: 1536, 2K Direct Benchmark, 2K-Upscale, 4K-Upscale
+- [ ] 32K QUALITY bleibt nicht produktiv bis Freigabe

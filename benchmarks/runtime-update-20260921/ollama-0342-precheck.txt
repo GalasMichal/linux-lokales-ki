@@ -1,0 +1,44 @@
+=== version/hash/override ===
+2026-09-21T12:16:10+02:00
+{"version":"0.34.2"}
+ollama version is 0.34.2
+ca9f4d3b7538196fab8bad3842bff3aa1352a80bfaaf95391ef7dda28880928b  /usr/local/bin/ollama
+7fb44d5fbe5363ca9196bc92a95cb0d23766b4f853c491de19e134efa6d89bf4  /etc/systemd/system/ollama.service.d/override.conf
+-- live override --
+[Service]
+Environment="OLLAMA_HOST=127.0.0.1:11434"
+Environment="OLLAMA_MODELS=/srv/ai/models/ollama"
+Environment="OLLAMA_FLASH_ATTENTION=1"
+Environment="OLLAMA_KV_CACHE_TYPE=q8_0"
+Environment="OLLAMA_NUM_PARALLEL=1"
+Environment="OLLAMA_MAX_LOADED_MODELS=1"
+Environment="OLLAMA_KEEP_ALIVE=5m"
+-- backup override --
+7fb44d5fbe5363ca9196bc92a95cb0d23766b4f853c491de19e134efa6d89bf4  /mnt/ai-archive/backups/runtime-update-20260921-120433/ollama-bin/override.conf
+OVERRIDE_UNCHANGED
+=== bind/ps/list ===
+LISTEN 0      4096       127.0.0.1:11434      0.0.0.0:*                                          
+NAME                             ID              SIZE      MODIFIED    
+local-quality:latest             ad1736a075f0    17 GB     4 days ago     
+bench-qwen38-27b-32k:latest      d4bf257f520d    17 GB     4 days ago     
+bench-qwen38-27b-16k:latest      ad1736a075f0    17 GB     4 days ago     
+bench-qwen36-coding-8k:latest    90ae8080c825    17 GB     5 days ago     
+bench-qwen38-27b-8k:latest       993995e538ad    17 GB     5 days ago     
+qwen3.6:27b-coding               3a12a518a499    17 GB     5 days ago     
+qwen3.8:27b                      22130167c4c2    17 GB     5 days ago     
+local-fast:latest                cf8bd43c0e1c    6.6 GB    4 weeks ago    
+qwen3.6:27b                      a50eda8ed977    17 GB     4 weeks ago    
+qwen3.5:9b                       6488c96fa5fa    6.6 GB    4 weeks ago    
+NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL 
+=== aliases ctx ===
+# To build a new Modelfile based on this, replace FROM with:
+# FROM local-fast:latest
+FROM /srv/ai/models/ollama/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c
+PARAMETER num_ctx 32768
+# To build a new Modelfile based on this, replace FROM with:
+# FROM local-quality:latest
+FROM /srv/ai/models/ollama/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d
+FROM /srv/ai/models/ollama/blobs/sha256-ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e
+PARAMETER num_ctx 16384
+=== health ===
+{"status":"ok","server":"local-ai-tools","version":"1.2.0","tools":["generate_image","memory_load","memory_update","pdf_read","pdf_inspect","pdf_create","pdf_edit","pdf_merge","pdf_split","pdf_ocr","pdf_render","pdf_vision_qa"],"localhost_only":true,"pdf":{"binaries":{"qpdf":"/home/mike/.local/bin/qpdf","pdftoppm":"/usr/bin/pdftoppm","pdftotext":"/usr/bin/pdftotext","pdfunite":"/usr/bin/pdfunite","pdfseparate":"/usr/bin/pdfseparate","tesseract":"/home/mike/.local/bin/tesseract","ocrmypdf":"/home/mike/.local/bin/ocrmypdf","soffice":"/usr/bin/soffice"},"python":{"pymupdf":"1.28.2","pikepdf":"10.8.0","reportlab":"4.5.1","ocrmypdf":"16.13.0"},"tessdata_dir":"/home/mike/.local/share/tessdata"}}

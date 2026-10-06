@@ -1,0 +1,19 @@
+{
+  "elapsed_s": 22.773,
+  "sessionId": "7481125c-9033-4540-8d6d-536736cf3cf5",
+  "completed": true,
+  "votes": [
+    {
+      "requestId": "a0692a01-7de0-4187-9109-42c63ab86b52",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "thoughts": 119,
+  "tools": [
+    {
+      "name": "memory_load (local-tools MCP Server)",
+      "status": "completed"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "baseline": {
+    "tag": "baseline",
+    "vram_used_mib": 14280,
+    "vram_total_mib": 16303,
+    "gpu_util": 4,
+    "mem_available_mib": 21373,
+    "swap_used_mib": 4231,
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-16k:latest    ad1736a075f0    18 GB    36%/64% CPU/GPU    16384      4 minutes from now    \n",
+    "ollama": true
+  },
+  "show_num_ctx": 32768,
+  "cold": {
+    "elapsed_s": 39.94,
+    "load_s": 39.091,
+    "prompt_eval_count": 19,
+    "eval_count": 2,
+    "tok_s": 10.03,
+    "content": "OK",
+    "resources": {
+      "tag": "cold",
+      "vram_used_mib": 14118,
+      "vram_total_mib": 16303,
+      "gpu_util": 5,
+      "mem_available_mib": 23380,
+      "swap_used_mib": 4211,
+      "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n",
+      "ollama": true
+    }
+  },
+  "warm": {
+    "elapsed_s": 17.008,
+    "tok_s": 9.49,
+    "prompt_eval_count": 19,
+    "resources": {
+      "tag": "warm",
+      "vram_used_mib": 14211,
+      "vram_total_mib": 16303,
+      "gpu_util": 27,
+      "mem_available_mib": 23681,
+      "swap_used_mib": 4206,
+      "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n",
+      "ollama": true
+    }
+  },
+  "tool": {
+    "elapsed_s": 25.191,
+    "tok_s": 25.06,
+    "has_tool_call": true,
+    "tool_names": [
+      "memory_load"
+    ],
+    "prompt_eval_count": 286,
+    "resources": {
+      "tag": "tool",
+      "vram_used_mib": 14167,
+      "vram_total_mib": 16303,
+      "gpu_util": 5,
+      "mem_available_mib": 23400,
+      "swap_used_mib": 4193,
+      "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n",
+      "ollama": true
+    }
+  },
+  "replay_44": {
+    "elapsed_s": 73.462,
+    "prompt_tokens": 29653,
+    "completion_tokens": 70,
+    "has_tool_call": true,
+    "tool_names": [
+      "mcp__local-tools__memory_load"
+    ],
+    "overflow_snap_4098": false,
+    "content_head": "",
+    "resources": {
+      "tag": "replay",
+      "vram_used_mib": 14210,
+      "vram_total_mib": 16303,
+      "gpu_util": 3,
+      "mem_available_mib": 22904,
+      "swap_used_mib": 4190,
+      "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n",
+      "ollama": true
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "final": {
+    "tag": "final",
+    "vram_used_mib": 1390,
+    "vram_total_mib": 16303,
+    "gpu_util": 25,
+    "mem_available_mib": 24910,
+    "swap_used_mib": 4190,
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n",
+    "ollama": true
+  },
+  "pass_load": false
+}

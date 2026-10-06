@@ -1,0 +1,128 @@
+{
+  "ts": "2026-10-03T12:07:08+0200",
+  "suite": "supervisor",
+  "num_ctx": 90112,
+  "model": "bench-qwen38-27b-88k",
+  "run_id": 1,
+  "sessionId": "a5ef73a1-fc1c-4501-b3eb-5b13db009b95",
+  "elapsed_s": 133.171,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_6nsytjxw",
+      "name": "Agent: One short question",
+      "status": "completed"
+    },
+    {
+      "id": "call_h0v1rmjv",
+      "name": "knowledge_search (local-tools MCP Server): {\"workspace\":\"/srv/ai/workspaces/linux-lokales-ki\",\"query\":\"Compact State Ledger purpose use\",\"max_results\":5,\"types\":\"research,decision,failure\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_7u9px5sa",
+      "name": "ToolSearch: ledger state compact",
+      "status": "completed"
+    },
+    {
+      "id": "call_8k831lb7",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/srv/ai/workspaces/linux-lokales-ki\",\"files\":\"STATE.md,REQUIREMENTS.md,DECISIONS.md,TASKS.md,TOOLS.md\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_8igjeiph",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/.qwen/projects/linux-lokales-ki\",\"files\":\"STATE.md,REQUIREMENTS.md,DECISIONS.md,TASKS.md,TOOLS.md,QWEN.md\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_9gmhjc8x",
+      "name": "browser_open (local-tools MCP Server): {\"url\":\"file:///home/mike/.qwen/projects/linux-lokales-ki/README.md\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_vhd2batw",
+      "name": "knowledge_search (local-tools MCP Server): {\"workspace\":\"/home/mike/.qwen/projects/linux-lokales-ki\",\"query\":\"Compact State Ledger use purpose\",\"max_results\":5,\"types\":\"research,decision\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_qn0jwxo7",
+      "name": "knowledge_search (local-tools MCP Server): {\"workspace\":\"-srv-ai-workspaces/memory\",\"query\":\"Compact State Ledger\",\"max_results\":10,\"types\":\"research,decision,failure,project,replani\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_9yc7hw43",
+      "name": "knowledge_get (local-tools MCP Server): {\"workspace\":\"-srv-ai-workspaces/memory\",\"id\":\"KB-20260922-LEDGER-002\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_baletn98",
+      "name": "knowledge_get (local-tools MCP Server): {\"workspace\":\"-srv-ai-workspaces/memory\",\"id\":\"KB-pdf-workflow\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_g5j9mzhd",
+      "name": "knowledge_get (local-tools MCP Server): {\"workspace\":\"-srv-ai-workspaces/memory\",\"id\":\"KB-20260922-LEDGER-002\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_i8797udr",
+      "name": "knowledge_search (local-tools MCP Server): {\"workspace\":\"local\",\"query\":\"Compact State Ledger\",\"max_results\":5,\"types\":\"research,project\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_srxauzps",
+      "name": "knowledge_search (local-tools MCP Server): {\"workspace\":\"\",\"query\":\"Compact State Ledger ledger state\",\"max_results\":10,\"types\":\"research,decision,failure,project\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_qmt6mrkv",
+      "name": "ReadFile",
+      "status": "failed"
+    },
+    {
+      "id": "call_pcaw1ekc",
+      "name": "ReadFile: /home/.../.qwen/projects/-srv-ai-workspaces/memory/project/compact-dup-synchr.md",
+      "status": "completed"
+    }
+  ],
+  "votes": 12,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1476,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25873,
+      "swap_used_mib": 6667
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14211,
+      "vram_total_mib": 16303,
+      "gpu_util": 63
+    },
+    "mem": {
+      "mem_available_mib": 21465,
+      "swap_used_mib": 6667
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    52%/48% CPU/GPU    90112      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

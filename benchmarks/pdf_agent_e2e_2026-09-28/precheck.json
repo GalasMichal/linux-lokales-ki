@@ -1,0 +1,64 @@
+{
+  "mcp_version": "1.7.0",
+  "pdf_tools": [
+    "pdf_read",
+    "pdf_inspect",
+    "pdf_create",
+    "pdf_edit",
+    "pdf_merge",
+    "pdf_split",
+    "pdf_ocr",
+    "pdf_render",
+    "pdf_vision_qa"
+  ],
+  "pdf_tool_count": 9,
+  "moe_consult": true,
+  "binaries": {
+    "qpdf": "/home/mike/.local/bin/qpdf",
+    "pdftoppm": "/usr/bin/pdftoppm",
+    "pdftotext": "/usr/bin/pdftotext",
+    "soffice": "/usr/bin/soffice",
+    "tesseract": "/home/mike/.local/bin/tesseract",
+    "ocrmypdf": "/home/mike/.local/bin/ocrmypdf"
+  },
+  "python_modules_importable_here": {
+    "fitz": true,
+    "pikepdf": true,
+    "reportlab": true
+  },
+  "health_pdf": {
+    "binaries": {
+      "qpdf": "/home/mike/.local/bin/qpdf",
+      "pdftoppm": "/usr/bin/pdftoppm",
+      "pdftotext": "/usr/bin/pdftotext",
+      "pdfunite": "/usr/bin/pdfunite",
+      "pdfseparate": "/usr/bin/pdfseparate",
+      "tesseract": "/home/mike/.local/bin/tesseract",
+      "ocrmypdf": "/home/mike/.local/bin/ocrmypdf",
+      "soffice": "/usr/bin/soffice"
+    },
+    "python": {
+      "pymupdf": "1.28.2",
+      "pikepdf": "10.8.0",
+      "reportlab": "4.5.1",
+      "ocrmypdf": "16.13.0"
+    },
+    "tessdata_dir": "/home/mike/.local/share/tessdata"
+  },
+  "ollama_models_sample": [
+    "local-quality:latest",
+    "bench-qwen38-27b-32k:latest",
+    "bench-qwen38-27b-16k:latest",
+    "bench-qwen38-27b-8k:latest",
+    "bench-qwen36-coding-8k:latest",
+    "qwen3.6:27b-coding",
+    "qwen3.8:27b",
+    "local-fast:latest",
+    "qwen3.6:27b",
+    "qwen3.5:9b"
+  ],
+  "local_quality_reachable": true,
+  "ollama_err": null,
+  "archive_mounted": true,
+  "allowed_roots_note": "paths.py ReadWritePaths Projects/workspaces/archive/cache"
+}

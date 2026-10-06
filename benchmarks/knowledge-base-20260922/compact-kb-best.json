@@ -1,0 +1,49 @@
+{
+  "label": "compact-kb-run4",
+  "sessionId": "90ce6e13-e6df-49ec-94e4-d73f554879ef",
+  "note": "Best compact+knowledge regression. knowledge_search/memory_load/pdf_create/pdf_read once; compact+ledger; post_compact max 13231; memory_update skipped after model drift to ReadFile/Edit.",
+  "completed_counts": {
+    "knowledge_search": 1,
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "duplicates": {},
+  "compressed": true,
+  "ledger_seen": true,
+  "prompt_tokens": [
+    10069,
+    10757,
+    12232,
+    12441,
+    14604,
+    14803,
+    15340,
+    15523,
+    8847,
+    9318,
+    9681,
+    9941,
+    10230,
+    10289,
+    12641,
+    13231
+  ],
+  "max_prompt_tokens": 15523,
+  "post_compact_tokens": [
+    8847,
+    9318,
+    9681,
+    9941,
+    10230,
+    10289,
+    12641,
+    13231
+  ],
+  "max_post_compact": 13231,
+  "immediate_second_compact": false,
+  "hard_overflow": false,
+  "pass_core": true,
+  "pass_full_five_tools": false,
+  "pass": true
+}

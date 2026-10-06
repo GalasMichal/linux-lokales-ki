@@ -1,0 +1,93 @@
+{
+  "ts": "2026-10-03T05:07:45+0200",
+  "suite": "supervisor",
+  "num_ctx": 73728,
+  "model": "bench-qwen38-27b-72k",
+  "run_id": 2,
+  "sessionId": "3b7be4a2-0243-4e52-8d06-92cbab226737",
+  "elapsed_s": 142.223,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_8vgeez2p",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_a7if8nyz",
+      "name": "Agent: Researcher: Compact State Ledger purpose",
+      "status": "completed"
+    },
+    {
+      "id": "call_xjvg6nt0",
+      "name": "knowledge_search (local-tools MCP Server)",
+      "status": "failed"
+    },
+    {
+      "id": "call_sxchf2xo",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"Compact State Ledger purpose use case ledger\",\"max_results\":5,\"types\":\"research,project\",\"workspace\":\".\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_yt2zumj6",
+      "name": "ToolSearch: select:grep_search",
+      "status": "completed"
+    },
+    {
+      "id": "call_lf2ue0pn",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_se2zzbb3",
+      "name": "Grep: 'Compact State Ledger' in .",
+      "status": "completed"
+    },
+    {
+      "id": "call_ulg3ibt8",
+      "name": "Grep: 'State Ledger' in ~/.qwen",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26187,
+      "swap_used_mib": 6277
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14208,
+      "vram_total_mib": 16303,
+      "gpu_util": 63
+    },
+    "mem": {
+      "mem_available_mib": 20889,
+      "swap_used_mib": 6392
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-72k:latest    41c3bb97d1e6    19 GB    49%/51% CPU/GPU    73728      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

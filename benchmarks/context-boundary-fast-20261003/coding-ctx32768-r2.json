@@ -1,0 +1,85 @@
+{
+  "ts": "2026-10-03T07:00:36+0200",
+  "suite": "coding",
+  "num_ctx": 32768,
+  "model": "bench-qwen35-9b-32k",
+  "run_id": 2,
+  "sessionId": "438604ef-4981-435f-94a1-75f591491c31",
+  "elapsed_s": 12.003,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_0kuhyjks",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_4fir74gr",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_p76s4x9d",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_fmyurkok",
+      "name": "run_shell_command",
+      "status": "failed"
+    },
+    {
+      "id": "call_89iim65q",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_36firy1a",
+      "name": "ToolSearch: shell command run",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1333,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25854,
+      "swap_used_mib": 6155
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 8544,
+      "vram_total_mib": 16303,
+      "gpu_util": 93
+    },
+    "mem": {
+      "mem_available_mib": 23590,
+      "swap_used_mib": 6155
+    },
+    "ps": "NAME                          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nbench-qwen35-9b-32k:latest    2db395653ce7    6.1 GB    100% GPU     32768      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

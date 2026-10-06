@@ -1,0 +1,72 @@
+{
+  "ts": "2026-10-03T07:03:28+0200",
+  "suite": "compact",
+  "num_ctx": 98304,
+  "model": "bench-qwen35-9b-96k",
+  "run_id": 2,
+  "sessionId": "f9f3d6b1-fd65-4a31-b992-b74b79de183d",
+  "elapsed_s": 14.902,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_fu8edbdv",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_5ofohhcu",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-98304-r2-070311.pdf\",\"text\":\"Compact continuity check ctx=98304.\",\"title\":\"COMPACT 98304 R2\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_qi1uk4hb",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-98304-r2-070311.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1333,
+      "vram_total_mib": 16303,
+      "gpu_util": 1
+    },
+    "mem": {
+      "mem_available_mib": 25743,
+      "swap_used_mib": 6130
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 10016,
+      "vram_total_mib": 16303,
+      "gpu_util": 86
+    },
+    "mem": {
+      "mem_available_mib": 23304,
+      "swap_used_mib": 6130
+    },
+    "ps": "NAME                          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nbench-qwen35-9b-96k:latest    c071de14ef9b    7.7 GB    100% GPU     98304      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,10 @@
+### 1) Components / UI Pieces
+*   **`LastTripsPanel` (Component)**: A sidebar or modal container managing the list of trip cards. Handles state for selection, loading, and export actions.
+*   **`TripCard` (Directive/Template)**: Displays trip metadata (date, distance, duration). Includes a click handler to trigger map navigation and an icon/button for CSV export.
+*   **`MapNavigationService` (Existing Integration)**: Adapter to call OpenLayers `view.animate()` or `fitExtent()` based on the selected route geometry.
+*   **`ExportService`**: Utility to serialize the current list of trip objects into a CSV string and trigger a browser download blob.
+*   **`LoadingSkeleton`**: UI overlay for the initial fetch of 20 records.
+
+### 2) Services / Dependencies
+*   **`TripDataService`**: Angular service wrapping the local REST API (e.g., `HttpClient`). Handles GET `/trips?limit=20&offset=0`. Implements pagination logic if total count > 20.
+*   **`RouteGeometryParser`**: Utility to transform raw API coordinates (likely GeoJSON or WKT) into OpenLayers `Multi

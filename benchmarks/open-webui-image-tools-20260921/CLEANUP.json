@@ -1,0 +1,14 @@
+{
+  "comfy": "inactive",
+  "ollama": "active",
+  "gpu": {
+    "used_mib": 2100,
+    "free_mib": 13739
+  },
+  "staged": [],
+  "ki_edit": "0",
+  "ok": true,
+  "name": "CLEANUP",
+  "ts": "2026-09-21T19:20:00",
+  "note": "Nach Cursor-Crash: POST /api/gpu/cleanup, Comfy gestoppt, Staging leer."
+}

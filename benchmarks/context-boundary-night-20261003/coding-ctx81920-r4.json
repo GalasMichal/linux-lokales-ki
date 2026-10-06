@@ -1,0 +1,126 @@
+{
+  "ts": "2026-10-03T23:58:40+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 4,
+  "sessionId": "41d4b898-f066-4137-8a3e-22d258febef9",
+  "elapsed_s": 107.826,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "artifact_missing:pytest_pass",
+    "artifact_missing:add_fixed",
+    "artifact_missing:mul_fixed",
+    "pytest_failed",
+    "calc_not_fixed",
+    "mul_not_fixed"
+  ],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_lcbivxp9",
+      "name": "ToolSearch: select:read_file,edit,grep_search,list_directory",
+      "status": "completed"
+    },
+    {
+      "id": "call_ejxfsjn7",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_aiir8upb",
+      "name": "ToolSearch: select:read_file,edit,grep_search,list_directory",
+      "status": "completed"
+    },
+    {
+      "id": "call_x1nmh6jj",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_x1fd056c",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_js9ycmcv",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_37mquy6s",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_mn8sivgp",
+      "name": "ToolSearch: pytest -q /home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py shell command execute python test fixture",
+      "status": "completed"
+    }
+  ],
+  "votes": 0,
+  "artifacts": {
+    "pytest_pass": false,
+    "pytest_out": "   assert -1 == 5\nE        +  where -1 = add(2, 3)\n\ntest_calc.py:4: AssertionError\n__________________________________ test_area ___________________________________\n\n    def test_area():\n>       assert area(4, 5) == 20\nE       assert 9 == 20\nE        +  where 9 = area(4, 5)\n\ntest_calc.py:7: AssertionError\n=========================== short test summary info ============================\nFAILED test_calc.py::test_add - assert -1 == 5\nFAILED test_calc.py::test_area - assert 9 == 20\n2 failed in 0.01s\n",
+    "add_fixed": false,
+    "mul_fixed": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14262,
+      "vram_total_mib": 16303,
+      "gpu_util": 1
+    },
+    "mem": {
+      "mem_available_mib": 24061,
+      "swap_used_mib": 4554
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 34.559,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14389,
+      "vram_total_mib": 16303,
+      "gpu_util": 61
+    },
+    "mem": {
+      "mem_available_mib": 20046,
+      "swap_used_mib": 5390
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 34.559,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "agent"
+}

@@ -1,0 +1,147 @@
+{
+  "sessionId": "f05326c9-503f-44d2-9288-b1e17f013358",
+  "model_switch": {
+    "_meta": {
+      "qwenModelSwitch": {
+        "authType": "openai",
+        "modelId": "local-quality",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "***",
+        "isRuntime": false
+      }
+    }
+  },
+  "model_id": "local-quality(openai)",
+  "elapsed_s": 564.869,
+  "prompt_error": null,
+  "prompt_result": {
+    "promptId": "d3089074-6f07-4bb2-a9aa-64869f0ca3db",
+    "lastEventId": 3,
+    "eventEpoch": "a9a78bd5-6ed4-4423-bbee-3e3aef7aea64"
+  },
+  "votes": [
+    {
+      "requestId": "be6828f6-a0aa-463b-a2a8-c0a018ab1408",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "d619433b-9417-43e3-bc35-b751a6e4e2ff",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "7db4f358-abb7-4a18-8792-10ac828543d0",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "b10ffa88-1b0d-493e-a5d1-b7154ee2e895",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "ce40bd8a-85c4-4796-aa58-5bef69a70ae9",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "b19173b9-d895-437b-9790-465eae33e624",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "8d0a959a-3b97-4b4a-abb9-1d54f3d7f4e3",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_lfdzdfw7",
+      "name": "memory_load (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_bkkpm8ze",
+      "name": "pdf_create (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_ivvsufmq",
+      "name": "pdf_create (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_bvsosamx",
+      "name": "pdf_read (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_m8b343a3",
+      "name": "pdf_render (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_6l9ygis6",
+      "name": "pdf_vision_qa (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_t54mq4op",
+      "name": "memory_update (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    }
+  ],
+  "expected_hit": [
+    "memory_load",
+    "memory_update",
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa"
+  ],
+  "missing": [],
+  "thoughts": 0,
+  "assistant_text": "I'm starting the E2E run in a local-serve session and will test the MCP tools sequentially at `/home/mike/Projects/Linux Lokales KI`.Memory loaded: `local-quality` is production (not in production) at 8192; next: explicit 16k cutover. Now creating the E2E PDF with that.IMPORTANT: This conversation approached the input token limit for local-quality. A compressed context will be sent for future messages (compressed from: 16034 to ~11461 tokens).Got it. Thanks for the additional context!",
+  "pdf_exists": true,
+  "png_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "single_session": true,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok",
+        "trust": null
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 7,
+    "tools": 7,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 1,
+    "vram": 14364
+  },
+  "nvidia": {
+    "vram_used_mib": 14364,
+    "vram_total_mib": 16303,
+    "gpu_util": 1
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    38%/62% CPU/GPU    16384      7 minutes from now    \n",
+  "pass": true
+}

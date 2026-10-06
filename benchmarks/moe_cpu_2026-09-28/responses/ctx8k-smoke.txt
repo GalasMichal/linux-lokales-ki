@@ -1,0 +1,2 @@
+TypeScript ist eine Programmiersprache, die JavaScript erweitert und statische Typisierung hinzufügt.
+[ Prompt: 7,0 t/s | Generation: 16,0 t/s ]

@@ -1,0 +1,70 @@
+{
+  "ts": "2026-10-03T06:58:57+0200",
+  "suite": "supervisor",
+  "num_ctx": 32768,
+  "model": "bench-qwen35-9b-32k",
+  "run_id": 3,
+  "sessionId": "80f49f4c-f182-4db5-9603-28c63372b46f",
+  "elapsed_s": 11.866,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift"
+  ],
+  "fail_reasons": [
+    "missing:['agent']"
+  ],
+  "completed_counts": {
+    "agent": 0
+  },
+  "tools": [
+    {
+      "id": "call_9hrmsj7n",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_etrpo0c4",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_eyq3z0pt",
+      "name": "ToolCall",
+      "status": "failed"
+    }
+  ],
+  "votes": 0,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1333,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25799,
+      "swap_used_mib": 6156
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 8548,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 24172,
+      "swap_used_mib": 6156
+    },
+    "ps": "NAME                          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              \nbench-qwen35-9b-32k:latest    2db395653ce7    6.1 GB    100% GPU     32768      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

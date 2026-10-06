@@ -1,0 +1,6 @@
+```typescript
+export function clampLonLat(input: { lon: number; lat: number }): { lon: number; lat: number } {
+  if (!Number.isFinite(input.lon) || !Number.isFinite(input.lat)) throw new TypeError('invalid lon/lat');
+  return { lon: Math.max(-180, Math.min(180, input.lon)), lat: Math.max(-90, Math.min(90, input.lat)) };
+}
+```

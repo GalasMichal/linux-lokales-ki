@@ -42,8 +42,10 @@ def set_fast_context(settings: dict, size: int) -> dict:
     for provider in providers:
         if provider.get("id") == "local-quality":
             quality = (provider.get("generationConfig") or {}).get("contextWindowSize")
-            if quality != 8192:
-                raise SystemExit(f"ABBRUCH: QUALITY contextWindowSize ist {quality}, erwartet 8192.")
+            if quality not in {8192, 16384}:
+                raise SystemExit(
+                    f"ABBRUCH: QUALITY contextWindowSize ist {quality}, erwartet 8192 oder 16384."
+                )
     if settings.get("model", {}).get("name") != "local-fast":
         raise SystemExit("ABBRUCH: Default-Modell ist nicht local-fast.")
     mcp = (settings.get("mcpServers") or {}).get("local-tools") or {}

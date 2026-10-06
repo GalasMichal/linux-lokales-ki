@@ -1,0 +1,20 @@
+{
+  "sessionId": "73a5e1fb-3d3e-4c7a-b078-e2b43f2e64dd",
+  "queries": [
+    "select:memory_load",
+    "select:pdf_create",
+    "select:generate_image",
+    "select:edit_image",
+    "select:browser_open",
+    "select:desktop_snapshot"
+  ],
+  "resolved": {
+    "memory_load": true,
+    "pdf_create": true,
+    "generate_image": true,
+    "edit_image": true,
+    "browser_open": true,
+    "desktop_snapshot": true
+  },
+  "pass": true
+}

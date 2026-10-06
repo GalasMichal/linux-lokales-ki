@@ -1,0 +1,76 @@
+{
+  "ts": "2026-10-03T05:03:10+0200",
+  "suite": "knowledge",
+  "num_ctx": 73728,
+  "model": "bench-qwen38-27b-72k",
+  "run_id": 3,
+  "sessionId": "f2ffad9b-12c5-4a27-9cbb-41908b1c6e5b",
+  "elapsed_s": 69.552,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift"
+  ],
+  "fail_reasons": [
+    "duplicate_tools:{'knowledge_search': 2}"
+  ],
+  "completed_counts": {
+    "knowledge_search": 2,
+    "knowledge_get": 1
+  },
+  "tools": [
+    {
+      "id": "call_o8pan1gs",
+      "name": "ToolSearch: local-tools knowledge search get mcp",
+      "status": "completed"
+    },
+    {
+      "id": "call_x63erqh9",
+      "name": "knowledge_search (local-tools MCP Server): {\"max_results\":5,\"query\":\"compact state ledger lazy tools\",\"workspace\":\"/home/mike/.qwen/projects/-srv-ai-workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_hhgdxx5f",
+      "name": "knowledge_search (local-tools MCP Server): {\"max_results\":5,\"query\":\"compact state ledger lazy tools\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_649xf6rc",
+      "name": "knowledge_get (local-tools MCP Server): {\"id\":\"KB-20260922-SUCCESS-001\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26414,
+      "swap_used_mib": 6397
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14210,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 21076,
+      "swap_used_mib": 6386
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-72k:latest    41c3bb97d1e6    19 GB    49%/51% CPU/GPU    73728      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

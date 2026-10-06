@@ -1,0 +1,129 @@
+{
+  "seq": 7,
+  "ts": "22:54:57",
+  "path": "/v1/chat/completions",
+  "elapsed_s": 6.718,
+  "status": 200,
+  "request": {
+    "model": "local-quality",
+    "stream": false,
+    "tool_choice": null,
+    "max_tokens": 32000,
+    "think": false,
+    "enable_thinking": false,
+    "reasoning": null,
+    "reasoning_effort": "none",
+    "tool_count": 0,
+    "tool_names": [],
+    "message_count": 10,
+    "messages": [
+      {
+        "role": "system",
+        "content_chars": 1010,
+        "content_head": "Follow the user-visible output language preference below for this side query.\n\nThis preference overrides any earlier language-selection rule in this system instruction.\n\n# Output language preference: auto\n<!-- qwen-code:llm-output-language:",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0
+      },
+      {
+        "role": "user",
+        "content_chars": 8698,
+        "content_head": "[{\"type\": \"text\", \"text\": \"<system-reminder>\\nNo skills are currently available. Skills can be added by creating directories with SKILL.md files or by configuring MCP servers with model-invocable prompts.\\n</system-reminder>\"}, {\"type\": \"te",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0
+      },
+      {
+        "role": "assistant",
+        "content_chars": 42,
+        "content_head": "Got it. Thanks for the additional context!",
+        "has_tool_calls": true,
+        "tool_call_name": "mcp__local-tools__pdf_create",
+        "reasoning_chars": 0,
+        "tool_call_arg_chars": 155
+      },
+      {
+        "role": "tool",
+        "content_chars": 171,
+        "content_head": "[{\"type\": \"text\", \"text\": \"Tool execution result was not recorded — likely interrupted by network failure, abort, or process exit. Treat as failure and retry if needed.\"}]",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0,
+        "tool_call_id": "call_xbihx1p0"
+      },
+      {
+        "role": "assistant",
+        "content_chars": 20,
+        "content_head": "Retrying pdf_create…",
+        "has_tool_calls": true,
+        "tool_call_name": "mcp__local-tools__pdf_create",
+        "reasoning_chars": 0,
+        "tool_call_arg_chars": 155
+      },
+      {
+        "role": "tool",
+        "content_chars": 1516,
+        "content_head": "[{\"type\": \"text\", \"text\": \"{\\\"ok\\\":true,\\\"path\\\":\\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/essay-ab-WIRE.pdf\\\",\\\"backend\\\":\\\"reportlab\\\",\\\"qa\\\":{\\\"ok\\\":true,\\\"path\\\":\\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/essay-ab-WIRE.pd",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0,
+        "tool_call_id": "call_o5b312lq"
+      },
+      {
+        "role": "assistant",
+        "content_chars": 0,
+        "content_head": "",
+        "has_tool_calls": true,
+        "tool_call_name": "mcp__local-tools__pdf_read",
+        "reasoning_chars": 0,
+        "tool_call_arg_chars": 76
+      },
+      {
+        "role": "tool",
+        "content_chars": 624,
+        "content_head": "[{\"type\": \"text\", \"text\": \"{\\\"ok\\\":true,\\\"path\\\":\\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/essay-ab-WIRE.pdf\\\",\\\"pages\\\":1,\\\"read_pages\\\":[1],\\\"text\\\":\\\"--- page 1 ---\\\\nEssay AB WIRE\\\\nQUALITY 16k essay-control A/B variant WIRE.\\\",",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0,
+        "tool_call_id": "call_wepb7z7q"
+      },
+      {
+        "role": "assistant",
+        "content_chars": 155,
+        "content_head": "WIRE-Kette abgeschlossen: `memory_load` → `pdf_create` (QA ok, 1 Seite, Text stimmt) → `pdf_read` (74 Zeichen, untruncated). Alle drei Schritte fehlerfrei.",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0
+      },
+      {
+        "role": "user",
+        "content_chars": 1642,
+        "content_head": "[{\"type\": \"text\", \"text\": \"[SUGGESTION MODE: Suggest what the user might naturally type next.]\\n\\nFIRST: Read the LAST FEW LINES of the assistant's most recent message -- that's where\\nnext-step hints, tips, and actionable suggestions usual",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0
+      }
+    ],
+    "extra_keys": [
+      "enable_thinking",
+      "max_tokens",
+      "reasoning_effort",
+      "think"
+    ]
+  },
+  "response": {
+    "chunk_count": 0,
+    "finish_reason": null,
+    "usage": null,
+    "response_keys": [],
+    "delta_keys": [],
+    "content_chars": 0,
+    "content_head": "",
+    "content_tail": "",
+    "reasoning_chars": 0,
+    "reasoning_head": "",
+    "tool_call_names": [],
+    "tool_arg_chars": 0,
+    "tool_arg_head": ""
+  }
+}

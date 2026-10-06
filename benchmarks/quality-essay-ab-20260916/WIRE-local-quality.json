@@ -1,0 +1,153 @@
+{
+  "variant": "WIRE",
+  "model_id": "local-quality",
+  "sessionId": "01e07c88-9208-423b-ac43-605eefec96da",
+  "elapsed_s": 274.707,
+  "prompt_error": null,
+  "prompt_result": {
+    "promptId": "7ba8e422-7a26-44cc-b3f1-499cb61cbff8",
+    "lastEventId": 4,
+    "eventEpoch": "aae6b344-bceb-4d2d-8e34-826e33ee3f0b"
+  },
+  "votes": [
+    {
+      "requestId": "0c90bdd6-f58d-4dab-b886-68971e75b11d",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "f2242724-63fb-432d-baaa-006f32e89653",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "05490cd6-1e3f-42a0-906b-985cae658a51",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "8a3787cc-8f0a-4208-8cca-c5d19bbe4438",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_oy2ecizr",
+      "name": "memory_load (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "id": "call_xbihx1p0",
+      "name": "pdf_create (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "id": "call_o5b312lq",
+      "name": "pdf_create (local-tools MCP Server)",
+      "status": "completed"
+    },
+    {
+      "id": "call_wepb7z7q",
+      "name": "pdf_read (local-tools MCP Server)",
+      "status": "completed"
+    }
+  ],
+  "tool_names": [
+    "memory_load",
+    "pdf_create",
+    "pdf_create",
+    "pdf_read"
+  ],
+  "missing": [],
+  "duplicate_tools": [
+    "pdf_create",
+    "pdf_create"
+  ],
+  "thoughts": 0,
+  "assistant_chars": 593,
+  "assistant_approx_tokens": 148,
+  "segments": [
+    {
+      "after_tool": null,
+      "before_tool": "memory_load (local-tools MCP Server)",
+      "start_s": 43.909,
+      "end_s": 43.928,
+      "chars": 143,
+      "approx_tokens": 35,
+      "text_preview": "I'll start with step 1, then proceed to the PDF creation and read in sequence since later steps depend on earlier ones completing successfully."
+    },
+    {
+      "after_tool": null,
+      "before_tool": "pdf_create (local-tools MCP Server)",
+      "start_s": 60.91,
+      "end_s": 60.914,
+      "chars": 98,
+      "approx_tokens": 24,
+      "text_preview": "Memory loaded; project state and PDF requirements confirmed. Proceeding to create the control PDF."
+    },
+    {
+      "after_tool": null,
+      "before_tool": "pdf_create (local-tools MCP Server)",
+      "start_s": 254.198,
+      "end_s": 263.391,
+      "chars": 197,
+      "approx_tokens": 49,
+      "text_preview": "IMPORTANT: This conversation approached the input token limit for local-quality. A compressed context will be sent for future messages (compressed from: 14447 to ~11034 tokens).Retrying pdf_create…"
+    },
+    {
+      "after_tool": null,
+      "before_tool": "pdf_read (local-tools MCP Server)",
+      "start_s": 267.046,
+      "end_s": 267.046,
+      "chars": 0,
+      "approx_tokens": 0,
+      "text_preview": ""
+    },
+    {
+      "after_tool": null,
+      "before_tool": "(final/leftover)",
+      "start_s": 273.096,
+      "end_s": 273.103,
+      "chars": 155,
+      "approx_tokens": 38,
+      "text_preview": "WIRE-Kette abgeschlossen: `memory_load` → `pdf_create` (QA ok, 1 Seite, Text stimmt) → `pdf_read` (74 Zeichen, untruncated). Alle drei Schritte fehlerfrei."
+    }
+  ],
+  "max_mid_tokens": 49,
+  "compressed": true,
+  "pdf_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok"
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 4,
+    "tools": 4,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 62,
+    "vram": 14299,
+    "abort": null,
+    "cancelled_leftover": false
+  },
+  "nvidia": {
+    "vram_used_mib": 14299,
+    "vram_total_mib": 16303,
+    "gpu_util": 62
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    38%/62% CPU/GPU    16384      4 minutes from now    \n",
+  "assistant_text": "I'll start with step 1, then proceed to the PDF creation and read in sequence since later steps depend on earlier ones completing successfully.Memory loaded; project state and PDF requirements confirmed. Proceeding to create the control PDF.IMPORTANT: This conversation approached the input token limit for local-quality. A compressed context will be sent for future messages (compressed from: 14447 to ~11034 tokens).Retrying pdf_create…WIRE-Kette abgeschlossen: `memory_load` → `pdf_create` (QA ok, 1 Seite, Text stimmt) → `pdf_read` (74 Zeichen, untruncated). Alle drei Schritte fehlerfrei.",
+  "pass_tools": true,
+  "essay_ok": false
+}

@@ -1,0 +1,92 @@
+{
+  "ts": "2026-10-04T09:57:37+0200",
+  "task": "order_service",
+  "title": "Checkout totals and member prices",
+  "core": true,
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 3,
+  "attempt": 1,
+  "retry_of": null,
+  "sessionId": "f72e1780-3209-4434-914f-b00bdf13a2d4",
+  "workspace": "/srv/ai/workspaces/realistic-80k-20261004/runs/order_service-r3",
+  "elapsed_s": 42.366,
+  "pass": false,
+  "resolved": false,
+  "fail_to_pass": false,
+  "pass_to_pass": true,
+  "musts_ok": false,
+  "score": {
+    "fail_to_pass": {
+      "pass": false,
+      "code": 1,
+      "out": "tax ____________________\n\n    def test_total_applies_discount_before_tax() -> None:\n        cat = Catalog({\"bread\": 10000})\n        cart = Cart(cat)\n        cart.add(\"bread\", 1)\n        checkout = Checkout(cart)\n>       assert checkout.total(discount_bp=1000) == 10710\nE       assert 0 == 10710\nE        +  where 0 = total(discount_bp=1000)\nE        +    where total = <checkout.Checkout object at 0x7f80d478dfd0>.total\n\n/home/mike/Projects/Linux Lokales KI/benchmarks/realistic_80k_tasks/order_service/workspace/test_visible.py:18: AssertionError\n=========================== short test summary info ============================\nFAILED test_visible.py::test_subtotal_uses_full_qty - assert 100 == 200\nFAILED test_visible.py::test_total_applies_discount_before_tax - assert 0 == ...\n2 failed in 0.01s\n"
+    },
+    "pass_to_pass": {
+      "pass": true,
+      "code": 0,
+      "out": "...                                                                      [100%]\n3 passed in 0.00s\n"
+    },
+    "musts": {
+      "pass": false,
+      "code": 1,
+      "out": "____________________\n\n    def test_member_price_this_cart_only() -> None:\n        cat = Catalog({\"a\": 100})\n        cart = Cart(cat)\n        cart.add(\"a\", 1)\n        checkout = Checkout(cart)\n        checkout.apply_member_price(\"a\", 50)\n>       assert checkout.total() == 59\nE       assert 0 == 59\nE        +  where 0 = total()\nE        +    where total = <checkout.Checkout object at 0x7f4bbda49e80>.total\n\n/home/mike/Projects/Linux Lokales KI/benchmarks/realistic_80k_tasks/order_service/hidden/test_musts.py:40: AssertionError\n=========================== short test summary info ============================\nFAILED ../../../../../../home/mike/Projects/Linux Lokales KI/benchmarks/realistic_80k_tasks/order_service/hidden/test_musts.py::test_member_price_this_cart_only\n1 failed, 2 passed in 0.01s\n"
+    },
+    "resolved": false
+  },
+  "tools": [
+    {
+      "name": "Shell: ls -la '/srv/ai/workspaces/realistic-80k-20261004/runs/order_service-r3'",
+      "status": "completed"
+    },
+    {
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "name": "ToolCall: read_file",
+      "status": "failed"
+    }
+  ],
+  "votes": 0,
+  "vote_log_tail": [],
+  "prompt_error": null,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 0,
+    "tools": 5,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 1,
+    "vram": 14024
+  },
+  "before": {
+    "mem": {
+      "mem_available_mib": 22888,
+      "swap_used_mib": 7505
+    },
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 6.54,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "empty_start": false,
+  "error_class": "must_loss",
+  "perm_blocked": false,
+  "productive_local_quality_untouched": true
+}

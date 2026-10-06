@@ -1,0 +1,140 @@
+{
+  "ts": "2026-10-03T04:14:41+0200",
+  "suite": "coding",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 7,
+  "sessionId": "563cbdc4-eded-49f2-893d-b43b3d7bf19a",
+  "elapsed_s": 507.703,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_bno6lkcj",
+      "name": "ToolSearch: select:read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_gpttune3",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_qta8w69u",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_pphb3zq5",
+      "name": "ToolSearch: select:edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_ml8r6pdf",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_7k4wtodt",
+      "name": "ToolSearch: run shell command pytest execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_qifqjea7",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_jlwxn29c",
+      "name": "Agent: run pytest exactly once",
+      "status": "completed"
+    },
+    {
+      "id": "call_ys5yjupq",
+      "name": "ToolSearch: shell run command execute bash subprocess",
+      "status": "completed"
+    },
+    {
+      "id": "call_0w2yjb1o",
+      "name": "ToolSearch: terminal execute shell command Bash run_script exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_c7ovpf02",
+      "name": "ToolSearch: run shell script command Bash terminal exec subprocess python",
+      "status": "completed"
+    },
+    {
+      "id": "call_u869zdzx",
+      "name": "ToolSearch: select:execute_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_b7dwhc5s",
+      "name": "ToolSearch: select:Bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_aw0pjll7",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_ney8e1ci",
+      "name": "ToolSearch: command",
+      "status": "completed"
+    },
+    {
+      "id": "call_xsg6bt4z",
+      "name": "ToolSearch: exec run shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_70me4pqr",
+      "name": "moe_consult (local-tools MCP Server): {\"role\":\"supervisor\",\"max_tokens\":64,\"task\":\"This subagent session has no shell/Bash tool in its function list (checked deferred tools with tool_search; none found). Task is to run exactly one shell pytest command and return verbatim output. Advise how to report the blocker.\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26302,
+      "swap_used_mib": 6411
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14396,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 19477,
+      "swap_used_mib": 8493
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    46%/54% CPU/GPU    65536      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

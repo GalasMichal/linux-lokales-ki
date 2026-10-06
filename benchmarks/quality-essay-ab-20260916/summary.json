@@ -1,0 +1,67 @@
+{
+  "phase": "QUALITY essay-control",
+  "ts": "2026-09-16T22:44+02:00",
+  "root_cause": "After pdf_create, local-quality generates ~1800-2400 tokens that Qwen Serve does not show as agent_message_chunk. Those tokens fill the 16k window, auto-compact fires, and the model retries pdf_create. Visible chat text was already short once Concise style was on. ACP system prompt still asks for thorough updates; Serve cwd /srv/ai/workspaces does not load project QWEN.md. memory_load instruction previously said to summarize later via memory_update.",
+  "matrix": {
+    "A": {
+      "label": "baseline",
+      "elapsed_s": 250.53,
+      "pass_tools": true,
+      "compressed": true,
+      "duplicate_pdf_create": true,
+      "hidden_n_gen_after_pdf_create": 2342,
+      "visible_mid_tokens": 44
+    },
+    "B": {
+      "label": "compact user-prompt instruction",
+      "elapsed_s": 256.694,
+      "pass_tools": true,
+      "compressed": true,
+      "duplicate_pdf_create": true,
+      "hidden_n_gen_after_pdf_create": 2544,
+      "note": "Prompt-only rule does not stop the hidden generation."
+    },
+    "C": {
+      "label": "project QWEN.md + Concise + skipStartupContext",
+      "note": "Serve workspace is /srv/ai/workspaces, so project QWEN.md is not injected. Applied globally via ~/.qwen/settings.json together with D."
+    },
+    "D": {
+      "label": "compact memory_load + Concise + skipStartupContext",
+      "elapsed_s": 225.802,
+      "pass_tools": true,
+      "essay_ok_visible": true,
+      "compressed": false,
+      "duplicate_pdf_create": false,
+      "hidden_n_gen_after_pdf_create": 1839,
+      "prompt_tokens_after_pdf_create": 7830,
+      "note": "Best 3-tool result. Visible text short. Hidden 2m15s generation remains."
+    },
+    "E": {
+      "label": "native samplingParams.max_tokens=768",
+      "elapsed_s": 114.3,
+      "pass_tools": true,
+      "compressed": true,
+      "duplicate_pdf_create": true,
+      "note": "Faster but truncated pdf_create ('interrupted'). Reverted."
+    }
+  },
+  "production_fix": {
+    "memory_load": "compact DECISIONS (recent 4 full, older headings) and TASKS (open + completed count); instruction: next tool immediately, no memory summary in chat",
+    "qwen": "general.outputStyle=Concise, model.skipStartupContext=true",
+    "not_applied": "samplingParams.max_tokens, Qwen Code 0.23.4 patch",
+    "backup": "/mnt/ai-archive/backups/qwen-essay-control-20260916-222500"
+  },
+  "full_e2e": {
+    "elapsed_s": 287.375,
+    "all_six_tools": true,
+    "pdf_png": true,
+    "votes_proceed_once": 7,
+    "compressed": true,
+    "duplicate_pdf_create": true,
+    "vs_565s": "287s (~49% faster) but not a strict PASS under no-duplicate/no-compress rules"
+  },
+  "unittest": 69,
+  "default_model": "local-fast",
+  "trust": false,
+  "approvalMode": "default"
+}

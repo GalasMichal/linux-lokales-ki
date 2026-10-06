@@ -1,0 +1,84 @@
+{
+  "seeded_or_existing": {
+    "ok": true,
+    "workspace": "/home/mike/Projects/Linux Lokales KI",
+    "knowledge_dir": "/home/mike/Projects/Linux Lokales KI/.agent/knowledge",
+    "seeded": false,
+    "count": 18
+  },
+  "cases": [
+    {
+      "name": "lazy",
+      "ok": true,
+      "approx_tokens": 389,
+      "hits": [
+        "KB-20260922-LAZY-001",
+        "KB-20260922-LAZY-002",
+        "KB-20260922-SUCCESS-001",
+        "KB-20260922-LEDGER-004",
+        "KB-20260922-BOOT-001"
+      ],
+      "package_chars": 1559
+    },
+    {
+      "name": "ledger",
+      "ok": true,
+      "approx_tokens": 426,
+      "hits": [
+        "KB-20260922-COMPACT-001",
+        "KB-20260922-COMPACT-002",
+        "KB-20260922-LEDGER-001",
+        "KB-20260922-LEDGER-002",
+        "KB-20260922-SUCCESS-001"
+      ],
+      "package_chars": 1705
+    },
+    {
+      "name": "1536",
+      "ok": true,
+      "approx_tokens": 247,
+      "hits": [
+        "KB-20260922-IMAGE-002",
+        "KB-20260921-ROADMAP-001",
+        "KB-20260921-ROADMAP-000"
+      ],
+      "package_chars": 989
+    },
+    {
+      "name": "systemd",
+      "ok": true,
+      "approx_tokens": 427,
+      "hits": [
+        "KB-20260922-BOOT-001",
+        "KB-20260922-BOOT-002",
+        "KB-20260922-LEDGER-004",
+        "KB-20260922-LEDGER-002",
+        "KB-20260922-LAZY-002"
+      ],
+      "package_chars": 1711
+    },
+    {
+      "name": "prevention",
+      "ok": true,
+      "approx_tokens": 448,
+      "hits": [
+        "KB-20260922-LEDGER-002",
+        "KB-20260922-COMPACT-001",
+        "KB-20260922-COMPACT-003",
+        "KB-20260922-COMPACT-002",
+        "KB-20260922-LEDGER-001"
+      ],
+      "package_chars": 1793
+    },
+    {
+      "name": "nohit",
+      "ok": true,
+      "approx_tokens": 10,
+      "hits": [],
+      "package_chars": 43
+    }
+  ],
+  "avg_tokens": 324.5,
+  "max_tokens": 448,
+  "pass": true
+}

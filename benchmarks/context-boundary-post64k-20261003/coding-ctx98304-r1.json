@@ -1,0 +1,149 @@
+{
+  "ts": "2026-10-03T14:25:04+0200",
+  "suite": "coding",
+  "num_ctx": 98304,
+  "model": "bench-qwen38-27b-96k",
+  "run_id": 1,
+  "sessionId": "7b3d397b-1f67-4275-9f9b-b90261fe2814",
+  "elapsed_s": 531.395,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "artifact_missing:pytest_pass",
+    "artifact_missing:add_fixed",
+    "artifact_missing:mul_fixed",
+    "pytest_failed",
+    "calc_not_fixed",
+    "mul_not_fixed"
+  ],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_aur1h2jv",
+      "name": "ToolSearch: select:read_file,write_file,edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_fk1zu3vm",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_480asrom",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_2qk8tfym",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ltp7mo01",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_rg2xag23",
+      "name": "ToolSearch: select:Bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_0ee7pddi",
+      "name": "ToolSearch: run shell command",
+      "status": "completed"
+    },
+    {
+      "id": "call_vwi4zx9h",
+      "name": "ToolSearch: execute command bash shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_w6unprz4",
+      "name": "ToolSearch: terminal process spawn python3",
+      "status": "completed"
+    },
+    {
+      "id": "call_ys57tcee",
+      "name": "ToolSearch: select:mcp__local-tools__run_shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_1480g216",
+      "name": "ToolSearch: shell exec command run_local",
+      "status": "completed"
+    },
+    {
+      "id": "call_tsw336ov",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_hhrjmgba",
+      "name": "ToolSearch: mcp local-tools",
+      "status": "completed"
+    },
+    {
+      "id": "call_wl9u5ww7",
+      "name": "ToolSearch: pytest python interpreter run script",
+      "status": "completed"
+    },
+    {
+      "id": "call_1nmv8qgr",
+      "name": "ToolSearch: \"run_shell_command\"",
+      "status": "completed"
+    },
+    {
+      "id": "call_c0hawpq4",
+      "name": "ToolSearch: subprocess task output stream process monitor",
+      "status": "completed"
+    },
+    {
+      "id": "call_jpo77pio",
+      "name": "Agent: Run pytest baseline",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pytest_pass": false,
+    "pytest_out": "   assert -1 == 5\nE        +  where -1 = add(2, 3)\n\ntest_calc.py:4: AssertionError\n__________________________________ test_area ___________________________________\n\n    def test_area():\n>       assert area(4, 5) == 20\nE       assert 9 == 20\nE        +  where 9 = area(4, 5)\n\ntest_calc.py:7: AssertionError\n=========================== short test summary info ============================\nFAILED test_calc.py::test_add - assert -1 == 5\nFAILED test_calc.py::test_area - assert 9 == 20\n2 failed in 0.01s\n",
+    "add_fixed": false,
+    "mul_fixed": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 3487,
+      "vram_total_mib": 16303,
+      "gpu_util": 1
+    },
+    "mem": {
+      "mem_available_mib": 24235,
+      "swap_used_mib": 8138
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14233,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 19173,
+      "swap_used_mib": 9869
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL                   \nbench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    62%/38% CPU/GPU    98304      About a minute from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

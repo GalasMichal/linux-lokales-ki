@@ -1,0 +1,10 @@
+ollama {"version":"0.34.2"}
+qwen 0.24.2
+comfy_prod 73c9bad4d21e7addbe1d13bc92eee0f1431b017d
+comfy_keep033 cc0fc21fea7a6a82f568362b15b7fbd713b419c1
+enabled disabled
+active inactive
+qwen_web active
+NVIDIA GeForce RTX 5080, 595.99.02, 9199 MiB, 6641 MiB
+/dev/sda3       921G    774G  145G   85% /
+/dev/sdc1       1,4T    1,1T  309G   78% /mnt/ai-archive

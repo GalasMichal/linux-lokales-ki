@@ -1,0 +1,204 @@
+{
+  "label": "ledger4",
+  "sessionId": "667d9bc2-081d-44dc-8967-2e40c5f6130f",
+  "model_id": "local-quality(openai)",
+  "elapsed_s": 211.922,
+  "prompt_error": null,
+  "turn_error": null,
+  "votes": [
+    {
+      "requestId": "a144aa87-2f3d-43d0-8ab5-5d9635339343",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "5706f15a-a240-4b78-a664-9674abc1e720",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "530e14f4-ab0e-47d0-a06c-6c296e216075",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "87b89927-b05e-417d-8fd4-344a111bc59d",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "bc76c3dc-2bea-4e94-8ea4-20b126abae43",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "2bc278c4-321d-4727-9c00-f69ae88f5176",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_iav098fz",
+      "name": "ToolSearch: select:memory_load",
+      "status": "completed",
+      "input": {
+        "query": "select:memory_load"
+      }
+    },
+    {
+      "id": "call_xdct24z2",
+      "name": "ToolCall",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_646kzcni",
+      "name": "ToolSearch: select:pdf_create",
+      "status": "completed",
+      "input": {
+        "query": "select:pdf_create"
+      }
+    },
+    {
+      "id": "call_lt93v046",
+      "name": "ToolCall",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_cxfx5vi7",
+      "name": "ToolSearch: select:pdf_read",
+      "status": "completed",
+      "input": {
+        "query": "select:pdf_read"
+      }
+    },
+    {
+      "id": "call_z5x67mpb",
+      "name": "ToolCall",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_gg6vnufs",
+      "name": "ToolSearch: select:pdf_render",
+      "status": "completed",
+      "input": {
+        "query": "select:pdf_render"
+      }
+    },
+    {
+      "id": "call_qg6vua1v",
+      "name": "ToolCall",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_s2eik0wd",
+      "name": "ToolSearch: select:pdf_vision_qa",
+      "status": "completed",
+      "input": {
+        "query": "select:pdf_vision_qa"
+      }
+    },
+    {
+      "id": "call_xbk1ptxy",
+      "name": "ToolCall",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_as35a7wz",
+      "name": "ToolSearch: select:memory_update",
+      "status": "completed",
+      "input": {
+        "query": "select:memory_update"
+      }
+    },
+    {
+      "id": "call_1x1f4bxq",
+      "name": "ToolCall",
+      "status": "completed",
+      "input": null
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1,
+    "memory_update": 1
+  },
+  "duplicates": {},
+  "missing": [],
+  "assistant_text": "Step 1: loading `memory_load` schema, then calling it.Alle 6 Schritte abgeschlossen:\n\n1. **memory_load** – ok, Workspace geladen (STATE.md u.a., Budget ~8900/14k)\n2. **pdf_create** – `ledger4.pdf` erstellt (reportlab, QA ok, 1 Seite, 97 Zeichen)\n3. **pdf_read** – ok, Text extrahiert (pymupdf, 113 Zeichen, nicht verkappt)\n4. **pdf_render** – `ledger4.png` erzeugt (Seite 1 @ 140 DPI, 1158×1638)\n5. **pdf_vision_qa** – **ok: false / needs_regeneration: true**: ein einzelnes „empty_page\"-Issue (High Severity, Confidence 1.0) – Seite ist fast leer nur Titel + eine Zeile oben links. Das ist bei diesem Test-Text erwartet, aber der Vision-Check meldet ihn als Layout-Problem und markiert `needs_regeneration`. Kein technischer Fehler im Tool: Model `local-quality` via Ollama lokal (prompt ~1937 Tokens, 14 s).\n6. **memory_update** – ok, DECISIONS.md append-only aktualisiert, History-Schnappschüsse gespeichert (`20260922-112004-*`).\n\nErgebnis: PDF-Kette create→read→render→QA lief E2E stabil mit Lazy Loading; der Vision-QA-Befund ist ein inhaltliches Layout-Rückmelding (leere Seite), kein Falschversprechen. STATE/TASKS wie vorgeschrieben nicht angefasst.",
+  "compressed": true,
+  "compact_events": [
+    {
+      "info": {
+        "originalTokenCount": 16517,
+        "newTokenCount": 11798,
+        "newTokenCountIsEstimated": true,
+        "compressionStatus": 1,
+        "triggerReason": "token_limit",
+        "originalTokenCountIsEstimated": true
+      },
+      "parts": [
+        {
+          "kind": "text",
+          "chars": 6303
+        },
+        {
+          "kind": "text",
+          "chars": 42
+        },
+        {
+          "kind": "functionCall",
+          "chars": 163
+        }
+      ]
+    }
+  ],
+  "prompt_tokens": [
+    9896,
+    11061,
+    9318,
+    9497,
+    10103,
+    10264,
+    10579,
+    10762,
+    11235,
+    11468,
+    12312,
+    12552,
+    12901
+  ],
+  "max_prompt_tokens": 12901,
+  "ledger_seen": true,
+  "immediate_second_compact": false,
+  "pdf_exists": true,
+  "png_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 6,
+    "tools": 12,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 91,
+    "vram": 14500
+  },
+  "nvidia": {
+    "vram_used_mib": 14500,
+    "vram_total_mib": 16303,
+    "gpu_util": 91
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    45%/55% CPU/GPU    16384      4 minutes from now    \n",
+  "pass": true
+}

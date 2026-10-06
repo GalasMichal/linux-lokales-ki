@@ -1,0 +1,216 @@
+{
+  "ts": "2026-10-03T12:30:04+0200",
+  "suite": "coding",
+  "num_ctx": 90112,
+  "model": "bench-qwen38-27b-88k",
+  "run_id": 1,
+  "sessionId": "bf742320-e57e-461a-8ce7-f584461770ca",
+  "elapsed_s": 786.072,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_t1p3nom3",
+      "name": "ToolSearch: select:read_file,glob,edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_o0xbcv3b",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_x708zvep",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_oasgfozm",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_jtv2bk2v",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_po72lvr6",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_qa90v9e4",
+      "name": "ToolSearch: run shell command execute command shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_qfq3igem",
+      "name": "ToolSearch: shell command",
+      "status": "completed"
+    },
+    {
+      "id": "call_5y6o9pbq",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_4gsitnf4",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_alch29oe",
+      "name": "ToolSearch: terminal bash execute python test run command",
+      "status": "completed"
+    },
+    {
+      "id": "call_h8zjj9f4",
+      "name": "ToolSearch: select:mcp__local-tools__run_command, run_shell, execute, Bash, cmd",
+      "status": "completed"
+    },
+    {
+      "id": "call_e2mfselo",
+      "name": "browser_snapshot (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_u3fcih9y",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_9nnalfja",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_mfaie9xv",
+      "name": "Agent: Run pytest in fixture dir",
+      "status": "completed"
+    },
+    {
+      "id": "call_z52s3siz",
+      "name": "ToolSearch: execute shell command run bash terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_olqf32h0",
+      "name": "ToolSearch: bash run exec command shell process",
+      "status": "completed"
+    },
+    {
+      "id": "call_d1ehspu7",
+      "name": "ToolSearch: +shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_4flmqb4n",
+      "name": "ToolSearch: +run",
+      "status": "completed"
+    },
+    {
+      "id": "call_ja6m542u",
+      "name": "ToolSearch: execute code python subprocess test pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_wv6q49wq",
+      "name": "ToolSearch: local-tools mcp terminal exec command line",
+      "status": "completed"
+    },
+    {
+      "id": "call_fwnay8mm",
+      "name": "ToolSearch: select:mcp__local-tools__shell,execute_command,run_shell,mcp__local-tools__terminal,shell_exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_ab6hm94u",
+      "name": "ToolSearch: +exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_4qhonwbb",
+      "name": "ToolSearch: select:shell,bash,terminal,run,cmd,execute_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_hqf3i3zu",
+      "name": "ToolSearch: select:execute_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_h17ebyuu",
+      "name": "ToolSearch: command process spawn child stdout pipeline",
+      "status": "completed"
+    },
+    {
+      "id": "call_9n49w5qd",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_wb3ppeq3",
+      "name": "ToolSearch: terminal bash shell command execute code interpret interpreter python node js eval",
+      "status": "completed"
+    },
+    {
+      "id": "call_9z04vccs",
+      "name": "ToolSearch: code interpreter jupyter notebook run script launch process start spawn",
+      "status": "completed"
+    },
+    {
+      "id": "call_womztwq9",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ns8w9ijy",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    }
+  ],
+  "votes": 4,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1476,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26029,
+      "swap_used_mib": 6731
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14411,
+      "vram_total_mib": 16303,
+      "gpu_util": 5
+    },
+    "mem": {
+      "mem_available_mib": 14300,
+      "swap_used_mib": 6829
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    52%/48% CPU/GPU    90112      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

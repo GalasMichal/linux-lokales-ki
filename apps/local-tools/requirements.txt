@@ -1,1 +1,9 @@
 mcp==2.0.0
+# Installed into the MCP venv by scripts/deploy-local-tools-mcp.sh (PyPI, no Chromium download).
+# Browser binary is the system Brave, not Playwright's Chromium.
+playwright==1.55.0
+# Desktop control uses system Python dbus/pyatspi and KWin. No ydotool and no extra pip package.
+# PDF/OCR Python packages are not in this locked MCP wheel cache.
+# They live in the user site (~/.local) and are imported via PYTHONPATH:
+# pymupdf==1.28.2 pikepdf==10.8.0 reportlab==4.5.1 ocrmypdf==16.13.0
+

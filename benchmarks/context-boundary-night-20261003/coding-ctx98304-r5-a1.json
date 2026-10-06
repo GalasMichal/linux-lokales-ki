@@ -1,0 +1,273 @@
+{
+  "ts": "2026-10-04T03:52:57+0200",
+  "suite": "coding",
+  "num_ctx": 98304,
+  "model": "bench-qwen38-27b-96k",
+  "run_id": 5,
+  "sessionId": "1fa71665-3753-4950-8b41-e6c9a16befa6",
+  "elapsed_s": 904.603,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_cg6a777t",
+      "name": "ToolSearch: select:read_file,write_file,read_many_files,list_directory,grep_search",
+      "status": "completed"
+    },
+    {
+      "id": "call_si9vworg",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_dhv6j7l2",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_eddhmq4j",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_6jqwckhu",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ao3hs4uz",
+      "name": "ToolSearch: select:Bash,Shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_enz1acvr",
+      "name": "ToolSearch: run shell command execute bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_4or9pifa",
+      "name": "ToolSearch: run bash terminal command execute pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_i2igi5qe",
+      "name": "ToolSearch: mcp__local-tools__ run terminal execute subprocess shell cli",
+      "status": "completed"
+    },
+    {
+      "id": "call_4gu1gur8",
+      "name": "ToolSearch: terminal_run shell_exec execute_python run_python pytest_runner mcp__local-tools__run",
+      "status": "completed"
+    },
+    {
+      "id": "call_jf8pfq4n",
+      "name": "ToolSearch: mcp__local-tools__shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_72mvj3uw",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_6m6zas2k",
+      "name": "ToolSearch: mcp__local-tools__ command run execute terminal script python cli process task",
+      "status": "completed"
+    },
+    {
+      "id": "call_ffzwiik3",
+      "name": "ToolSearch: select:mcp__local-tools__run_python,mcp__local-tools__exec,exec,Edit,mcp__local-tools__python,mcp__local-tools__command",
+      "status": "completed"
+    },
+    {
+      "id": "call_o276ovyz",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_hcdz4y1o",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_f6cqkrd1",
+      "name": "ToolSearch: mcp__local-tools__ test runner script process background job spawn launch interpreter",
+      "status": "completed"
+    },
+    {
+      "id": "call_tqksiyqu",
+      "name": "Agent: Run fixture pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_cu0fxn67",
+      "name": "ToolSearch: select:BashTool",
+      "status": "completed"
+    },
+    {
+      "id": "call_c8i1vbah",
+      "name": "ToolSearch: shell bash run command execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_1unv45xz",
+      "name": "ToolSearch: terminal command process exec python",
+      "status": "completed"
+    },
+    {
+      "id": "call_le73sarx",
+      "name": "ToolSearch: bash script shell tool",
+      "status": "completed"
+    },
+    {
+      "id": "call_5okue096",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_y9wygatc",
+      "name": "ToolSearch: +run",
+      "status": "completed"
+    },
+    {
+      "id": "call_w65gj0ru",
+      "name": "ToolSearch: +exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_r8qb4pd9",
+      "name": "ToolSearch: test pytest test runner",
+      "status": "completed"
+    },
+    {
+      "id": "call_2t31j5ok",
+      "name": "ToolSearch: select:Bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_wh8fy4ms",
+      "name": "ToolSearch: select:bash_tool",
+      "status": "completed"
+    },
+    {
+      "id": "call_76c6ehf2",
+      "name": "ToolSearch: select:run_shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_w1qrxce6",
+      "name": "ToolSearch: write edit file create read",
+      "status": "completed"
+    },
+    {
+      "id": "call_tx162zhe",
+      "name": "ToolSearch: cd path process spawn subprocess os system",
+      "status": "completed"
+    },
+    {
+      "id": "call_kn9lq99e",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_cspwll6d",
+      "name": "Glob: '*' in ~/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture",
+      "status": "failed"
+    },
+    {
+      "id": "call_w7depirw",
+      "name": "ToolSearch: select:read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_hmyqo6m8",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_rmvkylaf",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_565csn2h",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_far0554y",
+      "name": "ToolSearch: select:glob",
+      "status": "completed"
+    },
+    {
+      "id": "call_hmjusvsb",
+      "name": "Glob: '**/*' in ~/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14337,
+      "vram_total_mib": 16303,
+      "gpu_util": 14
+    },
+    "mem": {
+      "mem_available_mib": 23490,
+      "swap_used_mib": 4612
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 24.327,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14413,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 16171,
+      "swap_used_mib": 5176
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      7 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 24.327,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    51%/49% CPU/GPU    98304      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

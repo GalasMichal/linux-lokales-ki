@@ -1,0 +1,84 @@
+{
+  "ts": "2026-10-03T23:13:54+0200",
+  "suite": "compact",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 1,
+  "sessionId": "c6b20d90-6bc6-4626-90b7-48a9cfe6cd36",
+  "elapsed_s": 33.217,
+  "pass": false,
+  "drift": false,
+  "state_class": "A_technical",
+  "categories": [
+    "agent_drift",
+    "session_empty_start",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "missing:['memory_load', 'pdf_create', 'pdf_read']",
+    "artifact_missing:pdf",
+    "empty_session_start"
+  ],
+  "completed_counts": {
+    "memory_load": 0,
+    "pdf_create": 0,
+    "pdf_read": 0
+  },
+  "tools": [],
+  "votes": 0,
+  "artifacts": {
+    "pdf": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14246,
+      "vram_total_mib": 16303,
+      "gpu_util": 16
+    },
+    "mem": {
+      "mem_available_mib": 23807,
+      "swap_used_mib": 4182
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 4.334,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14310,
+      "vram_total_mib": 16303,
+      "gpu_util": 61
+    },
+    "mem": {
+      "mem_available_mib": 22081,
+      "swap_used_mib": 4178
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 4.334,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    49%/51% CPU/GPU    81920      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": true,
+  "error_class": "harness_session"
+}

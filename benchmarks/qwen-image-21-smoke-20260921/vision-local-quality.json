@@ -1,0 +1,12 @@
+{
+  "kind": "model_opinion_only",
+  "model": "local-quality",
+  "elapsed_s": 59.602,
+  "raw": "{\n  \"apple_now_green\": true,\n  \"table_and_steam_preserved\": true,\n  \"severe_artifacts\": false,\n  \"summary\": \"The apple was successfully changed from red to bright green. The table, steam, and overall composition were kept intact as requested.\"\n}",
+  "parsed": {
+    "apple_now_green": true,
+    "table_and_steam_preserved": true,
+    "severe_artifacts": false,
+    "summary": "The apple was successfully changed from red to bright green. The table, steam, and overall composition were kept intact as requested."
+  }
+}

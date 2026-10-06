@@ -1,0 +1,269 @@
+{
+  "http_status": 200,
+  "completion": {
+    "event_count": 1,
+    "text": ""
+  },
+  "chat_status": 200,
+  "chat": {
+    "id": "4a167add-9970-4b51-aaf6-e79323445fc3",
+    "user_id": "a2a393d9-0683-4d7d-a2d9-bcaa50d6514c",
+    "title": "CHAT-BAD-FILE",
+    "chat": {
+      "title": "CHAT-BAD-FILE",
+      "models": [
+        "local-fast:latest"
+      ],
+      "files": [
+        {
+          "type": "file",
+          "id": "b647901d-1e3c-488d-9c82-81a83985b66e",
+          "name": "bad.txt",
+          "content_type": "text/plain",
+          "file": {
+            "id": "b647901d-1e3c-488d-9c82-81a83985b66e",
+            "user_id": "a2a393d9-0683-4d7d-a2d9-bcaa50d6514c",
+            "hash": null,
+            "filename": "bad.txt",
+            "data": {},
+            "meta": {
+              "name": "bad.txt",
+              "content_type": "text/plain",
+              "size": 18,
+              "file_hash": "ea1f966d6c8f3c9fb78c473bf55d62695f4c07878f9abda23f4ef715ae0b1007",
+              "data": {}
+            },
+            "created_at": 1790002140,
+            "updated_at": 1790002140
+          }
+        }
+      ],
+      "history": {
+        "messages": {
+          "8d2ebb42-255a-4eb3-a9a9-e4dfb6cb938f": {
+            "id": "8d2ebb42-255a-4eb3-a9a9-e4dfb6cb938f",
+            "parentId": null,
+            "childrenIds": [
+              "f7574a2f-82ca-4861-822d-967c465c0394"
+            ],
+            "role": "user",
+            "content": "Bearbeite dieses Bild und mache den Himmel blau.",
+            "files": [
+              {
+                "type": "file",
+                "id": "b647901d-1e3c-488d-9c82-81a83985b66e",
+                "name": "bad.txt",
+                "content_type": "text/plain",
+                "file": {
+                  "id": "b647901d-1e3c-488d-9c82-81a83985b66e",
+                  "user_id": "a2a393d9-0683-4d7d-a2d9-bcaa50d6514c",
+                  "hash": null,
+                  "filename": "bad.txt",
+                  "data": {},
+                  "meta": {
+                    "name": "bad.txt",
+                    "content_type": "text/plain",
+                    "size": 18,
+                    "file_hash": "ea1f966d6c8f3c9fb78c473bf55d62695f4c07878f9abda23f4ef715ae0b1007",
+                    "data": {}
+                  },
+                  "created_at": 1790002140,
+                  "updated_at": 1790002140
+                }
+              }
+            ],
+            "timestamp": 1790002140,
+            "models": [
+              "local-fast:latest"
+            ]
+          },
+          "f7574a2f-82ca-4861-822d-967c465c0394": {
+            "id": "f7574a2f-82ca-4861-822d-967c465c0394",
+            "parentId": "8d2ebb42-255a-4eb3-a9a9-e4dfb6cb938f",
+            "childrenIds": [],
+            "role": "assistant",
+            "content": "Bitte laden Sie zuerst das Originalbild hoch, damit ich den Himmel dafür blau färben kann. Sobald Sie das Bild bereitgestellt haben, werde ich es umgehend bearbeiten.",
+            "done": true,
+            "model": "local-fast:latest",
+            "timestamp": 1790002140,
+            "statusHistory": [
+              {
+                "action": "queries_generated",
+                "queries": [],
+                "done": false
+              },
+              {
+                "action": "sources_retrieved",
+                "count": 0,
+                "done": true
+              }
+            ],
+            "sources": [
+              {
+                "source": {
+                  "type": "file",
+                  "id": "b647901d-1e3c-488d-9c82-81a83985b66e",
+                  "name": "bad.txt",
+                  "content_type": "text/plain",
+                  "file": {
+                    "id": "b647901d-1e3c-488d-9c82-81a83985b66e",
+                    "user_id": "a2a393d9-0683-4d7d-a2d9-bcaa50d6514c",
+                    "hash": null,
+                    "filename": "bad.txt",
+                    "data": {},
+                    "meta": {
+                      "name": "bad.txt",
+                      "content_type": "text/plain",
+                      "size": 18,
+                      "file_hash": "ea1f966d6c8f3c9fb78c473bf55d62695f4c07878f9abda23f4ef715ae0b1007",
+                      "data": {}
+                    },
+                    "created_at": 1790002140,
+                    "updated_at": 1790002140
+                  }
+                },
+                "document": [],
+                "metadata": [],
+                "distances": []
+              }
+            ],
+            "output": [
+              {
+                "type": "reasoning",
+                "id": "r_1df1e4c063934c45a8c60baf",
+                "status": "completed",
+                "start_tag": "<think>",
+                "end_tag": "</think>",
+                "attributes": {
+                  "type": "reasoning_content"
+                },
+                "content": [
+                  {
+                    "type": "output_text",
+                    "text": "The user is asking me to edit an image and make the sky blue. However, I don't see any image attached to this message. According to my instructions, I should call edit_image when the user wants to change or edit a picture, but I need an existing image to work with.\n\nSince no image is visible/attached to this conversation, I cannot proceed with editing. But wait - my instructions say \"Do not claim that no image is present\" and \"If no file exists the tool returns the error.\" So I should just try to call edit_image and let the tool handle it if there's no image.\n\nHowever, I realize I need an instruction for what to edit. The user wants me to make the sky blue. Let me call edit_image with that instruction. But wait - I don't actually have an image to work on!\n\nLooking at my guidelines again: \"If no file exists the tool returns the error.\" So I should proceed with the edit_image call and let it return an error if there's no image. The instructions say not to claim no image is present, so I'll just make the call with the appropriate instruction."
+                  }
+                ],
+                "summary": null,
+                "started_at": 1790002145.4281898,
+                "ended_at": 1790002147.7384295,
+                "duration": 2
+              },
+              {
+                "type": "function_call",
+                "id": "call_r48dbv47",
+                "call_id": "call_r48dbv47",
+                "name": "edit_image",
+                "arguments": "{\"instruction\": \"Make the sky blue\"}",
+                "status": "completed"
+              },
+              {
+                "type": "function_call_output",
+                "id": "fco_1e0411f5a5024b159b4f6278",
+                "call_id": "call_r48dbv47",
+                "output": [
+                  {
+                    "type": "input_text",
+                    "text": "{\"status\": \"error\", \"error\": \"Bitte zuerst ein Originalbild hochladen. Ein KI-Ergebnis wird nicht automatisch weiterbearbeitet.\"}"
+                  }
+                ],
+                "status": "completed"
+              },
+              {
+                "type": "reasoning",
+                "id": "r_17a09fba0ea24fdcbc91f4a2",
+                "status": "completed",
+                "start_tag": "<think>",
+                "end_tag": "</think>",
+                "attributes": {
+                  "type": "reasoning_content"
+                },
+                "content": [
+                  {
+                    "type": "output_text",
+                    "text": "The error message indicates that I need to first upload an original image before editing it. The system cannot automatically continue working with AI-generated results. I should inform the user about this requirement and ask them to upload the image they want edited."
+                  }
+                ],
+                "summary": null,
+                "started_at": 1790002147.8866909,
+                "ended_at": 1790002148.3345554,
+                "duration": 0
+              },
+              {
+                "type": "message",
+                "id": "msg_b579446e9d4340868edee004",
+                "status": "completed",
+                "role": "assistant",
+                "content": [
+                  {
+                    "type": "output_text",
+                    "text": "Bitte laden Sie zuerst das Originalbild hoch, damit ich den Himmel dafür blau färben kann. Sobald Sie das Bild bereitgestellt haben, werde ich es umgehend bearbeiten."
+                  }
+                ]
+              }
+            ],
+            "usage": {
+              "input_tokens": 1498,
+              "output_tokens": 352,
+              "total_tokens": 1850,
+              "prompt_tokens": 740,
+              "completion_tokens": 84,
+              "response_token/s": 113.2,
+              "prompt_token/s": 5501.82,
+              "total_duration": 883112046,
+              "load_duration": 1685434,
+              "prompt_eval_count": 740,
+              "prompt_eval_duration": 134501000,
+              "eval_count": 84,
+              "eval_duration": 742054000,
+              "approximate_total": "0h0m0s",
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "accepted_prediction_tokens": 0,
+                "rejected_prediction_tokens": 0
+              }
+            }
+          }
+        },
+        "currentId": "f7574a2f-82ca-4861-822d-967c465c0394"
+      }
+    },
+    "updated_at": 1790002148,
+    "created_at": 1790002140,
+    "share_id": null,
+    "archived": false,
+    "pinned": false,
+    "meta": {},
+    "variables": {},
+    "folder_id": null,
+    "tasks": null,
+    "summary": null,
+    "current_message_id": "f7574a2f-82ca-4861-822d-967c465c0394",
+    "context_usage": null
+  },
+  "state": {},
+  "job_ids": [],
+  "tools": [
+    "edit_image"
+  ],
+  "files": [],
+  "upload": {
+    "id": "b647901d-1e3c-488d-9c82-81a83985b66e",
+    "user_id": "a2a393d9-0683-4d7d-a2d9-bcaa50d6514c",
+    "hash": null,
+    "filename": "bad.txt",
+    "data": {},
+    "meta": {
+      "name": "bad.txt",
+      "content_type": "text/plain",
+      "size": 18,
+      "file_hash": "ea1f966d6c8f3c9fb78c473bf55d62695f4c07878f9abda23f4ef715ae0b1007",
+      "data": {}
+    },
+    "created_at": 1790002140,
+    "updated_at": 1790002140
+  },
+  "new_jobs": [],
+  "ok": true,
+  "name": "CHAT-BAD-FILE",
+  "ts": "2026-09-21T16:49:08"
+}

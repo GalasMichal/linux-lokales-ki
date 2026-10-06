@@ -44,7 +44,7 @@ class FastContextSetterTests(unittest.TestCase):
 
     def test_rejects_quality_drift(self):
         bad = json.loads(json.dumps(SAMPLE))
-        bad["modelProviders"]["openai"][0]["generationConfig"]["contextWindowSize"] = 16384
+        bad["modelProviders"]["openai"][0]["generationConfig"]["contextWindowSize"] = 32768
         with self.assertRaises(SystemExit):
             MOD.set_fast_context(bad, 32768)
 

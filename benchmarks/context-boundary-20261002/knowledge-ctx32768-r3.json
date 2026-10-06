@@ -1,0 +1,74 @@
+{
+  "ts": "2026-10-02T19:27:14+0200",
+  "suite": "knowledge",
+  "num_ctx": 32768,
+  "model": "bench-qwen38-27b-32k",
+  "run_id": 3,
+  "sessionId": "7ea5c404-aa53-48f8-a723-3b1997f54a54",
+  "elapsed_s": 45.287,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "knowledge_search": 1,
+    "knowledge_get": 1
+  },
+  "tools": [
+    {
+      "id": "call_cv6j0k9l",
+      "name": "ToolSearch: select:mcp__local-tools__knowledge_search",
+      "status": "completed"
+    },
+    {
+      "id": "call_eo0fhm0u",
+      "name": "ToolSearch: select:mcp__local-tools__knowledge_get",
+      "status": "completed"
+    },
+    {
+      "id": "call_hkpq4x6k",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"compact state ledger lazy tools\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_ejcg6edf",
+      "name": "knowledge_get (local-tools MCP Server): {\"id\":\"KB-20260922-SUCCESS-001\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1562,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25427,
+      "swap_used_mib": 5892
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14381,
+      "vram_total_mib": 16303,
+      "gpu_util": 59
+    },
+    "mem": {
+      "mem_available_mib": 20762,
+      "swap_used_mib": 5935
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-32k:latest    a095eb40b4bb    18 GB    41%/59% CPU/GPU    32768      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

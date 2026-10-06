@@ -1,0 +1,21 @@
+{
+  "label": "A-04_debugging",
+  "runtime": "llama.cpp",
+  "model": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_S",
+  "threads": 16,
+  "ctx": 4096,
+  "n_predict": 256,
+  "wall_s": 67.115,
+  "rc": 0,
+  "response_chars": 1321,
+  "response_preview": "Find the bug(s), explain briefly, and provide the corrected function. No tools.\n\n```typescript\nexport function mergeUniqueIds(a: string[], b: string[]): string[] {\n  const out = [];\n  for (let i = 0; i <= a.length; i++) {\n    if (!out.includes(a[i])) out.push(a[i]);\n  }\n  for (const id of b) {\n    if (out.indexOf(id) > 0) continue;\n    out.push(id);\n  }\n  return out.filter(Boolean);\n}\n```\n\nExpected behavior: union of unique string IDs from both arrays, stable o ... (truncated)\n## Fehleranalyse\n\n1. **IndexOutOfBoundsException**: `i <= a.length` im ersten Loop f\u00fchrt zu Zugriff auf `a[a.length]` (undefined)\n2. **Falsche Bedingung**: `out.indexOf(id) > 0` \u00fcberspringt Elemente, die an Position 0 stehen (inkl. `0` als g\u00fcltiger Index)\n3. **Fehlende Typisierung**: `out` hat keinen Typ, was zu Prob",
+  "prompt_tps": 70.2,
+  "eval_tps": 22.6,
+  "ram_peak_mb": 21614.0,
+  "ram_min_mb": 5613.0,
+  "swap_peak_mb": 12256.0,
+  "cpu_peak_pct": 35.9,
+  "vram_peak_mb": 1714.0,
+  "vram_min_mb": 1706.0,
+  "gpu_util_peak": 6.0
+}

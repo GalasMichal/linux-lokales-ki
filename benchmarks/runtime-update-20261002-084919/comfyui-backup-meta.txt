@@ -1,0 +1,8 @@
+prod_tree=/srv/ai/apps/ComfyUI-0.37.0
+v0.37.0
+73c9bad4d21e7addbe1d13bc92eee0f1431b017d
+iso_tree=/srv/ai/apps/ComfyUI-0.38.0
+v0.38.0
+6b747c0428c343e1417219641db93a4fb7cb69ae
+037_torch=2.13.0+cu130 13.0
+038_torch=2.13.0+cu130 13.0

@@ -1,0 +1,15 @@
+{
+  "usage": {
+    "prompt_tokens": 7689,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens": 40,
+    "total_tokens": 7729
+  },
+  "tool_names": [
+    "mcp__local-tools__memory_load"
+  ],
+  "finish": "tool_calls",
+  "content": ""
+}

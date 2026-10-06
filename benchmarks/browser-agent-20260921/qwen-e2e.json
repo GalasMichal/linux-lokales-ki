@@ -1,0 +1,16 @@
+{
+  "session": "8a6243d4-b169-438f-968e-409251afee9f",
+  "model": "local-fast",
+  "tools": [
+    "browser_open",
+    "browser_click"
+  ],
+  "votes": [
+    "proceed_once",
+    "proceed_once"
+  ],
+  "landed_url": "https://www.iana.org/help/example-domains",
+  "landed_title": "Example Domains",
+  "note": "browser_open liefert den Snapshot mit. Der Agent hat l1 daraus geklickt, ohne browser_snapshot extra aufzurufen. Keine Shell.",
+  "ok": true
+}

@@ -1,0 +1,66 @@
+{
+  "label": "lazy2",
+  "sessionId": "cd99ce7f-d426-4282-8b76-a26301dd74b9",
+  "model_id": "local-quality(openai)",
+  "elapsed_s": 151.936,
+  "prompt_error": null,
+  "votes": [
+    {
+      "requestId": "408d68c8-89fa-4b87-85c6-b8e00699c530",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_10j2ua1l",
+      "name": "ToolSearch: mcp local-tools pdf memory workspace",
+      "status": "completed",
+      "input": {
+        "query": "mcp local-tools pdf memory workspace",
+        "max_results": 10
+      }
+    },
+    {
+      "id": "call_jfhv06vv",
+      "name": "ToolCall",
+      "status": "completed",
+      "input": null
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 1
+  },
+  "duplicates": {},
+  "missing": [
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa",
+    "memory_update"
+  ],
+  "assistant_text": "I'll start by finding the MCP tools in the registry.Memory loaded successfully — executing step 1: memory_load.",
+  "compressed": false,
+  "pdf_exists": false,
+  "png_exists": false,
+  "yolo": false,
+  "always_allow": false,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 1,
+    "tools": 2,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 3,
+    "vram": 14249
+  },
+  "nvidia": {
+    "vram_used_mib": 14249,
+    "vram_total_mib": 16303,
+    "gpu_util": 3
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    44%/56% CPU/GPU    16384      4 minutes from now    \n",
+  "pass": false
+}

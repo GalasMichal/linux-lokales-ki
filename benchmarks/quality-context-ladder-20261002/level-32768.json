@@ -1,0 +1,153 @@
+{
+  "model": "bench-qwen38-27b-32k",
+  "model_id": "bench-qwen38-27b-32k(openai)",
+  "num_ctx": 32768,
+  "sessionId": "79476e01-ed87-45ef-b35d-a14156534280",
+  "model_switch": {
+    "_meta": {
+      "qwenModelSwitch": {
+        "authType": "openai",
+        "modelId": "bench-qwen38-27b-32k",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "***",
+        "isRuntime": false
+      }
+    }
+  },
+  "elapsed_s": 234.075,
+  "prompt_error": null,
+  "votes": [
+    {
+      "requestId": "758b5b04-a4e9-433e-964b-9627cd7e875d",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_b16n2l3r",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+      "status": "completed",
+      "input": {
+        "query": "select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa"
+      }
+    },
+    {
+      "id": "call_f5twe4y1",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed",
+      "input": {
+        "workspace": "/home/mike/Projects/Linux Lokales KI"
+      }
+    },
+    {
+      "id": "call_8mkq04b4",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-32768.pdf\",\"text\":\"Context ladder probe at 32768 tokens. FAST stays local-fast. No productive cutover.\",\"title\":\"QUALITY CTX 32768\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed",
+      "input": {
+        "output": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-32768.pdf",
+        "text": "Context ladder probe at 32768 tokens. FAST stays local-fast. No productive cutover.",
+        "title": "QUALITY CTX 32768",
+        "workspace": "/home/mike/Projects/Linux Lokales KI"
+      }
+    },
+    {
+      "id": "call_9ar6bhyq",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-32768.pdf\"}",
+      "status": "completed",
+      "input": {
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-32768.pdf"
+      }
+    },
+    {
+      "id": "call_ybhwtzih",
+      "name": "pdf_render (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-32768.png\",\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-32768.pdf\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed",
+      "input": {
+        "output": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-32768.png",
+        "page": 1,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-32768.pdf",
+        "workspace": "/home/mike/Projects/Linux Lokales KI"
+      }
+    },
+    {
+      "id": "call_dg49zfqk",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-32768.pdf\",\"strict\":true,\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed",
+      "input": {
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-32768.pdf",
+        "strict": true,
+        "workspace": "/home/mike/Projects/Linux Lokales KI"
+      }
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1
+  },
+  "expected_hit": [
+    "memory_load",
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa"
+  ],
+  "missing": [],
+  "duplicates": {},
+  "thoughts": 0,
+  "assistant_text_tail": "lt |\n|---|------|--------|\n| 1 | `memory_load` | ok — STATE/TASKS/DECISIONS/REQUIREMENTS/TOOLS loaded (FAST=local-fast default; QUALITY productive 16K) |\n| 2 | `pdf_create` | ok — reportlab, 1 page, QA pass, text present |\n| 3 | `pdf_read` | ok — pymupdf, 118 chars, matches title+text exactly |\n| 4 | `pdf_render` | ok — PNG 1158×1638 @140dpi |\n| 5 | `pdf_vision_qa` | **ok:false** (strict) — local-quality flagged page as \"nearly blank\" (only header + one line, rest white space) |\n\nThe vision result is a faithful rendering of the tiny probe page: it contains exactly the title `\"QUALITY CTX 32768\"` and one sentence, so at 140dpi most of A4 is empty. `needs_regeneration:true` is a strict-mode artifact, not a layout defect — no clipping, overlap, or broken table. The context-ladder probe itself succeeded (chain held at 32768; no productive cutover).\n\nStopping here per instructions. `memory_update` was **not** called (no state change requested, and it only runs on an explicit finish signal).",
+  "pdf_exists": true,
+  "png_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok",
+        "trust": null
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 1,
+    "tools": 6,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 5,
+    "vram": 14184
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1650,
+      "vram_total_mib": 16303,
+      "gpu_util": 6
+    },
+    "mem": {
+      "mem_available_mib": 24740,
+      "swap_used_mib": 4212
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14184,
+      "vram_total_mib": 16303,
+      "gpu_util": 5
+    },
+    "mem": {
+      "mem_available_mib": 22374,
+      "swap_used_mib": 4164
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-32k:latest    a095eb40b4bb    18 GB    42%/58% CPU/GPU    32768      4 minutes from now    \n"
+  },
+  "fail_reasons": [],
+  "pass": true
+}

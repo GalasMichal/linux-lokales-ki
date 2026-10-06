@@ -1,0 +1,113 @@
+{
+  "sessionId": "ac14aa20-4e0c-42dd-a89d-4ce9b6aa57ba",
+  "note": "Pre-patch QUALITY run from 22.09.2026. Lazy tools already on. Stock compact prompt.",
+  "prompts": [
+    {
+      "promptTokens": 9896,
+      "name": "select:memory_load"
+    },
+    {
+      "promptTokens": 11059,
+      "name": "mcp__local-tools__memory_load"
+    },
+    {
+      "promptTokens": 16231,
+      "name": "mcp__local-tools__pdf_create"
+    },
+    {
+      "promptTokens": 9686,
+      "name": "tool_search"
+    },
+    {
+      "promptTokens": 9770,
+      "name": "select:mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa,mcp__local-tools__memory_update"
+    },
+    {
+      "promptTokens": 10591,
+      "name": "mcp__local-tools__pdf_create"
+    },
+    {
+      "promptTokens": 11222,
+      "name": "mcp__local-tools__pdf_read"
+    },
+    {
+      "promptTokens": 11537,
+      "name": "mcp__local-tools__pdf_render"
+    },
+    {
+      "promptTokens": 12016,
+      "name": "mcp__local-tools__pdf_vision_qa"
+    },
+    {
+      "promptTokens": 12824,
+      "name": "mcp__local-tools__memory_update"
+    }
+  ],
+  "compacts": [
+    {
+      "line": 12,
+      "info": {
+        "originalTokenCount": 16280,
+        "newTokenCount": 10705,
+        "newTokenCountIsEstimated": true,
+        "compressionStatus": 1,
+        "triggerReason": "token_limit",
+        "originalTokenCountIsEstimated": true
+      },
+      "completedToolCallIds": [],
+      "turns": [
+        {
+          "role": "user",
+          "chars": 2981,
+          "kinds": [
+            "text"
+          ]
+        },
+        {
+          "role": "model",
+          "chars": 42,
+          "kinds": [
+            "text",
+            "functionCall:mcp__local-tools__memory_load"
+          ]
+        },
+        {
+          "role": "user",
+          "chars": 21581,
+          "kinds": [
+            "functionResponse"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 18,
+      "info": {
+        "originalTokenCount": 16231,
+        "newTokenCount": 8486,
+        "newTokenCountIsEstimated": true,
+        "compressionStatus": 1,
+        "triggerReason": "token_limit",
+        "originalTokenCountIsEstimated": false
+      },
+      "completedToolCallIds": [],
+      "turns": [
+        {
+          "role": "user",
+          "chars": 2934,
+          "kinds": [
+            "text"
+          ]
+        },
+        {
+          "role": "model",
+          "chars": 42,
+          "kinds": [
+            "text",
+            "functionCall:mcp__local-tools__pdf_create"
+          ]
+        }
+      ]
+    }
+  ]
+}

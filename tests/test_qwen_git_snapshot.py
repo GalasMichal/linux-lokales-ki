@@ -4,7 +4,7 @@ import importlib.util
 import unittest
 from pathlib import Path
 
-PATCH = Path(__file__).resolve().parents[1] / "patches/qwen-code/0.21.15/patch_git_snapshot.py"
+PATCH = Path(__file__).resolve().parents[1] / "patches/qwen-code/0.23.4/patch_git_snapshot.py"
 SPEC = importlib.util.spec_from_file_location("patch_git_snapshot", PATCH)
 assert SPEC and SPEC.loader
 MOD = importlib.util.module_from_spec(SPEC)

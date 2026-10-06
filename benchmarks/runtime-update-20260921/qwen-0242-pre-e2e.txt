@@ -1,0 +1,35 @@
+=== qwen version ===
+0.24.2
+=== package.json ===
+0.24.2
+=== keep 0.23.4 ===
+0.23.4
+=== settings pins ===
+approvalMode default
+trust False
+alwaysLoadTools True
+compactionModel local-fast
+autoCompact 0.95
+model local-fast
+False
+=== isolates ===
+PASS git snapshot omitted from system prompt
+PASS registry MCP short-name
+PASS select:generate_image {"status": "ok", "name": "mcp__local-tools__generate_image"}
+PASS select:memory_load {"status": "ok", "name": "mcp__local-tools__memory_load"}
+PASS select:pdf_create {"status": "ok", "name": "mcp__local-tools__pdf_create"}
+PASS select:pdf_read {"status": "ok", "name": "mcp__local-tools__pdf_read"}
+PASS select:pdf_render {"status": "ok", "name": "mcp__local-tools__pdf_render"}
+PASS select:pdf_vision_qa {"status": "ok", "name": "mcp__local-tools__pdf_vision_qa"}
+PASS K1 image ["mcp__local-tools__generate_image", "zoom_image"]
+PASS K2 generate ["mcp__local-tools__generate_image"]
+PASS K3 generate_image ["mcp__local-tools__generate_image"]
+PASS K4 database []
+PASS K5 deferred zoom_image ["mcp__local-tools__generate_image", "zoom_image"]
+PASS K6 memory_load keyword ["mcp__local-tools__memory_load"]
+PASS K7 pdf_create keyword ["mcp__local-tools__pdf_create"]
+=== ollama ===
+ollama version is 0.34.2
+{"version":"0.34.2"}
+=== mcp smoke ===
+{"ok": true, "server": "name='local-ai-tools' title=None version='1.2.0' description=None website_url=None icons=None", "tools": ["generate_image", "memory_load", "memory_update", "pdf_read", "pdf_inspect", "pdf_create", "pdf_edit", "pdf_merge", "pdf_split", "pdf_ocr", "pdf_render", "pdf_vision_qa"], "workflow_id": "flux2-klein-t2i-v1", "widths": [512, 768, 1024], "heights": [512, 768, 1024]}

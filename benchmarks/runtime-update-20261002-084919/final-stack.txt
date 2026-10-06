@@ -1,0 +1,43 @@
+=== FINAL STACK 2026-10-02T09:07:13+02:00 ===
+ollama=ollama version is 0.35.0
+ollama_api={"version":"0.35.0"}
+ollama_bin_sha=0b0650a962dda61ec0598141ea11e3b688d225e926c9c00bc2c299d0ed34c4f8  /usr/local/bin/ollama
+override_sha=7fb44d5fbe5363ca9196bc92a95cb0d23766b4f853c491de19e134efa6d89bf4  /etc/systemd/system/ollama.service.d/override.conf
+qwen=0.24.7
+Qwen 0.24.7
+SHA tool-search 2e7228baa28660669f56375e8066fecfcb9bb4993892f0580054e18268861c86
+OK   ToolSearch MCP-Alias
+SHA registry 26550f243415eb6731116447fd48fe90424826343f29346b98f3680da2dda442
+OK   Registry MCP-Kurzname
+OK   Git-Snapshot omitted
+comfy_unit:
+3:Description=Local ComfyUI 0.38.0
+11:WorkingDirectory=/srv/ai/apps/ComfyUI-0.38.0
+14:ExecStart=/srv/ai/venvs/comfyui-0.38/bin/python main.py --listen 127.0.0.1 --port 8188 --output-directory /srv/ai/apps/ComfyUI/output --disable-comfy-compiler
+mcp:
+1.7.0 33 tools
+models:
+NAME                           ID              SIZE      MODIFIED      
+bench-qwen38-27b-16k:latest    a4afc9b2a6e8    17 GB     2 minutes ago    
+bench-qwen38-27b-24k:latest    42e31fd21fed    17 GB     2 minutes ago    
+bench-qwen38-27b-32k:latest    a095eb40b4bb    17 GB     2 minutes ago    
+local-quality:latest           ad1736a075f0    17 GB     2 weeks ago      
+qwen3.8:27b                    22130167c4c2    17 GB     2 weeks ago      
+local-fast:latest              cf8bd43c0e1c    6.6 GB    5 weeks ago      
+qwen3.5:9b                     6488c96fa5fa    6.6 GB    6 weeks ago      
+local-quality ctx:
+# To build a new Modelfile based on this, replace FROM with:
+# FROM local-quality:latest
+FROM /srv/ai/models/ollama/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d
+FROM /srv/ai/models/ollama/blobs/sha256-ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e
+PARAMETER num_ctx 16384
+local-fast ctx:
+# To build a new Modelfile based on this, replace FROM with:
+# FROM local-fast:latest
+FROM /srv/ai/models/ollama/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c
+PARAMETER num_ctx 32768
+settings trust/approval:
+model local-fast approval default trust False maxSub 1 alwaysLoad False
+backup=/mnt/ai-archive/backups/runtime-update-20261002-084919
+report=/home/mike/Projects/Linux Lokales KI/benchmarks/runtime-update-20261002-084919
+abd0282f0939a321d4735b1579b68a86c1c7e61d

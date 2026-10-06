@@ -1,0 +1,93 @@
+[
+  {
+    "endpoint": "/api/chat",
+    "model": "local-fast",
+    "wall_s": 15.81,
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_76ptt1x7",
+        "function": {
+          "index": 0,
+          "name": "memory_load",
+          "arguments": {
+            "path": ".agent"
+          }
+        }
+      }
+    ],
+    "prompt_eval_count": 280,
+    "eval_count": 26
+  },
+  {
+    "endpoint": "/v1/chat/completions",
+    "model": "local-fast",
+    "wall_s": 0.28,
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_yvmdx7gv",
+        "index": 0,
+        "type": "function",
+        "function": {
+          "name": "memory_load",
+          "arguments": "{\"path\":\".agent\"}"
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 275,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens": 26,
+      "total_tokens": 301
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "model": "local-quality",
+    "wall_s": 7.55,
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_1762570h",
+        "function": {
+          "index": 0,
+          "name": "memory_load",
+          "arguments": {
+            "path": ".agent"
+          }
+        }
+      }
+    ],
+    "prompt_eval_count": 280,
+    "eval_count": 26
+  },
+  {
+    "endpoint": "/v1/chat/completions",
+    "model": "local-quality",
+    "wall_s": 1.75,
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_mjch72dq",
+        "index": 0,
+        "type": "function",
+        "function": {
+          "name": "memory_load",
+          "arguments": "{\"path\":\".agent\"}"
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 275,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens": 26,
+      "total_tokens": 301
+    }
+  }
+]
+TOOLCALL_PASS 0

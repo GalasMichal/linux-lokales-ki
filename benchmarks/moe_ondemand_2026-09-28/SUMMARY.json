@@ -1,0 +1,56 @@
+{
+  "tool": "moe_consult",
+  "mcp_version": "1.7.0",
+  "permanent_service": false,
+  "local_fast_default": true,
+  "architecture_ok": true,
+  "unit": {
+    "smoke": {
+      "ok": true,
+      "answer": "Reply with exactly: MOE_OK\n\nReply in compact bullets. Second opinion only; main agent verifies.\n\u2022 Task requires exact response: MOE_OK\n\u2022 Reply format: compact bullets\n\u2022 Second opinion only - main agent verifies\n\u2022 No additional commentary or assumptions\n\u2022 Response must be precisely as instructed\n\nMOE_OK",
+      "elapsed": 79.674
+    },
+    "architecture": {
+      "ok": true,
+      "elapsed": 75.026
+    },
+    "reviewer": {
+      "ok": true,
+      "elapsed": 54.066,
+      "answer_head": "Should main agent skip MoE for one-line CSS fixes? Answer yes/no with one reason.\n\nReply in compact bullets. Second opinion only; main agent verifies.\n\u2022 **Risk**: Skipping MoE for CSS fixes may introduce regressions or styling inconsistencies\n\u2022 **Missing Check**: No validation of fix impact on respo"
+    },
+    "timeout_cleanup": {
+      "ok": false,
+      "timed_out": true,
+      "killed": true,
+      "leftover": [],
+      "lock_cleared": true,
+      "elapsed": 12.18,
+      "error": "MoE consult timed out after 4s; process killed"
+    },
+    "repeated": {
+      "ok": true,
+      "elapsed": 78.336,
+      "answer": "One word: recovered\n\nReply in compact bullets. Second opinion only; main agent verifies.\n\u2022 Recovery implies prior loss o",
+      "leftover": []
+    },
+    "health": {
+      "version": "1.7.0",
+      "tools": 33
+    }
+  },
+  "parallel_gpu": {
+    "elapsed": 46.537,
+    "response": "The parallel GPU setup is confirmed as OK.",
+    "done": true
+  },
+  "parallel_moe": {
+    "ok": true,
+    "elapsed_s": 206.635,
+    "ngl": 0,
+    "leftover": []
+  },
+  "pass": true,
+  "timeout_cleanup_ok": true,
+  "repeated_ok": true
+}

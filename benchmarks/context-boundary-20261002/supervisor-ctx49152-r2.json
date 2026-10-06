@@ -1,0 +1,83 @@
+{
+  "ts": "2026-10-02T19:39:26+0200",
+  "suite": "supervisor",
+  "num_ctx": 49152,
+  "model": "bench-qwen38-27b-48k",
+  "run_id": 2,
+  "sessionId": "8ca50e77-da23-419d-b562-5b8ad2eebe37",
+  "elapsed_s": 117.894,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_vwley841",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_9qfv99fl",
+      "name": "ToolSearch: agent subagent launch handle task",
+      "status": "completed"
+    },
+    {
+      "id": "call_kmgc7i7c",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_96umrze4",
+      "name": "Agent: Research Compact State Ledger",
+      "status": "completed"
+    },
+    {
+      "id": "call_i3b4c6sh",
+      "name": "knowledge_search (local-tools MCP Server): {\"workspace\":\"-srv-ai-workspaces\",\"query\":\"Compact State Ledger KB-20260922-LEDGER\",\"max_results\":5}",
+      "status": "completed"
+    },
+    {
+      "id": "call_uf6fei6k",
+      "name": "knowledge_search (local-tools MCP Server): {\"workspace\":\"home/mike/.qwen/projects/-srv-ai-workspaces\",\"query\":\"Compact State Ledger\",\"max_results\":5}",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1797,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25431,
+      "swap_used_mib": 4988
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14380,
+      "vram_total_mib": 16303,
+      "gpu_util": 84
+    },
+    "mem": {
+      "mem_available_mib": 22151,
+      "swap_used_mib": 4976
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-48k:latest    cf92cdcda723    19 GB    45%/55% CPU/GPU    49152      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,51 @@
+{
+  "status": 200,
+  "body": {
+    "ok": true,
+    "job_id": "d54456bb448e",
+    "runtime_seconds": 65.267,
+    "archive_directory": "/mnt/ai-archive/images/inbox/2026-09-21/d54456bb448e",
+    "manifest": "/mnt/ai-archive/images/inbox/2026-09-21/d54456bb448e/manifest.json",
+    "previews": [
+      "http://127.0.0.1:8188/view?filename=ki_arbeitsplatz_d54456bb448e_00001_.png&subfolder=&type=output"
+    ]
+  },
+  "runtime": 65.289,
+  "manifest": {
+    "manifest_version": 1,
+    "job_id": "d54456bb448e",
+    "comfy_prompt_id": "8d6e4d55-493b-4350-8818-94d769c4b9ec",
+    "workflow_id": "flux2-klein-t2i-v1",
+    "workflow_sha256": "d9d752d52b1430bd3756908885146daea41279e29a7b6e3a9e05705572f39953",
+    "model_files": {
+      "diffusion_model": "/srv/ai/models/comfyui/diffusion_models/flux-2-klein-4b-fp8.safetensors",
+      "text_encoder": "/srv/ai/models/comfyui/text_encoders/qwen_3_4b.safetensors",
+      "vae": "/srv/ai/models/comfyui/vae/flux2-vae.safetensors"
+    },
+    "model_sha256": {
+      "diffusion_model": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+      "text_encoder": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+      "vae": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3"
+    },
+    "prompt": "Ein kleiner roter Wuerfel auf einem neutralen grauen Hintergrund, Studiofotografie",
+    "seed": 42,
+    "width": 512,
+    "height": 512,
+    "batch": 1,
+    "steps": 4,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "started_at": "2026-09-21T14:46:18.370964+00:00",
+    "finished_at": "2026-09-21T14:47:23.638281+00:00",
+    "runtime_seconds": 65.267,
+    "outputs": [
+      {
+        "source": "/srv/ai/apps/ComfyUI/output/ki_arbeitsplatz_d54456bb448e_00001_.png",
+        "archive": "/mnt/ai-archive/images/inbox/2026-09-21/d54456bb448e/ki_arbeitsplatz_d54456bb448e_00001_.png"
+      }
+    ]
+  },
+  "ok": true,
+  "name": "WORKPLACE-GENERATE",
+  "ts": "2026-09-21T16:47:23"
+}

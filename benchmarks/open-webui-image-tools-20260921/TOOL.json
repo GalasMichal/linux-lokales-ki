@@ -1,0 +1,10 @@
+{
+  "status": 200,
+  "specs": [
+    "edit_image",
+    "generate_image"
+  ],
+  "ok": true,
+  "name": "TOOL",
+  "ts": "2026-09-21T16:48:40"
+}

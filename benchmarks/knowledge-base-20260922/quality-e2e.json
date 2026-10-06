@@ -1,0 +1,40 @@
+{
+  "label": "quality-kb",
+  "session_id": "4f20170c-4df4-4959-ac31-c18a91dbed6e",
+  "model": "local-quality(openai)",
+  "elapsed_s": 94.42,
+  "prompt_error": null,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 1,
+    "tools": 2,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 100,
+    "vram": 14531
+  },
+  "votes": [
+    {
+      "requestId": "39880a48-7bfc-42f1-9363-e931341ba788",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    "tool_search",
+    "mcp__local-tools__knowledge_search"
+  ],
+  "used_knowledge_search": true,
+  "used_tool_search": true,
+  "assistant_excerpt": "**\nNe\nin\n —\n nicht\n erneut\n patch\nen\n.**\n Das\n Knowledge\n-P\nackage\n widers\npricht\n dem\n V\norsch\nlag\n eindeutig\n:\n\n\n-\n **\n`\nKB\n-\n2\n0\n2\n6\n0\n9\n2\n2\n-C\nOMP\nACT\n-\n0\n0\n3\n`\n (\nfailed\n,\n `\ndo\n_not\n_repeat\n:\n true\n`\n):**\n Der\n prompt\n-only\n Compact\n-\nContin\nuity\n-P\natch\n war\n insuff\niz\nient\n.\n „\nDo\n not\n reinstall\n prompt\n-only\n continuity\n as\n primary\n fix\n.\"\n\n-\n **\n`\nKB\n-\n2\n0\n2\n6\n0\n9\n2\n2\n-\nLED\nGER\n-\n0\n0\n3\n`\n (\nactive\n fallback\n):**\n „\nKeep\n stock\n compact\n prompt\n;\n do\n not\n reinstall\n continuity\n prompt\n patch\n\"\n —\n der\n Runtime\n-L\ned\nger\n lö\nste\n die\n Dup\nlik\nate\n;\n prompt\n-only\n hatte\n zuvor\n ges\nche\nit\nert\n.\n\n-\n **\n`\nKB\n-\n2\n0\n2\n6\n0\n9\n2\n2\n-\nLED\nGER\n-\n0\n0\n4\n`\n (\nactive\n decision\n):**\n Der\n Compact\n State\n Ledger\n bleibt\n produkt\niv\n in\n Kombination\n mit\n Lazy\n Tool\n Loading\n —\n QUAL\nITY\n E\n2\nE\n PASS\n,\n keine\n erne\nute\n Komp\nakt\nierung\n.\n\n\nF\nazit\n laut\n KB\n:\n Stock\n-P\nrompt\n behalten\n,\n Contin\nuity\n über\n den\n determin\nistischen\n Runtime\n-L\ned\nger\n (\nnicht\n prompt\n-only\n)\n sicher\nstellen\n.\n Kein\n Patch\n nötig\n.",
+  "yolo": false,
+  "nvidia": {
+    "vram_used_mib": 14531,
+    "vram_total_mib": 16303,
+    "gpu_util": 100
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    44%/56% CPU/GPU    16384      4 minutes from now    \n",
+  "pass": true
+}

@@ -1,0 +1,151 @@
+{
+  "ts": "2026-10-03T15:06:17+0200",
+  "suite": "coding",
+  "num_ctx": 98304,
+  "model": "bench-qwen38-27b-96k",
+  "run_id": 5,
+  "sessionId": "83f2900b-0e5f-44c2-8b20-1abff2e6f186",
+  "elapsed_s": 340.931,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_4dwaf1j9",
+      "name": "ToolSearch: select:read_file,glob,grep_search",
+      "status": "completed"
+    },
+    {
+      "id": "call_rg8rpbi7",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_a6zfga2w",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ys46gyt7",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_2pc5ygbj",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_o088gqh2",
+      "name": "WriteFile",
+      "status": "failed"
+    },
+    {
+      "id": "call_gccx8nej",
+      "name": "WriteFile",
+      "status": "failed"
+    },
+    {
+      "id": "call_mjhvopn0",
+      "name": "WriteFile: Writing to /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_4x5uyuxi",
+      "name": "WriteFile: Writing to /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_6fd9hfmh",
+      "name": "ToolSearch: select:run_shell_command,shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_ryup9ud6",
+      "name": "ToolSearch: shell command execute bash terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_gvxu16yj",
+      "name": "Agent: run fixture pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_ejyqgrhs",
+      "name": "ToolSearch: select:mcp__local-tools__shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_ao2ge0lu",
+      "name": "ToolSearch: shell run command exec bash terminal run",
+      "status": "completed"
+    },
+    {
+      "id": "call_wlqx51sy",
+      "name": "ToolSearch: bash exec process shell command run script terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_n0deqho2",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_p8r4graa",
+      "name": "ToolSearch: +shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_mwg3h3pd",
+      "name": "ToolSearch: +exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_bzskb5x2",
+      "name": "ToolSearch: +command",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2482,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 24854,
+      "swap_used_mib": 8253
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14414,
+      "vram_total_mib": 16303,
+      "gpu_util": 61
+    },
+    "mem": {
+      "mem_available_mib": 15847,
+      "swap_used_mib": 8268
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-96k:latest    d5b077ef7e07    20 GB    57%/43% CPU/GPU    98304      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

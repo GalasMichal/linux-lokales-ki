@@ -1,0 +1,27 @@
+{
+  "note": "DECISION recomputed with classify_error fix 2026-10-04; results.jsonl rows unchanged",
+  "order_service_reclass": [
+    {
+      "run_id": 1,
+      "old": "must_loss",
+      "new": "must_loss",
+      "fail_to_pass": true,
+      "musts_ok": false
+    },
+    {
+      "run_id": 2,
+      "old": "must_loss",
+      "new": "tool_runtime",
+      "fail_to_pass": false,
+      "musts_ok": false
+    },
+    {
+      "run_id": 3,
+      "old": "must_loss",
+      "new": "tool_runtime",
+      "fail_to_pass": false,
+      "musts_ok": false
+    }
+  ],
+  "must_pattern_rule": "must_loss only when fail_to_pass true and hidden MUSTs fail; tool_runtime for aborted turns"
+}

@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "memory_load",
+      "ok": true,
+      "detail": {
+        "keys": [
+          "STATE.md",
+          "REQUIREMENTS.md",
+          "DECISIONS.md",
+          "TASKS.md",
+          "TOOLS.md"
+        ]
+      }
+    },
+    {
+      "name": "pdf_create",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "name": "pdf_read",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "pages": 1
+      }
+    }
+  ]
+}

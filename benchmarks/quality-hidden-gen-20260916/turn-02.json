@@ -1,0 +1,112 @@
+{
+  "seq": 2,
+  "ts": "22:51:18",
+  "path": "/v1/chat/completions",
+  "elapsed_s": 16.94,
+  "status": 200,
+  "request": {
+    "model": "local-quality",
+    "stream": true,
+    "tool_choice": null,
+    "max_tokens": 4000,
+    "think": false,
+    "enable_thinking": false,
+    "reasoning": null,
+    "reasoning_effort": "none",
+    "tool_count": 13,
+    "tool_names": [
+      "mcp__local-tools__generate_image",
+      "mcp__local-tools__memory_load",
+      "mcp__local-tools__memory_update",
+      "mcp__local-tools__pdf_create",
+      "mcp__local-tools__pdf_edit",
+      "mcp__local-tools__pdf_inspect",
+      "mcp__local-tools__pdf_merge",
+      "mcp__local-tools__pdf_ocr",
+      "mcp__local-tools__pdf_read",
+      "mcp__local-tools__pdf_render",
+      "mcp__local-tools__pdf_split",
+      "mcp__local-tools__pdf_vision_qa",
+      "tool_search"
+    ],
+    "message_count": 4,
+    "messages": [
+      {
+        "role": "system",
+        "content_chars": 27619,
+        "content_head": "You are Qwen Code, a CLI agent operating through an ACP host developed by Alibaba Group, responding according to your \"Output Style\" below, which describes how you should respond to user queries. Your primary goal is to help users safely an",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0
+      },
+      {
+        "role": "user",
+        "content_chars": 2054,
+        "content_head": "[{\"type\": \"text\", \"text\": \"<system-reminder>\\nNo skills are currently available. Skills can be added by creating directories with SKILL.md files or by configuring MCP servers with model-invocable prompts.\\n</system-reminder>\"}, {\"type\": \"te",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0
+      },
+      {
+        "role": "assistant",
+        "content_chars": 143,
+        "content_head": "I'll start with step 1, then proceed to the PDF creation and read in sequence since later steps depend on earlier ones completing successfully.",
+        "has_tool_calls": true,
+        "tool_call_name": "mcp__local-tools__memory_load",
+        "reasoning_chars": 0,
+        "tool_call_arg_chars": 52
+      },
+      {
+        "role": "tool",
+        "content_chars": 15927,
+        "content_head": "[{\"type\": \"text\", \"text\": \"{\\\"ok\\\":true,\\\"workspace\\\":\\\"/home/mike/Projects/Linux Lokales KI\\\",\\\"agent_dir\\\":\\\"/home/mike/Projects/Linux Lokales KI/.agent\\\",\\\"bootstrapped\\\":[],\\\"files\\\":{\\\"STATE.md\\\":{\\\"content\\\":\\\"# State\\\\n\\\\n- Project: ",
+        "has_tool_calls": false,
+        "tool_call_name": null,
+        "reasoning_chars": 0,
+        "tool_call_id": "call_oy2ecizr"
+      }
+    ],
+    "extra_keys": [
+      "enable_thinking",
+      "max_tokens",
+      "reasoning_effort",
+      "think"
+    ]
+  },
+  "response": {
+    "chunk_count": 21,
+    "finish_reason": "tool_calls",
+    "usage": {
+      "prompt_tokens": 14447,
+      "prompt_tokens_details": {
+        "cached_tokens": 8644
+      },
+      "completion_tokens": 105,
+      "total_tokens": 14552
+    },
+    "response_keys": [
+      "choices",
+      "created",
+      "id",
+      "model",
+      "object",
+      "system_fingerprint",
+      "usage"
+    ],
+    "delta_keys": [
+      "content",
+      "role",
+      "tool_calls"
+    ],
+    "content_chars": 98,
+    "content_head": "Memory loaded; project state and PDF requirements confirmed. Proceeding to create the control PDF.",
+    "content_tail": "Memory loaded; project state and PDF requirements confirmed. Proceeding to create the control PDF.",
+    "reasoning_chars": 0,
+    "reasoning_head": "",
+    "tool_call_names": [
+      "mcp__local-tools__pdf_create"
+    ],
+    "tool_arg_chars": 155,
+    "tool_arg_head": "{\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/essay-ab-WIRE.pdf\",\"title\":\"Essay AB WIRE\",\"text\":\"QUALITY 16k essay-control A/B variant WIRE.\"}"
+  }
+}

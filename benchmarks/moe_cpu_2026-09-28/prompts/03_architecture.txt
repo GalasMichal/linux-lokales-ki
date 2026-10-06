@@ -1,0 +1,13 @@
+# ARCHITECTURE — Feature breakdown
+
+Feature request:
+"Add a 'Meine letzten Fahrten' panel to a local Angular+OpenLayers map app. Show the last 20 trips from a local REST API, click a trip to zoom the map to its route polyline, and allow exporting the visible list as CSV."
+
+Break this into:
+1) components / UI pieces
+2) services / dependencies
+3) data contracts
+4) risks / failure modes
+5) suggested implementation order
+
+Keep it concise and technical. No tools. Do not write full code.

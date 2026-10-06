@@ -1,0 +1,261 @@
+{
+  "ts": "2026-10-04T01:47:09+0200",
+  "suite": "coding",
+  "num_ctx": 90112,
+  "model": "bench-qwen38-27b-88k",
+  "run_id": 3,
+  "sessionId": "d5ac8ef2-c4f9-4699-888e-0e0491676df7",
+  "elapsed_s": 904.591,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "artifact_missing:pytest_pass",
+    "artifact_missing:add_fixed",
+    "artifact_missing:mul_fixed",
+    "pytest_failed",
+    "calc_not_fixed",
+    "mul_not_fixed"
+  ],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_c7e2m014",
+      "name": "ToolSearch: select:read_file,write_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_20zuiwlf",
+      "name": "ToolSearch: execute shell command",
+      "status": "completed"
+    },
+    {
+      "id": "call_wo4jxf5u",
+      "name": "ToolSearch: run shell command execute bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_51x7rd61",
+      "name": "ToolSearch: bash shell execute terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_1g8sxnd6",
+      "name": "ToolSearch: process spawn command output stdout",
+      "status": "completed"
+    },
+    {
+      "id": "call_nxw18v17",
+      "name": "ToolSearch: run a command in the shell, get result",
+      "status": "completed"
+    },
+    {
+      "id": "call_sk1z25ni",
+      "name": "ToolSearch: mcp local tools run command pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_sihc5cri",
+      "name": "ToolSearch: python interpret code interpreter run script",
+      "status": "completed"
+    },
+    {
+      "id": "call_bx0kyi82",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_q01k147l",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_wjc4jhwv",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_e68k4au3",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_wkuhxt3g",
+      "name": "Agent: Run pytest baseline (expect fail)",
+      "status": "completed"
+    },
+    {
+      "id": "call_tv5kk5ae",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_zs9gpsi9",
+      "name": "ToolSearch: shell command bash execute terminal run",
+      "status": "completed"
+    },
+    {
+      "id": "call_j0mn5ik1",
+      "name": "ToolSearch: +shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_bmqrdh85",
+      "name": "ToolSearch: command execute process terminal bash exec subprocess",
+      "status": "completed"
+    },
+    {
+      "id": "call_0m8xjw0j",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_3t0e1v8c",
+      "name": "ToolSearch: run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_uot49ius",
+      "name": "ToolSearch: write read file list directory edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_c1riszb3",
+      "name": "ToolSearch: terminal run_shell_command bash shell execute command",
+      "status": "completed"
+    },
+    {
+      "id": "call_9506n4qi",
+      "name": "ToolCall: run_shell_command",
+      "status": "failed"
+    },
+    {
+      "id": "call_tz45ts7q",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_nzpo0st1",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_iyss1f6y",
+      "name": "list_files",
+      "status": "failed"
+    },
+    {
+      "id": "call_tdpgarfb",
+      "name": "Glob: '*' in ~/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture",
+      "status": "failed"
+    },
+    {
+      "id": "call_rxtf32yg",
+      "name": "Glob: '*' in ~/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture",
+      "status": "completed"
+    },
+    {
+      "id": "call_lfnw201d",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_r86kvqyu",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_vinom3cd",
+      "name": "ToolSearch: +local-tools run shell command execute process",
+      "status": "completed"
+    },
+    {
+      "id": "call_pjwoozdj",
+      "name": "ToolSearch: pytest test runner python",
+      "status": "completed"
+    },
+    {
+      "id": "call_4jdxsocr",
+      "name": "ToolSearch: +command",
+      "status": "completed"
+    },
+    {
+      "id": "call_agd7sdsq",
+      "name": "desktop_snapshot (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_3ylh0rm7",
+      "name": "ToolCall: run_shell_command",
+      "status": "failed"
+    },
+    {
+      "id": "call_atiiw72a",
+      "name": "moe_consult (local-tools MCP Server): {\"task\":\"I need to run a shell command: python3 -m pytest -q \\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\\\" and get its output. I found read_file, write_file works via tool_search+tool_call, but run_shell_command is refused as \\\"not registered\\\". How can I execute a shell command in this Qwen Code environment?\",\"role\":\"second_opinion\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {
+    "pytest_pass": false,
+    "pytest_out": "   assert -1 == 5\nE        +  where -1 = add(2, 3)\n\ntest_calc.py:4: AssertionError\n__________________________________ test_area ___________________________________\n\n    def test_area():\n>       assert area(4, 5) == 20\nE       assert 9 == 20\nE        +  where 9 = area(4, 5)\n\ntest_calc.py:7: AssertionError\n=========================== short test summary info ============================\nFAILED test_calc.py::test_add - assert -1 == 5\nFAILED test_calc.py::test_area - assert 9 == 20\n2 failed in 0.01s\n",
+    "add_fixed": false,
+    "mul_fixed": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14146,
+      "vram_total_mib": 16303,
+      "gpu_util": 13
+    },
+    "mem": {
+      "mem_available_mib": 23817,
+      "swap_used_mib": 4934
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 50.163,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14177,
+      "vram_total_mib": 16303,
+      "gpu_util": 53
+    },
+    "mem": {
+      "mem_available_mib": 17150,
+      "swap_used_mib": 6592
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      6 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 50.163,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-88k:latest    7345ea83ec38    20 GB    51%/49% CPU/GPU    90112      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "agent"
+}

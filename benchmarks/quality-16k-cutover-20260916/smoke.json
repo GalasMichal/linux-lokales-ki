@@ -1,0 +1,64 @@
+{
+  "model": "local-quality",
+  "num_ctx": "16384",
+  "ps": {
+    "raw": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    38%/62% CPU/GPU    16384      7 minutes from now    \n",
+    "loaded": true
+  },
+  "nvidia": {
+    "vram_used_mib": 14131,
+    "vram_total_mib": 16303,
+    "gpu_util": 2
+  },
+  "ram": {
+    "mem_total_mib": 31864,
+    "mem_available_mib": 22677,
+    "swap_used_mib": 3545
+  },
+  "override_sha": "7fb44d5fbe5363ca9196bc92a95cb0d23766b4f853c491de19e134efa6d89bf4",
+  "load": {
+    "content": "OK",
+    "eval_count": 2,
+    "prompt_eval_count": 21,
+    "load_s": 10.173,
+    "prompt_eval_s": 0.782,
+    "tok_s": 10.25,
+    "elapsed_s": 11.154,
+    "ttft_s": 10.956
+  },
+  "coding": {
+    "content": "def add(a, b):\n    return a + b",
+    "tok_s": 22.78,
+    "elapsed_s": 1.252,
+    "eval_count": 13
+  },
+  "tool": {
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_q017xb2p",
+        "function": {
+          "index": 0,
+          "name": "memory_load",
+          "arguments": {
+            "workspace": "/home/mike/Projects/Linux Lokales KI"
+          }
+        }
+      }
+    ],
+    "tok_s": 26.41,
+    "elapsed_s": 2.218,
+    "eval_count": 35,
+    "prompt_eval_count": 296
+  },
+  "nvidia_after": {
+    "vram_used_mib": 14142,
+    "vram_total_mib": 16303,
+    "gpu_util": 13
+  },
+  "ps_after": {
+    "raw": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    38%/62% CPU/GPU    16384      7 minutes from now    \n",
+    "loaded": true
+  },
+  "pass": true
+}

@@ -1,0 +1,103 @@
+{
+  "ts": "2026-10-02T17:02:38+0200",
+  "suite": "tool_chain",
+  "num_ctx": 40960,
+  "model": "bench-qwen38-27b-40k",
+  "run_id": 1,
+  "sessionId": "cc390c64-90e8-49f9-b554-2ffc610e8726",
+  "elapsed_s": 394.235,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "compact_issue",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "missing:['pdf_create', 'pdf_read', 'pdf_render', 'pdf_vision_qa']",
+    "duplicate_tools:{'memory_load': 2}",
+    "compact_mentioned_with_incomplete_chain",
+    "artifact_missing:pdf",
+    "artifact_missing:png"
+  ],
+  "completed_counts": {
+    "memory_load": 2,
+    "pdf_create": 0,
+    "pdf_read": 0,
+    "pdf_render": 0,
+    "pdf_vision_qa": 0
+  },
+  "tools": [
+    {
+      "id": "call_lb2lwodk",
+      "name": "ToolSearch: mcp__local-tools__memory_load pdf_create pdf_read pdf_render pdf_vision_qa",
+      "status": "completed"
+    },
+    {
+      "id": "call_t9m903lu",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_n7r4dlj5",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load",
+      "status": "completed"
+    },
+    {
+      "id": "call_e71st4kg",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load",
+      "status": "completed"
+    },
+    {
+      "id": "call_pyfbo5o2",
+      "name": "memory_load (local-tools MCP Server): {\"files\":\"\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_x55cy9hd",
+      "name": "ToolSearch: select:Glob,Grep,Read,list_directory",
+      "status": "completed"
+    },
+    {
+      "id": "call_oah29tt3",
+      "name": "ToolSearch: select:Glob,Grep,Read,list_directory",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pdf": false,
+    "png": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1637,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 24439,
+      "swap_used_mib": 4666
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14222,
+      "vram_total_mib": 16303,
+      "gpu_util": 63
+    },
+    "mem": {
+      "mem_available_mib": 22154,
+      "swap_used_mib": 5290
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-40k:latest    d4ed59ea4a99    18 GB    44%/56% CPU/GPU    40960      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

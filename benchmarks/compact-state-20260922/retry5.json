@@ -1,0 +1,16 @@
+{
+  "sessionId": "5f313a9c-c5ba-477f-8796-3ce333d476c8",
+  "sequence": [
+    {
+      "ok": false,
+      "error": "Pfad liegt au\u00dferhalb der erlaubten Arbeitsbereiche: /home/mike"
+    },
+    {
+      "ok": true,
+      "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/compact-continuity/retry-ok5.png"
+    }
+  ],
+  "png": true,
+  "pass": true,
+  "note": "Agent called pdf_render with disallowed /home/mike path (ok:false), then corrected path (ok:true). Qwen UI success flag is true for both because the tool_call returned; ledger status uses ok/error from the payload."
+}

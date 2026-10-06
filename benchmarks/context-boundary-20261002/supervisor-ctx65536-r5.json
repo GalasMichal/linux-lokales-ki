@@ -1,0 +1,83 @@
+{
+  "ts": "2026-10-03T04:50:50+0200",
+  "suite": "supervisor",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 5,
+  "sessionId": "d2d23c61-ddd6-44e6-93f2-7d0514d067be",
+  "elapsed_s": 175.856,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_040pgfp3",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_fqbpcm8h",
+      "name": "ReadFile: AGENTS.md",
+      "status": "failed"
+    },
+    {
+      "id": "call_yi2cel23",
+      "name": "ToolSearch: select:write_file,send_message,list_agents,grep_search,read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_5dz0uu9r",
+      "name": "Agent: Research Compact State Ledger purpose",
+      "status": "completed"
+    },
+    {
+      "id": "call_qwr2zvub",
+      "name": "Grep: 'Compact State Ledger|State Ledger|LEDGER' in .",
+      "status": "completed"
+    },
+    {
+      "id": "call_lrrct4c3",
+      "name": "Grep: 'ledger|compact' in .",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26120,
+      "swap_used_mib": 6317
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14394,
+      "vram_total_mib": 16303,
+      "gpu_util": 61
+    },
+    "mem": {
+      "mem_available_mib": 21683,
+      "swap_used_mib": 6239
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    46%/54% CPU/GPU    65536      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

@@ -1,0 +1,77 @@
+{
+  "ts": "2026-10-02T21:57:06+0200",
+  "suite": "compact",
+  "num_ctx": 57344,
+  "model": "bench-qwen38-27b-56k",
+  "run_id": 4,
+  "sessionId": "ba438547-9011-44b3-a13b-0219dce7272c",
+  "elapsed_s": 127.067,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1
+  },
+  "tools": [
+    {
+      "id": "call_ptw5woaw",
+      "name": "ToolSearch: select:memory_load,pdf_create,pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_iz2xeg6r",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_xpxpmdlv",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-57344-r4-215456.pdf\",\"text\":\"Compact continuity check ctx=57344.\",\"title\":\"COMPACT 57344 R4\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_4785ekwe",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-compact-57344-r4-215456.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2252,
+      "vram_total_mib": 16303,
+      "gpu_util": 2
+    },
+    "mem": {
+      "mem_available_mib": 24332,
+      "swap_used_mib": 5986
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14326,
+      "vram_total_mib": 16303,
+      "gpu_util": 44
+    },
+    "mem": {
+      "mem_available_mib": 19549,
+      "swap_used_mib": 6038
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-56k:latest    5869af699429    19 GB    50%/50% CPU/GPU    57344      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

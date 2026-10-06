@@ -1,0 +1,9 @@
+{
+  "ollama": "0.34.0",
+  "qwen": "0.23.4",
+  "mcp": "local-tools 1.1.0 connected",
+  "trust": false,
+  "approvalMode": "default",
+  "workspace_tools_mcp_names": [],
+  "note": "/workspace/tools listed 30 builtins including tool_search; no memory_load/pdf_*"
+}

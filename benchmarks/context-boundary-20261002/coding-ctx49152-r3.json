@@ -1,0 +1,155 @@
+{
+  "ts": "2026-10-02T20:44:51+0200",
+  "suite": "coding",
+  "num_ctx": 49152,
+  "model": "bench-qwen38-27b-48k",
+  "run_id": 3,
+  "sessionId": "9dff6198-8457-403b-bdf6-13a1c7015317",
+  "elapsed_s": 724.669,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_4hkgk23x",
+      "name": "ToolSearch: select:read_file,edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_5ej1xo0n",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_7lofbwne",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_xki4aajm",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_zcgjw975",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_ugz7gwm8",
+      "name": "ToolSearch: shell command execution pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_kguiutv3",
+      "name": "ToolSearch: bash run shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_j13yrj0h",
+      "name": "ToolSearch: exec terminal command process",
+      "status": "completed"
+    },
+    {
+      "id": "call_zx8yr5dy",
+      "name": "Agent: Run pytest on calc fixture",
+      "status": "completed"
+    },
+    {
+      "id": "call_hdbx4kjq",
+      "name": "shell",
+      "status": "failed"
+    },
+    {
+      "id": "call_19wjd5fu",
+      "name": "ToolSearch: shell execute command run python pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_8es992v8",
+      "name": "ToolSearch: bash terminal run command",
+      "status": "completed"
+    },
+    {
+      "id": "call_4ls5r3lp",
+      "name": "ToolSearch: terminal bash run script subprocess",
+      "status": "completed"
+    },
+    {
+      "id": "call_jyl5yq0k",
+      "name": "ToolSearch: mcp local tools run task execute code",
+      "status": "completed"
+    },
+    {
+      "id": "call_100hr668",
+      "name": "ToolSearch: select:run,shell,terminal,bash,cmd_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_8mmpemii",
+      "name": "ToolSearch: run command line process spawn",
+      "status": "completed"
+    },
+    {
+      "id": "call_fdw9cuvq",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"execute pytest shell terminal subprocess run command local-tools unavailable\",\"types\":\"fallback,fix,failure,decision\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_8xre193d",
+      "name": "memory_load (local-tools MCP Server): {\"files\":\"STATE.md\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_haf5w6h0",
+      "name": "ToolSearch: mcp local-tools shell run bash subprocess python pytest execute command terminal bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_q19fpciq",
+      "name": "Agent: Fork: execute pytest on calc",
+      "status": "completed"
+    }
+  ],
+  "votes": 5,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1458,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25505,
+      "swap_used_mib": 5230
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14373,
+      "vram_total_mib": 16303,
+      "gpu_util": 87
+    },
+    "mem": {
+      "mem_available_mib": 21678,
+      "swap_used_mib": 5158
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-48k:latest    cf92cdcda723    19 GB    44%/56% CPU/GPU    49152      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

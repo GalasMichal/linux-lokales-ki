@@ -1,0 +1,338 @@
+{
+  "ts": "2026-10-03T21:16:48+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 3,
+  "sessionId": "6cd80695-054f-47dd-be1b-fb5be78e940d",
+  "elapsed_s": 904.805,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_h556lhly",
+      "name": "ToolSearch: select:read_file,glob,write_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_bvi9nzn9",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_9vgvzqps",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_m9r1gz3v",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_gtx18as6",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_jxsi6mnf",
+      "name": "ToolSearch: run shell command execute pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_l061w8cr",
+      "name": "ToolSearch: run_shell_command bash execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_qf05vx1w",
+      "name": "ToolSearch: shell bash command execution terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_4or0n50l",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_vcrijt22",
+      "name": "ToolSearch: execute command process system python pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_a6yknnp2",
+      "name": "ToolSearch: +shell OR bash OR subprocess OR \"run\"",
+      "status": "completed"
+    },
+    {
+      "id": "call_ea2c9w4n",
+      "name": "ToolSearch: command line terminal interactive execute process shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_7tdxaks1",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_wrztvv4a",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_vflefvc7",
+      "name": "ToolSearch: local-tools execute cli python test runner invoke script process",
+      "status": "completed"
+    },
+    {
+      "id": "call_vuygimrp",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_evky1spm",
+      "name": "ToolSearch: bash command cd ls mkdir cp cat test verify validate execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_l6vm4o5v",
+      "name": "ToolSearch: select:shell,exec,bash,command_line,execute_command,run",
+      "status": "completed"
+    },
+    {
+      "id": "call_or2tpmee",
+      "name": "ToolSearch: select:run",
+      "status": "completed"
+    },
+    {
+      "id": "call_4mcd3vk0",
+      "name": "Agent: Run pytest fixture twice",
+      "status": "in_progress"
+    },
+    {
+      "id": "call_eftvsw6f",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_r3idwihd",
+      "name": "ToolSearch: bash shell execute command run process",
+      "status": "completed"
+    },
+    {
+      "id": "call_7js1gp0h",
+      "name": "ToolSearch: terminal shell run bash command exec",
+      "status": "completed"
+    },
+    {
+      "id": "call_859lug5y",
+      "name": "ToolSearch: Shell command Bash tool run process execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_wz1md3z0",
+      "name": "ToolSearch: +run command shell bash terminal execute script",
+      "status": "completed"
+    },
+    {
+      "id": "call_6u41l83c",
+      "name": "ToolSearch: pytest python test fixture run",
+      "status": "completed"
+    },
+    {
+      "id": "call_swh8e0zg",
+      "name": "ToolSearch: mcp local tools shell script run",
+      "status": "completed"
+    },
+    {
+      "id": "call_pgeewsz2",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_ijg54vs9",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_s1unkpc4",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_j6y499z4",
+      "name": "ToolSearch: Shell Bash execute command run_script subprocess",
+      "status": "completed"
+    },
+    {
+      "id": "call_5mytvafw",
+      "name": "ToolSearch: file read write list directory ls cat",
+      "status": "completed"
+    },
+    {
+      "id": "call_nzxule4u",
+      "name": "ToolSearch: select:Shell,shell,Bash,bash,run_command,execute_command,command",
+      "status": "completed"
+    },
+    {
+      "id": "call_rjbkn3cj",
+      "name": "ToolSearch: a",
+      "status": "failed"
+    },
+    {
+      "id": "call_jj30vb9a",
+      "name": "ToolSearch: zsh bash terminal shell exec subprocess run command output stdout",
+      "status": "completed"
+    },
+    {
+      "id": "call_kwctjjcj",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_0d21q7wu",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_3pebw06x",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_bvk1pyby",
+      "name": "ToolCall: Shell",
+      "status": "failed"
+    },
+    {
+      "id": "call_uz2nff5g",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_3wz9zuaa",
+      "name": "ToolSearch: output capture invoke python pytest test process launch",
+      "status": "completed"
+    },
+    {
+      "id": "call_gbqqxydz",
+      "name": "ToolSearch: exec run bash script subprocess shell terminal process command output stdout stderr exit code",
+      "status": "completed"
+    },
+    {
+      "id": "call_rva0yl3q",
+      "name": "ToolCall: run_shell_command",
+      "status": "failed"
+    },
+    {
+      "id": "call_9apfilrp",
+      "name": "ToolCall: bash",
+      "status": "failed"
+    },
+    {
+      "id": "call_tydwuu4e",
+      "name": "ToolCall: Bash",
+      "status": "failed"
+    },
+    {
+      "id": "call_c6ubukdu",
+      "name": "ToolCall: mcp__local-tools__run_command",
+      "status": "failed"
+    },
+    {
+      "id": "call_jgvxxfqr",
+      "name": "ToolCall: mcp__local-tools__shell",
+      "status": "failed"
+    },
+    {
+      "id": "call_arn1tntn",
+      "name": "ToolSearch: cd pwd ls cat date grep find touch mkdir cp mv rm chmod env vars export pipe stdin stdout redirect",
+      "status": "completed"
+    },
+    {
+      "id": "call_a1brap06",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_79cwhglf",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_0kpw7e60",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_3t6h9kw9",
+      "name": "ToolSearch: select:read_file,write_file",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 13801,
+      "vram_total_mib": 16303,
+      "gpu_util": 3
+    },
+    "mem": {
+      "mem_available_mib": 22850,
+      "swap_used_mib": 6527
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now    \n",
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 25.319,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 13977,
+      "vram_total_mib": 16303,
+      "gpu_util": 3
+    },
+    "mem": {
+      "mem_available_mib": 14732,
+      "swap_used_mib": 7763
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true,
+  "warmup": {
+    "ok": true,
+    "error": null,
+    "elapsed_s": 25.319,
+    "ps": [
+      "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+      "bench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      9 minutes from now"
+    ]
+  },
+  "attempt": 1,
+  "retry_of": null,
+  "empty_start": false,
+  "error_class": "pass"
+}

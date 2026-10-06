@@ -1,0 +1,21 @@
+{
+  "label": "A-01_code_review",
+  "runtime": "llama.cpp",
+  "model": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_S",
+  "threads": 16,
+  "ctx": 4096,
+  "n_predict": 256,
+  "wall_s": 72.772,
+  "rc": 0,
+  "response_chars": 1298,
+  "response_preview": "Review the following TypeScript/OpenLayers snippet. List:\n1) concrete bugs\n2) unnecessary complexity\n3) concrete improvements\n\nReturn a short structured answer. No tools.\n\n```typescript\nimport Map from 'ol/Map';\nimport View from 'ol/View';\nimport TileLayer from 'ol/layer/Tile';\nimport OSM from 'ol/source/OSM';\nimport VectorLayer from 'ol/layer/Vector';\nimport VectorSource from 'ol/source/Vector';\nimport { fromLonLat } from 'ol/proj';\nimport Feature from ... (truncated)\n**1) Konkrete Fehler**\n- `document.getElementById(target)!.style.height = '100vh';` kann fehlschlagen, wenn `target` kein g\u00fcltiger DOM-Selector ist\n- `data[0].lon, data[0].lat` in `setCenter()` kann fehlschlagen, wenn `data` leer ist\n\n**2) Unn\u00f6tige Komplexit\u00e4t**\n- `setInterval` mit fester 1000ms-Intervall, ohne M\u00f6glichkeit z",
+  "prompt_tps": 40.2,
+  "eval_tps": 21.3,
+  "ram_peak_mb": 21627.0,
+  "ram_min_mb": 5819.0,
+  "swap_peak_mb": 15384.0,
+  "cpu_peak_pct": 36.6,
+  "vram_peak_mb": 1749.0,
+  "vram_min_mb": 1710.0,
+  "gpu_util_peak": 8.0
+}

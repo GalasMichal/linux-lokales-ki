@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "status": 400,
+  "body": {
+    "ok": false,
+    "error": "Die Bilddatei darf höchstens 25 MiB groß sein."
+  }
+}

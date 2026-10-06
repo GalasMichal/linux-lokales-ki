@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "updated_at": "2026-10-01T18:53:14.321347+02:00",
+  "count": 22,
+  "by_id": {
+    "KB-20260922-COMPACT-001": {
+      "type": "failure",
+      "topic": "qwen-compact",
+      "status": "validated",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-COMPACT-002": {
+      "type": "decision",
+      "topic": "qwen-compact",
+      "status": "active",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-COMPACT-003": {
+      "type": "failure",
+      "topic": "compact-continuity",
+      "status": "failed",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-LAZY-001": {
+      "type": "failure",
+      "topic": "qwen-context",
+      "status": "validated",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-LAZY-002": {
+      "type": "fix",
+      "topic": "qwen-context",
+      "status": "validated",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-LEDGER-001": {
+      "type": "failure",
+      "topic": "compact-continuity",
+      "status": "validated",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-LEDGER-002": {
+      "type": "fix",
+      "topic": "compact-continuity",
+      "status": "validated",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-LEDGER-003": {
+      "type": "fallback",
+      "topic": "compact-continuity",
+      "status": "active",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-LEDGER-004": {
+      "type": "decision",
+      "topic": "compact-continuity",
+      "status": "active",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-TOOLSEARCH-001": {
+      "type": "fix",
+      "topic": "qwen-tooling",
+      "status": "validated",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-GIT-001": {
+      "type": "fix",
+      "topic": "qwen-tooling",
+      "status": "validated",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-BOOT-001": {
+      "type": "failure",
+      "topic": "systemd-boot",
+      "status": "validated",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-BOOT-002": {
+      "type": "fix",
+      "topic": "systemd-boot",
+      "status": "validated",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-IMAGE-001": {
+      "type": "decision",
+      "topic": "image-editing",
+      "status": "active",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-IMAGE-002": {
+      "type": "decision",
+      "topic": "image-resolution",
+      "status": "active",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260921-ROADMAP-000": {
+      "type": "decision",
+      "topic": "roadmap",
+      "status": "superseded",
+      "updated_at": "2026-09-22T09:00:00+02:00"
+    },
+    "KB-20260921-ROADMAP-001": {
+      "type": "replan",
+      "topic": "roadmap",
+      "status": "active",
+      "updated_at": "2026-09-22T09:00:00+02:00"
+    },
+    "KB-20260922-SUCCESS-001": {
+      "type": "success",
+      "topic": "qwen-context",
+      "status": "validated",
+      "updated_at": "2026-09-22T10:00:00+02:00"
+    },
+    "KB-20260922-SUPERVISOR-MULTI-A-001": {
+      "type": "decision",
+      "topic": "supervisor-multi-agent",
+      "status": "active",
+      "updated_at": "2026-09-22T13:26:13.372652+02:00"
+    },
+    "KB-20261001-IMAGE-GEN-CALIBRI-001": {
+      "type": "decision",
+      "topic": "image-gen-calibri",
+      "status": "active",
+      "updated_at": "2026-10-01T18:47:11.331809+02:00"
+    },
+    "KB-20261001-RUNTIME-UPGRADE-001": {
+      "type": "decision",
+      "topic": "runtime-upgrade",
+      "status": "active",
+      "updated_at": "2026-10-01T18:47:11.332511+02:00"
+    },
+    "KB-20261001-COLIBRI-ENGINE-001": {
+      "type": "decision",
+      "topic": "colibri-engine",
+      "status": "active",
+      "updated_at": "2026-10-01T18:53:14.320951+02:00"
+    }
+  },
+  "by_topic": {
+    "qwen-compact": [
+      "KB-20260922-COMPACT-001",
+      "KB-20260922-COMPACT-002"
+    ],
+    "compact-continuity": [
+      "KB-20260922-COMPACT-003",
+      "KB-20260922-LEDGER-001",
+      "KB-20260922-LEDGER-002",
+      "KB-20260922-LEDGER-003",
+      "KB-20260922-LEDGER-004"
+    ],
+    "qwen-context": [
+      "KB-20260922-LAZY-001",
+      "KB-20260922-LAZY-002",
+      "KB-20260922-SUCCESS-001"
+    ],
+    "qwen-tooling": [
+      "KB-20260922-TOOLSEARCH-001",
+      "KB-20260922-GIT-001"
+    ],
+    "systemd-boot": [
+      "KB-20260922-BOOT-001",
+      "KB-20260922-BOOT-002"
+    ],
+    "image-editing": [
+      "KB-20260922-IMAGE-001"
+    ],
+    "image-resolution": [
+      "KB-20260922-IMAGE-002"
+    ],
+    "roadmap": [
+      "KB-20260921-ROADMAP-000",
+      "KB-20260921-ROADMAP-001"
+    ],
+    "supervisor-multi-agent": [
+      "KB-20260922-SUPERVISOR-MULTI-A-001"
+    ],
+    "image-gen-calibri": [
+      "KB-20261001-IMAGE-GEN-CALIBRI-001"
+    ],
+    "runtime-upgrade": [
+      "KB-20261001-RUNTIME-UPGRADE-001"
+    ],
+    "colibri-engine": [
+      "KB-20261001-COLIBRI-ENGINE-001"
+    ]
+  }
+}

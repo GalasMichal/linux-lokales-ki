@@ -1,0 +1,59 @@
+[
+  {
+    "id": "call_4mhk69se",
+    "name": "pdf_inspect (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\"}",
+    "status": "completed",
+    "title": "pdf_inspect (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\"}",
+    "rawInput": {
+      "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf"
+    },
+    "content": [
+      {
+        "content": {
+          "text": "{\"ok\":true,\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\",\"pages\":2,\"is_encrypted\":false,\"metadata\":{\"format\":\"PDF 1.4\",\"title\":\"(anonymous)\",\"author\":\"(anonymous)\",\"subject\":\"(unspecified)\",\"creator\":\"(unspecified)\",\"producer\":\"ReportLab PDF Library - (opensource)\",\"creationDate\":\"D:20260928144802+02'00'\",\"modDate\":\"D:20260928144802+02'00'\"},\"page_info\":[{\"page\":1,\"width\":595.28,\"height\":841.89,\"has_text\":true,\"chars\":285},{\"page\":2,\"width\":595.28,\"height\":841.89,\"has_text\":true,\"chars\":272}],\"backend\":\"pymupdf\"}\n{\n  \"ok\": true,\n  \"path\": \"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\",\n  \"pages\": 2,\n  \"is_encrypted\": false,\n  \"metadata\": {\n    \"format\": \"PDF 1.4\",\n    \"title\": \"(anonymous)\",\n    \"author\": \"(anonymous)\",\n    \"subject\": \"(unspecified)\",\n    \"creator\": \"(unspecified)\",\n    \"producer\": \"ReportLab PDF Library - (opensource)\",\n    \"creationDate\": \"D:20260928144802+02'00'\",\n    \"modDate\": \"D:20260928144802+02'00'\"\n  },\n  \"page_info\": [\n    {\n      \"page\": 1,\n      \"width\": 595.28,\n      \"height\": 841.89,\n      \"has_text\": true,\n      \"chars\": 285\n    },\n    {\n      \"page\": 2,\n      \"width\": 595.28,\n      \"height\": 841.89,\n      \"has_text\": true,\n      \"chars\": 272\n    }\n  ],\n  \"backend\": \"pymupdf\"\n}",
+          "type": "text"
+        },
+        "type": "content"
+      }
+    ]
+  },
+  {
+    "id": "call_fzby7w5p",
+    "name": "pdf_edit (local-tools MCP Server): {\"mode\":\"replace\",\"output\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\",\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\",\"replacements\":\"Project Status: Draft=>Project Status: Final;Amount: 1250 EUR=>Amount: 1490 EUR;Pending=>Done   \"}",
+    "status": "completed",
+    "title": "pdf_edit (local-tools MCP Server): {\"mode\":\"replace\",\"output\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\",\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\",\"replacements\":\"Project Status: Draft=>Project Status: Final;Amount: 1250 EUR=>Amount: 1490 EUR;Pending=>Done   \"}",
+    "rawInput": {
+      "mode": "replace",
+      "output": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf",
+      "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf",
+      "replacements": "Project Status: Draft=>Project Status: Final;Amount: 1250 EUR=>Amount: 1490 EUR;Pending=>Done   "
+    },
+    "content": [
+      {
+        "content": {
+          "text": "{\"ok\":true,\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\",\"source\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\",\"mode\":\"replace\",\"replacements_applied\":3,\"backend\":\"pymupdf\",\"qa\":{\"ok\":true,\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\",\"pages\":2,\"text_chars\":555,\"text_preview\":\"PDF Agent End-to-End Test\\nCustomer: Example GmbH\\nThis controlled fixture is used to verify the Qwen local-fast agent path through MCP pdf_* tools.\\nLayout must stay largely intact for small in-place edits. Do not treat this as production content.\\nProject Status: Final\\nAmount: 1490 EUR\\n\\nTask Overview\\nTask\\nStatus\\nAnalysis\\nOpen\\nImplementation\\nReview\\nOpen\\nAdditional notes: Keep Analysis and Review as Open. Only the Implementation row status token\\nshould change. Prefer same-length replacements when using in-place redact edits so spacing\\nstays clean.\\nDone\\n\",\"render_path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.qa-p1.png\",\"errors\":[],\"warnings\":[],\"vision\":{\"ready\":true,\"page\":1,\"image_path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.qa-p1.png\",\"mime\":\"image/png\",\"note\":\"Kein Vision-Modell aufgerufen. Render liegt bereit.\"}}}\n{\n  \"ok\": true,\n  \"path\": \"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\",\n  \"source\": \"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\",\n  \"mode\": \"replace\",\n  \"replacements_applied\": 3,\n  \"backend\": \"pymupdf\",\n  \"qa\": {\n    \"ok\": true,\n    \"path\": \"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\",\n    \"pages\": 2,\n    \"text_chars\": 555,\n    \"text_preview\": \"PDF Agent End-to-End Test\\nCustomer: Example GmbH\\nThis controlled fixture is used to verify the Qwen local-fast agent path through MCP pdf_* tools.\\nLayout must stay largely intact for small in-place edits. Do not treat this as production content.\\nProject Status: Final\\nAmount: 1490 EUR\\n\\nTask Overview\\nTask\\nStatus\\nAnalysis\\nOpen\\nImplementation\\nReview\\nOpen\\nAdditional notes: Keep Analysis and Review as Open. Only the Implementation row status token\\nshould change. Prefer same-length replacements when using in-place redact edits so spacing\\nstays clean.\\nDone\\n\",\n    \"render_path\": \"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.qa-p1.png\",\n    \"errors\": [],\n    \"warnings\": [],\n    \"vision\": {\n      \"ready\": true,\n      \"page\": 1,\n      \"image_path\": \"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.qa-p1.png\",\n      \"mime\": \"image/png\",\n      \"note\": \"Kein Vision-Modell aufgerufen. Render liegt bereit.\"\n    }\n  }\n}",
+          "type": "text"
+        },
+        "type": "content"
+      }
+    ]
+  },
+  {
+    "id": "call_r6b75ayz",
+    "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\"}",
+    "status": "completed",
+    "title": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\"}",
+    "rawInput": {
+      "path": "/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf"
+    },
+    "content": [
+      {
+        "content": {
+          "text": "{\"ok\":true,\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\",\"pages\":2,\"read_pages\":[1,2],\"text\":\"--- page 1 ---\\nPDF Agent End-to-End Test\\nCustomer: Example GmbH\\nThis controlled fixture is used to verify the Qwen local-fast agent path through MCP pdf_* tools.\\nLayout must stay largely intact for small in-place edits. Do not treat this as production content.\\nProject Status: Final\\nAmount: 1490 EUR\\n\\n--- page 2 ---\\nTask Overview\\nTask\\nStatus\\nAnalysis\\nOpen\\nImplementation\\nReview\\nOpen\\nAdditional notes: Keep Analysis and Review as Open. Only the Implementation row status token\\nshould change. Prefer same-length replacements when using in-place redact edits so spacing\\nstays clean.\\nDone\",\"chars\":586,\"truncated\":false,\"backend\":\"pymupdf\"}\n{\n  \"ok\": true,\n  \"path\": \"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_edited.pdf\",\n  \"pages\": 2,\n  \"read_pages\": [\n    1,\n    2\n  ],\n  \"text\": \"--- page 1 ---\\nPDF Agent End-to-End Test\\nCustomer: Example GmbH\\nThis controlled fixture is used to verify the Qwen local-fast agent path through MCP pdf_* tools.\\nLayout must stay largely intact for small in-place edits. Do not treat this as production content.\\nProject Status: Final\\nAmount: 1490 EUR\\n\\n--- page 2 ---\\nTask Overview\\nTask\\nStatus\\nAnalysis\\nOpen\\nImplementation\\nReview\\nOpen\\nAdditional notes: Keep Analysis and Review as Open. Only the Implementation row status token\\nshould change. Prefer same-length replacements when using in-place redact edits so spacing\\nstays clean.\\nDone\",\n  \"chars\": 586,\n  \"truncated\": false,\n  \"backend\": \"pymupdf\"\n}",
+          "type": "text"
+        },
+        "type": "content"
+      }
+    ]
+  }
+]

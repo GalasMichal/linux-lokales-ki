@@ -1,0 +1,150 @@
+{
+  "ts": "2026-10-03T06:25:05+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 5,
+  "sessionId": "e805c038-d582-4d4f-8336-3e6a7aca1e9e",
+  "elapsed_s": 398.547,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_bzet6mea",
+      "name": "ToolSearch: select:read_file,grep_search,write_file,edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_l8cctm7y",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_1k9c1clo",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_hbho6x4x",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_8iegmg6r",
+      "name": "ToolSearch: run shell command execute bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_pg90ijl3",
+      "name": "ToolSearch: +run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_h72it9qj",
+      "name": "ToolSearch: test pytest python run command bash terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_w9nkfoke",
+      "name": "Agent: Run pytest once",
+      "status": "completed"
+    },
+    {
+      "id": "call_p09a1yf4",
+      "name": "ToolSearch: select:Bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_2fqzptv8",
+      "name": "ToolSearch: run shell command bash execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_cca3oe3a",
+      "name": "ToolSearch: shell terminal run python subprocess test command",
+      "status": "completed"
+    },
+    {
+      "id": "call_oqktdu2d",
+      "name": "ToolSearch: exec run command",
+      "status": "completed"
+    },
+    {
+      "id": "call_44fh93g1",
+      "name": "desktop_snapshot (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_p7qcvm7j",
+      "name": "desktop_close (local-tools MCP Server): {}",
+      "status": "completed"
+    },
+    {
+      "id": "call_xidujqt0",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_eeuse0d3",
+      "name": "ToolSearch: select:read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_86nfl0xb",
+      "name": "report",
+      "status": "failed"
+    },
+    {
+      "id": "call_w59pu0gf",
+      "name": "ToolSearch: select:grep_search,read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_c9lv9qeg",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "failed"
+    }
+  ],
+  "votes": 4,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26321,
+      "swap_used_mib": 6501
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14070,
+      "vram_total_mib": 16303,
+      "gpu_util": 61
+    },
+    "mem": {
+      "mem_available_mib": 16171,
+      "swap_used_mib": 6542
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

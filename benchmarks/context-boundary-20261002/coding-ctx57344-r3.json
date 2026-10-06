@@ -1,0 +1,115 @@
+{
+  "ts": "2026-10-02T21:27:22+0200",
+  "suite": "coding",
+  "num_ctx": 57344,
+  "model": "bench-qwen38-27b-56k",
+  "run_id": 3,
+  "sessionId": "7514a350-f43e-4c9a-a5b2-7b8382345a79",
+  "elapsed_s": 902.865,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_zc3hfa8r",
+      "name": "ToolSearch: select:read_file,edit,write_file,glob",
+      "status": "completed"
+    },
+    {
+      "id": "call_159yuggz",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_klgrigik",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ljcup1jr",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ivtzxzyj",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_aoenjufp",
+      "name": "ToolSearch: shell command execution bash pytest python",
+      "status": "completed"
+    },
+    {
+      "id": "call_4uirsg51",
+      "name": "ToolSearch: run shell command bash terminal execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_eskzwqn5",
+      "name": "ToolSearch: select:run_shell_command,shell,bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_stu99qlc",
+      "name": "ToolSearch: execute command process python3",
+      "status": "completed"
+    },
+    {
+      "id": "call_91y9f73i",
+      "name": "ToolSearch: +shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_h4etb7pu",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_05iiahza",
+      "name": "ToolSearch: exec cmd console subprocess invoke cli run command process launch",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2050,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25348,
+      "swap_used_mib": 5958
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14263,
+      "vram_total_mib": 16303,
+      "gpu_util": 3
+    },
+    "mem": {
+      "mem_available_mib": 17240,
+      "swap_used_mib": 7468
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL       \nbench-qwen38-27b-56k:latest    5869af699429    19 GB    50%/50% CPU/GPU    57344      Stopping...    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

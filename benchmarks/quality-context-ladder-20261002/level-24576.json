@@ -1,0 +1,150 @@
+{
+  "model": "bench-qwen38-27b-24k",
+  "model_id": "bench-qwen38-27b-24k(openai)",
+  "num_ctx": 24576,
+  "sessionId": "7f2adbe5-b4b0-4bd3-aadc-6ebe18130d1c",
+  "model_switch": {
+    "_meta": {
+      "qwenModelSwitch": {
+        "authType": "openai",
+        "modelId": "bench-qwen38-27b-24k",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "***",
+        "isRuntime": false
+      }
+    }
+  },
+  "elapsed_s": 357.542,
+  "prompt_error": null,
+  "votes": [
+    {
+      "requestId": "9b0300b6-9fcc-4a54-8d6a-0dbe18d3824f",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_m9z1rei0",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+      "status": "completed",
+      "input": {
+        "query": "select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create,mcp__local-tools__pdf_read,mcp__local-tools__pdf_render,mcp__local-tools__pdf_vision_qa",
+        "max_results": 10
+      }
+    },
+    {
+      "id": "call_fhuxzbgr",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed",
+      "input": {
+        "workspace": "/home/mike/Projects/Linux Lokales KI"
+      }
+    },
+    {
+      "id": "call_2ykpjobx",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-24576.pdf\",\"text\":\"Context ladder probe at 24576 tokens. FAST stays local-fast. No productive cutover.\",\"title\":\"QUALITY CTX 24576\"}",
+      "status": "completed",
+      "input": {
+        "output": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-24576.pdf",
+        "text": "Context ladder probe at 24576 tokens. FAST stays local-fast. No productive cutover.",
+        "title": "QUALITY CTX 24576"
+      }
+    },
+    {
+      "id": "call_zyp53lt4",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-24576.pdf\"}",
+      "status": "completed",
+      "input": {
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-24576.pdf"
+      }
+    },
+    {
+      "id": "call_1h6j3leh",
+      "name": "pdf_render (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-24576.png\",\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-24576.pdf\"}",
+      "status": "completed",
+      "input": {
+        "output": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-24576.png",
+        "page": 1,
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-24576.pdf"
+      }
+    },
+    {
+      "id": "call_yi2coh37",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-24576.pdf\"}",
+      "status": "completed",
+      "input": {
+        "path": "/home/mike/Projects/Linux Lokales KI/.agent/tmp/quality-ctx-ladder-24576.pdf"
+      }
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1
+  },
+  "expected_hit": [
+    "memory_load",
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa"
+  ],
+  "missing": [],
+  "duplicates": {},
+  "thoughts": 0,
+  "assistant_text_tail": "TATE/TASKS/DECISIONS/REQUIREMENTS/TOOLS loaded. Phase confirms \"Context-Probe additiv PASS, kein Cutover\". FAST is `local-fast`, QUALITY 24K/32K stays non-productive.\n2. **pdf_create** — 1 page, QA ok (reportlab + text + render).\n3. **pdf_read** — title + probe sentence extracted verbatim (pymupdf).\n4. **pdf_render** — page 1 → PNG, 1158×1638 @140dpi (pymupdf). Render works at that project path today despite the older memory note about `/srv/ai/workspaces` rejection.\n5. **pdf_vision_qa** — ran local-quality via `http://127.0.0.1:11434/api/chat` (~17.5s, 1937 prompt eval). Result: `ok:false`, one high-severity issue \"empty_page\" (title + one line, rest blank), `needs_regeneration:true`. **Expected** for a minimal 2-line probe PDF, not a defect.\n\nProbe artifacts in `/home/mike/Projects/Linux Lokales KI/.agent/tmp/`: `quality-ctx-ladder-24576.pdf`, `.png`, plus internal QA/vision renders (`qa-p1.png`, `vision-p1.png`). No productive cutover touched — per the stated rule and current STATE.",
+  "pdf_exists": true,
+  "png_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok",
+        "trust": null
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 1,
+    "tools": 6,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 65,
+    "vram": 14120
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 14525,
+      "vram_total_mib": 16303,
+      "gpu_util": 85
+    },
+    "mem": {
+      "mem_available_mib": 20216,
+      "swap_used_mib": 4457
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL       \nbench-qwen38-27b-16k:latest    a4afc9b2a6e8    18 GB    36%/64% CPU/GPU    16384      Stopping...    \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14124,
+      "vram_total_mib": 16303,
+      "gpu_util": 100
+    },
+    "mem": {
+      "mem_available_mib": 21928,
+      "swap_used_mib": 4212
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-24k:latest    42e31fd21fed    18 GB    41%/59% CPU/GPU    24576      4 minutes from now    \n"
+  },
+  "fail_reasons": [],
+  "pass": true
+}

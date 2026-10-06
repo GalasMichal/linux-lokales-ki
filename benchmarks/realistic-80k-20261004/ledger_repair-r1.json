@@ -1,0 +1,116 @@
+{
+  "ts": "2026-10-04T09:45:33+0200",
+  "task": "ledger_repair",
+  "title": "Ledger parse, signed balance, report ids",
+  "core": true,
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 1,
+  "attempt": 1,
+  "retry_of": null,
+  "sessionId": "9f92c958-2f1f-4b12-9cbc-6fba039ff5f4",
+  "workspace": "/srv/ai/workspaces/realistic-80k-20261004/runs/ledger_repair-r1",
+  "elapsed_s": 122.791,
+  "pass": true,
+  "resolved": true,
+  "fail_to_pass": true,
+  "pass_to_pass": true,
+  "musts_ok": true,
+  "score": {
+    "fail_to_pass": {
+      "pass": true,
+      "code": 0,
+      "out": "..                                                                       [100%]\n2 passed in 0.00s\n"
+    },
+    "pass_to_pass": {
+      "pass": true,
+      "code": 0,
+      "out": "..                                                                       [100%]\n2 passed in 0.00s\n"
+    },
+    "musts": {
+      "pass": true,
+      "code": 0,
+      "out": "...                                                                      [100%]\n3 passed in 0.01s\n"
+    },
+    "resolved": true
+  },
+  "tools": [
+    {
+      "name": "ToolSearch: select:read_file,run_shell_command",
+      "status": "completed"
+    },
+    {
+      "name": "ToolSearch: select:glob,write_file,edit",
+      "status": "completed"
+    },
+    {
+      "name": "Shell: ls -la /srv/ai/workspaces/realistic-80k-20261004/runs/ledger_repair-r1 && ls /srv/ai/workspaces/realistic-80k-20261004/runs/ledger_repair-r1/data 2>/dev/null (List task directory contents)",
+      "status": "failed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-20261004/runs/ledger_repair-r1/balance.py",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-20261004/runs/ledger_repair-r1/entries.py",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-20261004/runs/ledger_repair-r1/report.py",
+      "status": "completed"
+    },
+    {
+      "name": "ReadFile: realistic-80k-20261004/runs/ledger_repair-r1/test_visible.py",
+      "status": "completed"
+    },
+    {
+      "name": "WriteFile: Writing to realistic-80k-20261004/runs/ledger_repair-r1/entries.py",
+      "status": "completed"
+    },
+    {
+      "name": "WriteFile: Writing to realistic-80k-20261004/runs/ledger_repair-r1/balance.py",
+      "status": "completed"
+    },
+    {
+      "name": "WriteFile: Writing to realistic-80k-20261004/runs/ledger_repair-r1/report.py",
+      "status": "completed"
+    },
+    {
+      "name": "Shell: cd /srv/ai/workspaces/realistic-80k-20261004/runs/ledger_repair-r1 && python3 -m pytest -q test_visible.py (Run visible tests)",
+      "status": "completed"
+    }
+  ],
+  "votes": 5,
+  "vote_log_tail": [],
+  "prompt_error": null,
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 5,
+    "tools": 11,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 62,
+    "vram": 14028
+  },
+  "before": {
+    "mem": {
+      "mem_available_mib": 22367,
+      "swap_used_mib": 6972
+    },
+    "warmup": {
+      "ok": true,
+      "error": null,
+      "elapsed_s": 25.946,
+      "ps": [
+        "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              ",
+        "bench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      9 minutes from now"
+      ]
+    }
+  },
+  "empty_start": false,
+  "error_class": "pass",
+  "perm_blocked": false,
+  "productive_local_quality_untouched": true
+}

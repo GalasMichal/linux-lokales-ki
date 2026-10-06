@@ -1,0 +1,12 @@
+{
+  "id": "order_service",
+  "title": "Checkout totals and member prices",
+  "core": true,
+  "musts": [
+    "signature_price_add",
+    "valueerror_unknown_or_qty",
+    "tax_after_discount",
+    "member_price_no_catalog_mutate",
+    "stdlib_only"
+  ]
+}

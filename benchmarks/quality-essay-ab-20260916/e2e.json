@@ -1,0 +1,128 @@
+{
+  "sessionId": "06481540-3cb5-4a62-a348-876c08644642",
+  "model_id": "local-quality(openai)",
+  "elapsed_s": 157.816,
+  "prompt_error": null,
+  "votes": [
+    {
+      "requestId": "16b9ccc6-7675-49e3-b8b4-9eb4b80d1a6d",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "241fb547-aada-4678-bfc9-9393af79c1c8",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "849cea8d-dcea-4bc2-9fec-e7d19f926c70",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "a0712fb8-c321-4de7-ad7b-6ab05946b9ef",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "f9ebaae4-f16e-48bc-be2d-e9c9ad2e3cac",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "409a878e-3a84-4c0a-9ce1-a718f03d45b7",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "call_z030sji2",
+      "name": "memory_load (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_8kgudxpm",
+      "name": "pdf_create (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_741352qq",
+      "name": "pdf_read (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_j6rb2s51",
+      "name": "pdf_render (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_v2q3ghdo",
+      "name": "pdf_vision_qa (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    },
+    {
+      "id": "call_468lxj3n",
+      "name": "memory_update (local-tools MCP Server)",
+      "status": "completed",
+      "input": null
+    }
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1,
+    "memory_update": 1
+  },
+  "duplicates": {},
+  "expected_hit": [
+    "memory_load",
+    "memory_update",
+    "pdf_create",
+    "pdf_read",
+    "pdf_render",
+    "pdf_vision_qa"
+  ],
+  "missing": [],
+  "thoughts": 0,
+  "assistant_text": "Memory loaded; creating the test PDF.PDF created, QA passed (1 page). Reading text back.Text reads clean. Rendering page 1 to PNG.PNG rendered. Running local vision QA.Vision QA ran on local-quality (the \"needs_regeneration\" is just the empty-page flag for a 1-sentence test page — content is correct). Writing decision to memory.E2E complete. All 6 steps passed:\n\n1. ✅ **memory_load** — loaded STATE/DECISIONS/TASKS\n2. ✅ **pdf_create** — 1-page PDF, 76 chars text, QA metadata auto-generated\n3. ✅ **pdf_read** — pymupdf extracted 92 chars, no truncation\n4. ✅ **pdf_render** — 1158×1638 PNG at 140 dpi via pymupdf\n5. ✅ **pdf_vision_qa** — local-quality on Ollama (11.7s), correctly identified the 1-sentence test page as \"nearly empty\" — expected for a 2-line PDF\n6. ✅ **memory_update** — decision \"QUALITY hidden-gen compact fix\" written to DECISIONS.md, history snapshots saved\n\nThe `needs_regeneration: true` / `empty_page` flag is the honest behavior of the vision QA model on a minimal test document — it's not a defect. The full chain (create → read → render → vision) ran in one serve session at 16384 tokens without truncation or hidden-gen issues.",
+  "compressed": false,
+  "pdf_exists": true,
+  "png_exists": true,
+  "yolo": false,
+  "always_allow": false,
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok"
+      }
+    ]
+  },
+  "health": {
+    "active": false,
+    "wait_perm": false,
+    "pending": 0,
+    "votes": 6,
+    "tools": 6,
+    "thoughts": 0,
+    "n_gen": 0,
+    "gpu_util": 62,
+    "vram": 14486
+  },
+  "nvidia": {
+    "vram_used_mib": 14490,
+    "vram_total_mib": 16303,
+    "gpu_util": 62
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nlocal-quality:latest    ad1736a075f0    18 GB    38%/62% CPU/GPU    16384      4 minutes from now    \n",
+  "pass": true
+}

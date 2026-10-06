@@ -1,0 +1,145 @@
+{
+  "ts": "2026-10-02T23:20:47+0200",
+  "suite": "coding",
+  "num_ctx": 73728,
+  "model": "bench-qwen38-27b-72k",
+  "run_id": 1,
+  "sessionId": "90b99b4b-83e3-48a2-b9f2-0fec833f8c26",
+  "elapsed_s": 394.204,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_1jnhmvpq",
+      "name": "ToolSearch: select:read_file,write_file,edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_kdt9s3et",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_tifay3km",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_7x2g5dvv",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_r9a2pikz",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_d2bh8iwh",
+      "name": "ToolSearch: run shell command execute terminal bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_ryfx5c1u",
+      "name": "ToolSearch: +execute bash process run",
+      "status": "completed"
+    },
+    {
+      "id": "call_heah5dqs",
+      "name": "ToolSearch: shell command terminal bash subprocess pytest",
+      "status": "completed"
+    },
+    {
+      "id": "call_9uwy47p2",
+      "name": "ToolSearch: select:bash,shell,execute_command,run_command,subprocess,terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_p87m7imi",
+      "name": "ToolSearch: +command process stdout stderr exit_code",
+      "status": "completed"
+    },
+    {
+      "id": "call_ohg7rrgp",
+      "name": "ToolSearch: local-tools mcp shell exec python command runner terminal run",
+      "status": "completed"
+    },
+    {
+      "id": "call_cukaswwj",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_ouzxv9n3",
+      "name": "ToolSearch: local-tools terminal shell exec run subprocess command python",
+      "status": "completed"
+    },
+    {
+      "id": "call_ttwhl3vw",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_xf88sdm1",
+      "name": "ToolSearch: run shell bash terminal command script execute python test",
+      "status": "completed"
+    },
+    {
+      "id": "call_po7xmosy",
+      "name": "Agent: Run pytest for calc",
+      "status": "completed"
+    },
+    {
+      "id": "call_684g6uqu",
+      "name": "ToolSearch: select:Shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_j7yb4j27",
+      "name": "ToolSearch: bash shell execute command terminal run script",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1288,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26242,
+      "swap_used_mib": 4834
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14379,
+      "vram_total_mib": 16303,
+      "gpu_util": 4
+    },
+    "mem": {
+      "mem_available_mib": 20180,
+      "swap_used_mib": 5177
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-72k:latest    41c3bb97d1e6    19 GB    47%/53% CPU/GPU    73728      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

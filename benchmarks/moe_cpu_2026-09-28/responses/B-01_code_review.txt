@@ -1,0 +1,8 @@
+### 1) Concrete Bugs
+*   **Race Condition on First Render**: The `setInterval` runs immediately. If the API takes >1s to respond, the map renders with an empty vector layer. When data arrives, `source.clear()` is called again (harmless but redundant), and features are added. More critically, if the initial view center logic relied on the first data point, it would fail until the interval fires.
+*   **Unnecessary Re-fetching**: The code fetches `/api/positions` every 1 second regardless of whether the user is interacting with the map or if new data actually exists. This wastes bandwidth and CPU.
+*   **Blocking UI during Fetch**: While `fetch` is async, chaining `.then()` inside a tight loop without error handling can lead to silent failures (e.g., network timeout) where the map stops updating forever without logging an error.
+*   **Type Safety Violation**: The use of `any` for `p` defeats the purpose of TypeScript and allows potential runtime errors if the API structure changes.
+
+### 2) Unnecessary Complexity
+*   **Immediate Interval Start**: Starting the polling loop immediately inside the setup function creates a "fire-and-forget" pattern that

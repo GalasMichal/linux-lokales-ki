@@ -1,0 +1,21 @@
+{
+  "label": "A-03_architecture",
+  "runtime": "llama.cpp",
+  "model": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_S",
+  "threads": 16,
+  "ctx": 4096,
+  "n_predict": 256,
+  "wall_s": 63.485,
+  "rc": 0,
+  "response_chars": 1502,
+  "response_preview": "Feature request:\n\"Add a 'Meine letzten Fahrten' panel to a local Angular+OpenLayers map app. Show the last 20 trips from a local REST API, click a trip to zoom the map to its route polyline, and allow exporting the visible list as CSV.\"\n\nBreak this into:\n1) components / UI pieces\n2) services / dependencies\n3) data contracts\n4) risks / failure modes\n5) suggested implementation order\n\nKeep it concise and technical. No tools. Do not write full code.\n## 1) Components / UI Pieces\n\n- **TripsPanelComponent**: Main panel container with header and list\n- **TripListItemComponent**: Individual trip row with metadata (date, distance, duration)\n- **TripMapComponent**: Embedded OpenLayers map with route visualization\n- **ExportButtonComponent**: CSV export trigger button\n- **TripDetailsComponent**: Opti",
+  "prompt_tps": 49.4,
+  "eval_tps": 22.0,
+  "ram_peak_mb": 21554.0,
+  "ram_min_mb": 5426.0,
+  "swap_peak_mb": 10835.0,
+  "cpu_peak_pct": 36.3,
+  "vram_peak_mb": 1718.0,
+  "vram_min_mb": 1706.0,
+  "gpu_util_peak": 9.0
+}

@@ -1,0 +1,103 @@
+{
+  "ts": "2026-10-03T10:19:21+0200",
+  "suite": "supervisor",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 5,
+  "sessionId": "800789b8-d73d-415e-b65d-97fa222dd0e8",
+  "elapsed_s": 194.557,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_ii12vt9p",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_0t9odzww",
+      "name": "Agent: Ask researcher one question",
+      "status": "completed"
+    },
+    {
+      "id": "call_x7ffqsqu",
+      "name": "ToolSearch: select:grep_search,read_file",
+      "status": "completed"
+    },
+    {
+      "id": "call_lkyblsdd",
+      "name": "Grep: 'Compact State Ledger' in .",
+      "status": "completed"
+    },
+    {
+      "id": "call_blxak91u",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_yjkrzxz0",
+      "name": "ToolSearch: select:list_directory",
+      "status": "completed"
+    },
+    {
+      "id": "call_vrgpr2w1",
+      "name": "ToolSearch: list directory files ls",
+      "status": "completed"
+    },
+    {
+      "id": "call_su81wx2o",
+      "name": "ToolSearch: select:memory_search",
+      "status": "completed"
+    },
+    {
+      "id": "call_0nt1cdu0",
+      "name": "ToolSearch: search knowledge KB entries query",
+      "status": "completed"
+    },
+    {
+      "id": "call_l870qi8d",
+      "name": "knowledge_search (local-tools MCP Server): {\"query\":\"Compact State Ledger purpose\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1476,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25670,
+      "swap_used_mib": 6428
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14199,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 19053,
+      "swap_used_mib": 6600
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

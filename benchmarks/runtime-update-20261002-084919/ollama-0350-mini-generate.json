@@ -1,0 +1,20 @@
+[
+  {
+    "model": "local-fast",
+    "response": "OK",
+    "eval_count": 2,
+    "prompt_eval_count": 21,
+    "total_duration_ns": 15094422587,
+    "wall_s": 15.1,
+    "done": true
+  },
+  {
+    "model": "local-quality",
+    "response": "OK",
+    "eval_count": 2,
+    "prompt_eval_count": 21,
+    "total_duration_ns": 22116705175,
+    "wall_s": 22.12,
+    "done": true
+  }
+]

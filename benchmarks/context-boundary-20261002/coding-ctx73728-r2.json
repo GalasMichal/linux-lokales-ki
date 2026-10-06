@@ -1,0 +1,95 @@
+{
+  "ts": "2026-10-02T23:23:33+0200",
+  "suite": "coding",
+  "num_ctx": 73728,
+  "model": "bench-qwen38-27b-72k",
+  "run_id": 2,
+  "sessionId": "40295c27-5e2c-49c5-b703-11e895f9d986",
+  "elapsed_s": 161.731,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_m3lyxa4b",
+      "name": "ToolSearch: select:read_file,write_file,edit,glob",
+      "status": "completed"
+    },
+    {
+      "id": "call_utqvlxid",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_2ayj9rko",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_25p439k2",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_7fmdzra0",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_t9vrpem6",
+      "name": "ToolSearch: execute pytest shell command python run",
+      "status": "completed"
+    },
+    {
+      "id": "call_qeaeehjl",
+      "name": "ToolSearch: local tools shell execute command bash terminal pytest run script",
+      "status": "completed"
+    },
+    {
+      "id": "call_rokacy6b",
+      "name": "ToolSearch: bash exec subprocess python test runner local-tools all tools list",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "add_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1288,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26344,
+      "swap_used_mib": 5045
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14371,
+      "vram_total_mib": 16303,
+      "gpu_util": 70
+    },
+    "mem": {
+      "mem_available_mib": 19066,
+      "swap_used_mib": 5165
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-72k:latest    41c3bb97d1e6    19 GB    47%/53% CPU/GPU    73728      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

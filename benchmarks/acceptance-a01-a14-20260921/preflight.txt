@@ -1,0 +1,117 @@
+=== git ===
+abd0282 feat: raise FAST context to 32K so Qwen Code keeps tools and the user task
+## codex/ki-arbeitsplatz...origin/codex/ki-arbeitsplatz [voraus 5]
+ M .gitignore
+ M .qwen/settings.json
+ M QWEN.md
+ M README.md
+ M apps/ki-workplace/server.py
+ M apps/ki-workplace/www/index.html
+ M apps/local-tools/config/qwen-mcp.json
+ M apps/local-tools/gateway.py
+ M apps/local-tools/requirements.txt
+ M apps/local-tools/server.py
+ M apps/local-tools/systemd/local-tools-mcp.service
+ M docs/CHANGELOG.md
+ M docs/QWEN_GIT_SNAPSHOT.md
+ M docs/QWEN_SKILLS.md
+ M docs/QWEN_TOOLSEARCH_MCP_ALIAS.md
+ M scripts/apply-local-fast-context.sh
+ M scripts/apply-qwen-toolsearch-mcp-alias-patch.sh
+ M scripts/deploy-local-tools-mcp.sh
+ M scripts/rollback-qwen-toolsearch-mcp-alias-patch.sh
+ M scripts/set-qwen-fast-context.py
+ M tests/live_mcp_smoke.py
+ M tests/test_ki_workplace.py
+ M tests/test_local_tools_gateway.py
+ M tests/test_qwen_fast_context.py
+ M tests/test_qwen_git_snapshot.py
+ M tests/test_qwen_toolsearch_mcp_alias.py
+?? .agent/
+?? .qwen/skills/agent-memory
+?? .qwen/skills/document-tools
+=== versions ===
+{"version":"0.34.0"}
+qwen_pkg False
+0.23.4
+=== nvidia ===
+595.99.02, 16303 MiB, 2034 MiB, 4 %
+               total        used        free      shared  buff/cache   available
+Mem:            31Gi       8,0Gi       3,6Gi       167Mi        20Gi        23Gi
+Swap:           52Gi       1,9Gi        50Gi
+Dateisystem    Größe Benutzt Verf. Verw% Eingehängt auf
+/dev/sda3       921G    769G  149G   84% /
+/dev/sda3       921G    769G  149G   84% /
+/dev/sdc1       1,4T    1,1T  314G   78% /mnt/ai-archive
+/dev/sda3       921G    769G  149G   84% /home
+=== ollama list/ps ===
+NAME                             ID              SIZE      MODIFIED    
+local-quality:latest             ad1736a075f0    17 GB     4 days ago     
+bench-qwen38-27b-32k:latest      d4bf257f520d    17 GB     4 days ago     
+bench-qwen38-27b-16k:latest      ad1736a075f0    17 GB     4 days ago     
+bench-qwen38-27b-8k:latest       993995e538ad    17 GB     5 days ago     
+bench-qwen36-coding-8k:latest    90ae8080c825    17 GB     5 days ago     
+qwen3.6:27b-coding               3a12a518a499    17 GB     5 days ago     
+qwen3.8:27b                      22130167c4c2    17 GB     5 days ago     
+local-fast:latest                cf8bd43c0e1c    6.6 GB    4 weeks ago    
+qwen3.6:27b                      a50eda8ed977    17 GB     4 weeks ago    
+qwen3.5:9b                       6488c96fa5fa    6.6 GB    4 weeks ago    
+NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL 
+=== aliases ===
+-- local-fast --
+# To build a new Modelfile based on this, replace FROM with:
+# FROM local-fast:latest
+FROM /srv/ai/models/ollama/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c
+PARAMETER num_ctx 32768
+-- local-quality --
+# To build a new Modelfile based on this, replace FROM with:
+# FROM local-quality:latest
+FROM /srv/ai/models/ollama/blobs/sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d
+FROM /srv/ai/models/ollama/blobs/sha256-ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e
+PARAMETER num_ctx 16384
+=== systemd enable/active ===
+enabled
+enabled
+disabled
+disabled
+active
+active
+active
+inactive
+inactive
+active
+=== cycle analyze ===
+=== ports ===
+LISTEN 0      128        127.0.0.1:3000       0.0.0.0:*    users:(("pasta.avx2",pid=2600,fd=153))
+LISTEN 0      511        127.0.0.1:4170       0.0.0.0:*    users:(("node",pid=9695,fd=22))       
+LISTEN 0      128        127.0.0.1:8791       0.0.0.0:*    users:(("python3",pid=3047,fd=11))    
+LISTEN 0      128        127.0.0.1:8790       0.0.0.0:*    users:(("python3",pid=3047,fd=10))    
+LISTEN 0      2048       127.0.0.1:8765       0.0.0.0:*    users:(("uvicorn",pid=9693,fd=6))     
+LISTEN 0      4096       127.0.0.1:11434      0.0.0.0:*                                          
+=== health ===
+{"status":"ok","server":"local-ai-tools","version":"1.2.0","tools":["generate_image","memory_load","memory_update","pdf_read","pdf_inspect","pdf_create","pdf_edit","pdf_merge","pdf_split","pdf_ocr","pdf_render","pdf_vision_qa"],"localhost_only":true,"pdf":{"binaries":{"qpdf":"/home/mike/.local/bin/qpdf","pdftoppm":"/usr/bin/pdftoppm","pdftotext":"/usr/bin/pdftotext","pdfunite":"/usr/bin/pdfunite","pdfseparate":"/usr/bin/pdfseparate","tesseract":"/home/mike/.local/bin/tesseract","ocrmypdf":"/home/mike/.local/bin/ocrmypdf","soffice":"/usr/bin/soffice"},"python":{"pymupdf":"1.28.2","pikepdf":"10.8.0","reportlab":"4.5.1","ocrmypdf":"16.13.0"},"tessdata_dir":"/home/mike/.local/share/tessdata"}}
+{"status":"ok"}
+{'ok': True, 'ollama': {'running': True, 'version': '0.34.0', 'models': []}, 'qwen': {'service': True, 'ready': True, 'url': 'http://127.0.0.1:4170'}, 'comfyui': {'service': False, 'ready': False, 'url': 'http://127.0.0.1:8188'}, 'chat': {'service': True, 'ready': True, 'url': 'http://127.0.0.1:3000'}, 'gpu': {'name': 'NVIDIA GeForce RTX 5080', 'total_mib': 16303, 'used_mib': 2035, 'free_mib': 13805, 'utilization_percent': 4}, 'memory': {'total_gib': 31.12, 'used_gib': 8.03, 'swap_total_gib': 52.8, 'swap_used_gib': 1.91}, 'storage': {'active': {'path': '/srv/ai', 'total_gib': 920.1, 'used_gib': 768.4, 'free_gib': 149.0}, 'archive': {'path': '/mnt/ai-archive', 'total_gib': 1397.3, 'used_gib': 1083.9, 'free_gib': 313.3}}, 'image_job_running': False, 'boot': {'mode': None, 'phase': 'idle', 'percent': 0, 'title': 'Bereit', 'detail': ''}, 'bindings': ['127.0.0.1:11434', '127.0.0.1:3000', '127.0.0.1:4170', '127.0.0.1:8188', '127.0.0.1:8790', '127.0.0.1:8791']}
+=== override ===
+[Service]
+Environment="OLLAMA_HOST=127.0.0.1:11434"
+Environment="OLLAMA_MODELS=/srv/ai/models/ollama"
+Environment="OLLAMA_FLASH_ATTENTION=1"
+Environment="OLLAMA_KV_CACHE_TYPE=q8_0"
+Environment="OLLAMA_NUM_PARALLEL=1"
+Environment="OLLAMA_MAX_LOADED_MODELS=1"
+Environment="OLLAMA_KEEP_ALIVE=5m"
+7fb44d5fbe5363ca9196bc92a95cb0d23766b4f853c491de19e134efa6d89bf4  /etc/systemd/system/ollama.service.d/override.conf
+=== qwen settings keys ===
+default local-fast
+trust False
+approval default
+compact local-fast 0.95
+skip True
+style Concise
+eager []
+disabled_n 27
+max_tokens None
+local-quality ctx 16384 extra {'think': False, 'enable_thinking': False, 'reasoning_effort': 'none'} base http://127.0.0.1:11434/v1
+local-fast ctx 32768 extra None base http://127.0.0.1:11434/v1
+bench-qwen38-27b-16k ctx 16384 extra {'think': False, 'enable_thinking': False, 'reasoning_effort': 'none'} base http://127.0.0.1:11434/v1

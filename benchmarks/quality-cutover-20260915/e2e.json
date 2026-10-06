@@ -1,0 +1,233 @@
+{
+  "sessionId": "3ba84f0d-7d74-4be3-974b-bd7bc1feaeea",
+  "attached": false,
+  "model_switch": {
+    "_meta": {
+      "qwenModelSwitch": {
+        "authType": "openai",
+        "modelId": "local-quality",
+        "baseUrl": "http://127.0.0.1:11436/v1",
+        "apiKey": "***",
+        "isRuntime": false
+      }
+    }
+  },
+  "mcp_status": {
+    "initialized": true,
+    "servers": [
+      {
+        "name": "local-tools",
+        "status": "ok",
+        "trust": null
+      }
+    ]
+  },
+  "prompt_result": {
+    "promptId": "7fc780b6-5cc5-413f-aadc-3c551cdede47",
+    "lastEventId": 3,
+    "eventEpoch": "efbdcffe-fbbf-4b80-9fbc-ff54d03e691a"
+  },
+  "prompt_error": null,
+  "elapsed_s": 37.309,
+  "votes": [],
+  "permissions": [],
+  "tools": [],
+  "assistant_text": "I'll start by discovering what MCP tools are available that match the names you mentioned, then proceed step by step with your permission at each mutation point.",
+  "sse_error": null,
+  "context": {
+    "v": 1,
+    "sessionId": "3ba84f0d-7d74-4be3-974b-bd7bc1feaeea",
+    "workspaceCwd": "/srv/ai/workspaces",
+    "recovery": {
+      "kind": "clean",
+      "canContinue": false
+    },
+    "state": {
+      "models": {
+        "currentModelId": "local-quality(openai)",
+        "availableModels": [
+          {
+            "modelId": "local-quality(openai)",
+            "name": "Local Quality - Qwen3.8 27B",
+            "description": null,
+            "_meta": {
+              "contextLimit": 8192
+            }
+          },
+          {
+            "modelId": "local-fast(openai)",
+            "name": "Local Fast - Qwen3.5 9B",
+            "description": null,
+            "_meta": {
+              "contextLimit": 32768
+            }
+          }
+        ]
+      },
+      "modes": {
+        "currentModeId": "default",
+        "availableModes": [
+          {
+            "id": "plan",
+            "name": "Plan",
+            "description": "Analyze only, do not modify files or execute commands"
+          },
+          {
+            "id": "default",
+            "name": "Default",
+            "description": "Require approval for file edits or shell commands"
+          },
+          {
+            "id": "auto-edit",
+            "name": "Auto Edit",
+            "description": "Automatically approve file edits"
+          },
+          {
+            "id": "auto",
+            "name": "Auto",
+            "description": "LLM classifier auto-approves safe actions, blocks risky ones"
+          },
+          {
+            "id": "yolo",
+            "name": "YOLO",
+            "description": "Automatically approve all tools"
+          }
+        ]
+      },
+      "configOptions": [
+        {
+          "id": "mode",
+          "name": "Mode",
+          "description": "Session permission mode",
+          "category": "mode",
+          "type": "select",
+          "currentValue": "default",
+          "options": [
+            {
+              "value": "plan",
+              "name": "Plan",
+              "description": "Analyze only, do not modify files or execute commands"
+            },
+            {
+              "value": "default",
+              "name": "Default",
+              "description": "Require approval for file edits or shell commands"
+            },
+            {
+              "value": "auto-edit",
+              "name": "Auto Edit",
+              "description": "Automatically approve file edits"
+            },
+            {
+              "value": "auto",
+              "name": "Auto",
+              "description": "LLM classifier auto-approves safe actions, blocks risky ones"
+            },
+            {
+              "value": "yolo",
+              "name": "YOLO",
+              "description": "Automatically approve all tools"
+            }
+          ]
+        },
+        {
+          "id": "model",
+          "name": "Model",
+          "description": "AI model to use",
+          "category": "model",
+          "type": "select",
+          "currentValue": "local-quality(openai)",
+          "options": [
+            {
+              "value": "local-quality(openai)",
+              "name": "Local Quality - Qwen3.8 27B",
+              "description": ""
+            },
+            {
+              "value": "local-fast(openai)",
+              "name": "Local Fast - Qwen3.5 9B",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "reasoning_effort",
+          "name": "Reasoning effort",
+          "description": "How hard reasoning-capable models should think",
+          "category": "thought_level",
+          "type": "select",
+          "currentValue": "default",
+          "options": [
+            {
+              "value": "none",
+              "name": "Thinking off",
+              "description": "Disable thinking for this session"
+            },
+            {
+              "value": "default",
+              "name": "Default",
+              "description": "Use the model or provider default"
+            },
+            {
+              "value": "low",
+              "name": "Low",
+              "description": "Providers map or clamp the requested tier for the active model"
+            },
+            {
+              "value": "medium",
+              "name": "Medium",
+              "description": "Providers map or clamp the requested tier for the active model"
+            },
+            {
+              "value": "high",
+              "name": "High",
+              "description": "Providers map or clamp the requested tier for the active model"
+            },
+            {
+              "value": "xhigh",
+              "name": "Extra high",
+              "description": "Providers map or clamp the requested tier for the active model"
+            },
+            {
+              "value": "max",
+              "name": "Max",
+              "description": "Providers map or clamp the requested tier for the active model"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "status": {
+    "sessionId": "3ba84f0d-7d74-4be3-974b-bd7bc1feaeea",
+    "workspaceCwd": "/srv/ai/workspaces",
+    "createdAt": "2026-09-15T18:43:00.960Z",
+    "updatedAt": "2026-09-15T18:43:31.315Z",
+    "clientCount": 1,
+    "hasActivePrompt": false,
+    "activeWorkState": "idle",
+    "isWaitingForPermission": false,
+    "isWaitingForUserQuestion": false,
+    "pendingInteractionCount": 0,
+    "hasTurnError": false,
+    "pendingInteractions": [],
+    "health": {
+      "active": false,
+      "wait_perm": false,
+      "pending": 0,
+      "votes": 0,
+      "tools": 0,
+      "thoughts": 334,
+      "n_gen": 0,
+      "gpu_util": 64,
+      "vram": 14271
+    }
+  },
+  "nvidia": {
+    "vram_used_mib": 14270,
+    "vram_total_mib": 16303,
+    "gpu_util": 96
+  },
+  "ollama_ps": "NAME                    ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nlocal-quality:latest    993995e538ad    18 GB    38%/62% CPU/GPU    8192       14 minutes from now    \n",
+  "event_count": 372
+}

@@ -23,6 +23,17 @@ fi
 for required in \
   "$SOURCE/server.py" \
   "$SOURCE/gateway.py" \
+  "$SOURCE/errors.py" \
+  "$SOURCE/paths.py" \
+  "$SOURCE/memory.py" \
+  "$SOURCE/knowledge.py" \
+  "$SOURCE/pdf_tools.py" \
+  "$SOURCE/pdf_vision.py" \
+  "$SOURCE/browser_policy.py" \
+  "$SOURCE/browser_session.py" \
+  "$SOURCE/desktop_policy.py" \
+  "$SOURCE/desktop_session.py" \
+  "$SOURCE/desktop_helper.py" \
   "$SOURCE/systemd/$UNIT" \
   "$SOURCE/config/qwen-mcp.json" \
   "$REPO_ROOT/scripts/configure-qwen-mcp.py" \
@@ -67,10 +78,18 @@ python3 -m venv "$VERSIONED_VENV"
   --find-links "$WHEEL_DIR" \
   "mcp==2.0.0"
 "$VERSIONED_VENV/bin/python" -m pip check
+"$VERSIONED_VENV/bin/python" -m pip install \
+  --disable-pip-version-check \
+  "playwright==1.55.0"
 
 install -d -m 0755 "$TARGET" "$MCP_CONFIG" "$USER_UNITS"
-install -m 0755 "$SOURCE/server.py" "$TARGET/server.py"
-install -m 0644 "$SOURCE/gateway.py" "$TARGET/gateway.py"
+for pyfile in server.py gateway.py errors.py paths.py memory.py knowledge.py pdf_tools.py pdf_vision.py browser_policy.py browser_session.py desktop_policy.py desktop_session.py desktop_helper.py; do
+  mode=0644
+  if [[ "$pyfile" == "server.py" ]]; then
+    mode=0755
+  fi
+  install -m "$mode" "$SOURCE/$pyfile" "$TARGET/$pyfile"
+done
 install -m 0644 "$SOURCE/requirements.txt" "$TARGET/requirements.txt"
 install -m 0644 "$SOURCE/config/qwen-mcp.json" "$MCP_CONFIG/local-tools-qwen.json"
 install -m 0644 "$SOURCE/systemd/$UNIT" "$USER_UNITS/$UNIT"

@@ -1,0 +1,67 @@
+{
+  "ok": true,
+  "before": {
+    "qwen": "inactive",
+    "comfy": "inactive",
+    "mcp": "active",
+    "wp": "active"
+  },
+  "agent": {
+    "ok": true,
+    "mode": "agent",
+    "message": "Agent bereit. Bilder-KI wurde beendet.",
+    "boot": {
+      "mode": "agent",
+      "phase": "ready",
+      "percent": 58,
+      "title": "Qwen erreichbar",
+      "detail": "Der Dienst antwortet. Als Nächstes kommen die Fensterdateien."
+    }
+  },
+  "after_agent": {
+    "qwen_unit": "active",
+    "comfy_unit": "inactive",
+    "qwen_health": {
+      "status": "ok"
+    },
+    "port_4170": true,
+    "port_8188": false
+  },
+  "images": {
+    "ok": true,
+    "mode": "images",
+    "unloaded_models": [],
+    "message": "Bilder-KI bereit. Ollama-Modelle wurden entladen."
+  },
+  "images_s": 6.535,
+  "after_images": {
+    "qwen_unit": "active",
+    "comfy_unit": "active",
+    "port_8188": "LISTEN 0      128        127.0.0.1:8188       0.0.0.0:*    users:((\"python\",pid=92293,fd=43))",
+    "port_8188_all": "LISTEN 0      128        127.0.0.1:8188       0.0.0.0:*    users:((\"python\",pid=92293,fd=43))"
+  },
+  "cleanup": {
+    "ok": true,
+    "message": "GPU-Verbraucher wurden sauber beendet.",
+    "stopped_services": [
+      "qwen-code-web.service",
+      "comfyui.service"
+    ],
+    "unloaded_models": [],
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 5080",
+      "total_mib": 16303,
+      "used_mib": 1045,
+      "free_mib": 14795,
+      "utilization_percent": 0
+    }
+  },
+  "after_cleanup": {
+    "qwen_unit": "inactive",
+    "comfy_unit": "inactive",
+    "mcp": "active",
+    "wp": "active",
+    "port_4170": "",
+    "port_8188": ""
+  }
+}

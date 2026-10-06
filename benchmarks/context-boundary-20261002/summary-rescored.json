@@ -1,0 +1,33 @@
+{
+  "updated": "2026-10-02T17:52:02+0200",
+  "note": "pass_rescored accepts png filename variants when full tool chain completed once.",
+  "by_suite_ctx": [
+    {
+      "suite": "tool_chain",
+      "num_ctx": 32768,
+      "n": 5,
+      "pass_strict": 4,
+      "pass_rescored": 4,
+      "drift": 1,
+      "chain_complete": 4
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 40960,
+      "n": 6,
+      "pass_strict": 0,
+      "pass_rescored": 0,
+      "drift": 6,
+      "chain_complete": 0
+    },
+    {
+      "suite": "tool_chain",
+      "num_ctx": 49152,
+      "n": 5,
+      "pass_strict": 3,
+      "pass_rescored": 5,
+      "drift": 0,
+      "chain_complete": 5
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "label": "browser",
+  "sessionId": "8cfb0feb-760f-41df-9bb0-df65ba380ffe",
+  "elapsed_s": 31.953,
+  "tools": [
+    {
+      "id": "call_yklvbn0g",
+      "name": "ToolSearch: browser_open",
+      "status": "completed",
+      "input": {
+        "query": "browser_open",
+        "max_results": 5
+      }
+    },
+    {
+      "id": "call_4mc12tcr",
+      "name": "ToolCall",
+      "status": "completed",
+      "input": null
+    }
+  ],
+  "completed_names": [
+    "ToolSearch: browser_open",
+    "ToolCall"
+  ],
+  "votes": [
+    {
+      "requestId": "cbd69fc9-43f2-45ab-86a4-257468c43277",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "proceed_once": true,
+  "yolo": false
+}

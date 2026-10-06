@@ -1,0 +1,42 @@
+{
+  "pass": true,
+  "used_pdf_edit": true,
+  "used_reviewer": false,
+  "used_moe": true,
+  "yolo": false,
+  "edited_ok": true,
+  "content_ok": true,
+  "source_intact": true,
+  "tools": [
+    "pdf_edit (local-tools MCP Server): {\"mode\":\"replace\",\"output\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_moe_review.pdf\",\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\",\"replacements\":\"Project Status: Draft=>Project Status: Final;Amount: 1250 EUR=>Amount: 1490 EUR;Pending=>Done   \"} pdf_edit (local-tools MCP Server): {\"mode\":\"replace\",\"output\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_moe_review.pdf\",\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/input/agent_e2e_source.pdf\",\"replacements\":\"Project Status: Draft=>Project Status: Final;Amount: 1250 EUR=>Amount: 1490 EUR;Pending=>Done   \"} completed",
+    "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_moe_review.pdf\"} pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_moe_review.pdf\"} completed",
+    "ToolCall ToolCall failed",
+    "ToolCall ToolCall failed",
+    "ToolSearch: select:supervisor-team ToolSearch: select:supervisor-team completed",
+    "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_moe_review.pdf\"} pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/benchmarks/pdf_agent_e2e_2026-09-28/output/agent_e2e_moe_review.pdf\"} completed"
+  ],
+  "votes": [
+    {
+      "requestId": "9288257e-29ec-44d4-9471-907d7e46b176",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "dacd8857-93f2-4dd2-9ed2-468215cdd7fc",
+      "optionId": "proceed_once",
+      "ok": true
+    },
+    {
+      "requestId": "d726d482-fe61-43d9-8c39-14dbcab3c17b",
+      "optionId": "proceed_once",
+      "ok": true
+    }
+  ],
+  "texts_tail": "Ich f\u00fchre die PDF-Editierung durch und lese dann das Ergebnis:Ich rufe den reviewer-agent auf f\u00fcr die PDF-Review:",
+  "moe_direct": {
+    "ok": true,
+    "answer_head": "Review whether PDF requirements were met: Draft->Final, 1250->1490, Pending->Done. Do not edit files.\n\nCONTEXT:\nPDF Agent End-to-End Test\nCustomer: Example GmbH\nThis controlled fixture is used to verify the Qwen local-fast agent path through MCP pdf_* tools.\nLayout must stay largely intact for small in-place edits. Do not treat this as production content.\nProject Status: Final\nAmount: 1490 EUR\n\nTa",
+    "leftover": []
+  },
+  "note": "MoE second opinion only; pdf_* owns file ops. Fallback direct moe_consult if agent skipped MoE."
+}

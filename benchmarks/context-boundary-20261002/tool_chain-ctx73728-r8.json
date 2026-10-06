@@ -1,0 +1,111 @@
+{
+  "ts": "2026-10-03T05:22:47+0200",
+  "suite": "tool_chain",
+  "num_ctx": 73728,
+  "model": "bench-qwen38-27b-72k",
+  "run_id": 8,
+  "sessionId": "91b2cd4f-ec72-49bb-8d1e-e96c90211a0e",
+  "elapsed_s": 233.307,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 1,
+    "pdf_read": 1,
+    "pdf_render": 1,
+    "pdf_vision_qa": 1
+  },
+  "tools": [
+    {
+      "id": "call_97l6otse",
+      "name": "ToolSearch: select:mcp__local-tools__memory_load,mcp__local-tools__pdf_create",
+      "status": "completed"
+    },
+    {
+      "id": "call_uyq3mppo",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_dwev2fac",
+      "name": "pdf_create (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r8-051851.pdf\",\"text\":\"Boundary probe ctx=73728 run=8.\",\"title\":\"BOUND 73728 R8\",\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_8nyntrvs",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_read",
+      "status": "completed"
+    },
+    {
+      "id": "call_6gdwwwg2",
+      "name": "pdf_read (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r8-051851.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_hf2ynjl9",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_render",
+      "status": "completed"
+    },
+    {
+      "id": "call_gfu6ut4m",
+      "name": "pdf_render (local-tools MCP Server): {\"output\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r8-051851.png\",\"page\":1,\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r8-051851.pdf\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_5j31gqd2",
+      "name": "ToolSearch: select:mcp__local-tools__pdf_vision_qa",
+      "status": "completed"
+    },
+    {
+      "id": "call_nw6cln7f",
+      "name": "pdf_vision_qa (local-tools MCP Server): {\"path\":\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r8-051851.pdf\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": true,
+    "png": true,
+    "png_exact": true,
+    "png_alt": [
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r8-051851.qa-p1.png",
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r8-051851.png",
+      "/home/mike/Projects/Linux Lokales KI/.agent/tmp/bound-tool_chain-73728-r8-051851.vision-p1.png"
+    ]
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1340,
+      "vram_total_mib": 16303,
+      "gpu_util": 1
+    },
+    "mem": {
+      "mem_available_mib": 26233,
+      "swap_used_mib": 6329
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14208,
+      "vram_total_mib": 16303,
+      "gpu_util": 60
+    },
+    "mem": {
+      "mem_available_mib": 22256,
+      "swap_used_mib": 6271
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-72k:latest    41c3bb97d1e6    19 GB    49%/51% CPU/GPU    73728      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

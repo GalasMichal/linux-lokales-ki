@@ -1,0 +1,141 @@
+{
+  "ts": "2026-10-03T10:32:52+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 2,
+  "sessionId": "6502b094-19f5-4b0e-b267-a0d59e7ae306",
+  "elapsed_s": 357.381,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_gyhcddgs",
+      "name": "ToolSearch: select:read_file,write_file,edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_wpgnb2jf",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_k9omqrvz",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_a6ph24mw",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_c07b2bc8",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_bvfxj5tj",
+      "name": "ToolCall",
+      "status": "failed"
+    },
+    {
+      "id": "call_9jvq06cs",
+      "name": "ToolSearch: run shell command execute",
+      "status": "completed"
+    },
+    {
+      "id": "call_tjwml1dz",
+      "name": "ToolSearch: shell bash command terminal execute run python",
+      "status": "completed"
+    },
+    {
+      "id": "call_zqcmp11w",
+      "name": "ToolSearch",
+      "status": "failed"
+    },
+    {
+      "id": "call_tnv9t27g",
+      "name": "ToolSearch: +shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_o5sm29ph",
+      "name": "ToolSearch: execute bash terminal process command run task execute_script",
+      "status": "completed"
+    },
+    {
+      "id": "call_chb33lqh",
+      "name": "ToolSearch: run_command execute bash shell subprocess terminal cmd",
+      "status": "completed"
+    },
+    {
+      "id": "call_nwjlgqhr",
+      "name": "ToolSearch: +run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_a998rgot",
+      "name": "ToolSearch: mcp bash tool command line terminal zsh sh execute process spawn output read result",
+      "status": "completed"
+    },
+    {
+      "id": "call_6ghbaw2j",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_ta5wb7ui",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_0a670ypk",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    }
+  ],
+  "votes": 2,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1476,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 25780,
+      "swap_used_mib": 6614
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14201,
+      "vram_total_mib": 16303,
+      "gpu_util": 23
+    },
+    "mem": {
+      "mem_available_mib": 15163,
+      "swap_used_mib": 6906
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    19 GB    51%/49% CPU/GPU    81920      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

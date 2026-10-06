@@ -1,0 +1,16 @@
+### Bug Analysis
+
+1.  **Off-by-one Error in Loop Bound**: The first loop uses `i <= a.length`. This causes an "undefined" element to be accessed on the last iteration (`a[a.length]`), which gets pushed into the output array.
+2.  **Incorrect Filter Logic**: The function ends with `.filter(Boolean)`. In JavaScript, an empty string `""` is falsy. Since the requirement explicitly states "empty strings discarded," this logic accidentally removes valid empty strings from the result (though the first bug usually introduces `undefined` which is also removed).
+3.  **Inefficient Lookup**: Using `indexOf` inside the second loop makes the complexity $O(N \cdot M)$. While not strictly a "bug" in functionality, it's poor practice; however, the logic errors above are the primary issues.
+
+### Corrected Function
+
+```typescript
+export function mergeUniqueIds(a: string[], b: string[]): string[] {
+  const out = [];
+  
+  // Fix 1: Use < instead of <= to avoid accessing undefined
+  for (let i = 0; i < a.length; i++) {
+    const val = a[i];
+    // Only push if not

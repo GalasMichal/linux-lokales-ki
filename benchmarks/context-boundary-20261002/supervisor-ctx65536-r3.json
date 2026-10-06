@@ -1,0 +1,73 @@
+{
+  "ts": "2026-10-02T22:16:26+0200",
+  "suite": "supervisor",
+  "num_ctx": 65536,
+  "model": "bench-qwen38-27b-64k",
+  "run_id": 3,
+  "sessionId": "24fa3324-9d95-49da-9d4a-e12cfe0ea689",
+  "elapsed_s": 99.747,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {
+    "agent": 1
+  },
+  "tools": [
+    {
+      "id": "call_1qrjj75b",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_vxe7s1ma",
+      "name": "Agent: Ask researcher about Compact State Ledger",
+      "status": "completed"
+    },
+    {
+      "id": "call_utmjtajo",
+      "name": "knowledge_search (local-tools MCP Server): {\"workspace\":\"/srv/ai/workspaces\",\"query\":\"Compact State Ledger use purpose\",\"types\":\"project,reference,decision\",\"max_results\":5}",
+      "status": "completed"
+    },
+    {
+      "id": "call_kphcau9y",
+      "name": "knowledge_search (local-tools MCP Server): {\"max_results\":5,\"query\":\"Compact State Ledger use purpose\",\"types\":\"\",\"workspace\":\"/srv/ai/workspaces\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 3,
+  "artifacts": {},
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1304,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 26160,
+      "swap_used_mib": 4753
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14352,
+      "vram_total_mib": 16303,
+      "gpu_util": 66
+    },
+    "mem": {
+      "mem_available_mib": 22760,
+      "swap_used_mib": 4738
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-64k:latest    bb8caefbec9e    19 GB    46%/54% CPU/GPU    65536      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

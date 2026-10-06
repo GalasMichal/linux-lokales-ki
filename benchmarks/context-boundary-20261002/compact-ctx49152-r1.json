@@ -1,0 +1,78 @@
+{
+  "ts": "2026-10-02T19:20:47+0200",
+  "suite": "compact",
+  "num_ctx": 49152,
+  "model": "bench-qwen38-27b-48k",
+  "run_id": 1,
+  "sessionId": "b557a543-a515-422f-be2f-7735c91bc66e",
+  "elapsed_s": 136.046,
+  "pass": false,
+  "drift": true,
+  "state_class": "B_agent_unstable",
+  "categories": [
+    "agent_drift",
+    "compact_issue",
+    "tool_runtime"
+  ],
+  "fail_reasons": [
+    "missing:['pdf_create', 'pdf_read']",
+    "compact_mentioned_with_incomplete_chain",
+    "artifact_missing:pdf"
+  ],
+  "completed_counts": {
+    "memory_load": 1,
+    "pdf_create": 0,
+    "pdf_read": 0
+  },
+  "tools": [
+    {
+      "id": "call_de29b8lj",
+      "name": "ToolSearch: select:memory_load",
+      "status": "completed"
+    },
+    {
+      "id": "call_apcytoiq",
+      "name": "memory_load (local-tools MCP Server): {\"workspace\":\"/home/mike/Projects/Linux Lokales KI\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_jfvx1qnp",
+      "name": "ToolSearch: select:pdf_create",
+      "status": "completed"
+    }
+  ],
+  "votes": 1,
+  "artifacts": {
+    "pdf": false
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 1563,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 24882,
+      "swap_used_mib": 5272
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 14422,
+      "vram_total_mib": 16303,
+      "gpu_util": 60
+    },
+    "mem": {
+      "mem_available_mib": 21867,
+      "swap_used_mib": 5644
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-48k:latest    cf92cdcda723    19 GB    44%/56% CPU/GPU    49152      4 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

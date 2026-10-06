@@ -1,0 +1,1227 @@
+{
+  "role": "CANDIDATE-CODING",
+  "ctx": 8192,
+  "tasks": {
+    "1_memory": {
+      "task": "1_memory",
+      "elapsed_s": 80.1,
+      "rounds": [
+        {
+          "metrics": {
+            "prompt_tokens": 900,
+            "output_tokens": 38,
+            "tok_s": 23.4,
+            "ttft_ms": 5157.9,
+            "wall_s": 56.579,
+            "nvidia": {
+              "vram_mib": 14386,
+              "vram_total_mib": 16303,
+              "gpu_util": 18
+            }
+          },
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_vcxoaplv",
+              "function": {
+                "index": 0,
+                "name": "memory_load",
+                "arguments": {
+                  "files": "STATE.md,REQUIREMENTS.md,DECISIONS.md"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 2603,
+            "output_tokens": 400,
+            "tok_s": 19.47,
+            "ttft_ms": 2795.3,
+            "wall_s": 23.386,
+            "nvidia": {
+              "vram_mib": 14446,
+              "vram_total_mib": 16303,
+              "gpu_util": 4
+            }
+          },
+          "content": "**Current Requirements (5 bullets):**\n\n*   **Local-only stack:** Bind to `127.0.0.1` only; no cloud fallback, no new model pulls, `trust: false`, no `--yolo`.\n*   **Persistent memory:** `.agent/` is the source of truth; load STATE/TASKS/DECISIONS before tasks, update after; never dump history into prompts.\n*   **PDF workflow:** Fully local read/create/edit/render; after creation/large edits, verify page count, extract text, render a page, and return structured QA.\n*   **Large PDF edits:** Must recreate via intermediate text/LibreOffice file; no blind in-place reflow.\n*   **Vision readiness:** Rendered PNG pages may be inspected by vision models later, but no extra model installs in this phase.\n\n**Existing Decisions (from DECISIONS.md):**\n\n1.  **Persistent memory is `.agent/`, not Qwen auto-memory** – `enableManagedAutoMemory` stays false; `.agent/` markdown is loaded/updated via tools; DECISIONS.md is append-only.\n2.  **PDF tools extend existing local-tools MCP** – No second MCP server; tools registered on `apps/local-tools`; path access limited to specific directories.\n3.  **Large PDF text edits recreate the document** – In-place replace only for small changes; large rewrites go through text → new PDF or LibreOffice headless.\n4.  **PDF Python libs via user site, CLIs via extracted Fedora RPMs** – `pip install --user` for PyMuPDF/pikepdf/reportlab/ocrmypdf; tesseract/qpdf from RPMs into `~/.local/bin`.\n5.  **Live MCP keeps trust:false; non-interactive agent cannot confirm MCP",
+          "tool_calls": [],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "memory_load",
+          "args": {
+            "files": "STATE.md,REQUIREMENTS.md,DECISIONS.md"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "workspace": "/srv/ai/workspaces/fable-bench-20260915",
+            "agent_dir": "/srv/ai/workspaces/fable-bench-20260915/.agent",
+            "bootstrapped": [],
+            "files": {
+              "STATE.md": {
+                "content": "# State\n\nDone: created .agent/tmp/bench-report.pdf (1 page, text verified), rendered .agent/tmp/bench-report.png. QA passed; no fix needed.\n",
+                "chars": 140,
+                "truncated": false,
+                "mtime": "2026-09-15T17:31:52.359105+00:00"
+              },
+              "REQUIREMENTS.md": {
+                "content": "# Requirements\n\n- Local-only stack. No cloud fallback. Bind `127.0.0.1` only.\n- `trust: false`, no `--yolo`, no new model pulls in this phase.\n- Persistent project memory lives in `.agent/`. Chat history is not the source of truth.\n- Before a relevant agent task: load STATE, TASKS, DECISIONS, REQUIREMENTS, TOOLS.\n- After a finished task: update STATE and TASKS; append DECISIONS when a choice was made.\n- Do not dump `.agent/history/` into the model prompt. History is an audit trail.\n- PDF/document work is fully local: read, inspect, create, edit, merge, split, OCR, render.\n- After PDF create or a large edit: reopen, check page count, extract text, render at least one page, return structured QA.\n- Large text changes on existing PDFs must recreate via an intermediate text/LibreOffice file. No blind PDF reflow.\n- Vision models may later inspect rendered PNG pages. Do not install extra models in this phase.\n",
+                "chars": 916,
+                "truncated": false,
+                "mtime": "2026-09-15T16:01:17.735463+00:00"
+              },
+              "DECISIONS.md": {
+                "content": "# Decisions\n\nAppend-only. To change a decision, add a new dated entry that supersedes the old one.\n\n## 2026-09-15 — Persistent memory is `.agent/`, not Qwen auto-memory\n\nQwen `enableManagedAutoMemory` stays false. Managed files under `~/.qwen/projects/` are not the project source of truth. Compact markdown under `.agent/` is loaded via `memory_load` / `read_file` and updated via `memory_update`. DECISIONS.md is append-only; replacements snapshot the previous file into `.agent/history/`.\n\n## 2026-09-15 — PDF tools extend existing local-tools MCP\n\nNo second MCP server. Tools are registered on `apps/local-tools` next to `generate_image`. Path access is limited to `/home/mike/Projects`, `/srv/ai/workspaces`, `/mnt/ai-archive`, and temp dirs.\n\n## 2026-09-15 — Large PDF text edits recreate the document\n\nIn-place replace is only for small search/replace. Large rewrites go text → new PDF (ReportLab) or text → LibreOffice headless → PDF. Original layout is not reconstructed.\n\n## 2026-09-15 — PDF Python libs via user site, CLIs via extracted Fedora RPMs\n\nsudo was not available. PyMuPDF, pikepdf, reportlab, ocrmypdf installed with `pip install --user`. `tesseract` and `qpdf` binaries extracted from Fedora RPMs into `~/.local/bin` because `libtesseract` and `qpdf-libs` were already on the system. Poppler and LibreOffice were already installed.\n\n## 2026-09-15 — Live MCP keeps trust:false; non-interactive agent cannot confirm MCP\n\nDeployed `local-tools` 1.1.0. `trust: false` and `approvalMode: default` stay. Qwen `-p` correctly selected `memory_load`/`pdf_create` then got permission declined. Live proof is the MCP Python client. Do not set `--yolo` or `trust: true` to force headless MCP.\n\n## 2026-09-15 — MCP PrivateTmp and PYTHONPATH\n\nsystemd `PrivateTmp=true` hides host `/tmp` from the service. PDF outputs go under the workspace (`.agent/tmp/`) or `/srv/ai/workspaces`. `PYTHONPATH` must include user-site and Fedora system site-packages so pikepdf/ocrmypdf import in the MCP venv.\n\n## 2026-09-15 — No Ollama/Qwen runtime bump in this phase\n\nOllama stays 0.32.14: `/usr/local/bin/ollama` is root-owned; sudo password required. Qwen Code stays 0.21.15: ToolSearch/Git-omit patches are version-pinned. Latest stables verified 2026-09-15: Ollama v0.34.0, Qwen Code v0.23.4. Existing models are not replaced before the model benchmark.\n",
+                "chars": 2351,
+                "truncated": false,
+                "mtime": "2026-09-15T16:43:36.108310+00:00"
+              }
+            },
+            "recent_history": [
+              {
+                "name": "20260915-193152-summary.md",
+                "mtime": "2026-09-15T17:31:52.359198+00:00"
+              },
+              {
+                "name": "20260915-193152-STATE.md",
+                "mtime": "2026-09-15T17:31:52.359042+00:00"
+              },
+              {
+                "name": "20260915-184138-summary.md",
+                "mtime": "2026-09-15T16:41:38.681688+00:00"
+              },
+              {
+                "name": "20260915-184138-TASKS.md",
+                "mtime": "2026-09-15T16:41:38.681639+00:00"
+              },
+              {
+                "name": "20260915-184138-STATE.md",
+                "mtime": "2026-09-15T16:41:38.681225+00:00"
+              },
+              {
+                "name": "20260915-1838-pre-deploy-inventory.md",
+                "mtime": "2026-09-15T16:39:05.021064+00:00"
+              }
+            ],
+            "budget": {
+              "max_chars_per_file": 3500,
+              "max_total_chars": 14000,
+              "loaded_chars": 3407
+            },
+            "instruction": "Treat these files as source of truth. Do not rely on chat history. After the task, call memory_update."
+          }
+        }
+      ],
+      "tool_success": 1,
+      "tool_total": 1,
+      "final_text": "**Current Requirements (5 bullets):**\n\n*   **Local-only stack:** Bind to `127.0.0.1` only; no cloud fallback, no new model pulls, `trust: false`, no `--yolo`.\n*   **Persistent memory:** `.agent/` is the source of truth; load STATE/TASKS/DECISIONS before tasks, update after; never dump history into prompts.\n*   **PDF workflow:** Fully local read/create/edit/render; after creation/large edits, verify page count, extract text, render a page, and return structured QA.\n*   **Large PDF edits:** Must recreate via intermediate text/LibreOffice file; no blind in-place reflow.\n*   **Vision readiness:** Rendered PNG pages may be inspected by vision models later, but no extra model installs in this phase.\n\n**Existing Decisions (from DECISIONS.md):**\n\n1.  **Persistent memory is `.agent/`, not Qwen auto-memory** – `enableManagedAutoMemory` stays false; `.agent/` markdown is loaded/updated via tools; DECISIONS.md is append-only.\n2.  **PDF tools extend existing local-tools MCP** – No second MCP server; tools registered on `apps/local-tools`; path access limited to specific directories.\n3.  **Large PDF text edits recreate the document** – In-place replace only for small changes; large rewrites go through text → new PDF or LibreOffice headless.\n4.  **PDF Python libs via user site, CLIs via extracted Fedora RPMs** – `pip install --user` for PyMuPDF/pikepdf/reportlab/ocrmypdf; tesseract/qpdf from RPMs into `~/.local/bin`.\n5.  **Live MCP keeps trust:false; non-interactive agent cannot confirm MCP",
+      "scores": {
+        "tools": 9,
+        "memory": 8,
+        "instruction": 7
+      }
+    },
+    "2_pdf": {
+      "task": "2_pdf",
+      "elapsed_s": 31.35,
+      "rounds": [
+        {
+          "metrics": {
+            "prompt_tokens": 952,
+            "output_tokens": 103,
+            "tok_s": 24.86,
+            "ttft_ms": 1346.0,
+            "wall_s": 5.624,
+            "nvidia": {
+              "vram_mib": 14447,
+              "vram_total_mib": 16303,
+              "gpu_util": 1
+            }
+          },
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_99ybj3ir",
+              "function": {
+                "index": 0,
+                "name": "memory_load",
+                "arguments": {
+                  "files": "REQUIREMENTS.md"
+                }
+              }
+            },
+            {
+              "id": "call_c6s2sdv0",
+              "function": {
+                "index": 1,
+                "name": "pdf_create",
+                "arguments": {
+                  "output": ".agent/tmp/bench-report.pdf",
+                  "title": "Fable bench",
+                  "text": "Local stack: Ollama localhost, MCP local-tools, no YOLO, trust false."
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 1896,
+            "output_tokens": 105,
+            "tok_s": 20.88,
+            "ttft_ms": 1509.7,
+            "wall_s": 6.549,
+            "nvidia": {
+              "vram_mib": 14447,
+              "vram_total_mib": 16303,
+              "gpu_util": 22
+            }
+          },
+          "content": "PDF create failed due to path restriction. I'll use a path within the allowed workspace area. Let me retry with `.agent/bench-report.pdf` instead.",
+          "tool_calls": [
+            {
+              "id": "call_kkrg0e6d",
+              "function": {
+                "index": 0,
+                "name": "pdf_create",
+                "arguments": {
+                  "output": ".agent/bench-report.pdf",
+                  "title": "Fable bench",
+                  "text": "Local stack: Ollama localhost, MCP local-tools, no YOLO, trust false."
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 2044,
+            "output_tokens": 94,
+            "tok_s": 19.13,
+            "ttft_ms": 676.0,
+            "wall_s": 5.599,
+            "nvidia": {
+              "vram_mib": 14449,
+              "vram_total_mib": 16303,
+              "gpu_util": 22
+            }
+          },
+          "content": "Path still outside allowed area. Let me check what paths are permitted by trying a relative path in the workspace root.",
+          "tool_calls": [
+            {
+              "id": "call_ocgkcyrp",
+              "function": {
+                "index": 0,
+                "name": "pdf_create",
+                "arguments": {
+                  "output": "bench-report.pdf",
+                  "title": "Fable bench",
+                  "text": "Local stack: Ollama localhost, MCP local-tools, no YOLO, trust false."
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 2179,
+            "output_tokens": 85,
+            "tok_s": 20.82,
+            "ttft_ms": 644.4,
+            "wall_s": 4.736,
+            "nvidia": {
+              "vram_mib": 14452,
+              "vram_total_mib": 16303,
+              "gpu_util": 1
+            }
+          },
+          "content": "Let me try with a subdirectory that might be allowed.",
+          "tool_calls": [
+            {
+              "id": "call_rnijg9fg",
+              "function": {
+                "index": 0,
+                "name": "pdf_create",
+                "arguments": {
+                  "output": "tmp/bench-report.pdf",
+                  "title": "Fable bench",
+                  "text": "Local stack: Ollama localhost, MCP local-tools, no YOLO, trust false."
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 2306,
+            "output_tokens": 99,
+            "tok_s": 23.32,
+            "ttft_ms": 644.3,
+            "wall_s": 4.9,
+            "nvidia": {
+              "vram_mib": 14448,
+              "vram_total_mib": 16303,
+              "gpu_util": 22
+            }
+          },
+          "content": "Let me try the workspace path directly.",
+          "tool_calls": [
+            {
+              "id": "call_cdqovo56",
+              "function": {
+                "index": 0,
+                "name": "pdf_create",
+                "arguments": {
+                  "output": "/srv/ai/workspaces/fable-bench-20260915/bench-report.pdf",
+                  "title": "Fable bench",
+                  "text": "Local stack: Ollama localhost, MCP local-tools, no YOLO, trust false."
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 2647,
+            "output_tokens": 58,
+            "tok_s": 20.65,
+            "ttft_ms": 797.8,
+            "wall_s": 3.62,
+            "nvidia": {
+              "vram_mib": 14448,
+              "vram_total_mib": 16303,
+              "gpu_util": 14
+            }
+          },
+          "content": "PDF created successfully. Now reading it back:",
+          "tool_calls": [
+            {
+              "id": "call_5k2aq67h",
+              "function": {
+                "index": 0,
+                "name": "pdf_read",
+                "arguments": {
+                  "path": "/srv/ai/workspaces/fable-bench-20260915/bench-report.pdf"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "memory_load",
+          "args": {
+            "files": "REQUIREMENTS.md"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "workspace": "/srv/ai/workspaces/fable-bench-20260915",
+            "agent_dir": "/srv/ai/workspaces/fable-bench-20260915/.agent",
+            "bootstrapped": [],
+            "files": {
+              "REQUIREMENTS.md": {
+                "content": "# Requirements\n\n- Local-only stack. No cloud fallback. Bind `127.0.0.1` only.\n- `trust: false`, no `--yolo`, no new model pulls in this phase.\n- Persistent project memory lives in `.agent/`. Chat history is not the source of truth.\n- Before a relevant agent task: load STATE, TASKS, DECISIONS, REQUIREMENTS, TOOLS.\n- After a finished task: update STATE and TASKS; append DECISIONS when a choice was made.\n- Do not dump `.agent/history/` into the model prompt. History is an audit trail.\n- PDF/document work is fully local: read, inspect, create, edit, merge, split, OCR, render.\n- After PDF create or a large edit: reopen, check page count, extract text, render at least one page, return structured QA.\n- Large text changes on existing PDFs must recreate via an intermediate text/LibreOffice file. No blind PDF reflow.\n- Vision models may later inspect rendered PNG pages. Do not install extra models in this phase.\n",
+                "chars": 916,
+                "truncated": false,
+                "mtime": "2026-09-15T16:01:17.735463+00:00"
+              }
+            },
+            "recent_history": [
+              {
+                "name": "20260915-193152-summary.md",
+                "mtime": "2026-09-15T17:31:52.359198+00:00"
+              },
+              {
+                "name": "20260915-193152-STATE.md",
+                "mtime": "2026-09-15T17:31:52.359042+00:00"
+              },
+              {
+                "name": "20260915-184138-summary.md",
+                "mtime": "2026-09-15T16:41:38.681688+00:00"
+              },
+              {
+                "name": "20260915-184138-TASKS.md",
+                "mtime": "2026-09-15T16:41:38.681639+00:00"
+              },
+              {
+                "name": "20260915-184138-STATE.md",
+                "mtime": "2026-09-15T16:41:38.681225+00:00"
+              },
+              {
+                "name": "20260915-1838-pre-deploy-inventory.md",
+                "mtime": "2026-09-15T16:39:05.021064+00:00"
+              }
+            ],
+            "budget": {
+              "max_chars_per_file": 3500,
+              "max_total_chars": 14000,
+              "loaded_chars": 916
+            },
+            "instruction": "Treat these files as source of truth. Do not rely on chat history. After the task, call memory_update."
+          }
+        },
+        {
+          "name": "pdf_create",
+          "args": {
+            "output": ".agent/tmp/bench-report.pdf",
+            "title": "Fable bench",
+            "text": "Local stack: Ollama localhost, MCP local-tools, no YOLO, trust false."
+          },
+          "ok": false,
+          "result": {
+            "ok": false,
+            "error": "Pfad liegt außerhalb der erlaubten Arbeitsbereiche: /srv/ai/apps/local-tools/.agent/tmp"
+          }
+        },
+        {
+          "name": "pdf_create",
+          "args": {
+            "output": ".agent/bench-report.pdf",
+            "title": "Fable bench",
+            "text": "Local stack: Ollama localhost, MCP local-tools, no YOLO, trust false."
+          },
+          "ok": false,
+          "result": {
+            "ok": false,
+            "error": "Pfad liegt außerhalb der erlaubten Arbeitsbereiche: /srv/ai/apps/local-tools/.agent"
+          }
+        },
+        {
+          "name": "pdf_create",
+          "args": {
+            "output": "bench-report.pdf",
+            "title": "Fable bench",
+            "text": "Local stack: Ollama localhost, MCP local-tools, no YOLO, trust false."
+          },
+          "ok": false,
+          "result": {
+            "ok": false,
+            "error": "Pfad liegt außerhalb der erlaubten Arbeitsbereiche: /srv/ai/apps/local-tools"
+          }
+        },
+        {
+          "name": "pdf_create",
+          "args": {
+            "output": "tmp/bench-report.pdf",
+            "title": "Fable bench",
+            "text": "Local stack: Ollama localhost, MCP local-tools, no YOLO, trust false."
+          },
+          "ok": false,
+          "result": {
+            "ok": false,
+            "error": "Pfad liegt außerhalb der erlaubten Arbeitsbereiche: /srv/ai/apps/local-tools/tmp"
+          }
+        },
+        {
+          "name": "pdf_create",
+          "args": {
+            "output": "/srv/ai/workspaces/fable-bench-20260915/bench-report.pdf",
+            "title": "Fable bench",
+            "text": "Local stack: Ollama localhost, MCP local-tools, no YOLO, trust false."
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "path": "/srv/ai/workspaces/fable-bench-20260915/bench-report.pdf",
+            "backend": "reportlab",
+            "qa": {
+              "ok": true,
+              "path": "/srv/ai/workspaces/fable-bench-20260915/bench-report.pdf",
+              "pages": 1,
+              "text_chars": 82,
+              "text_preview": "Fable bench\nLocal stack: Ollama localhost, MCP local-tools, no YOLO, trust false.\n",
+              "render_path": "/srv/ai/workspaces/fable-bench-20260915/bench-report.qa-p1.png",
+              "errors": [],
+              "warnings": [],
+              "vision": {
+                "ready": true,
+                "page": 1,
+                "image_path": "/srv/ai/workspaces/fable-bench-20260915/bench-report.qa-p1.png",
+                "mime": "image/png",
+                "note": "Kein Vision-Modell aufgerufen. Render liegt bereit."
+              }
+            }
+          }
+        },
+        {
+          "name": "pdf_read",
+          "args": {
+            "path": "/srv/ai/workspaces/fable-bench-20260915/bench-report.pdf"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "path": "/srv/ai/workspaces/fable-bench-20260915/bench-report.pdf",
+            "pages": 1,
+            "read_pages": [
+              1
+            ],
+            "text": "--- page 1 ---\nFable bench\nLocal stack: Ollama localhost, MCP local-tools, no YOLO, trust false.",
+            "chars": 98,
+            "truncated": false,
+            "backend": "pymupdf"
+          }
+        }
+      ],
+      "tool_success": 3,
+      "tool_total": 7,
+      "final_text": "PDF created successfully. Now reading it back:",
+      "scores": {
+        "tools": 5,
+        "pdf": 5,
+        "memory": 8,
+        "instruction": 5
+      }
+    },
+    "3_coding": {
+      "task": "3_coding",
+      "elapsed_s": 34.25,
+      "rounds": [
+        {
+          "metrics": {
+            "prompt_tokens": 946,
+            "output_tokens": 58,
+            "tok_s": 24.7,
+            "ttft_ms": 1265.1,
+            "wall_s": 3.777,
+            "nvidia": {
+              "vram_mib": 14479,
+              "vram_total_mib": 16303,
+              "gpu_util": 7
+            }
+          },
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_okyyfsfe",
+              "function": {
+                "index": 0,
+                "name": "read_file",
+                "arguments": {
+                  "path": "apps/local-tools/errors.py"
+                }
+              }
+            },
+            {
+              "id": "call_ol065uji",
+              "function": {
+                "index": 1,
+                "name": "read_file",
+                "arguments": {
+                  "path": "tests/test_tool_error.py"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 1132,
+            "output_tokens": 285,
+            "tok_s": 23.78,
+            "ttft_ms": 678.6,
+            "wall_s": 12.672,
+            "nvidia": {
+              "vram_mib": 14448,
+              "vram_total_mib": 16303,
+              "gpu_util": 22
+            }
+          },
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_g9kya1wq",
+              "function": {
+                "index": 0,
+                "name": "write_file",
+                "arguments": {
+                  "path": "apps/local-tools/errors.py",
+                  "contents": "\"\"\"Errors that MCP tools may return to the client.\"\"\"\n\n\nclass ToolError(RuntimeError):\n    \"\"\"Expected error that is safe to return to an MCP client.\"\"\"\n\n    def __init__(self, message: str, code: str | None = None):\n        super().__init__(message)\n        self.code = code\n"
+                }
+              }
+            },
+            {
+              "id": "call_ke9mhi87",
+              "function": {
+                "index": 1,
+                "name": "write_file",
+                "arguments": {
+                  "path": "tests/test_tool_error.py",
+                  "contents": "import unittest\nfrom apps.local_tools.errors import ToolError\n\n\nclass TestToolError(unittest.TestCase):\n    def test_default_code_is_none(self):\n        err = ToolError(\"something went wrong\")\n        self.assertIsNone(err.code)\n\n    def test_custom_code_is_kept(self):\n        err = ToolError(\"something went wrong\", code=\"INVALID_INPUT\")\n        self.assertEqual(err.code, \"INVALID_INPUT\")\n\n    def test_str_is_message(self):\n        msg = \"something went wrong\"\n        err = ToolError(msg)\n        self.assertEqual(str(err), msg)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 1499,
+            "output_tokens": 15,
+            "tok_s": 23.11,
+            "ttft_ms": 762.4,
+            "wall_s": 1.421,
+            "nvidia": {
+              "vram_mib": 14479,
+              "vram_total_mib": 16303,
+              "gpu_util": 1
+            }
+          },
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_63l6wdk0",
+              "function": {
+                "index": 0,
+                "name": "run_tests",
+                "arguments": {}
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 1710,
+            "output_tokens": 31,
+            "tok_s": 24.3,
+            "ttft_ms": 720.4,
+            "wall_s": 2.007,
+            "nvidia": {
+              "vram_mib": 14452,
+              "vram_total_mib": 16303,
+              "gpu_util": 17
+            }
+          },
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_rhk6ap9u",
+              "function": {
+                "index": 0,
+                "name": "read_file",
+                "arguments": {
+                  "path": "apps/local-tools/__init__.py"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 1793,
+            "output_tokens": 42,
+            "tok_s": 23.65,
+            "ttft_ms": 617.6,
+            "wall_s": 2.402,
+            "nvidia": {
+              "vram_mib": 14452,
+              "vram_total_mib": 16303,
+              "gpu_util": 20
+            }
+          },
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_t4cx8jov",
+              "function": {
+                "index": 0,
+                "name": "write_file",
+                "arguments": {
+                  "path": "apps/local-tools/__init__.py",
+                  "contents": ""
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 1879,
+            "output_tokens": 17,
+            "tok_s": 25.81,
+            "ttft_ms": 630.6,
+            "wall_s": 1.299,
+            "nvidia": {
+              "vram_mib": 14451,
+              "vram_total_mib": 16303,
+              "gpu_util": 6
+            }
+          },
+          "content": "...",
+          "tool_calls": [
+            {
+              "id": "call_9wxmip0s",
+              "function": {
+                "index": 0,
+                "name": "run_tests",
+                "arguments": {}
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 2092,
+            "output_tokens": 215,
+            "tok_s": 22.24,
+            "ttft_ms": 696.8,
+            "wall_s": 10.376,
+            "nvidia": {
+              "vram_mib": 14452,
+              "vram_total_mib": 16303,
+              "gpu_util": 15
+            }
+          },
+          "content": "...",
+          "tool_calls": [
+            {
+              "id": "call_w11q74dl",
+              "function": {
+                "index": 0,
+                "name": "write_file",
+                "arguments": {
+                  "path": "tests/test_tool_error.py",
+                  "contents": "import sys\nimport os\nimport unittest\n\n# Add project root to path so apps.local_tools resolves\nsys.path.insert(0, os.path.join(os.path.dirname(__file__), \"..\"))\n\nfrom apps.local_tools.errors import ToolError\n\n\nclass TestToolError(unittest.TestCase):\n    def test_default_code_is_none(self):\n        err = ToolError(\"something went wrong\")\n        self.assertIsNone(err.code)\n\n    def test_custom_code_is_kept(self):\n        err = ToolError(\"something went wrong\", code=\"INVALID_INPUT\")\n        self.assertEqual(err.code, \"INVALID_INPUT\")\n\n    def test_str_is_message(self):\n        msg = \"something went wrong\"\n        err = ToolError(msg)\n        self.assertEqual(str(err), msg)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "read_file",
+          "args": {
+            "path": "apps/local-tools/errors.py"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "path": "/home/mike/Projects/Linux Lokales KI/apps/local-tools/errors.py",
+            "text": "\"\"\"Errors that MCP tools may return to the client.\"\"\"\n\n\nclass ToolError(RuntimeError):\n    \"\"\"Expected error that is safe to return to an MCP client.\"\"\"\n"
+          }
+        },
+        {
+          "name": "read_file",
+          "args": {
+            "path": "tests/test_tool_error.py"
+          },
+          "ok": false,
+          "result": {
+            "ok": false,
+            "error": "[Errno 2] No such file or directory: '/home/mike/Projects/Linux Lokales KI/tests/test_tool_error.py'"
+          }
+        },
+        {
+          "name": "write_file",
+          "args": {
+            "path": "apps/local-tools/errors.py",
+            "contents": "\"\"\"Errors that MCP tools may return to the client.\"\"\"\n\n\nclass ToolError(RuntimeError):\n    \"\"\"Expected error that is safe to return to an MCP client.\"\"\"\n\n    def __init__(self, message: str, code: str | None = None):\n        super().__init__(message)\n        self.code = code\n"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "path": "/home/mike/Projects/Linux Lokales KI/apps/local-tools/errors.py",
+            "bytes": 276
+          }
+        },
+        {
+          "name": "write_file",
+          "args": {
+            "path": "tests/test_tool_error.py",
+            "contents": "import unittest\nfrom apps.local_tools.errors import ToolError\n\n\nclass TestToolError(unittest.TestCase):\n    def test_default_code_is_none(self):\n        err = ToolError(\"something went wrong\")\n        self.assertIsNone(err.code)\n\n    def test_custom_code_is_kept(self):\n        err = ToolError(\"something went wrong\", code=\"INVALID_INPUT\")\n        self.assertEqual(err.code, \"INVALID_INPUT\")\n\n    def test_str_is_message(self):\n        msg = \"something went wrong\"\n        err = ToolError(msg)\n        self.assertEqual(str(err), msg)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "path": "/home/mike/Projects/Linux Lokales KI/tests/test_tool_error.py",
+            "bytes": 583
+          }
+        },
+        {
+          "name": "run_tests",
+          "args": {},
+          "ok": false,
+          "result": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "======================================================================\nERROR: test_tool_error (unittest.loader._FailedTest.test_tool_error)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_tool_error\nTraceback (most recent call last):\n  File \"/usr/lib64/python3.14/unittest/loader.py\", line 141, in loadTestsFromName\n    module = __import__(module_name)\n  File \"/home/mike/Projects/Linux Lokales KI/tests/test_tool_error.py\", line 2, in <module>\n    from apps.local_tools.errors import ToolError\nModuleNotFoundError: No module named 'apps.local_tools'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+          }
+        },
+        {
+          "name": "read_file",
+          "args": {
+            "path": "apps/local-tools/__init__.py"
+          },
+          "ok": false,
+          "result": {
+            "ok": false,
+            "error": "[Errno 2] No such file or directory: '/home/mike/Projects/Linux Lokales KI/apps/local-tools/__init__.py'"
+          }
+        },
+        {
+          "name": "write_file",
+          "args": {
+            "path": "apps/local-tools/__init__.py",
+            "contents": ""
+          },
+          "ok": false,
+          "result": {
+            "ok": false,
+            "error": "write_file blocked: /home/mike/Projects/Linux Lokales KI/apps/local-tools/__init__.py"
+          }
+        },
+        {
+          "name": "run_tests",
+          "args": {},
+          "ok": false,
+          "result": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "======================================================================\nERROR: test_tool_error (unittest.loader._FailedTest.test_tool_error)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_tool_error\nTraceback (most recent call last):\n  File \"/usr/lib64/python3.14/unittest/loader.py\", line 141, in loadTestsFromName\n    module = __import__(module_name)\n  File \"/home/mike/Projects/Linux Lokales KI/tests/test_tool_error.py\", line 2, in <module>\n    from apps.local_tools.errors import ToolError\nModuleNotFoundError: No module named 'apps.local_tools'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+          }
+        },
+        {
+          "name": "write_file",
+          "args": {
+            "path": "tests/test_tool_error.py",
+            "contents": "import sys\nimport os\nimport unittest\n\n# Add project root to path so apps.local_tools resolves\nsys.path.insert(0, os.path.join(os.path.dirname(__file__), \"..\"))\n\nfrom apps.local_tools.errors import ToolError\n\n\nclass TestToolError(unittest.TestCase):\n    def test_default_code_is_none(self):\n        err = ToolError(\"something went wrong\")\n        self.assertIsNone(err.code)\n\n    def test_custom_code_is_kept(self):\n        err = ToolError(\"something went wrong\", code=\"INVALID_INPUT\")\n        self.assertEqual(err.code, \"INVALID_INPUT\")\n\n    def test_str_is_message(self):\n        msg = \"something went wrong\"\n        err = ToolError(msg)\n        self.assertEqual(str(err), msg)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "path": "/home/mike/Projects/Linux Lokales KI/tests/test_tool_error.py",
+            "bytes": 728
+          }
+        }
+      ],
+      "tool_success": 4,
+      "tool_total": 9,
+      "final_text": "...",
+      "scores": {
+        "coding": 6,
+        "tools": 8,
+        "instruction": 6
+      }
+    },
+    "4_agent": {
+      "task": "4_agent",
+      "elapsed_s": 58.53,
+      "rounds": [
+        {
+          "metrics": {
+            "prompt_tokens": 960,
+            "output_tokens": 59,
+            "tok_s": 20.66,
+            "ttft_ms": 1253.4,
+            "wall_s": 4.237,
+            "nvidia": {
+              "vram_mib": 14452,
+              "vram_total_mib": 16303,
+              "gpu_util": 22
+            }
+          },
+          "content": "I'll execute this multi-step agent cycle as instructed. Let me start by loading the memory files.",
+          "tool_calls": [
+            {
+              "id": "call_e6dbw25z",
+              "function": {
+                "index": 0,
+                "name": "memory_load",
+                "arguments": {
+                  "files": "STATE.md,REQUIREMENTS.md,DECISIONS.md"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 2684,
+            "output_tokens": 42,
+            "tok_s": 23.03,
+            "ttft_ms": 2595.4,
+            "wall_s": 4.432,
+            "nvidia": {
+              "vram_mib": 14451,
+              "vram_total_mib": 16303,
+              "gpu_util": 1
+            }
+          },
+          "content": "Memory loaded. Now let me read the errors.py file.",
+          "tool_calls": [
+            {
+              "id": "call_hilvukk2",
+              "function": {
+                "index": 0,
+                "name": "read_file",
+                "arguments": {
+                  "path": "apps/local-tools/errors.py"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 2812,
+            "output_tokens": 220,
+            "tok_s": 19.58,
+            "ttft_ms": 650.6,
+            "wall_s": 11.905,
+            "nvidia": {
+              "vram_mib": 14622,
+              "vram_total_mib": 16303,
+              "gpu_util": 25
+            }
+          },
+          "content": "Good. Now I have the current state. Let me plan and execute.\n\n**Plan:** Add a `code` parameter to `ToolError` (similar to HTTP status codes or error codes), write tests in `tests/test_tool_error.py`, run the tests, create a PDF report, read it back, and update memory.\n\nLet me implement the changes:",
+          "tool_calls": [
+            {
+              "id": "call_e967xo8u",
+              "function": {
+                "index": 0,
+                "name": "write_file",
+                "arguments": {
+                  "contents": "\"\"\"Errors that MCP tools may return to the client.\"\"\"\n\n\nclass ToolError(RuntimeError):\n    \"\"\"Expected error that is safe to return to an MCP client.\n\n    Args:\n        message: Human-readable description of the error.\n        code: Optional short machine-readable error code (e.g. 'FILE_NOT_FOUND').\n    \"\"\"\n\n    def __init__(self, message: str, code: str | None = None):\n        super().__init__(message)\n        self.code = code\n",
+                  "path": "apps/local-tools/errors.py"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 3077,
+            "output_tokens": 262,
+            "tok_s": 18.52,
+            "ttft_ms": 807.3,
+            "wall_s": 14.969,
+            "nvidia": {
+              "vram_mib": 14394,
+              "vram_total_mib": 16303,
+              "gpu_util": 24
+            }
+          },
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_37j9ky1b",
+              "function": {
+                "index": 0,
+                "name": "write_file",
+                "arguments": {
+                  "path": "tests/test_tool_error.py",
+                  "contents": "\"\"\"Tests for the ToolError class.\"\"\"\n\nimport unittest\nfrom apps.local_tools.errors import ToolError\n\n\nclass TestToolError(unittest.TestCase):\n    \"\"\"Verify ToolError behavior with and without a code.\"\"\"\n\n    def test_default_code_is_none(self):\n        err = ToolError(\"something went wrong\")\n        self.assertEqual(err.code, None)\n        self.assertEqual(str(err), \"something went wrong\")\n\n    def test_custom_code(self):\n        err = ToolError(\"file missing\", code=\"FILE_NOT_FOUND\")\n        self.assertEqual(err.code, \"FILE_NOT_FOUND\")\n        self.assertEqual(str(err), \"file missing\")\n\n    def test_is_runtime_error(self):\n        with self.assertRaises(RuntimeError):\n            raise ToolError(\"oops\")\n\n    def test_code_preserved_on_catch(self):\n        try:\n            raise ToolError(\"disk full\", code=\"DISK_FULL\")\n        except ToolError as exc:\n            self.assertEqual(exc.code, \"DISK_FULL\")\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 3384,
+            "output_tokens": 15,
+            "tok_s": 20.74,
+            "ttft_ms": 782.9,
+            "wall_s": 1.52,
+            "nvidia": {
+              "vram_mib": 14404,
+              "vram_total_mib": 16303,
+              "gpu_util": 14
+            }
+          },
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_stpj0669",
+              "function": {
+                "index": 0,
+                "name": "run_tests",
+                "arguments": {}
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 3595,
+            "output_tokens": 46,
+            "tok_s": 19.72,
+            "ttft_ms": 715.6,
+            "wall_s": 3.066,
+            "nvidia": {
+              "vram_mib": 14393,
+              "vram_total_mib": 16303,
+              "gpu_util": 23
+            }
+          },
+          "content": "The import path needs adjustment. Let me check the actual package structure.",
+          "tool_calls": [
+            {
+              "id": "call_e7bccwlq",
+              "function": {
+                "index": 0,
+                "name": "read_file",
+                "arguments": {
+                  "path": "apps/local-tools/__init__.py"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 3693,
+            "output_tokens": 338,
+            "tok_s": 21.29,
+            "ttft_ms": 661.2,
+            "wall_s": 16.558,
+            "nvidia": {
+              "vram_mib": 14411,
+              "vram_total_mib": 16303,
+              "gpu_util": 7
+            }
+          },
+          "content": "No `__init__.py`. Let me fix the import in the test to use a relative path approach.",
+          "tool_calls": [
+            {
+              "id": "call_0muggff3",
+              "function": {
+                "index": 0,
+                "name": "write_file",
+                "arguments": {
+                  "contents": "\"\"\"Tests for the ToolError class.\"\"\"\n\nimport sys\nimport os\nimport unittest\n\n# Add the apps/local-tools directory to the path so errors.py can be imported\n_tools_dir = os.path.join(os.path.dirname(__file__), \"..\", \"apps\", \"local-tools\")\nsys.path.insert(0, _tools_dir)\n\nfrom errors import ToolError\n\n\nclass TestToolError(unittest.TestCase):\n    \"\"\"Verify ToolError behavior with and without a code.\"\"\"\n\n    def test_default_code_is_none(self):\n        err = ToolError(\"something went wrong\")\n        self.assertEqual(err.code, None)\n        self.assertEqual(str(err), \"something went wrong\")\n\n    def test_custom_code(self):\n        err = ToolError(\"file missing\", code=\"FILE_NOT_FOUND\")\n        self.assertEqual(err.code, \"FILE_NOT_FOUND\")\n        self.assertEqual(str(err), \"file missing\")\n\n    def test_is_runtime_error(self):\n        with self.assertRaises(RuntimeError):\n            raise ToolError(\"oops\")\n\n    def test_code_preserved_on_catch(self):\n        try:\n            raise ToolError(\"disk full\", code=\"DISK_FULL\")\n        except ToolError as exc:\n            self.assertEqual(exc.code, \"DISK_FULL\")\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+                  "path": "tests/test_tool_error.py"
+                }
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        },
+        {
+          "metrics": {
+            "prompt_tokens": 4077,
+            "output_tokens": 15,
+            "tok_s": 20.71,
+            "ttft_ms": 815.2,
+            "wall_s": 1.558,
+            "nvidia": {
+              "vram_mib": 14411,
+              "vram_total_mib": 16303,
+              "gpu_util": 23
+            }
+          },
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_gfejbb5q",
+              "function": {
+                "index": 0,
+                "name": "run_tests",
+                "arguments": {}
+              }
+            }
+          ],
+          "ps": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "memory_load",
+          "args": {
+            "files": "STATE.md,REQUIREMENTS.md,DECISIONS.md"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "workspace": "/srv/ai/workspaces/fable-bench-20260915",
+            "agent_dir": "/srv/ai/workspaces/fable-bench-20260915/.agent",
+            "bootstrapped": [],
+            "files": {
+              "STATE.md": {
+                "content": "# State\n\nDone: created .agent/tmp/bench-report.pdf (1 page, text verified), rendered .agent/tmp/bench-report.png. QA passed; no fix needed.\n",
+                "chars": 140,
+                "truncated": false,
+                "mtime": "2026-09-15T17:31:52.359105+00:00"
+              },
+              "REQUIREMENTS.md": {
+                "content": "# Requirements\n\n- Local-only stack. No cloud fallback. Bind `127.0.0.1` only.\n- `trust: false`, no `--yolo`, no new model pulls in this phase.\n- Persistent project memory lives in `.agent/`. Chat history is not the source of truth.\n- Before a relevant agent task: load STATE, TASKS, DECISIONS, REQUIREMENTS, TOOLS.\n- After a finished task: update STATE and TASKS; append DECISIONS when a choice was made.\n- Do not dump `.agent/history/` into the model prompt. History is an audit trail.\n- PDF/document work is fully local: read, inspect, create, edit, merge, split, OCR, render.\n- After PDF create or a large edit: reopen, check page count, extract text, render at least one page, return structured QA.\n- Large text changes on existing PDFs must recreate via an intermediate text/LibreOffice file. No blind PDF reflow.\n- Vision models may later inspect rendered PNG pages. Do not install extra models in this phase.\n",
+                "chars": 916,
+                "truncated": false,
+                "mtime": "2026-09-15T16:01:17.735463+00:00"
+              },
+              "DECISIONS.md": {
+                "content": "# Decisions\n\nAppend-only. To change a decision, add a new dated entry that supersedes the old one.\n\n## 2026-09-15 — Persistent memory is `.agent/`, not Qwen auto-memory\n\nQwen `enableManagedAutoMemory` stays false. Managed files under `~/.qwen/projects/` are not the project source of truth. Compact markdown under `.agent/` is loaded via `memory_load` / `read_file` and updated via `memory_update`. DECISIONS.md is append-only; replacements snapshot the previous file into `.agent/history/`.\n\n## 2026-09-15 — PDF tools extend existing local-tools MCP\n\nNo second MCP server. Tools are registered on `apps/local-tools` next to `generate_image`. Path access is limited to `/home/mike/Projects`, `/srv/ai/workspaces`, `/mnt/ai-archive`, and temp dirs.\n\n## 2026-09-15 — Large PDF text edits recreate the document\n\nIn-place replace is only for small search/replace. Large rewrites go text → new PDF (ReportLab) or text → LibreOffice headless → PDF. Original layout is not reconstructed.\n\n## 2026-09-15 — PDF Python libs via user site, CLIs via extracted Fedora RPMs\n\nsudo was not available. PyMuPDF, pikepdf, reportlab, ocrmypdf installed with `pip install --user`. `tesseract` and `qpdf` binaries extracted from Fedora RPMs into `~/.local/bin` because `libtesseract` and `qpdf-libs` were already on the system. Poppler and LibreOffice were already installed.\n\n## 2026-09-15 — Live MCP keeps trust:false; non-interactive agent cannot confirm MCP\n\nDeployed `local-tools` 1.1.0. `trust: false` and `approvalMode: default` stay. Qwen `-p` correctly selected `memory_load`/`pdf_create` then got permission declined. Live proof is the MCP Python client. Do not set `--yolo` or `trust: true` to force headless MCP.\n\n## 2026-09-15 — MCP PrivateTmp and PYTHONPATH\n\nsystemd `PrivateTmp=true` hides host `/tmp` from the service. PDF outputs go under the workspace (`.agent/tmp/`) or `/srv/ai/workspaces`. `PYTHONPATH` must include user-site and Fedora system site-packages so pikepdf/ocrmypdf import in the MCP venv.\n\n## 2026-09-15 — No Ollama/Qwen runtime bump in this phase\n\nOllama stays 0.32.14: `/usr/local/bin/ollama` is root-owned; sudo password required. Qwen Code stays 0.21.15: ToolSearch/Git-omit patches are version-pinned. Latest stables verified 2026-09-15: Ollama v0.34.0, Qwen Code v0.23.4. Existing models are not replaced before the model benchmark.\n",
+                "chars": 2351,
+                "truncated": false,
+                "mtime": "2026-09-15T16:43:36.108310+00:00"
+              }
+            },
+            "recent_history": [
+              {
+                "name": "20260915-193152-summary.md",
+                "mtime": "2026-09-15T17:31:52.359198+00:00"
+              },
+              {
+                "name": "20260915-193152-STATE.md",
+                "mtime": "2026-09-15T17:31:52.359042+00:00"
+              },
+              {
+                "name": "20260915-184138-summary.md",
+                "mtime": "2026-09-15T16:41:38.681688+00:00"
+              },
+              {
+                "name": "20260915-184138-TASKS.md",
+                "mtime": "2026-09-15T16:41:38.681639+00:00"
+              },
+              {
+                "name": "20260915-184138-STATE.md",
+                "mtime": "2026-09-15T16:41:38.681225+00:00"
+              },
+              {
+                "name": "20260915-1838-pre-deploy-inventory.md",
+                "mtime": "2026-09-15T16:39:05.021064+00:00"
+              }
+            ],
+            "budget": {
+              "max_chars_per_file": 3500,
+              "max_total_chars": 14000,
+              "loaded_chars": 3407
+            },
+            "instruction": "Treat these files as source of truth. Do not rely on chat history. After the task, call memory_update."
+          }
+        },
+        {
+          "name": "read_file",
+          "args": {
+            "path": "apps/local-tools/errors.py"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "path": "/home/mike/Projects/Linux Lokales KI/apps/local-tools/errors.py",
+            "text": "\"\"\"Errors that MCP tools may return to the client.\"\"\"\n\n\nclass ToolError(RuntimeError):\n    \"\"\"Expected error that is safe to return to an MCP client.\"\"\"\n"
+          }
+        },
+        {
+          "name": "write_file",
+          "args": {
+            "contents": "\"\"\"Errors that MCP tools may return to the client.\"\"\"\n\n\nclass ToolError(RuntimeError):\n    \"\"\"Expected error that is safe to return to an MCP client.\n\n    Args:\n        message: Human-readable description of the error.\n        code: Optional short machine-readable error code (e.g. 'FILE_NOT_FOUND').\n    \"\"\"\n\n    def __init__(self, message: str, code: str | None = None):\n        super().__init__(message)\n        self.code = code\n",
+            "path": "apps/local-tools/errors.py"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "path": "/home/mike/Projects/Linux Lokales KI/apps/local-tools/errors.py",
+            "bytes": 432
+          }
+        },
+        {
+          "name": "write_file",
+          "args": {
+            "path": "tests/test_tool_error.py",
+            "contents": "\"\"\"Tests for the ToolError class.\"\"\"\n\nimport unittest\nfrom apps.local_tools.errors import ToolError\n\n\nclass TestToolError(unittest.TestCase):\n    \"\"\"Verify ToolError behavior with and without a code.\"\"\"\n\n    def test_default_code_is_none(self):\n        err = ToolError(\"something went wrong\")\n        self.assertEqual(err.code, None)\n        self.assertEqual(str(err), \"something went wrong\")\n\n    def test_custom_code(self):\n        err = ToolError(\"file missing\", code=\"FILE_NOT_FOUND\")\n        self.assertEqual(err.code, \"FILE_NOT_FOUND\")\n        self.assertEqual(str(err), \"file missing\")\n\n    def test_is_runtime_error(self):\n        with self.assertRaises(RuntimeError):\n            raise ToolError(\"oops\")\n\n    def test_code_preserved_on_catch(self):\n        try:\n            raise ToolError(\"disk full\", code=\"DISK_FULL\")\n        except ToolError as exc:\n            self.assertEqual(exc.code, \"DISK_FULL\")\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "path": "/home/mike/Projects/Linux Lokales KI/tests/test_tool_error.py",
+            "bytes": 964
+          }
+        },
+        {
+          "name": "run_tests",
+          "args": {},
+          "ok": false,
+          "result": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "======================================================================\nERROR: test_tool_error (unittest.loader._FailedTest.test_tool_error)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_tool_error\nTraceback (most recent call last):\n  File \"/usr/lib64/python3.14/unittest/loader.py\", line 141, in loadTestsFromName\n    module = __import__(module_name)\n  File \"/home/mike/Projects/Linux Lokales KI/tests/test_tool_error.py\", line 4, in <module>\n    from apps.local_tools.errors import ToolError\nModuleNotFoundError: No module named 'apps.local_tools'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+          }
+        },
+        {
+          "name": "read_file",
+          "args": {
+            "path": "apps/local-tools/__init__.py"
+          },
+          "ok": false,
+          "result": {
+            "ok": false,
+            "error": "[Errno 2] No such file or directory: '/home/mike/Projects/Linux Lokales KI/apps/local-tools/__init__.py'"
+          }
+        },
+        {
+          "name": "write_file",
+          "args": {
+            "contents": "\"\"\"Tests for the ToolError class.\"\"\"\n\nimport sys\nimport os\nimport unittest\n\n# Add the apps/local-tools directory to the path so errors.py can be imported\n_tools_dir = os.path.join(os.path.dirname(__file__), \"..\", \"apps\", \"local-tools\")\nsys.path.insert(0, _tools_dir)\n\nfrom errors import ToolError\n\n\nclass TestToolError(unittest.TestCase):\n    \"\"\"Verify ToolError behavior with and without a code.\"\"\"\n\n    def test_default_code_is_none(self):\n        err = ToolError(\"something went wrong\")\n        self.assertEqual(err.code, None)\n        self.assertEqual(str(err), \"something went wrong\")\n\n    def test_custom_code(self):\n        err = ToolError(\"file missing\", code=\"FILE_NOT_FOUND\")\n        self.assertEqual(err.code, \"FILE_NOT_FOUND\")\n        self.assertEqual(str(err), \"file missing\")\n\n    def test_is_runtime_error(self):\n        with self.assertRaises(RuntimeError):\n            raise ToolError(\"oops\")\n\n    def test_code_preserved_on_catch(self):\n        try:\n            raise ToolError(\"disk full\", code=\"DISK_FULL\")\n        except ToolError as exc:\n            self.assertEqual(exc.code, \"DISK_FULL\")\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+            "path": "tests/test_tool_error.py"
+          },
+          "ok": true,
+          "result": {
+            "ok": true,
+            "path": "/home/mike/Projects/Linux Lokales KI/tests/test_tool_error.py",
+            "bytes": 1161
+          }
+        },
+        {
+          "name": "run_tests",
+          "args": {},
+          "ok": true,
+          "result": {
+            "ok": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+          }
+        }
+      ],
+      "tool_success": 6,
+      "tool_total": 8,
+      "final_text": "",
+      "scores": {
+        "planning": 8,
+        "tools": 4,
+        "coding": 8,
+        "pdf": 3,
+        "memory": 7
+      }
+    }
+  },
+  "ps_end": "NAME                             ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen36-coding-8k:latest    90ae8080c825    18 GB    37%/63% CPU/GPU    8192       4 minutes from now    \n",
+  "nvidia_end": {
+    "vram_mib": 14411,
+    "vram_total_mib": 16303,
+    "gpu_util": 23
+  }
+}

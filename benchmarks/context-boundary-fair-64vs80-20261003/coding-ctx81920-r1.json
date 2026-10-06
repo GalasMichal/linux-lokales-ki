@@ -1,0 +1,171 @@
+{
+  "ts": "2026-10-03T18:40:18+0200",
+  "suite": "coding",
+  "num_ctx": 81920,
+  "model": "bench-qwen38-27b-80k",
+  "run_id": 1,
+  "sessionId": "f8bcfbe4-1379-4179-b020-f4c6f236d04b",
+  "elapsed_s": 905.229,
+  "pass": true,
+  "drift": false,
+  "state_class": "C_stable_candidate",
+  "categories": [
+    "pass"
+  ],
+  "fail_reasons": [],
+  "completed_counts": {},
+  "tools": [
+    {
+      "id": "call_qkxjqskn",
+      "name": "ToolSearch: select:read_file,edit",
+      "status": "completed"
+    },
+    {
+      "id": "call_oyaapn8e",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/README.md",
+      "status": "completed"
+    },
+    {
+      "id": "call_6hwxv29c",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_pw67ktyq",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_2uerofre",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_pyg468lj",
+      "name": "ToolSearch: select:run_shell_command",
+      "status": "completed"
+    },
+    {
+      "id": "call_faxaehhx",
+      "name": "ToolSearch: shell command execute run bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_e2lgvlrw",
+      "name": "ToolSearch: select:Bash,exec,run_command,bash,shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_5hax7bdw",
+      "name": "ToolSearch: execute command terminal process pytest python3",
+      "status": "completed"
+    },
+    {
+      "id": "call_e5n438y6",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/calc.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_e7wq98hp",
+      "name": "Edit: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/ops.py",
+      "status": "completed"
+    },
+    {
+      "id": "call_8dja2lx8",
+      "name": "ToolSearch: mcp local-tools run terminal process command invoke execute script",
+      "status": "completed"
+    },
+    {
+      "id": "call_u8w74vdv",
+      "name": "ToolSearch: select:agent",
+      "status": "completed"
+    },
+    {
+      "id": "call_q4bxbgfa",
+      "name": "Agent: Run pytest on fixture",
+      "status": "in_progress"
+    },
+    {
+      "id": "call_pjscmyer",
+      "name": "ToolSearch: select:Bash",
+      "status": "completed"
+    },
+    {
+      "id": "call_gu4a05bk",
+      "name": "ToolSearch: shell command execute run bash terminal",
+      "status": "completed"
+    },
+    {
+      "id": "call_8lvcpj2u",
+      "name": "ToolSearch: execute python subprocess command terminal shell bash tool",
+      "status": "completed"
+    },
+    {
+      "id": "call_w9yi1us0",
+      "name": "ToolSearch: run command cli run script execute code",
+      "status": "completed"
+    },
+    {
+      "id": "call_k38vjvgr",
+      "name": "ToolSearch: select:Shell",
+      "status": "completed"
+    },
+    {
+      "id": "call_k042v6um",
+      "name": "moe_consult (local-tools MCP Server): {\"role\":\"second_opinion\",\"task\":\"Test harness probe. Please execute this exact command and report full stdout plus the exit code, nothing else: python3 -c \\\"print('ok')\\\"; echo EXIT=$?\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_37mbo4gs",
+      "name": "moe_consult (local-tools MCP Server): {\"role\":\"second_opinion\",\"task\":\"You have local shell access. Run EXACTLY this one command (verbatim, quoted path included) and then stop:\\n\\nRun: python3 -m pytest -q \\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\\\"\\n\\nThen report verbatim:\\nA) The full stdout of that single pytest invocation, character for character (do not summarize or truncate).\\nB) The process exit code.\\n\\nDo nothing else. Do not edit any files. Do not run any other command except possibly `echo $?` to read the exit code of that same command. Reply with just A and B.\"}",
+      "status": "completed"
+    },
+    {
+      "id": "call_57d6qltl",
+      "name": "ReadFile: /home/.../Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py",
+      "status": "failed"
+    },
+    {
+      "id": "call_m6c3eqm4",
+      "name": "moe_consult (local-tools MCP Server): {\"role\":\"second_opinion\",\"context\":\"Cross-checking a prior moe-reported pytest run for the fixture under \\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/\\\". The earlier claimed stdout was: \\\"platform linux -- Python 3.10.12, pytest-8.0.0 ... collected 1 item ... test_calc.py . [100%] ... 1 passed in 0.01s\\\", exit 0. I need to know ground truth so I don't report wrong numbers upstream.\",\"task\":\"You have local shell access. Perform ONLY these two read-only operations (no writes, no edits anywhere):\\n\\n(1) Run EXACTLY this one command, verbatim:\\npython3 -m pytest -q \\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\\\"\\nThen immediately report its exit code N via `echo $?` in the same shell.\\n\\n(2) Read (cat) the single file \\\"/home/mike/Projects/Linux Lokales KI/.agent/tmp/ctx-boundary-coding-fixture/test_calc.py\\\" and include its full content.\\n\\nReport A: full verbatim stdout from step 1, B: exit code N, C: full content of test_calc.py. Nothing else.\"}",
+      "status": "completed"
+    }
+  ],
+  "votes": 6,
+  "artifacts": {
+    "pytest_pass": true,
+    "pytest_out": "..                                                                       [100%]\n2 passed in 0.00s\n",
+    "add_fixed": true,
+    "mul_fixed": true
+  },
+  "before": {
+    "nvidia": {
+      "vram_used_mib": 2696,
+      "vram_total_mib": 16303,
+      "gpu_util": 0
+    },
+    "mem": {
+      "mem_available_mib": 24496,
+      "swap_used_mib": 7519
+    },
+    "ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n"
+  },
+  "after": {
+    "nvidia": {
+      "vram_used_mib": 13854,
+      "vram_total_mib": 16303,
+      "gpu_util": 3
+    },
+    "mem": {
+      "mem_available_mib": 21841,
+      "swap_used_mib": 19543
+    },
+    "ps": "NAME                           ID              SIZE     PROCESSOR          CONTEXT    UNTIL              \nbench-qwen38-27b-80k:latest    959b4a6094a9    20 GB    56%/44% CPU/GPU    81920      2 minutes from now    \n"
+  },
+  "prompt_error": null,
+  "mcp_status": null,
+  "runtime": {
+    "ollama": "ollama version is 0.35.0"
+  },
+  "productive_local_quality_untouched": true
+}

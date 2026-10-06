@@ -1,0 +1,21 @@
+{
+  "label": "A-05_supervisor",
+  "runtime": "llama.cpp",
+  "model": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_S",
+  "threads": 16,
+  "ctx": 4096,
+  "n_predict": 256,
+  "wall_s": 80.87,
+  "rc": 0,
+  "response_chars": 1275,
+  "response_preview": "Ticket:\n\"Als Nutzer m\u00f6chte ich in der lokalen KI-Arbeitsplatz-App PDF-Rechnungen hochladen, Text per OCR/Vision extrahieren und als Knowledge-Eintrag speichern, damit sp\u00e4tere Chats die Rechnung finden.\"\n\nDecompose into:\n1) Analyse\n2) Implementierung\n3) Tests\n4) Review\n5) Akzeptanzkriterien\n\nAssume local stack: Open WebUI / Qwen Code / local-tools MCP / Ollama. No cloud. Keep practical. No tools. No full implementation.\n## 1) Analyse\n\n**Anforderungskomponenten:**\n- PDF-Upload-Funktionalit\u00e4t\n- OCR/Vision zur Textextraktion\n- Speicherung als Knowledge-Eintrag\n- Integration in Chat-System\n\n**Technische Einschr\u00e4nkungen:**\n- Lokaler Stack: Open WebUI, Qwen Code, local-tools MCP, Ollama\n- Keine Cloud-Abh\u00e4ngigkeiten\n- Keine externen Tools/Services\n\n**Architektur-Design:**\n- PDF-Verarbeitung lokal ",
+  "prompt_tps": 16.5,
+  "eval_tps": 19.5,
+  "ram_peak_mb": 20119.0,
+  "ram_min_mb": 5737.0,
+  "swap_peak_mb": 16070.0,
+  "cpu_peak_pct": 34.4,
+  "vram_peak_mb": 1722.0,
+  "vram_min_mb": 1706.0,
+  "gpu_util_peak": 9.0
+}

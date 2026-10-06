@@ -1,0 +1,49 @@
+{
+  "inventory": {
+    "qwen_version": "0.24.2",
+    "agent_enabled": true,
+    "list_agents_enabled": true,
+    "send_message_enabled": true,
+    "shell_disabled": true,
+    "maxSubagentDepth": 1,
+    "agentTeam": false,
+    "alwaysLoadTools": false,
+    "mcp_tools": 32,
+    "trust": false,
+    "approvalMode": "default",
+    "agents_present": [
+      "architect.md",
+      "researcher.md",
+      "reviewer.md"
+    ],
+    "model_grades": {
+      "fast": "local-fast",
+      "quality": "local-quality"
+    }
+  },
+  "tests": {
+    "failure_prevention": true,
+    "architecture_delegation": true,
+    "no_delegation": true,
+    "research_fast": true,
+    "review": true,
+    "permission_isolation": true,
+    "platform_neutral": true
+  },
+  "sessions": {
+    "failure_prevention": "bfc2e5fe-e216-4aa9-a3ee-03d0853dbefc",
+    "architecture": "9f3be373-e192-4423-8895-cbd2ccfb47c4",
+    "no_delegation": "faca2826-6326-40fb-83b9-68cada0ab7e4",
+    "research": "70b6b892-2e54-4c52-a11b-d25b27659e39",
+    "review": "48545458-cda6-4505-b7e0-ab14bd4b0970",
+    "permission": "2521d7ce-8b06-403c-89fa-652ab67bad40",
+    "platforms": "1e60248f-ec13-47cd-a5b6-1917a43aeb79"
+  },
+  "token_samples": {
+    "failure_first": 8835,
+    "architecture_max": 15226,
+    "research_max": 10591
+  },
+  "security_ok": true,
+  "pass": true
+}

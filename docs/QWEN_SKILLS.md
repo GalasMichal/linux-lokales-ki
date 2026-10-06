@@ -1,6 +1,6 @@
 # Qwen-Code-Skills
 
-Stand: 21.08.2026. Gilt für Qwen Code **0.21.13** unter `/srv/ai/apps/qwen-code`.
+Stand: 15.09.2026. Gilt für Qwen Code **0.21.15** unter `/srv/ai/apps/qwen-code`.
 
 Dieses Setup ändert **nicht** QUALITY, Quantisierung oder den systemd-Override. FAST-Context 32K ist der dokumentierte Alias (`config/modelfiles/local-fast.Modelfile`).
 
@@ -20,6 +20,8 @@ Aktivierung: relative Symlinks `.qwen/skills/<name> -> ../../skills/<name>`
 | `openlayers-gis` | OpenLayers / GIS |
 | `roblox-luau` | Roblox Luau |
 | `allinkl-ftps-deploy` | All-Inkl FTPS / Portfolio-Deploy |
+| `agent-memory` | `.agent/` laden/aktualisieren, nicht Chat-History |
+| `document-tools` | lokale PDF-MCP-Tools (`pdf_*`) |
 
 Zusätzlich liefert Qwen Code gebündelte Skills (`/review`, `/loop`, …). Die werden nicht versioniert.
 
@@ -70,7 +72,7 @@ In **diesem Workspace** sind User-Level-Skills abgeschaltet, damit `~/.agents/sk
 
 - `skills.disabledLevels: ["user", "bundled"]` — keine User-Skills aus `~/.agents` und keine gebündelten Qwen-Skills (`new-app`, …) in diesem Workspace. Projekt-Skills inkl. `verify-work` bleiben.
 - `tools.computerUse.enabled: false` — keine `computer_use__*`-Tools in diesem Workspace
-- `tools.visible: ["mcp__local-tools__generate_image"]` — MCP-Bildtool in der ersten Tool-Welle (Qwen 0.21.13: `alwaysLoadTools` ist ein Boolean am MCP-Server, kein Namens-Array)
+- `tools.visible` listet `mcp__local-tools__generate_image`, `memory_load`/`memory_update` und alle `pdf_*` Tools in der ersten Welle (Qwen 0.21.15: `alwaysLoadTools` ist ein Boolean am MCP-Server, kein Namens-Array)
 - `env.QWEN_CODE_LEGACY_MCP_BLOCKING: "1"` — MCP-Discovery vor dem ersten Modellaufruf (sonst bleibt `generate_image` unsichtbar)
 - `memory.enableManagedAutoMemory: false` und `memory.enableManagedAutoDream: false` — kein Auto-Memory-Prompt mit `~/.qwen/projects/<sanitizeCwd>/…` in diesem Workspace. Bestehende Memory-Dateien bleiben auf der Platte; Backup unter `/mnt/ai-archive/backups/qwen-memory/`. Schema-Keys aus Qwen 0.21.15 `SETTINGS_SCHEMA`.
 - `ui.enableFollowupSuggestions: false` — keine `commit`-Placeholder im TUI-Input. Schema-Key in Qwen 0.21.15 `SETTINGS_SCHEMA`.
