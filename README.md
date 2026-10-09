@@ -4,6 +4,8 @@ Lokaler KI-Stack für Coding-Agent, Chat und Bildgenerierung — **ohne Cloud-Pf
 
 Referenzmaschine: Nobara Linux (Fedora), Desktop-PC „Vollstrecker“. Dieses Repo versioniert Apps, Skripte, Workflows, Patches und Doku. Modellgewichte liegen absichtlich **nicht** in Git.
 
+**Cursor / Qwen + mg-games:** Agent-Handoff für kinder-spiele → [`docs/cursor-agent-handoff/README.md`](docs/cursor-agent-handoff/README.md).
+
 ![KI-Arbeitsplatz — Systemstatus](docs/assets/readme/ki-arbeitsplatz-system.png)
 
 ## Was drin ist
@@ -15,6 +17,7 @@ Referenzmaschine: Nobara Linux (Fedora), Desktop-PC „Vollstrecker“. Dieses R
 | **Open WebUI** | allgemeiner Chat (eigene Desktop-App) | `3000` |
 | **ComfyUI** | Bild-Workflows (FLUX.2, Qwen-Image-2.1 Edit) | `8188` |
 | **KI-Arbeitsplatz** | gemeinsame UI: Agent · Bilder · System | `8790` |
+| **KI-TTS (Piper)** | Offline-Sprachsynthese (CPU), z. B. kinder-spiele Narrator | `8792` |
 | **local-tools MCP** | Memory, PDF, Vision-QA, Browser, Desktop, Bilder | `8765` |
 
 Alles bindet nur an `127.0.0.1`. Kein LAN, kein automatischer Cloud-Fallback. GPU wechselt sequenziell: Textmodelle (Ollama) und Bildmodelle (ComfyUI) teilen sich die RTX — nie parallel geladen.
