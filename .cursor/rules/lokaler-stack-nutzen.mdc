@@ -1,0 +1,21 @@
+---
+description: Lokalen KI-Stack nutzen wenn es passt, danach das Ergebnis prüfen
+alwaysApply: true
+---
+
+# Lokalen KI-Stack nutzen und Ergebnis prüfen
+
+Gilt in jedem Cursor-Projekt. Dieselbe Regel steht in den globalen Cursor-Einstellungen.
+
+Wenn eine Aufgabe zum lokalen KI-Stack passt, die Arbeit dorthin geben und nicht im Chat-Modell erledigen. Das spart Tokens. Coding, Reviews und normale Texte bleiben beim Cursor-Agenten.
+
+Sinnvoll dafür: neues Bild, Bildänderung, kurzes Video, Sprache. Nur `127.0.0.1`. Kein Cloud-Bilddienst, kein Online-TTS, kein espeak für Stimmen.
+
+- Bild neu: `POST http://127.0.0.1:8790/api/images/generate` mit `prompt`, `width`, `height`, `seed`. Größen nur 512, 768 oder 1024.
+- Bild ändern: `POST http://127.0.0.1:8790/api/images/edit`
+- Video: `POST http://127.0.0.1:8790/api/videos/generate`
+- Sprache: `POST http://127.0.0.1:8792/api/tts/synthesize` mit `text` und `lang` (`de`, `en`, `pl`, `es`, `fr`, `tr`, höchstens 500 Zeichen).
+
+Flache Formen, die der Code einfärbt, und reine Vektor-UI bleiben Code. Ollama und ComfyUI nicht gleichzeitig laden.
+
+Nachdem der Stack etwas geliefert hat, prüfen, ob das Ziel erreicht ist. Ein Bild, Video oder eine Sprachdatei mit dem Auftrag vergleichen. Erst dann ist die Aufgabe erledigt. Wenn es nicht passt, einmal nachziehen oder sagen, was fehlt. Ein erfolgreicher Aufruf allein reicht nicht.
