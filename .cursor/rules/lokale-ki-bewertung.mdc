@@ -1,0 +1,12 @@
+---
+description: Lokale KI nur in diesem Projekt bewerten, Coding und Alltag zuerst
+alwaysApply: true
+---
+
+# Lokale KI in diesem Projekt
+
+Gilt nur, wenn dieses Repo offen ist. Nicht in andere Projekte übernehmen.
+
+Bei Vorschlägen zuerst Coding (Qwen Code, Agent, Tools, `local-quality` / `local-fast`), danach Alltag (Chat, Erklären, Deutsch, Open WebUI). Daten bleiben auf `127.0.0.1`. CPU-Offload mitdenken. Bild-Stack nicht mit LLM-Tuning vermischen.
+
+Nicht pauschal „geht nicht“ sagen. Eher beobachten oder später messen. Nichts installieren oder ersetzen ohne ausdrückliches „mach“, „test“ oder „update“. Große Downloads brauchen Freigabe. Tests danach nur als kurze Summary, die großen Dateien löschen.
