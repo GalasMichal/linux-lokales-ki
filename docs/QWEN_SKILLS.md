@@ -1,6 +1,6 @@
 # Qwen-Code-Skills
 
-Stand: 15.09.2026. Gilt für Qwen Code **0.21.15** unter `/srv/ai/apps/qwen-code`.
+Stand: 12.10.2026. Qwen Code **0.24.7** unter `/srv/ai/apps/qwen-code`.
 
 Dieses Setup ändert **nicht** QUALITY, Quantisierung oder den systemd-Override. FAST-Context 32K ist der dokumentierte Alias (`config/modelfiles/local-fast.Modelfile`).
 
@@ -13,15 +13,11 @@ Aktivierung: relative Symlinks `.qwen/skills/<name> -> ../../skills/<name>`
 | Skill | Zweck |
 |-------|--------|
 | `local-ai-stack` | lokale FAST/QUALITY-Rollen, localhost, GPU-Regel |
-| `caveman` | knappe Antwortform |
 | `verify-work` | Nachprüfung nach Änderungen |
-| `angular-standalone` | Angular 17+ Standalone/Signals |
-| `angular-i18n` | ngx-translate DE/EN |
-| `openlayers-gis` | OpenLayers / GIS |
-| `roblox-luau` | Roblox Luau |
-| `allinkl-ftps-deploy` | All-Inkl FTPS / Portfolio-Deploy |
 | `agent-memory` | `.agent/` laden/aktualisieren, nicht Chat-History |
 | `document-tools` | lokale PDF-MCP-Tools (`pdf_*`) |
+| `knowledge-base` | Wissenssuche vor Reparaturen |
+| `supervisor-team` | Supervisor und benannte Unteragenten |
 
 Zusätzlich liefert Qwen Code gebündelte Skills (`/review`, `/loop`, …). Die werden nicht versioniert.
 
@@ -77,14 +73,14 @@ In **diesem Workspace** sind User-Level-Skills abgeschaltet, damit `~/.agents/sk
 - `memory.enableManagedAutoMemory: false` und `memory.enableManagedAutoDream: false` — kein Auto-Memory-Prompt mit `~/.qwen/projects/<sanitizeCwd>/…` in diesem Workspace. Bestehende Memory-Dateien bleiben auf der Platte; Backup unter `/mnt/ai-archive/backups/qwen-memory/`. Schema-Keys aus Qwen 0.21.15 `SETTINGS_SCHEMA`.
 - `ui.enableFollowupSuggestions: false` — keine `commit`-Placeholder im TUI-Input. Schema-Key in Qwen 0.21.15 `SETTINGS_SCHEMA`.
 
-`apps/local-tools/config/qwen-mcp.json` setzt `alwaysLoadTools: true` am Server `local-tools`. Das landet bei einem Deploy in der globalen Qwen-Config, ohne `model.name` oder `trust` zu ändern.
+`apps/local-tools/config/qwen-mcp.json` setzt `alwaysLoadTools: false` am Server `local-tools`. Das landet bei einem Deploy in der globalen Qwen-Config, ohne `model.name` oder `trust` zu ändern.
 
 `select:generate_image` und Keyword `image` in ToolSearch brauchen den Patch `docs/QWEN_TOOLSEARCH_MCP_ALIAS.md` (nur Qwen 0.21.15).
 
 ## FAST / QUALITY
 
 - FAST: Ollama `local-fast` / `qwen3.5:9b` Q4_K_M, `num_ctx` 32768, Qwen-Provider `contextWindowSize` 32768. Rebuild: `./scripts/apply-local-fast-context.sh`. Rollback 16K: `./scripts/rollback-local-fast-context.sh`.
-- QUALITY: Ollama `local-quality` / `qwen3.6:27b`, Qwen-Provider `local-quality`, Context 8K (unverändert)
+- QUALITY: Ollama `local-quality` / `qwen3.8:27b` Q4_K_M, Qwen-Provider `contextWindowSize` 65536
 
 Host-Default in `~/.qwen/settings.json`: `model.name` = `local-fast`. QUALITY nur explizit (`qwen -m local-quality`). systemd-Override unverändert. Backup vor FAST-32K: `/mnt/ai-archive/backups/ollama-fast-ctx/`.
 

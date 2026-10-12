@@ -34,7 +34,7 @@ or says 1:1 / Vorlage / nur Daten ändern / Felder leeren:
    rewriting the whole document as HTML/TXT, Shell, or inventing a new design.
 5. Keep tool use tiny: `pdf_inspect` → `pdf_edit` → `pdf_read` → optional `pdf_render` /
    `pdf_vision_qa`. No long vision tours before the first replace.
-6. Prefer model **`local-fast`** (32K) for these edit chains; Quality 16K overflows easily.
+6. Prefer model **`local-fast`** (32K) for these edit chains. QUALITY is 64K and is for architecture, review, and vision.
 
 Blanking a field: replace the exact visible string with spaces of similar length, or a
 placeholder the user named — do not rebuild the page.

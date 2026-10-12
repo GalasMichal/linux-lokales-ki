@@ -8,7 +8,7 @@ Persistent project memory is `.agent/` (STATE, REQUIREMENTS, DECISIONS, TASKS, T
 
 Long-term lessons live in `.agent/knowledge/` via `knowledge_search` / `knowledge_get` / `knowledge_record`. Search before repairs and architecture changes. Do not dump the whole knowledge store into the prompt.
 
-## Supervisor / Multi-Agent (native Qwen 0.24.2)
+## Supervisor / Multi-Agent (native Qwen 0.24.7)
 
 You are the Supervisor (`local-fast`). Named project agents live in `.qwen/agents/`:
 
@@ -39,6 +39,6 @@ For coding tasks: execute the user's current request. Change only the files the 
 
 Coding, tests, and refactors are not image requests. Call `mcp__local-tools__generate_image` only when the user asked to create an image. Call `mcp__local-tools__edit_image` only when the user asked to edit an existing local image.
 
-PDF/document work uses `mcp__local-tools__pdf_*`. For 1:1 layout / Vorlage / styles+tables kept: only `pdf_edit mode=replace` on a copy (same-length replacements preferred). Never `pdf_create`/`recreate` for that case. Prefer `local-fast` (32K) for PDF edit chains; Quality 16K overflows easily. Large text changes that intentionally abandon layout may use recreate/soffice.
+PDF/document work uses `mcp__local-tools__pdf_*`. For 1:1 layout / Vorlage / styles+tables kept: only `pdf_edit mode=replace` on a copy (same-length replacements preferred). Never `pdf_create`/`recreate` for that case. Prefer `local-fast` (32K) for PDF edit chains. QUALITY is 64K and stays for architecture, review, and vision. Large text changes that intentionally abandon layout may use recreate/soffice.
 
 Project skills: `skills/` → `.qwen/skills/` (`scripts/setup-qwen-skills.sh`). User-level skills are off here. See `docs/QWEN_SKILLS.md`.

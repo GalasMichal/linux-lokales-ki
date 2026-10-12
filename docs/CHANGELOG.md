@@ -2,6 +2,12 @@
 
 Host Vollstrecker, 2026-08-18. Phasen in dieser Reihenfolge. Phase 4 (Coding-Suite) übersprungen auf Anweisung.
 
+## Stand 12.10.2026
+
+- Ollama 0.35.1, Qwen Code 0.24.7, Open WebUI 0.11.4, ComfyUI 0.38.0, MCP local-tools 1.8.0, Piper auf Port 8792.
+- `local-fast` 32768, `local-quality` 65536, beide Q4_K_M.
+- Projekt-Skills nur für diesen Stack. Angular, Roblox, All-Inkl, OpenLayers und Caveman bleiben globale Skills und liegen nicht mehr in diesem Repo.
+
 ## Phase 0 — Inventur und Pfade
 
 - Snapshot `/.snapshots/2026-08-18-phase0-vor-ai`

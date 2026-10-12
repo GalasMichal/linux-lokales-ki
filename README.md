@@ -270,9 +270,9 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v \
 | Cursor ↔ lokale Agenten (mg-games) | [`docs/cursor-agent-handoff/README.md`](docs/cursor-agent-handoff/README.md) |
 | Browser-Agent | [`docs/BROWSER_AGENT.md`](docs/BROWSER_AGENT.md) |
 | Desktop-Agent | [`docs/DESKTOP_AGENT.md`](docs/DESKTOP_AGENT.md) |
-| Stack-Audit (Ist-Zustand) | [`docs/STACK_AUDIT_2026-09-28.md`](docs/STACK_AUDIT_2026-09-28.md) |
 | Changelog / Bauphasen | [`docs/CHANGELOG.md`](docs/CHANGELOG.md) |
-| Abnahme A01–A14 | [`docs/ACCEPTANCE_A01_A14.md`](docs/ACCEPTANCE_A01_A14.md) |
+
+Dateien mit einem Datum im Namen sind das Protokoll von diesem Tag. Der aktuelle Stand steht in dieser README.
 
 ## Sicherheit & was nicht in Git liegt
 

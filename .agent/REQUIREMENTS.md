@@ -11,5 +11,5 @@
 - Large text changes on existing PDFs must recreate via an intermediate text/LibreOffice file. No blind PDF reflow.
 - Vision models may later inspect rendered PNG pages. Do not install extra models in this phase.
 - Optional visual layout QA uses existing `local-quality` over Ollama `/api/chat` (`pdf_vision_qa`). No extra vision pull. Technical `qa_pdf` stays mandatory; vision is not run on every tiny test PDF.
-- Productive QUALITY context is 16384. FAST stays 32768 and remains the default model.
-- Image Editing with Qwen-Image-2.1: isolated smoke PASS (int8 DiT + w4a8 encoder + VAE, 512 and 1024). Do not add `edit_image` or workplace editing UI until the next explicit go-ahead. FLUX.2-[klein] T2I stays the productive generator. License is Qwen Research (private local test only).
+- Productive QUALITY context is 65536. FAST stays 32768 and remains the default model.
+- Image edit with Qwen-Image-2.1 and short video via Wan are live on the workplace (`edit_image`, `generate_video`). FLUX.2-[klein] stays the productive text-to-image generator. No new model pulls without an explicit go-ahead.

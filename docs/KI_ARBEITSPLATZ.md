@@ -1,6 +1,6 @@
 # KI-Arbeitsplatz und Lokaler Chat
 
-Stand: 21.09.2026 20:30. Runtime: Ollama 0.34.2, Qwen Code 0.24.2, ComfyUI **0.37.0**. Abnahme: `docs/ACCEPTANCE_A01_A14.md`. SoT: `docs/CHATGPT_HANDOFF.md`. Upgrade: `docs/COMFYUI_0_37_UPGRADE.md`. Image-2.1 Edit: [`docs/QWEN_IMAGE_2_1_EDIT.md`](QWEN_IMAGE_2_1_EDIT.md) (Backend + MCP) und [`docs/QWEN_IMAGE_2_1_EDIT_UI.md`](QWEN_IMAGE_2_1_EDIT_UI.md) (sichtbare Bearbeiten-Ansicht). Lokaler Chat Bilder: [`docs/OPEN_WEBUI_IMAGE_TOOLS.md`](OPEN_WEBUI_IMAGE_TOOLS.md). Browser-Agent: [`docs/BROWSER_AGENT.md`](BROWSER_AGENT.md). Desktop-Agent: [`docs/DESKTOP_AGENT.md`](DESKTOP_AGENT.md).
+Stand: 12.10.2026. Runtime: Ollama 0.35.1, Qwen Code 0.24.7, ComfyUI **0.38.0**, Open WebUI 0.11.4, MCP 1.8.0. Aktueller Überblick: `README.md`. Comfy-Upgrade: `docs/COMFYUI_0_38_UPGRADE.md`. Image-2.1 Edit: [`docs/QWEN_IMAGE_2_1_EDIT.md`](QWEN_IMAGE_2_1_EDIT.md) und [`docs/QWEN_IMAGE_2_1_EDIT_UI.md`](QWEN_IMAGE_2_1_EDIT_UI.md). Lokaler Chat Bilder: [`docs/OPEN_WEBUI_IMAGE_TOOLS.md`](OPEN_WEBUI_IMAGE_TOOLS.md). Browser-Agent: [`docs/BROWSER_AGENT.md`](BROWSER_AGENT.md). Desktop-Agent: [`docs/DESKTOP_AGENT.md`](DESKTOP_AGENT.md). Sprache: Port 8792.
 
 ## Was installiert ist
 
@@ -48,7 +48,7 @@ Die einfache Ansicht verwendet ausschließlich den versionierten Workflow `flux2
 
 Vor einem Bildauftrag werden alle geladenen Ollama-Modelle entladen. Erst danach startet ComfyUI. Es können keine Shell-Befehle oder Dateipfade aus dem Bildtext übernommen werden.
 
-ComfyUI hat keinen Autostart (Unit **disabled**). Live-Version ist **0.37.0** unter `/srv/ai/apps/ComfyUI-0.37.0`; der 0.33.0-Tree bleibt liegen. Beim Schließen des letzten KI-Fensters wartet der Arbeitsplatz auf einen noch laufenden Bildauftrag und dessen Manifest. Erst danach wird ComfyUI gestoppt und die GPU freigegeben.
+ComfyUI hat keinen Autostart (Unit **disabled**). Live-Version ist **0.38.0** unter `/srv/ai/apps/ComfyUI-0.38.0`. Beim Schließen des letzten KI-Fensters wartet der Arbeitsplatz auf einen noch laufenden Bildauftrag und dessen Manifest. Erst danach wird ComfyUI gestoppt und die GPU freigegeben.
 
 Ergebnisse werden nach folgendem Muster gespeichert:
 
@@ -88,7 +88,8 @@ Der Bereich **System** zeigt:
 | ComfyUI | 8188 | 127.0.0.1 | Bild-Workflows |
 | KI-Arbeitsplatz | 8790 | 127.0.0.1 | gemeinsame Oberfläche |
 | Qwen-Einbettungsproxy | 8791 | 127.0.0.1 | feste lokale Qwen-Einbettung |
-| local-tools MCP | 8765 | 127.0.0.1 | Memory, PDF, Vision-QA, T2I, Image-Edit, isolierter Browser |
+| local-tools MCP | 8765 | 127.0.0.1 | Memory, PDF, Vision-QA, Bilder, Video, isolierter Browser |
+| Piper Sprache | 8792 | 127.0.0.1 | lokale Stimme, CPU |
 
 ## Startreihenfolge
 
@@ -119,8 +120,8 @@ Jede Installation legt eine datierte Sicherung unter `/mnt/ai-archive/backups/ki
 - Compact State Ledger 22.09.: **PASS**. Folgeprompt nach Compact **9318**. Bericht: `docs/QWEN_COMPACT_STATE_LEDGER.md`.
 - Lazy Tool Loading bleibt (`alwaysLoadTools: false`). Compact-Prompt-Patch bleibt nicht installiert.
 
-A01–A14 inklusive Reboot-Beweis ist dokumentiert. Die sichtbare Image-Editing-UI ist PASS. Open-WebUI-Bild-Tools sind PASS. Der lokale Browser-Agent ist PASS. Der Desktop-Agent ist PASS. MCP local-tools ist 1.5.0 mit 29 Tools. Bildgrößen bleiben 512, 768 und 1024.
+Die sichtbare Image-Editing-UI ist produktiv. Open-WebUI-Bild-Tools, Browser-Agent und Desktop-Agent sind produktiv. MCP local-tools ist 1.8.0 mit 34 Tools. Bildgrößen bleiben 512, 768 und 1024. Sprache läuft über Port 8792.
 
 ## Knowledge Base v2
 
-Seit 22.09.2026: MCP `local-tools` 1.6.0 mit `knowledge_*` (lazy). SoT: `docs/KNOWLEDGE_BASE_V2.md`.
+MCP `local-tools` hat `knowledge_*` (lazy). Beschreibung: `docs/KNOWLEDGE_BASE_V2.md`.
