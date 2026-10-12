@@ -1,29 +1,12 @@
 ---
-description: Vor jeder Antwort die passenden Anleitungen lesen und alle nötigen Schalter nennen
+description: Projektdoku nur bei Bedarf lesen, globale Regeln nicht wiederholen
 alwaysApply: true
 ---
 
-# Vor der Antwort vollständig prüfen
+# Dieses Projekt
 
-Gilt in jedem Chat zu diesem Repo, für jedes Modell.
+Globale User-Regeln gelten von selbst. Sie hier nicht wiederholen und nicht in andere Projekte kopieren.
 
-## Problem
+`README.md` nur öffnen, wenn die Frage Modelle, Ports, Installation oder den lokalen Stack betrifft. Andere Dateien unter `docs/`, `skills/`, `benchmarks/` und `.agent/` nur öffnen, wenn die Frage genau dieses Thema trifft. Nicht den ganzen Baum lesen.
 
-Die konkrete Frage in einem Satz benennen, inklusive der ganzen Kette. Beispiel: Wake-on-LAN braucht BIOS, Netzwerkkarte im System und Router. BIOS allein reicht nicht.
-
-## Lesen
-
-Vor der Antwort diese Anleitungen lesen, auch wenn die Antwort schon bekannt wirkt:
-
-- `README.md`
-- `QWEN.md`
-- alle Dateien unter `.cursor/rules/`
-- jede `docs/*.md` und `skills/**/SKILL.md`, deren Name oder Überschrift zur Frage passt
-
-`benchmarks/`, `.agent/**/history/` und doppelte Archivkopien nur lesen, wenn die Frage genau diese Messung betrifft. Das sind Protokolle, keine aktuelle Anleitung.
-
-Steht der Schritt in keiner Datei, am laufenden System prüfen. Nicht aus dem Gedächtnis raten.
-
-## Senden
-
-Alle nötigen Schalter und Optionen nennen, nicht nur den kürzesten Weg. Fehlt eine Ebene, vor dem Senden ergänzen oder als ungeprüft markieren. Erst dann antworten.
+Vor dem Senden die Ebenen dieser Frage nennen. Was fehlt, als ungeprüft markieren. Offene Punkte aus dem Chat behalten.
