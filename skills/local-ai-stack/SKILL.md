@@ -15,15 +15,18 @@ This skill is for the Git repo that documents `/srv/ai`. Do not pull new models,
 | Role | Ollama name | Alias | Context in Qwen | Use |
 |------|-------------|-------|-----------------|-----|
 | FAST | `qwen3.5:9b` | `local-fast` | 32K | normal coding, small edits, file analysis |
-| QUALITY | `qwen3.6:27b` | `local-quality` | 8K | architecture, hard bugs, larger refactors |
+| QUALITY | `qwen3.8:27b` | `local-quality` | 64K | architecture, hard bugs, larger refactors |
 
-Do not download models, change quant, change QUALITY context, or load both models at once. FAST context is the documented 32K alias only.
+Both aliases are Q4_K_M. Do not download models, change quant, or load both models at once. FAST context stays 32K. QUALITY on this machine is 64K.
 
 ## Endpoints (localhost only)
 
 - Ollama: `http://127.0.0.1:11434`
 - Qwen Code CLI: `/srv/ai/apps/qwen-code/bin/qwen`
-- Do not bind services to LAN.
+- Images: `POST http://127.0.0.1:8790/api/images/generate` and `/api/images/edit`
+- Video: `POST http://127.0.0.1:8790/api/videos/generate`
+- Speech: `POST http://127.0.0.1:8792/api/tts/synthesize`
+- Do not bind services to LAN. No cloud image service, no online TTS.
 
 ## Agent safety
 

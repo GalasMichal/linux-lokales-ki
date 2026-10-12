@@ -1,0 +1,23 @@
+---
+description: Bilder, Video und Sprache über den lokalen KI-Stack, nicht über Cloud oder Ersatzstimmen
+alwaysApply: true
+---
+
+# Lokaler Stack für Bilder, Video und Audio
+
+Gilt für dieses Repo und für Projekte, die diesen Stack nutzen. Nur `127.0.0.1`. Kein Cloud-Bilddienst, kein Online-TTS, kein espeak als Ersatz.
+
+## Bilder
+
+Illustrationen (Figuren, Tiere, Fahrzeuge, Menü-Icons, Logos, Store-Art, Hintergründe) immer über den Bildgenerator:
+
+- Neu: `POST http://127.0.0.1:8790/api/images/generate` — JSON `prompt`, `width`, `height`, `seed`. Größen nur 512, 768 oder 1024. FLUX.2 klein, ComfyUI `127.0.0.1:8188`.
+- Ändern: `POST http://127.0.0.1:8790/api/images/edit` (Qwen-Image-2.1).
+- Video: `POST http://127.0.0.1:8790/api/videos/generate`.
+- Liegt ein Motiv noch als SVG-Platzhalter und der Bildgenerator kann es, dort neu erzeugen.
+
+Flache Formen, die der Spielcode einfärbt, und reine Vektor-UI (Pfeil) bleiben Code. Ollama und ComfyUI teilen sich die GPU — nicht parallel laden.
+
+## Audio
+
+Sprache über Piper: `POST http://127.0.0.1:8792/api/tts/synthesize` mit JSON `text` und `lang` (`de`, `en`, `pl`, `es`, `fr`, `tr`, höchstens 500 Zeichen). Synth-WAV nur für abstrakte Effekte (Klick, Musik), nicht für Stimmen oder echte Tierlaute.

@@ -33,7 +33,7 @@ Rules:
 
 After a successful tool, immediately call the next required tool. At most one short status sentence between tools. Do not summarize memory files, recap the plan, or write an intermediate report. The full summary comes only after the last step.
 
-Default model: FAST `local-fast` (32K). QUALITY: `local-quality` = Qwen3.8 27B / 16K. Host is Qwen Code **0.24.2** with repo patches under `patches/qwen-code/0.24.2/`. Qwen settings: `context.autoCompactThreshold=0.95`, `compactionModel=local-fast`. Do not set a global `max_tokens` cap. QUALITY compact can still run when the prompt exceeds ~15565 tokens. Rollback QUALITY 16K: `scripts/rollback-local-quality-16k.sh`. MCP user unit is independent of `ki-workplace` (`scripts/apply-mcp-independent-boot.sh`).
+Default model: FAST `local-fast` (32K, Q4_K_M). QUALITY: `local-quality` = Qwen3.8 27B / 64K, Q4_K_M. Host is Qwen Code **0.24.7** with repo patches under `patches/qwen-code/`. Qwen settings: `context.autoCompactThreshold=0.95`, `compactionModel=local-fast`. Do not set a global `max_tokens` cap. MCP user unit is independent of `ki-workplace` (`scripts/apply-mcp-independent-boot.sh`). Speech is local Piper at `POST http://127.0.0.1:8792/api/tts/synthesize`. Images and video stay on `127.0.0.1:8790`.
 
 For coding tasks: execute the user's current request. Change only the files the user named. Do not scaffold new package trees. Read a target file before modifying it. After edits run relevant tests and inspect the diff. Do not invent commit or push work. The `skill` tool is disabled in this workspace; do not try to call `verify-work` via it.
 
