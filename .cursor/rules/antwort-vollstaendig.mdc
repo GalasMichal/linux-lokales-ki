@@ -1,0 +1,29 @@
+---
+description: Vor jeder Antwort die passenden Anleitungen lesen und alle nötigen Schalter nennen
+alwaysApply: true
+---
+
+# Vor der Antwort vollständig prüfen
+
+Gilt in jedem Chat zu diesem Repo, für jedes Modell.
+
+## Problem
+
+Die konkrete Frage in einem Satz benennen, inklusive der ganzen Kette. Beispiel: Wake-on-LAN braucht BIOS, Netzwerkkarte im System und Router. BIOS allein reicht nicht.
+
+## Lesen
+
+Vor der Antwort diese Anleitungen lesen, auch wenn die Antwort schon bekannt wirkt:
+
+- `README.md`
+- `QWEN.md`
+- alle Dateien unter `.cursor/rules/`
+- jede `docs/*.md` und `skills/**/SKILL.md`, deren Name oder Überschrift zur Frage passt
+
+`benchmarks/`, `.agent/**/history/` und doppelte Archivkopien nur lesen, wenn die Frage genau diese Messung betrifft. Das sind Protokolle, keine aktuelle Anleitung.
+
+Steht der Schritt in keiner Datei, am laufenden System prüfen. Nicht aus dem Gedächtnis raten.
+
+## Senden
+
+Alle nötigen Schalter und Optionen nennen, nicht nur den kürzesten Weg. Fehlt eine Ebene, vor dem Senden ergänzen oder als ungeprüft markieren. Erst dann antworten.
