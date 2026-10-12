@@ -1,0 +1,19 @@
+[Unit]
+Description=KI Piper TTS (localhost CPU, kinder-spiele narrator prep)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/ai/apps/ki-tts
+ExecStart=/usr/bin/python3 /srv/ai/apps/ki-tts/server.py
+Restart=on-failure
+RestartSec=2
+Environment=PYTHONUNBUFFERED=1
+Environment=KI_TTS_PORT=8792
+Environment=KI_PIPER_BIN=/srv/ai/apps/piper/piper/piper
+Environment=KI_PIPER_VOICES=/srv/ai/models/piper/voices
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

@@ -19,6 +19,8 @@ Hauptziel: Der lokale Stack soll zu einem möglichst autonomen lokalen KI-Entwic
 
 `local-fast` für Routine und Orchestrierung. `local-quality` für schwere Architektur, Coding und Review. Ein geprüftes weiteres lokales Modell nur als Gegenprüfung. Bildmodelle nur für Assets.
 
+**Gemma 4 Bake-off (deferred, nicht jetzt):** Später kostenlosen Gegenvergleich zu Qwen — z. B. `gemma4:e4b` / `gemma4:12b` (Chat/FAST) und ggf. `gemma4:26b` wenn VRAM reicht. Fairer Smoke: gleiche Tool-/Coding-Kette wie `local-fast` / `local-quality`, kein produktiver Default-Wechsel ohne PASS. Plan-Notiz auch unter `~/.cursor/plans/linux-lokales-ki/`.
+
 ## Jetzt nicht
 
-Kein QUALITY-Cutover über 64K ohne erfüllte Fair-Kriterien + Freigabe. `local-fast` bleibt 32K. Kein YOLO. `trust` bleibt false. `approvalMode` bleibt default. Keine Fähigkeit löschen, nur damit der Prompt kleiner wird. Kein Cloud-Agent. Kein paralleler Writer-Pool auf dem Hauptworkspace.
+Kein QUALITY-Cutover über 64K ohne erfüllte Fair-Kriterien + Freigabe. `local-fast` bleibt 32K. Kein YOLO. `trust` bleibt false. `approvalMode` bleibt default. Keine Fähigkeit löschen, nur damit der Prompt kleiner wird. Kein Cloud-Agent. Kein paralleler Writer-Pool auf dem Hauptworkspace. **Kein Gemma-Pull/Test jetzt.**

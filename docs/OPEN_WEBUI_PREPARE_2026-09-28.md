@@ -48,4 +48,4 @@ Jeder Podman/systemd-Pull von `:main` kann ein anderes Image liefern als der akt
 
 ## Status
 
-**PREPARED ONLY — kein Update durchgeführt.**
+**Cutover 2026-10-08.** Image `ghcr.io/open-webui/open-webui:v0.11.4` (`sha256:332438e079ad23bb11b0ab278b43e7c98b50e8cec14b0840281644e8a289f49f`). API `/api/version` = `0.11.4`. Quadlet-Tag nicht mehr `:main`. Datenbackup `/mnt/ai-archive/backups/open-webui-v0.11.4-20261008-140237`. Altes Image `…:main` (`e97bf9531916`) bleibt lokal bis zur Abnahme. Tool `local_images` und 56 Chats unverändert. Ollama, Qwen Code, ComfyUI nicht angefasst.

@@ -4,7 +4,7 @@ Lokaler KI-Stack für Coding-Agent, Chat und Bildgenerierung — **ohne Cloud-Pf
 
 Referenzmaschine: Nobara Linux (Fedora), Desktop-PC „Vollstrecker“. Dieses Repo versioniert Apps, Skripte, Workflows, Patches und Doku. Modellgewichte liegen absichtlich **nicht** in Git.
 
-**Cursor / Qwen + mg-games:** Agent-Handoff für kinder-spiele → [`docs/cursor-agent-handoff/README.md`](docs/cursor-agent-handoff/README.md).
+Cursor auf diesem Rechner spricht mit demselben Stack über localhost (Bilder, Video, TTS) — ohne Cloud-Bilddienst und ohne Online-Stimme. Projektbeispiel: kinder-spiele / mg-games, Handoff [`docs/cursor-agent-handoff/README.md`](docs/cursor-agent-handoff/README.md).
 
 ![KI-Arbeitsplatz — Systemstatus](docs/assets/readme/ki-arbeitsplatz-system.png)
 
@@ -15,10 +15,10 @@ Referenzmaschine: Nobara Linux (Fedora), Desktop-PC „Vollstrecker“. Dieses R
 | **Ollama** | LLM-Runtime (`local-fast` / `local-quality`) | `11434` |
 | **Qwen Code** | Coding-Agent (Dateien, Git, Builds, MCP-Tools) | `4170` |
 | **Open WebUI** | allgemeiner Chat (eigene Desktop-App) | `3000` |
-| **ComfyUI** | Bild-Workflows (FLUX.2, Qwen-Image-2.1 Edit) | `8188` |
-| **KI-Arbeitsplatz** | gemeinsame UI: Agent · Bilder · System | `8790` |
-| **KI-TTS (Piper)** | Offline-Sprachsynthese (CPU), z. B. kinder-spiele Narrator | `8792` |
-| **local-tools MCP** | Memory, PDF, Vision-QA, Browser, Desktop, Bilder | `8765` |
+| **ComfyUI** | Bild- und Video-Workflows (FLUX.2, Qwen-Image-2.1, Wan) | `8188` |
+| **KI-Arbeitsplatz** | gemeinsame UI plus HTTP-API für Bilder, Bearbeitung, Video | `8790` |
+| **KI-TTS (Piper)** | Offline-Sprache auf der CPU (DE/EN/PL/ES/FR/TR) | `8792` |
+| **local-tools MCP** | Agent-Werkzeuge: Memory, Wissen, PDF, Browser, Desktop, Bilder, Video, MoE | `8765` |
 
 Alles bindet nur an `127.0.0.1`. Kein LAN, kein automatischer Cloud-Fallback. GPU wechselt sequenziell: Textmodelle (Ollama) und Bildmodelle (ComfyUI) teilen sich die RTX — nie parallel geladen.
 
@@ -41,21 +41,23 @@ Stand der Doku-Maschine (kann abweichen, wenn du upgradest):
 
 - Ollama **0.35.1**
 - Qwen Code **0.24.7** (mit lokalen Patches: ToolSearch-MCP-Alias, Compact State Ledger, …)
-- Open WebUI **0.11.0** (Podman, `:main`)
+- Open WebUI **0.11.4** (Podman, festes Image-Tag, nicht mehr `:main`)
 - ComfyUI **0.38.0**
+- Piper TTS (CPU) hinter `ki-tts` auf Port **8792**
 - MCP `local-tools` **1.8.0** / 34 Tools
 
 ### Modelle (Ollama)
 
 | Alias | Basis | Kontext | Einsatz |
 |---|---|---:|---|
-| `local-fast` | Qwen3.5 9B (~6,6 GB) | **32 768** | Default-Agent, Coding, Compact |
-| `local-quality` | Qwen3.8 27B (~17 GB) | **16 384** | Review, Architektur, Vision-QA |
+| `local-fast` | Qwen3.5 9B (~6,6 GB), **Q4_K_M** | **32 768** | Default-Agent, Coding, Compact |
+| `local-quality` | Qwen3.8 27B (~17 GB), **Q4_K_M** | **65 536** | Review, Architektur, Vision-QA |
 
 ### Bildmodelle (ComfyUI unter `/srv/ai/models/comfyui`)
 
 - **FLUX.2 [klein] 4B** fp8 — Text→Bild (fester Workflow im KI-Arbeitsplatz)
 - **Qwen-Image-2.1** — Bildbearbeitung (fester Edit-Workflow)
+- **Wan 2.2 TI2V 5B** — kurzes Video über denselben Arbeitsplatz (`generate_video`)
 
 ## Screenshots & Beispiele
 
@@ -71,13 +73,35 @@ Stand der Doku-Maschine (kann abweichen, wenn du upgradest):
 ## Architektur (kurz)
 
 ```text
-Desktop
+Desktop / Cursor / Qwen
   ├─ Lokaler Chat ──► Open WebUI :3000 ──► Ollama :11434
-  └─ KI-Arbeitsplatz :8790
-        ├─ Agent ──► Qwen Code :4170 ──► Ollama + MCP :8765
-        ├─ Bilder ──► ComfyUI :8188 (nach Ollama-Unload)
-        └─ System ──► Status / VRAM / Ports
+  ├─ KI-Arbeitsplatz :8790
+  │     ├─ Agent ──► Qwen Code :4170 ──► Ollama + MCP :8765
+  │     ├─ Bilder / Video ──► ComfyUI :8188 (nach Ollama-Unload)
+  │     └─ System ──► Status / VRAM / Ports
+  └─ KI-TTS :8792 ──► Piper (CPU, kein GPU-Konflikt)
 ```
+
+## Werkzeuge (localhost)
+
+HTTP, nur `127.0.0.1` — Cursor, Open WebUI und der Qwen-Agent rufen dieselben Endpunkte:
+
+| Werkzeug | Aufruf |
+|---|---|
+| Bild erzeugen | `POST http://127.0.0.1:8790/api/images/generate` |
+| Bild ändern | `POST http://127.0.0.1:8790/api/images/edit` |
+| Video | `POST http://127.0.0.1:8790/api/videos/generate` |
+| Sprache (WAV) | `POST http://127.0.0.1:8792/api/tts/synthesize` JSON `text`, `lang` (`de` `en` `pl` `es` `fr` `tr`, max. 500 Zeichen). Status: `GET /api/tts/status` |
+
+MCP `local-tools` (`:8765`) gruppiert dieselben Fähigkeiten plus Agent-Helfer:
+
+- Bilder und Video: `generate_image`, `edit_image`, `generate_video`
+- Gedächtnis und Wissen: `memory_*`, `knowledge_*`
+- PDF: lesen, erzeugen, ändern, OCR, Vision-QA
+- Browser und Desktop: eigener Agent-Browser und native Fenster, mit Sperren (kein Terminal, kein Passwort, kein Löschen)
+- Zweitmeinung auf der CPU: `moe_consult` (kein zweites GPU-Modell parallel)
+
+Open WebUI nutzt für Bilder das Tool `local_images` gegen den Arbeitsplatz, nicht ComfyUI direkt. Details: [`docs/OPEN_WEBUI_IMAGE_TOOLS.md`](docs/OPEN_WEBUI_IMAGE_TOOLS.md), [`docs/BROWSER_AGENT.md`](docs/BROWSER_AGENT.md), [`docs/DESKTOP_AGENT.md`](docs/DESKTOP_AGENT.md).
 
 Startverhalten:
 
@@ -154,7 +178,7 @@ Apply-Skripte für Context-Cutover:
 
 ```bash
 ./scripts/apply-local-fast-context.sh      # FAST → 32K
-./scripts/apply-local-quality-16k.sh       # QUALITY → 16K (Beispiel)
+./scripts/apply-local-quality-64k.sh       # QUALITY → 64K (produktiv auf der Referenzmaschine)
 ```
 
 ### 4. Qwen Code
@@ -172,7 +196,7 @@ Provider nur `local-fast` / `local-quality` gegen Ollama — der KI-Arbeitsplatz
 
 ```bash
 # Podman Quadlet / Container, Bind 127.0.0.1:3000 → 8080
-# Image: ghcr.io/open-webui/open-webui:main
+# Referenz-Image: ghcr.io/open-webui/open-webui:v0.11.4
 # Daten unter /srv/ai (nicht auf die System-Root knallen)
 ```
 
@@ -201,12 +225,23 @@ systemctl --user start comfyui.service   # Port 8188
 ./scripts/deploy-local-ui.sh             # nach Bestätigung — sichert vorher nach /mnt/ai-archive/backups/ki-ui/
 ```
 
+### 8. Sprache (Piper, CPU)
+
+Stimmen kommen von Hugging Face (`rhasspy/piper-voices`), Binary von den [Piper-Releases](https://github.com/rhasspy/piper/releases). Kein Cloud-TTS.
+
+```bash
+./scripts/install-piper-tts.sh
+./scripts/deploy-ki-tts.sh
+curl -s http://127.0.0.1:8792/api/tts/status
+```
+
 Health-Checks:
 
 ```bash
 curl -s http://127.0.0.1:11434/api/version
 curl -s http://127.0.0.1:8765/health
 curl -s http://127.0.0.1:8790/ >/dev/null && echo workplace_ok
+curl -s http://127.0.0.1:8792/api/tts/status
 curl -s http://127.0.0.1:3000/api/version
 ```
 
@@ -219,7 +254,8 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v \
   tests/test_ki_workplace.py \
   tests/test_local_tools_gateway.py \
   tests/test_agent_memory.py \
-  tests/test_pdf_tools.py
+  tests/test_pdf_tools.py \
+  tests/test_ki_tts.py
 ```
 
 ## Wichtige Docs
@@ -231,6 +267,9 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v \
 | Compact nach Tool-Ketten | [`docs/QWEN_COMPACT_STATE_LEDGER.md`](docs/QWEN_COMPACT_STATE_LEDGER.md) |
 | Bild-Edit Qwen-Image-2.1 | [`docs/QWEN_IMAGE_2_1_EDIT.md`](docs/QWEN_IMAGE_2_1_EDIT.md) |
 | Open-WebUI Bild-Tools | [`docs/OPEN_WEBUI_IMAGE_TOOLS.md`](docs/OPEN_WEBUI_IMAGE_TOOLS.md) |
+| Cursor ↔ lokale Agenten (mg-games) | [`docs/cursor-agent-handoff/README.md`](docs/cursor-agent-handoff/README.md) |
+| Browser-Agent | [`docs/BROWSER_AGENT.md`](docs/BROWSER_AGENT.md) |
+| Desktop-Agent | [`docs/DESKTOP_AGENT.md`](docs/DESKTOP_AGENT.md) |
 | Stack-Audit (Ist-Zustand) | [`docs/STACK_AUDIT_2026-09-28.md`](docs/STACK_AUDIT_2026-09-28.md) |
 | Changelog / Bauphasen | [`docs/CHANGELOG.md`](docs/CHANGELOG.md) |
 | Abnahme A01–A14 | [`docs/ACCEPTANCE_A01_A14.md`](docs/ACCEPTANCE_A01_A14.md) |

@@ -13,6 +13,7 @@ Local agents on **Vollstrecker** that start from this repo (`Linux Lokales KI`) 
 | [release-approval-gate.md](./release-approval-gate.md) | Review PASS → then Mike OK for release messaging / guarded pushes |
 | [plan-local-codic-delegation.md](./plan-local-codic-delegation.md) | Stub: Cloud coordinator + Qwen Code on this machine |
 | [cloud-sync-maintain.md](./cloud-sync-maintain.md) | Stub: store → `kinder-spiele/docs/agent/` sync |
+| Android emulator (Vollstrecker) | [kinder-spiele `android-emulator-setup.md`](https://github.com/GalasMichal/kinder-spiele/blob/master/docs/agent/android-emulator-setup.md) — long-lived AVDs `kinder-phone` / `kinder`, `npm run test:emulator` |
 
 ## Qwen Code from this repo
 
