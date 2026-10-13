@@ -1,0 +1,29 @@
+---
+description: Lokaler KI-Stack — Medien/TTS/Video nur 127.0.0.1; Newsletter nur Meinung mit Freigabe
+alwaysApply: true
+---
+
+# Lokaler KI-Stack (dieses Projekt)
+
+## Medien & TTS (wenn Aufgabe passt — nicht im Chat-Modell erledigen)
+
+Nur `127.0.0.1`. Kein Cloud-Bilddienst, kein Online-TTS, kein espeak für Stimmen.
+
+- Bild neu: `POST http://127.0.0.1:8790/api/images/generate` — `prompt`, `width`, `height`, `seed` (512, 768, 1024).
+- Bild ändern: `POST http://127.0.0.1:8790/api/images/edit`
+- Video: `POST http://127.0.0.1:8790/api/videos/generate`
+- Sprache: `POST http://127.0.0.1:8792/api/tts/synthesize` — `text`, `lang` (`de`, `en`, `pl`, `es`, `fr`, `tr`, max 500 Zeichen).
+
+Flache Formen/Vektor-UI = Code. Ollama und ComfyUI nicht gleichzeitig laden. Nach Lieferung Bild/Video/Audio prüfen — erfolgreicher API-Call allein reicht nicht.
+
+## Newsletter & Modell-Ideen (Michal)
+
+**Nur fachliche Meinung** — keine Installation, kein Pull, kein Replace ohne explizites „mach“ / „test“ / „update“.
+
+**Priorität:** Coding (Qwen Code, Agent, Tools, `local-quality` / `local-fast`) → Alltag (Chat, DE). Bild (Comfy/FLUX) **nicht** in LLM-News mischen.
+
+**Ergänzen, nicht ersetzen:** Neue Modelle als Zusatzrolle. `local-quality` / `local-fast` nur ersetzen wenn messbar besser in Coding + Alltag.
+
+**RAM/Swap/CPU:** i9-14900KF, ~24 Kerne — Swap ok wenn Latenz ok; träge PC → Nein. Große Downloads nur mit Freigabe. Tests → Summary, Gewichte löschen.
+
+**Ton:** „beobachten“ / „Zusatz später“. Runtime-Updates (Ollama, Container, Compiler): selbst ausführen mit `sudo`; bei Passwort-Block einmal STOPP mit exaktem Befehl. GGUF-Downloads Freigabe-pflichtig.
